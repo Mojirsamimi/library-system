@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_BOOK_EXISTENCEPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllBookLoanHistoryVC"
+                  id="removeAllBookLoanHistoryVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <invokeAction Binds="removeAllPhysicalBookVC"
+                  id="removeAllPhysicalBookVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <invokeAction Binds="removeAllVirtualBookVC"
+                  id="removeAllVirtualBookVC_execute" Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="VirtualBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO1Iterator"/>
+    <searchRegion Criteria="Search_CallNo_ArtId_TitleVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="VirtualBookVO1Iterator"
+                  id="SearchCallNoArtIdTitleVCQuery"/>
+    <iterator Binds="PhysicalBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PhysicalBookVO1Iterator"/>
+    <searchRegion Binds="PhysicalBookVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PhysicalBookVO1Query"/>
+    <iterator Binds="BookLoanHistoryVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="BookLoanHistoryVo1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="CallNo">
+      <AttrNames>
+        <Item Value="CallNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="VbookCNT">
+      <AttrNames>
+        <Item Value="VbookCNT"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PhysicalBookVO1Iterator" id="PhysicalBookVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+                      Name="PhysicalBookVO10">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="RegId"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="ExistenceStatus"/>
+          <Item Value="LoanStatus"/>
+          <Item Value="SafetyStatus"/>
+          <Item Value="Place"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="ProviderName">
+      <AttrNames>
+        <Item Value="ProviderName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookLoanHistoryVo1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookLoanHistoryVo1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookLoanHistoryVo1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator"
+                     id="ProviderForeignName">
+      <AttrNames>
+        <Item Value="ProviderForeignName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="removeAllBookLoanHistoryVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllBookLoanHistoryVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllPhysicalBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPhysicalBookVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllVirtualBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllVirtualBookVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

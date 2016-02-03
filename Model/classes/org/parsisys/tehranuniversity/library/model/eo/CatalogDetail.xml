@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CatalogDetail"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="CATALOG_DETAIL"
+  AliasName="CatalogDetail"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.CatalogDetailImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CATALOG_DETAIL"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Value"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="VALUE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CATALOG_DETAIL"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EnglishText"
+    Precision="50"
+    ColumnName="ENGLISH_TEXT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CATALOG_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    Scale="0"
+    ColumnName="ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CATALOG_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Text"
+    Precision="50"
+    ColumnName="TEXT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CATALOG_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CatArtId"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="CAT_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CATALOG_DETAIL"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="MemberSetup"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.CatalogPrivateMemberSetupFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.CatalogPrivateMemberSetupFkAssoc.MemberSetup"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.CatalogPrivateMemberSetupFkAssoc.CatalogDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CatalogDetailPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CATALOG_DETAIL_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.CatArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.Value"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008129">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008129"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008130">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008130"/>
+      <Attr Name="_checkCondition" Value='"VALUE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.Value"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008131">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008131"/>
+      <Attr Name="_checkCondition" Value='"ACTIVE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.Active"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008132">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008132"/>
+      <Attr Name="_checkCondition" Value='"TEXT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.Text"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008133">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008133"/>
+      <Attr Name="_checkCondition" Value='"CAT_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CatalogDetail.CatArtId"/>
+    </AttrArray>
+  </Key>
+</Entity>

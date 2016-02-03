@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CardCardRowVO"
+  Version="11.1.1.55.36"
+  SelectList="Card.ART_ID, 
+       Card.CARD_DATE, 
+       Card.CRDTYPE_ART_ID, 
+       Card.LABCOL, 
+       Card.LASTARTID, 
+       Card.STATUS, 
+       Card.USER_NAME, 
+       Card.VBOOK_ART_ID, 
+       CardRow.CRD_ART_ID, 
+       CardRow.ITEM, 
+       CardRow.LABCOL AS LABCOL1, 
+       CardRow.ROW_NO"
+  FromList="CARD Card, CARD_ROW CardRow"
+  Where="(Card.LABCOL = CardRow.LABCOL(+)) AND (Card.ART_ID = CardRow.CRD_ART_ID(+))"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Partial"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="CardCardRowVO_VirtualBookVOLookup"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO"/>
+  <ListBinding
+    Name="LOV_VirtualBookVO"
+    ListVOName="CardCardRowVO_VirtualBookVOLookup"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_VirtualBookVO_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Labcol"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Labcol"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CallNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Card"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Card"/>
+  <EntityUsage
+    Name="CardRow"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.CardRow"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.CrdCrdrowFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.CrdCrdrowFkAssoc.CardRow"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.CardCardRowVO.Card"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Card.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Card.ArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.CrdArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Card"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="CardDate"
+    PrecisionRule="true"
+    EntityAttrName="CardDate"
+    EntityUsage="Card"
+    AliasName="CARD_DATE"/>
+  <ViewAttribute
+    Name="CrdtypeArtId"
+    PrecisionRule="true"
+    EntityAttrName="CrdtypeArtId"
+    EntityUsage="Card"
+    AliasName="CRDTYPE_ART_ID"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Card"
+    AliasName="LABCOL"
+    LOVName="LOV_VirtualBookVO">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="100"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Lastartid"
+    PrecisionRule="true"
+    EntityAttrName="Lastartid"
+    EntityUsage="Card"
+    AliasName="LASTARTID"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="Card"
+    AliasName="STATUS"/>
+  <ViewAttribute
+    Name="UserName"
+    PrecisionRule="true"
+    EntityAttrName="UserName"
+    EntityUsage="Card"
+    AliasName="USER_NAME"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="Card"
+    AliasName="VBOOK_ART_ID"/>
+  <ViewAttribute
+    Name="CrdArtId"
+    PrecisionRule="true"
+    EntityAttrName="CrdArtId"
+    EntityUsage="CardRow"
+    AliasName="CRD_ART_ID"/>
+  <ViewAttribute
+    Name="Item"
+    PrecisionRule="true"
+    EntityAttrName="Item"
+    EntityUsage="CardRow"
+    AliasName="ITEM"/>
+  <ViewAttribute
+    Name="Labcol1"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="CardRow"
+    AliasName="LABCOL1"/>
+  <ViewAttribute
+    Name="RowNo"
+    PrecisionRule="true"
+    EntityAttrName="RowNo"
+    EntityUsage="CardRow"
+    AliasName="ROW_NO"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ArtId"/>
+    <Item Value="Labcol"/>
+  </AttrArray>
+</ViewObject>

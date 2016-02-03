@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmailVO"
+  Version="11.1.1.56.60"
+  SelectList="Email.ACTIVE, 
+       Email.EMAIL AS EMAIL1, 
+       Email.ORDER_NO, 
+       Email.PERS_ART_ID"
+  FromList="EMAIL Email"
+  OrderBy="Email.ORDER_NO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.EmailVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.EmailVOImpl"
+  PageIterMode="Partial"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="EmailVO_PersonVOLookup"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.PersonVO"/>
+  <ViewAccessor
+    Name="CheckBox01View1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.CheckBox01View"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PersonVO"
+    ListVOName="EmailVO_PersonVOLookup"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_PersonVO_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PersArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Fname"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Active_true_false"
+    ListVOName="CheckBox01View1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_Active_true_false_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Active"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="NumberValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BooleanValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Email"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Email"/>
+  <ViewAttribute
+    Name="Active"
+    IsNotNull="true"
+    PrecisionRule="true"
+    DefaultValue="1"
+    EntityAttrName="Active"
+    EntityUsage="Email"
+    AliasName="ACTIVE"
+    LOVName="LOV_Active_true_false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="check_box"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Email1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="Email"
+    AliasName="EMAIL1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.EmailVO.Email1_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrderNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="Email"
+    AliasName="ORDER_NO"/>
+  <ViewAttribute
+    Name="PersArtId"
+    LOVName="LOV_PersonVO"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PersArtId"
+    EntityUsage="Email"
+    AliasName="PERS_ART_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewKey
+    Name="EmailAlternateKey">
+    <AttrArray Name="EntityKeys">
+      <Item Value="EmailAltKey"/>
+    </AttrArray>
+  </ViewKey>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

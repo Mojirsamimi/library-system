@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelCollection id="pc1">
+    <af:table value="#{bindings.MenuListVO1.collectionModel}" var="row"
+              rows="#{bindings.MenuListVO1.rangeSize}"
+              emptyText="#{bindings.MenuListVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.MenuListVO1.rangeSize}"
+              rowBandingInterval="0" id="t1">
+      <af:column sortProperty="ArtId" sortable="false"
+                 headerText="#{bindings.MenuListVO1.hints.ArtId.label}" id="c4">
+        <af:inputText value="#{row.bindings.ArtId.inputValue}"
+                      label="#{bindings.MenuListVO1.hints.ArtId.label}"
+                      required="#{bindings.MenuListVO1.hints.ArtId.mandatory}"
+                      columns="#{bindings.MenuListVO1.hints.ArtId.displayWidth}"
+                      maximumLength="#{bindings.MenuListVO1.hints.ArtId.precision}"
+                      shortDesc="#{bindings.MenuListVO1.hints.ArtId.tooltip}"
+                      id="it4">
+          <f:validator binding="#{row.bindings.ArtId.validator}"/>
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.MenuListVO1.hints.ArtId.format}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="IsLeaf" sortable="false"
+                 headerText="#{bindings.MenuListVO1.hints.IsLeaf.label}"
+                 id="c2">
+        <af:inputText value="#{row.bindings.IsLeaf.inputValue}"
+                      label="#{bindings.MenuListVO1.hints.IsLeaf.label}"
+                      required="#{bindings.MenuListVO1.hints.IsLeaf.mandatory}"
+                      columns="#{bindings.MenuListVO1.hints.IsLeaf.displayWidth}"
+                      maximumLength="#{bindings.MenuListVO1.hints.IsLeaf.precision}"
+                      shortDesc="#{bindings.MenuListVO1.hints.IsLeaf.tooltip}"
+                      id="it1">
+          <f:validator binding="#{row.bindings.IsLeaf.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="Name" sortable="false"
+                 headerText="#{bindings.MenuListVO1.hints.Name.label}" id="c6">
+        <af:inputText value="#{row.bindings.Name.inputValue}"
+                      label="#{bindings.MenuListVO1.hints.Name.label}"
+                      required="#{bindings.MenuListVO1.hints.Name.mandatory}"
+                      columns="#{bindings.MenuListVO1.hints.Name.displayWidth}"
+                      maximumLength="#{bindings.MenuListVO1.hints.Name.precision}"
+                      shortDesc="#{bindings.MenuListVO1.hints.Name.tooltip}"
+                      id="it3">
+          <f:validator binding="#{row.bindings.Name.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="Page" sortable="false"
+                 headerText="#{bindings.MenuListVO1.hints.Page.label}" id="c5">
+        <af:inputText value="#{row.bindings.Page.inputValue}"
+                      label="#{bindings.MenuListVO1.hints.Page.label}"
+                      required="#{bindings.MenuListVO1.hints.Page.mandatory}"
+                      columns="#{bindings.MenuListVO1.hints.Page.displayWidth}"
+                      maximumLength="#{bindings.MenuListVO1.hints.Page.precision}"
+                      shortDesc="#{bindings.MenuListVO1.hints.Page.tooltip}"
+                      id="it5">
+          <f:validator binding="#{row.bindings.Page.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="ParentId" sortable="false"
+                 headerText="#{bindings.MenuListVO1.hints.ParentId.label}"
+                 id="c3">
+        <af:inputText value="#{row.bindings.ParentId.inputValue}"
+                      label="#{bindings.MenuListVO1.hints.ParentId.label}"
+                      required="#{bindings.MenuListVO1.hints.ParentId.mandatory}"
+                      columns="#{bindings.MenuListVO1.hints.ParentId.displayWidth}"
+                      maximumLength="#{bindings.MenuListVO1.hints.ParentId.precision}"
+                      shortDesc="#{bindings.MenuListVO1.hints.ParentId.tooltip}"
+                      id="it6">
+          <f:validator binding="#{row.bindings.ParentId.validator}"/>
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.MenuListVO1.hints.ParentId.format}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="SecCodePosition" sortable="false"
+                 headerText="#{bindings.MenuListVO1.hints.SecCodePosition.label}"
+                 id="c1">
+        <af:inputText value="#{row.bindings.SecCodePosition.inputValue}"
+                      label="#{bindings.MenuListVO1.hints.SecCodePosition.label}"
+                      required="#{bindings.MenuListVO1.hints.SecCodePosition.mandatory}"
+                      columns="#{bindings.MenuListVO1.hints.SecCodePosition.displayWidth}"
+                      maximumLength="#{bindings.MenuListVO1.hints.SecCodePosition.precision}"
+                      shortDesc="#{bindings.MenuListVO1.hints.SecCodePosition.tooltip}"
+                      id="it2">
+          <f:validator binding="#{row.bindings.SecCodePosition.validator}"/>
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.MenuListVO1.hints.SecCodePosition.format}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="Slct" sortable="false"
+                 headerText="#{bindings.MenuListVO1.hints.Slct.label}" id="c7">
+        <af:inputText value="#{row.bindings.Slct.inputValue}"
+                      label="#{bindings.MenuListVO1.hints.Slct.label}"
+                      required="#{bindings.MenuListVO1.hints.Slct.mandatory}"
+                      columns="#{bindings.MenuListVO1.hints.Slct.displayWidth}"
+                      maximumLength="#{bindings.MenuListVO1.hints.Slct.precision}"
+                      shortDesc="#{bindings.MenuListVO1.hints.Slct.tooltip}"
+                      id="it7">
+          <f:validator binding="#{row.bindings.Slct.validator}"/>
+        </af:inputText>
+      </af:column>
+    </af:table>
+    <f:facet name="menus"/>
+    <f:facet name="toolbar"/>
+    <f:facet name="statusbar"/>
+  </af:panelCollection>
+</jsp:root>

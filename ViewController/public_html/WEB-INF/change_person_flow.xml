@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="change_person_flow">
+    <default-activity id="__45">prepare_fields</default-activity>
+    <data-control-scope id="__20">
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__23">
+      <name id="__21">param</name>
+      <value>#{pageFlowScope.param}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <managed-bean id="__9">
+      <managed-bean-name id="__12">change_person_bean</managed-bean-name>
+      <managed-bean-class id="__10">org.parsisys.tehranuniversity.library.view.beans.ChangePersonBean</managed-bean-class>
+      <managed-bean-scope id="__11">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <save-point-restore-finalizer id="__17">#{pageFlowScope.change_person_bean.savePointFinalizer}</save-point-restore-finalizer>
+    <view id="ChangePerson">
+      <page>/ff/ChangePerson.jsff</page>
+    </view>
+    <method-call id="prepare_fields">
+      <method>#{pageFlowScope.change_person_bean.prepareFields}</method>
+      <outcome id="__13">
+        <fixed-outcome>change_person</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="createSavePoint">
+      <method>#{pageFlowScope.change_person_bean.createAdfmSavePoint}</method>
+      <outcome id="__39">
+        <fixed-outcome>go_prepare_fields</fixed-outcome>
+      </outcome>
+    </method-call>
+    <save-point-restore id="savePointRestore1">
+      <save-point-id>#{pageFlowScope['AdfmSavePoint']}</save-point-id>
+    </save-point-restore>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__1">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__4">
+      <from-activity-id id="__5">prepare_fields</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome id="__8">change_person</from-outcome>
+        <to-activity-id id="__6">ChangePerson</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__14">ChangePerson</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome id="__22">save</from-outcome>
+        <to-activity-id id="__18">prepare_fields</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__46">
+        <from-outcome id="__48">no end</from-outcome>
+        <to-activity-id id="__47">savePointRestore1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome id="__16">end</from-outcome>
+        <to-activity-id id="__15">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__40">
+      <from-activity-id id="__41">createSavePoint</from-activity-id>
+      <control-flow-case id="__44">
+        <from-outcome id="__42">go_prepare_fields</from-outcome>
+        <to-activity-id id="__43">prepare_fields</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

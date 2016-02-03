@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:6da4f8e6-5a80-49ca-a81f-3e7317c608f9'
+   isAbstract='false'
+   isLeaf='false'
+   name='مشاهده سابقه باركد اعضاي كتابخانه'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:b3ac1fa8-f9de-42f1-a730-87ed405c1416'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

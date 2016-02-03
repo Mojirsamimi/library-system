@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="reserve_detailPageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PhysicalBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PhysicalBookVO1Iterator"/>
+    <searchRegion Binds="PhysicalBookVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PhysicalBookVO1Query" InitialQueryOverridden="true"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PhysicalBookVO1Iterator" id="PhysicalBookVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+                      Name="PhysicalBookVO10">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="RegId"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="LoanStatus"/>
+          <Item Value="SafetyStatus"/>
+          <Item Value="ExistenceStatus"/>
+          <Item Value="Place"/>
+          <Item Value="PubDate"/>
+          <Item Value="RetDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

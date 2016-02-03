@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CardVO"
+  Version="11.1.1.56.60"
+  SelectList="Card.ART_ID, 
+       Card.CARD_DATE, 
+       Card.CRDTYPE_ART_ID, 
+       Card.LABCOL, 
+       Card.LASTARTID, 
+       Card.STATUS, 
+       Card.USER_NAME, 
+       Card.VBOOK_ART_ID"
+  FromList="CARD Card"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.CardVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.CardVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Card"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Card"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Card"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="CardDate"
+    PrecisionRule="true"
+    EntityAttrName="CardDate"
+    EntityUsage="Card"
+    AliasName="CARD_DATE"/>
+  <ViewAttribute
+    Name="CrdtypeArtId"
+    PrecisionRule="true"
+    EntityAttrName="CrdtypeArtId"
+    EntityUsage="Card"
+    AliasName="CRDTYPE_ART_ID"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Card"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="Lastartid"
+    PrecisionRule="true"
+    EntityAttrName="Lastartid"
+    EntityUsage="Card"
+    AliasName="LASTARTID"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="Card"
+    AliasName="STATUS"/>
+  <ViewAttribute
+    Name="UserName"
+    PrecisionRule="true"
+    EntityAttrName="UserName"
+    EntityUsage="Card"
+    AliasName="USER_NAME"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="Card"
+    AliasName="VBOOK_ART_ID"/>
+  <ViewLinkAccessor
+    Name="CardRowVO"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.CardCardRowVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

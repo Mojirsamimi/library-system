@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+ 
+  <metadata-resource>/WEB-INF/adfc-config2.xml</metadata-resource>
+  <metadata-resource>/WEB-INF/adfc-config-portal.xml</metadata-resource>
+  <metadata-resource>/WEB-INF/adfc-config-error-pages.xml</metadata-resource>
+  <view id="persianCataloging">
+    <page>/persianCataloging.jsp</page>
+  </view>
+  <view id="BOOK_STATUS_BARCODE_CHANGE">
+    <page>/BOOK_STATUS_BARCODE_CHANGE.jsp</page>
+  </view>
+  <view id="BOOK_STATUS_HISTORY">
+    <page>/BOOK_STATUS_HISTORY.jsp</page>
+  </view>
+  <view id="CID_BARCODE_SEARCH">
+    <page>/CID_BARCODE_SEARCH.jsp</page>
+  </view>
+  <view id="CID_BOOK_BARCODE_CHANGE">
+    <page>/CID_BOOK_BARCODE_CHANGE.jspx</page>
+  </view>
+  <view id="CID_BOOK_BARCODE_HISTORY">
+    <page>/CID_BOOK_BARCODE_HISTORY.jsp</page>
+  </view>
+  <view id="CID_BOOK_EXISTENCE">
+    <page>/CID_BOOK_EXISTENCE.jsp</page>
+  </view>
+  <view id="CID_BOOK_LOAN_HISTORY">
+    <page>/CID_BOOK_LOAN_HISTORY.jspx</page>
+  </view>
+  <view id="CID_BOOK_RESERVE_HISTORY">
+    <page>/CID_BOOK_RESERVE_HISTORY.jsp</page>
+  </view>
+  <view id="CID_CLEARING">
+    <page>/CID_CLEARING.jsp</page>
+  </view>
+  <view id="CID_EXTEND">
+    <page>/CID_EXTEND.jsp</page>
+  </view>
+  <view id="CID_LOAN_CASH_PENALTY">
+    <page>/CID_LOAN_CASH_PENALTY.jspx</page>
+  </view>
+  <view id="CID_LOAN">
+    <page>/CID_LOAN.jsp</page>
+  </view>
+  <view id="CID_MEM_BARCODE_CHANGE">
+    <page>/CID_MEM_BARCODE_CHANGE.jsp</page>
+  </view>
+  <view id="CID_MEM_BARCODE_HISTORY">
+    <page>/CID_MEM_BARCODE_HISTORY.jspx</page>
+  </view>
+  <view id="CID_MEM_LOAN_HISTORY">
+    <page>/CID_MEM_LOAN_HISTORY.jspx</page>
+  </view>
+  <view id="CID_MEM_STATUS_CHANGE">
+    <page>/CID_MEM_STATUS_CHANGE.jspx</page>
+  </view>
+  <view id="CID_MEM_STATUS_HISTORY">
+    <page>/CID_MEM_STATUS_HISTORY.jspx</page>
+  </view>
+  <view id="CID_MEMBER_PENALTY_HISTORY">
+    <page>/CID_MEMBER_PENALTY_HISTORY.jsp</page>
+  </view>
+  <view id="CID_Member">
+    <page>/CID_Member.jsp</page>
+  </view>
+  <view id="CID_PENALTY_PAY">
+    <page>/CID_PENALTY_PAY.jsp</page>
+  </view>
+  <view id="CID_PRINT_RESERVE">
+    <page>/CID_PRINT_RESERVE.jspx</page>
+  </view>
+  <view id="CID_PUBLIC_CASH_PENALTY">
+    <page>/CID_PUBLIC_CASH_PENALTY.jspx</page>
+  </view>
+  <view id="CID_PUBLIC_NON_CASH_PENALTY">
+    <page>/CID_PUBLIC_NON_CASH_PENALTY.jspx</page>
+  </view>
+  <view id="CID_RESERVE">
+    <page>/CID_RESERVE.jspx</page>
+  </view>
+  <view id="CID_RETURN_BOOK">
+    <page>/CID_RETURN_BOOK.jsp</page>
+  </view>
+  <view id="INTRODUCTION_LETTER">
+    <page>/INTRODUCTION_LETTER.jspx</page>
+  </view>
+  <view id="LOAN_AT_LIB_LIST">
+    <page>/LOAN_AT_LIB_LIST.jspx</page>
+  </view>
+  <view id="persianCataloging1">
+    <page>/persianCataloging.jsp</page>
+  </view>
+  <view id="PRINT_RESERVE">
+    <page>/PRINT_RESERVE.jspx</page>
+  </view>
+  <view id="BookIntermidiatePage">
+    <page>/BookIntermidiatePage.jsp</page>
+  </view>
+  <view id="CatalogingIntermidiatePage">
+    <page>/CatalogingIntermidiatePage.jsp</page>
+  </view>
+  <view id="LibrarySystemIntermidiatePage">
+    <page>/LibrarySystemIntermidiatePage.jsp</page>
+  </view>
+  <view id="MemshipIntermidiatePage">
+    <page>/MemshipIntermidiatePage.jsp</page>
+  </view>
+  <view id="LoandeskIntermidiatePage">
+    <page>/LoandeskIntermidiatePage.jsp</page>
+  </view>
+  <view id="ReserveIntermidiatePage">
+    <page>/ReserveIntermidiatePage.jsp</page>
+  </view>
+  <view id="PanaltyIntermidiatePage">
+    <page>/PanaltyIntermidiatePage.jsp</page>
+  </view>
+  <view id="LoanIntermidiatePage">
+    <page>/LoanIntermidiatePage.jsp</page>
+  </view>
+  <view id="BarcodeSearchIntrmidiatePage">
+    <page>/BarcodeSearchIntrmidiatePage.jsp</page>
+  </view>
+  <view id="BookVerChangeIntermidiatePage">
+    <page>/BookVerChangeIntermidiatePage.jsp</page>
+  </view>
+  <view id="RoleAndPermission">
+    <page>/RoleAndPermission.jspx</page>
+  </view>
+  <view id="SettingsIntermidiatePage">
+    <page>/SettingsIntermidiatePage.jspx</page>
+  </view>
+  <view id="logIn">
+    <page>/logIn.jsp</page>
+  </view>
+  <view id="CID_REGISTER_LOST">
+    <page>/CID_REGISTER_LOST.jspx</page>
+  </view>
+  <view id="RecentBook">
+    <page>/RecentBook.jsp</page>
+  </view>
+  <view id="RecentBookIntermidiatepage">
+    <page>/RecentBookIntermidiatepage.jsp</page>
+  </view>
+  <view id="PersianRefrenceIntermidiatePage">
+    <page>/PersianRefrenceIntermidiatePage.jsp</page>
+  </view>
+  <view id="PersianProvider">
+    <page>/PersianProvider.jsp</page>
+  </view>
+  <view id="PersianSubject">
+    <page>/PersianSubject.jsp</page>
+  </view>
+  <view id="PersianUniformTitle">
+    <page>/PersianUniformTitle.jsp</page>
+  </view>
+  <view id="RefrenceIntermidiatePage">
+    <page>/RefrenceIntermidiatePage.jsp</page>
+  </view>
+  <view id="LatinProvider">
+    <page>/LatinProvider.jsp</page>
+  </view>
+  <view id="LatinRefrenceIntermidiatePage">
+    <page>/LatinRefrenceIntermidiatePage.jsp</page>
+  </view>
+  <view id="LatinSubject">
+    <page>/LatinSubject.jsp</page>
+  </view>
+  <view id="LatinUniformTitle">
+    <page>/LatinUniformTitle.jsp</page>
+  </view>
+  <view id="FarsiKeywordView">
+    <page>/FarsiKeywordView.jsp</page>
+  </view>
+  <view id="Sandoogh">
+    <page>/Sandoogh.jsp</page>
+  </view>
+  <view id="BookRequestNew">
+    <page>/BookRequestNew.jsp</page>
+  </view>
+  <view id="bookRequestIntermidiatepage">
+    <page>/bookRequestIntermidiatepage.jsp</page>
+  </view>
+  <view id="RafUpload">
+    <page>/RafUpload.jspx</page>
+  </view>
+  <view id="ReportIntermidiatePage">
+    <page>/ReportIntermidiatePage.jsp</page>
+  </view>
+  <view id="SuggestedBook">
+    <page>/SuggestedBook.jspx</page>
+  </view>
+  <view id="suggestedbooklist">
+    <page>/suggestedbooklist.jsp</page>
+  </view>
+  <view id="suggestedintermidiatepage">
+    <page>/suggestedintermidiatepage.jsp</page>
+  </view>
+  <view id="IntermidiatePageCharge">
+    <page>/IntermidiatePageCharge.jsp</page>
+  </view>
+  <view id="Extra_Charge">
+    <page>/Extra_Charge.jsp</page>
+  </view>
+  <view id="report_date_ExtraCharge">
+    <page>/report_date_ExtraCharge.jsp</page>
+  </view>
+  <view id="ReportCataloging">
+    <page>/ReportCataloging.jsp</page>
+  </view>
+  <view id="ReportLoan">
+    <page>/ReportLoan.jsp</page>
+  </view>
+  <view id="reportRecent">
+    <page>/reportRecent.jsp</page>
+  </view>
+  <view id="DataEntry">
+    <page>/DataEntry.jsp</page>
+  </view>
+  <view id="ReportLabelFarsi">
+    <page>/ReportLabelFarsi.jsp</page>
+  </view>
+  <view id="ReportLabelFarsiListBook">
+    <page>/ReportLabelFarsiListBook.jsp</page>
+  </view>
+  <view id="IntermdiatePageBookLabel">
+    <page>/IntermdiatePageBookLabel.jsp</page>
+  </view>
+  <view id="IntermdiatePageBookFarsiCard">
+    <page>/IntermdiatePageBookFarsiCard.jsp</page>
+  </view>
+  <view id="ReportFarsiCard">
+    <page>/ReportFarsiCard.jsp</page>
+  </view>
+  <view id="bookRequest-A">
+    <page>/bookRequest-A.jspx</page>
+  </view>
+  <control-flow-rule id="__29">
+    <from-activity-id id="__30">*</from-activity-id>
+    <control-flow-case id="__31">
+      <from-outcome id="__32">adfMenu_persianCataloging</from-outcome>
+      <to-activity-id id="__77">persianCataloging</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__78">
+      <from-outcome id="__79">adfMenu_BOOK_STATUS_BARCODE_CHANGE</from-outcome>
+      <to-activity-id id="__80">BOOK_STATUS_BARCODE_CHANGE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__81">
+      <from-outcome id="__82">adfMenu_BOOK_STATUS_HISTORY</from-outcome>
+      <to-activity-id id="__83">BOOK_STATUS_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__84">
+      <from-outcome id="__85">adfMenu_CID_BARCODE_SEARCH</from-outcome>
+      <to-activity-id id="__86">CID_BARCODE_SEARCH</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__87">
+      <from-outcome id="__88">adfMenu_CID_BOOK_BARCODE_CHANGE</from-outcome>
+      <to-activity-id id="__89">CID_BOOK_BARCODE_CHANGE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__90">
+      <from-outcome id="__91">adfMenu_CID_BOOK_BARCODE_HISTORY</from-outcome>
+      <to-activity-id id="__92">CID_BOOK_BARCODE_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__93">
+      <from-outcome id="__94">adfMenu_CID_BOOK_EXISTENCE</from-outcome>
+      <to-activity-id id="__95">CID_BOOK_EXISTENCE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__96">
+      <from-outcome id="__97">adfMenu_CID_BOOK_LOAN_HISTORY</from-outcome>
+      <to-activity-id id="__98">CID_BOOK_LOAN_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__99">
+      <from-outcome id="__100">adfMenu_CID_BOOK_RESERVE_HISTORY</from-outcome>
+      <to-activity-id id="__101">CID_BOOK_RESERVE_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__102">
+      <from-outcome id="__103">adfMenu_CID_CLEARING</from-outcome>
+      <to-activity-id id="__104">CID_CLEARING</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__105">
+      <from-outcome id="__106">adfMenu_CID_EXTEND</from-outcome>
+      <to-activity-id id="__107">CID_EXTEND</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__108">
+      <from-outcome id="__109">adfMenu_CID_LOAN_CASH_PENALTY</from-outcome>
+      <to-activity-id id="__110">CID_LOAN_CASH_PENALTY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__111">
+      <from-outcome id="__112">adfMenu_CID_LOAN</from-outcome>
+      <to-activity-id id="__113">CID_LOAN</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__114">
+      <from-outcome id="__115">adfMenu_CID_MEM_BARCODE_CHANGE</from-outcome>
+      <to-activity-id id="__116">CID_MEM_BARCODE_CHANGE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__117">
+      <from-outcome id="__118">adfMenu_CID_MEM_BARCODE_HISTORY</from-outcome>
+      <to-activity-id id="__119">CID_MEM_BARCODE_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__120">
+      <from-outcome id="__121">adfMenu_CID_MEM_LOAN_HISTORY</from-outcome>
+      <to-activity-id id="__122">CID_MEM_LOAN_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__123">
+      <from-outcome id="__124">adfMenu_CID_MEM_STATUS_CHANGE</from-outcome>
+      <to-activity-id id="__125">CID_MEM_STATUS_CHANGE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__126">
+      <from-outcome id="__127">adfMenu_CID_MEM_STATUS_HISTORY</from-outcome>
+      <to-activity-id id="__128">CID_MEM_STATUS_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__129">
+      <from-outcome id="__130">adfMenu_CID_MEMBER_PENALTY_HISTORY</from-outcome>
+      <to-activity-id id="__131">CID_MEMBER_PENALTY_HISTORY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__132">
+      <from-outcome id="__133">adfMenu_CID_Member</from-outcome>
+      <to-activity-id id="__134">CID_Member</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__135">
+      <from-outcome id="__136">adfMenu_CID_PENALTY_PAY</from-outcome>
+      <to-activity-id id="__137">CID_PENALTY_PAY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__138">
+      <from-outcome id="__139">adfMenu_CID_PRINT_RESERVE</from-outcome>
+      <to-activity-id id="__140">CID_PRINT_RESERVE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__141">
+      <from-outcome id="__142">adfMenu_CID_PUBLIC_CASH_PENALTY</from-outcome>
+      <to-activity-id id="__143">CID_PUBLIC_CASH_PENALTY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__144">
+      <from-outcome id="__145">adfMenu_CID_PUBLIC_NON_CASH_PENALTY</from-outcome>
+      <to-activity-id id="__146">CID_PUBLIC_NON_CASH_PENALTY</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__147">
+      <from-outcome id="__148">adfMenu_CID_RESERVE</from-outcome>
+      <to-activity-id id="__149">CID_RESERVE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__150">
+      <from-outcome id="__151">adfMenu_CID_RETURN_BOOK</from-outcome>
+      <to-activity-id id="__152">CID_RETURN_BOOK</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__153">
+      <from-outcome id="__154">adfMenu_INTRODUCTION_LETTER</from-outcome>
+      <to-activity-id id="__155">INTRODUCTION_LETTER</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__156">
+      <from-outcome id="__157">adfMenu_LOAN_AT_LIB_LIST</from-outcome>
+      <to-activity-id id="__158">LOAN_AT_LIB_LIST</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__159">
+      <from-outcome id="__160">adfMenu_persianCataloging1</from-outcome>
+      <to-activity-id id="__161">persianCataloging1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__162">
+      <from-outcome id="__163">adfMenu_PRINT_RESERVE</from-outcome>
+      <to-activity-id id="__164">PRINT_RESERVE</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__176">
+      <from-outcome id="__177">adfMenu_BookIntermidiatePage</from-outcome>
+      <to-activity-id id="__178">BookIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__179">
+      <from-outcome id="__180">adfMenu_BookIntermidiatePage_30</from-outcome>
+      <to-activity-id id="__181">bookMenu</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__182">
+      <from-outcome id="__183">adfMenu_CatalogingIntermidiatePage</from-outcome>
+      <to-activity-id id="__184">CatalogingIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__185">
+      <from-outcome id="__186">adfMenu_CatalogingIntermidiatePage_32</from-outcome>
+      <to-activity-id id="__187">cataloging</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__188">
+      <from-outcome id="__189">adfMenu_LibrarySystemIntermidiatePage</from-outcome>
+      <to-activity-id id="__190">LibrarySystemIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__191">
+      <from-outcome id="__192">adfMenu_LibrarySystemIntermidiatePage_34</from-outcome>
+      <to-activity-id id="__193">lib</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__194">
+      <from-outcome id="__195">adfMenu_BookIntermidiatePage_30</from-outcome>
+      <to-activity-id id="__196">bookMenu</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__197">
+      <from-outcome id="__198">adfMenu_CatalogingIntermidiatePage_32</from-outcome>
+      <to-activity-id id="__199">cataloging</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__204">
+      <from-outcome id="__205">adfMenu_MemshipIntermidiatePage</from-outcome>
+      <to-activity-id id="__206">MemshipIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__207">
+      <from-outcome id="__208">adfMenu_LoandeskIntermidiatePage</from-outcome>
+      <to-activity-id id="__209">LoandeskIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__210">
+      <from-outcome id="__211">adfMenu_LoandeskIntermidiatePage_39</from-outcome>
+      <to-activity-id id="__212">amanatdesk</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__213">
+      <from-outcome id="__214">adfMenu_MemshipIntermidiatePage_38</from-outcome>
+      <to-activity-id id="__215">subs</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__216">
+      <from-outcome id="__217">adfMenu_BarcodeSearchIntrmidiatePage</from-outcome>
+      <to-activity-id id="__218">BarcodeSearchIntrmidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__219">
+      <from-outcome id="__220">adfMenu_LoanIntermidiatePage</from-outcome>
+      <to-activity-id id="__221">LoanIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__222">
+      <from-outcome id="__223">adfMenu_PanaltyIntermidiatePage</from-outcome>
+      <to-activity-id id="__224">PanaltyIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__225">
+      <from-outcome id="__226">adfMenu_ReserveIntermidiatePage</from-outcome>
+      <to-activity-id id="__227">ReserveIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__228">
+      <from-outcome id="__229">adfMenu_ReserveIntermidiatePage_45</from-outcome>
+      <to-activity-id id="__230">reserve</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__231">
+      <from-outcome id="__232">adfMenu_PanaltyIntermidiatePage_44</from-outcome>
+      <to-activity-id id="__233">fine</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__234">
+      <from-outcome id="__235">adfMenu_LoanIntermidiatePage_43</from-outcome>
+      <to-activity-id id="__236">amanat</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__237">
+      <from-outcome id="__238">adfMenu_BookVerChangeIntermidiatePage</from-outcome>
+      <to-activity-id id="__239">BookVerChangeIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__240">
+      <from-outcome id="__241">adfMenu_BookVerChangeIntermidiatePage_49</from-outcome>
+      <to-activity-id id="__242">bookVer</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__243">
+      <from-outcome id="__244">adfMenu_BookIntermidiatePage_30</from-outcome>
+      <to-activity-id id="__245">bookMenu</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__246">
+      <from-outcome id="__247">adfMenu_LibrarySystemIntermidiatePage_34</from-outcome>
+      <to-activity-id id="__248">cataloging</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__261">
+      <from-outcome id="__262">adfMenu_RoleAndPermission</from-outcome>
+      <to-activity-id id="__263">RoleAndPermission</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__264">
+      <from-outcome id="__265">adfMenu_SettingsIntermidiatePage</from-outcome>
+      <to-activity-id id="__266">SettingsIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__283">
+      <from-outcome id="__284">adfMenu_logIn</from-outcome>
+      <to-activity-id id="__285">logIn</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__275">
+      <from-outcome id="__276">adfMenu_CID_REGISTER_LOST</from-outcome>
+      <to-activity-id id="__277">CID_REGISTER_LOST</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__298">
+      <from-outcome id="__299">adfMenu_RecentBook</from-outcome>
+      <to-activity-id id="__300">RecentBook</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__301">
+      <from-outcome id="__302">adfMenu_RecentBookIntermidiatepage</from-outcome>
+      <to-activity-id id="__303">RecentBookIntermidiatepage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__308">
+      <from-outcome id="__309">adfMenu_RefrenceIntermidiatePage</from-outcome>
+      <to-activity-id id="__310">RefrenceIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__311">
+      <from-outcome id="__312">adfMenu_PersianRefrenceIntermidiatePage</from-outcome>
+      <to-activity-id id="__313">PersianRefrenceIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__314">
+      <from-outcome id="__315">adfMenu_LatinRefrenceIntermidiatePage</from-outcome>
+      <to-activity-id id="__316">LatinRefrenceIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__317">
+      <from-outcome id="__318">adfMenu_LatinProvider</from-outcome>
+      <to-activity-id id="__319">LatinProvider</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__320">
+      <from-outcome id="__321">adfMenu_LatinUniformTitle</from-outcome>
+      <to-activity-id id="__322">LatinUniformTitle</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__323">
+      <from-outcome id="__324">adfMenu_LatinSubject</from-outcome>
+      <to-activity-id id="__325">LatinSubject</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__326">
+      <from-outcome id="__327">adfMenu_PersianUniformTitle</from-outcome>
+      <to-activity-id id="__328">PersianUniformTitle</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__329">
+      <from-outcome id="__330">adfMenu_PersianSubject</from-outcome>
+      <to-activity-id id="__331">PersianSubject</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__332">
+      <from-outcome id="__333">adfMenu_PersianProvider</from-outcome>
+      <to-activity-id id="__334">PersianProvider</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__335">
+      <from-outcome id="__336">adfMenu_FarsiKeywordView</from-outcome>
+      <to-activity-id id="__337">FarsiKeywordView</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__358">
+      <from-outcome id="__359">adfMenu_Sandoogh</from-outcome>
+      <to-activity-id id="__360">Sandoogh</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__369">
+      <from-outcome id="__370">adfMenu_BookRequestNew</from-outcome>
+      <to-activity-id id="__371">BookRequestNew</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__372">
+      <from-outcome id="__373">adfMenu_bookRequestIntermidiatepage</from-outcome>
+      <to-activity-id id="__374">bookRequestIntermidiatepage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__383">
+      <from-outcome id="__384">adfMenu_RafUpload</from-outcome>
+      <to-activity-id id="__385">RafUpload</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__386">
+      <from-outcome id="__387">adfMenu_ReportIntermidiatePage</from-outcome>
+      <to-activity-id id="__388">ReportIntermidiatePage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__397">
+      <from-outcome id="__398">adfMenu_suggestedbooklist</from-outcome>
+      <to-activity-id id="__399">suggestedbooklist</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__400">
+      <from-outcome id="__401">adfMenu_SuggestedBook</from-outcome>
+      <to-activity-id id="__402">SuggestedBook</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__403">
+      <from-outcome id="__404">adfMenu_suggestedintermidiatepage</from-outcome>
+      <to-activity-id id="__405">suggestedintermidiatepage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__406">
+      <from-outcome id="__407">adfMenu_IntermidiatePageCharge</from-outcome>
+      <to-activity-id id="__408">IntermidiatePageCharge</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__409">
+      <from-outcome id="__410">adfMenu_Extra_Charge</from-outcome>
+      <to-activity-id id="__411">Extra_Charge</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__412">
+      <from-outcome id="__413">adfMenu_report_date_ExtraCharge</from-outcome>
+      <to-activity-id id="__414">report_date_ExtraCharge</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__423">
+      <from-outcome id="__424">adfMenu_ReportCataloging</from-outcome>
+      <to-activity-id id="__425">ReportCataloging</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__426">
+      <from-outcome id="__427">adfMenu_ReportLoan</from-outcome>
+      <to-activity-id id="__428">ReportLoan</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__441">
+      <from-outcome id="__442">adfMenu_reportRecent</from-outcome>
+      <to-activity-id id="__443">reportRecent</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__448">
+      <from-outcome id="__449">adfMenu_DataEntry</from-outcome>
+      <to-activity-id id="__450">DataEntry</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__454">
+      <from-outcome id="__455">adfMenu_ReportLabelFarsiListBook</from-outcome>
+      <to-activity-id id="__456">ReportLabelFarsiListBook</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__457">
+      <from-outcome id="__458">adfMenu_IntermdiatePageBookLabel</from-outcome>
+      <to-activity-id id="__459">IntermdiatePageBookLabel</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__464">
+      <from-outcome id="__465">adfMenu_ReportFarsiCard</from-outcome>
+      <to-activity-id id="__466">ReportFarsiCard</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__467">
+      <from-outcome id="__468">adfMenu_IntermdiatePageBookFarsiCard</from-outcome>
+      <to-activity-id id="__469">IntermdiatePageBookFarsiCard</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__485">
+      <from-outcome id="__486">adfMenu_bookRequest-A</from-outcome>
+      <to-activity-id id="__487">bookRequest-A</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__286">
+    <from-activity-id id="__287">logIn</from-activity-id>
+    <control-flow-case id="__292">
+      <from-outcome id="__293">lib_operator_success</from-outcome>
+      <to-activity-id id="__291">LibrarySystemIntermidiatePage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__474">
+    <from-activity-id id="__475">ReportLabelFarsiListBook</from-activity-id>
+    <control-flow-case id="__477">
+      <from-outcome id="__478">printLabel_farsi</from-outcome>
+      <to-activity-id id="__476">ReportLabelFarsi</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__479">
+    <from-activity-id id="__480">ReportLabelFarsi</from-activity-id>
+    <control-flow-case id="__481">
+      <from-outcome id="__483">goBack</from-outcome>
+      <to-activity-id id="__482">ReportLabelFarsiListBook</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__2">
+    <managed-bean-name id="__1">TFBean</managed-bean-name>
+    <managed-bean-class id="__4">org.parsisys.tehranuniversity.library.view.beans.TaskFlowBean</managed-bean-class>
+    <managed-bean-scope id="__3">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name id="__8">back</managed-bean-name>
+    <managed-bean-class id="__7">org.parsisys.tehranuniversity.library.view.beans.Back</managed-bean-class>
+    <managed-bean-scope id="__5">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__16">
+    <managed-bean-name id="__15">IntroductionLetter</managed-bean-name>
+    <managed-bean-class id="__13">org.parsisys.tehranuniversity.library.view.beans.IntroductionLetter</managed-bean-class>
+    <managed-bean-scope id="__14">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__19">
+    <managed-bean-name id="__18">ReserveTitle</managed-bean-name>
+    <managed-bean-class id="__20">org.parsisys.tehranuniversity.library.view.beans.CidReserveTitle</managed-bean-class>
+    <managed-bean-scope id="__17">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__28">
+    <managed-bean-name id="__26">CID_LOAN</managed-bean-name>
+    <managed-bean-class id="__25">org.parsisys.tehranuniversity.library.view.beans.CidLoan</managed-bean-class>
+    <managed-bean-scope id="__27">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__36">
+    <managed-bean-name id="__33">PrintReserveSetVC</managed-bean-name>
+    <managed-bean-class id="__35">org.parsisys.tehranuniversity.library.view.beans.PrintReserve</managed-bean-class>
+    <managed-bean-scope id="__34">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__40">
+    <managed-bean-name id="__37">LoanAtLib</managed-bean-name>
+    <managed-bean-class id="__39">org.parsisys.tehranuniversity.library.view.beans.LoanATLibActiveList</managed-bean-class>
+    <managed-bean-scope id="__38">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__44">
+    <managed-bean-name id="__42">cid_extend</managed-bean-name>
+    <managed-bean-class id="__41">org.parsisys.tehranuniversity.library.view.beans.CidExtend</managed-bean-class>
+    <managed-bean-scope id="__43">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__47">
+    <managed-bean-name id="__46">cid_mem_statuschange</managed-bean-name>
+    <managed-bean-class id="__48">org.parsisys.tehranuniversity.library.view.beans.CidMemStatusChange</managed-bean-class>
+    <managed-bean-scope id="__45">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__50">
+    <managed-bean-name id="__52">book_status_barcode_change</managed-bean-name>
+    <managed-bean-class id="__49">org.parsisys.tehranuniversity.library.view.beans.BookStatusBarcodeChange</managed-bean-class>
+    <managed-bean-scope id="__51">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__53">
+    <managed-bean-name id="__55">cid_barcode_search</managed-bean-name>
+    <managed-bean-class id="__56">org.parsisys.tehranuniversity.library.view.beans.CidBarcodeSearch</managed-bean-class>
+    <managed-bean-scope id="__54">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__58">
+    <managed-bean-name id="__60">cid_mem_barcode_change</managed-bean-name>
+    <managed-bean-class id="__57">org.parsisys.tehranuniversity.library.view.beans.CidMemBarcodeChange</managed-bean-class>
+    <managed-bean-scope id="__59">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__64">
+    <managed-bean-name id="__61">cid_book_barcode_change</managed-bean-name>
+    <managed-bean-class id="__63">org.parsisys.tehranuniversity.library.view.beans.CidBookBarcodeChange</managed-bean-class>
+    <managed-bean-scope id="__62">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__65">
+    <managed-bean-name id="__68">cid_member_penalty_history</managed-bean-name>
+    <managed-bean-class id="__66">org.parsisys.tehranuniversity.library.view.beans.CidMemberPenaltyHist</managed-bean-class>
+    <managed-bean-scope id="__67">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__69">
+    <managed-bean-name id="__71">cid_reserve_new_email</managed-bean-name>
+    <managed-bean-class id="__70">org.parsisys.tehranuniversity.library.view.beans.NewEmail_Reserve</managed-bean-class>
+    <managed-bean-scope id="__72">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__74">
+    <managed-bean-name id="__76">cid_reserve</managed-bean-name>
+    <managed-bean-class id="__75">org.parsisys.tehranuniversity.library.view.beans.CidReserve</managed-bean-class>
+    <managed-bean-scope id="__73">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__24">
+    <managed-bean-name id="__23">cid_clearing</managed-bean-name>
+    <managed-bean-class id="__22">org.parsisys.tehranuniversity.library.view.beans.CidClearing</managed-bean-class>
+    <managed-bean-scope id="__21">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__165">
+    <description id="__167">Menu Model Managed Bean</description>
+    <managed-bean-name id="__166">root_menu</managed-bean-name>
+    <managed-bean-class>oracle.adf.view.rich.model.MDSMenuModel</managed-bean-class>
+    <managed-bean-scope id="__168">request</managed-bean-scope>
+    <managed-property id="__170">
+      <property-name id="__171">createHiddenNodes</property-name>
+      <value id="__169">false</value>
+    </managed-property>
+    <managed-property id="__175">
+      <property-name id="__174">source</property-name>
+      <property-class id="__173">java.lang.String</property-class>
+      <value id="__172">/WEB-INF/root_menu.xml</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__201">
+    <managed-bean-name id="__202">sessionUser</managed-bean-name>
+    <managed-bean-class id="__200">org.parsisys.tehranuniversity.library.view.beans.UserStatus</managed-bean-class>
+    <managed-bean-scope id="__203">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__249">
+    <managed-bean-name id="__252">cid_public_non_cash_penalty</managed-bean-name>
+    <managed-bean-class id="__250">org.parsisys.tehranuniversity.library.view.beans.PublicNonCashPenalty</managed-bean-class>
+    <managed-bean-scope id="__251">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__11">
+    <managed-bean-name id="__10">cid_public_cash_penalty</managed-bean-name>
+    <managed-bean-class id="__9">org.parsisys.tehranuniversity.library.view.beans.PublicCashPenalty</managed-bean-class>
+    <managed-bean-scope id="__12">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__258">
+    <managed-bean-name id="__257">role_permission</managed-bean-name>
+    <managed-bean-class id="__260">org.parsisys.tehranuniversity.library.view.beans.PermissionRoleTree</managed-bean-class>
+    <managed-bean-scope id="__259">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__256">
+    <managed-bean-name id="__254">role_permission_userShuttle</managed-bean-name>
+    <managed-bean-class id="__255">org.parsisys.tehranuniversity.library.view.beans.RolePermissionUserShuttle</managed-bean-class>
+    <managed-bean-scope id="__253">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__267">
+    <managed-bean-name id="__270">cid_return</managed-bean-name>
+    <managed-bean-class id="__268">org.parsisys.tehranuniversity.library.view.beans.CidReturn</managed-bean-class>
+    <managed-bean-scope id="__269">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__271">
+    <managed-bean-name id="__273">cid_loan_cash_penalty</managed-bean-name>
+    <managed-bean-class id="__274">org.parsisys.tehranuniversity.library.view.beans.LoanCashPenalty</managed-bean-class>
+    <managed-bean-scope id="__272">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__279">
+    <managed-bean-name id="__278">cid_register_lost</managed-bean-name>
+    <managed-bean-class id="__281">org.parsisys.tehranuniversity.library.view.beans.CidRegisterLost</managed-bean-class>
+    <managed-bean-scope id="__280">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__288">
+    <managed-bean-name id="__290">cid_penalty_payment</managed-bean-name>
+    <managed-bean-class id="__282">org.parsisys.tehranuniversity.library.view.beans.CidPenaltyPayment</managed-bean-class>
+    <managed-bean-scope id="__289">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__294">
+    <managed-bean-name id="__297">session_common_bean</managed-bean-name>
+    <managed-bean-class id="__296">org.parsisys.tehranuniversity.library.view.beans.CommonBean</managed-bean-class>
+    <managed-bean-scope id="__295">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__307">
+    <managed-bean-name id="__304">cid_member_bean</managed-bean-name>
+    <managed-bean-class id="__306">org.parsisys.tehranuniversity.library.view.beans.CidMemberBean</managed-bean-class>
+    <managed-bean-scope id="__305">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__339">
+    <managed-bean-name id="__338">persian_uniTitle</managed-bean-name>
+    <managed-bean-class id="__341">org.parsisys.tehranuniversity.library.view.beans.PersianUniformTitle</managed-bean-class>
+    <managed-bean-scope id="__340">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__344">
+    <managed-bean-name id="__343">latin_uniTitle</managed-bean-name>
+    <managed-bean-class id="__342">org.parsisys.tehranuniversity.library.view.beans.LatinUniformTitle</managed-bean-class>
+    <managed-bean-scope id="__345">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__346">
+    <managed-bean-name id="__347">persian_provider</managed-bean-name>
+    <managed-bean-class id="__348">org.parsisys.tehranuniversity.library.view.beans.PersianProvider</managed-bean-class>
+    <managed-bean-scope id="__349">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__353">
+    <managed-bean-name id="__350">latin_provider</managed-bean-name>
+    <managed-bean-class id="__352">org.parsisys.tehranuniversity.library.view.beans.LatinProvider</managed-bean-class>
+    <managed-bean-scope id="__351">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__355">
+    <managed-bean-name id="__357">persian_subject</managed-bean-name>
+    <managed-bean-class id="__356">org.parsisys.tehranuniversity.library.view.beans.PersianSubject</managed-bean-class>
+    <managed-bean-scope id="__354">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__362">
+    <managed-bean-name id="__361">sandoogh_cashierList</managed-bean-name>
+    <managed-bean-class id="__364">org.parsisys.tehranuniversity.library.view.beans.Sandoogh</managed-bean-class>
+    <managed-bean-scope id="__363">pageFlow</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__368">
+    <managed-bean-name id="__366">book_request_new</managed-bean-name>
+    <managed-bean-class id="__367">org.parsisys.tehranuniversity.library.view.beans.BookRequest</managed-bean-class>
+    <managed-bean-scope id="__365">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__378">
+    <managed-bean-name id="__376">RafBean</managed-bean-name>
+    <managed-bean-class id="__377">org.parsisys.tehranuniversity.library.view.beans.RafBean</managed-bean-class>
+    <managed-bean-scope id="__375">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__380">
+    <managed-bean-name id="__379">progress_bar</managed-bean-name>
+    <managed-bean-class id="__382">org.parsisys.tehranuniversity.library.view.beans.progressBar</managed-bean-class>
+    <managed-bean-scope id="__381">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__390">
+    <managed-bean-name id="__389">book_reserve_history</managed-bean-name>
+    <managed-bean-class id="__392">org.parsisys.tehranuniversity.library.view.beans.BookReserveHistory</managed-bean-class>
+    <managed-bean-scope id="__391">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__395">
+    <managed-bean-name id="__393">login_bean</managed-bean-name>
+    <managed-bean-class id="__394">org.parsisys.tehranuniversity.library.view.beans.LoginBean</managed-bean-class>
+    <managed-bean-scope id="__396">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__418">
+    <managed-bean-name id="__417">extra_charge</managed-bean-name>
+    <managed-bean-class id="__416">org.parsisys.tehranuniversity.library.view.beans.ExtraCharge</managed-bean-class>
+    <managed-bean-scope id="__415">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__420">
+    <managed-bean-name id="__421">cid_print_reserve</managed-bean-name>
+    <managed-bean-class id="__422">org.parsisys.tehranuniversity.library.view.beans.PrintReserve</managed-bean-class>
+    <managed-bean-scope id="__419">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__430">
+    <managed-bean-name id="__429">reportLoan</managed-bean-name>
+    <managed-bean-class id="__431">org.parsisys.tehranuniversity.library.view.beans.ReportLoanBean</managed-bean-class>
+    <managed-bean-scope id="__432">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__433">
+    <managed-bean-name id="__434">report_cataloging</managed-bean-name>
+    <managed-bean-class id="__435">org.parsisys.tehranuniversity.library.view.beans.ReportCataloging</managed-bean-class>
+    <managed-bean-scope id="__436">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__438">
+    <managed-bean-name id="__437">report_recent</managed-bean-name>
+    <managed-bean-class id="__440">org.parsisys.tehranuniversity.library.view.beans.ReportRecent</managed-bean-class>
+    <managed-bean-scope id="__439">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__446">
+    <managed-bean-name id="__447">data_entry</managed-bean-name>
+    <managed-bean-class id="__445">org.parsisys.tehranuniversity.library.view.beans.DataEntry</managed-bean-class>
+    <managed-bean-scope id="__444">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__462">
+    <managed-bean-name id="__463">report_farsi_label</managed-bean-name>
+    <managed-bean-class id="__461">org.parsisys.tehranuniversity.library.view.beans.ReportFarsiLabel</managed-bean-class>
+    <managed-bean-scope id="__460">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__473">
+    <managed-bean-name id="__472">report_farsi_card</managed-bean-name>
+    <managed-bean-class id="__471">org.parsisys.tehranuniversity.library.view.beans.ReportFarsiCard</managed-bean-class>
+    <managed-bean-scope id="__470">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__484">
+    <managed-bean-name id="__453">latin_subject</managed-bean-name>
+    <managed-bean-class id="__452">org.parsisys.tehranuniversity.library.view.beans.LatinSubject</managed-bean-class>
+    <managed-bean-scope id="__451">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__490">
+    <managed-bean-name id="__489">book_request_A</managed-bean-name>
+    <managed-bean-class id="__488">org.parsisys.tehranuniversity.library.view.beans.BookRequestA</managed-bean-class>
+    <managed-bean-scope id="__491">view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__494">
+    <managed-bean-name id="__493">provider_tf_bean</managed-bean-name>
+    <managed-bean-class id="__495">org.parsisys.tehranuniversity.library.view.beans.ProviderTF</managed-bean-class>
+    <managed-bean-scope id="__492">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Publisher_PersianVO"
+  Version="11.1.1.56.60"
+  SelectList="Publisher.ART_ID, 
+       Publisher.LABCOL, 
+       Publisher.PLACE, 
+       Publisher.PUBLISHER AS PUBLISHER1, 
+       Publisher.READING_ORDER"
+  FromList="PUBLISHER Publisher"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.Publisher_PersianVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.Publisher_PersianVOImpl"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Where="Publisher.LABCOL=:labcol"
+  FetchMode="FETCH_AS_NEEDED"
+  AccessMode="RANGE_PAGING"
+  RangeSize="10">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_objectSuperClassName" Value="fadak.base.TemplateViewObject"/>
+    <Attr Name="_rowSuperClassName" Value="fadak.base.TemplateViewRow"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="labcol"
+    Kind="where"
+    Type="oracle.jbo.domain.Number">
+    <TransientExpression><![CDATA[adf.userSession.userData.labcol]]></TransientExpression>
+  </Variable>
+  <ViewAccessor
+    Name="ReadingOrderLovVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="PerCatalog_Reading_OrderVC"
+      FullName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO.PerCatalog_Reading_OrderVC"/>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_ReadingOrder"
+    ListVOName="ReadingOrderLovVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_ReadingOrder_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReadingOrder"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Text"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Publisher"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Publisher"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Publisher"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Publisher"
+    AliasName="LABCOL">
+    <TransientExpression><![CDATA[adf.userSession.userData.labcol]]></TransientExpression>
+  </ViewAttribute>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="EditOnUpdateInsert"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+  <ViewAttribute
+    Name="Place"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Place"
+    EntityUsage="Publisher"
+    AliasName="PLACE"/>
+  <ViewAttribute
+    Name="Publisher1"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Publisher"
+    EntityUsage="Publisher"
+    AliasName="PUBLISHER1"/>
+  <ViewAttribute
+    Name="ReadingOrder"
+    PrecisionRule="true"
+    EntityAttrName="ReadingOrder"
+    EntityUsage="Publisher"
+    AliasName="READING_ORDER"
+    LOVName="LOV_ReadingOrder"
+    DefaultValue="1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

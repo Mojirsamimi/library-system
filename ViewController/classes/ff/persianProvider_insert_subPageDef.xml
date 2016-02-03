@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="persianProvider_insert_subPageDef"
+                Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MainSeeProvider1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="MainSeeProvider1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="MainSeeProvider1Iterator" StaticList="false"
+          Uses="LOV_ProviderKind" id="ProviderKind" DTSupportsMRU="true"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="DataEntryPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="CatalogPlaceVo" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CatalogPlaceVoIterator"/>
+    <searchRegion Binds="CatalogPlaceVoIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CatalogPlaceVoQuery"/>
+    <iterator Binds="MemberSetUpVo2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="MemberSetUpVo2Iterator"/>
+    <searchRegion Binds="MemberSetUpVo2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MemberSetUpVo2Query"/>
+    <iterator Binds="CatalogPrivatePostVo" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="CatalogPrivatePostVoIterator"/>
+    <searchRegion Binds="CatalogPrivatePostVoIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CatalogPrivatePostVoQuery"/>
+    <iterator Binds="MemberSetUpVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="MemberSetUpVo1Iterator"/>
+    <searchRegion Binds="MemberSetUpVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MemberSetUpVo1Query"/>
+    <iterator Binds="PenaltyType_1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PenaltyType_1Iterator"/>
+    <iterator Binds="PenaltyType_2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PenaltyType_2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CatalogPlaceVoIterator" id="CatalogPlaceVo">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CatalogDetailVO"
+                      Name="CatalogPlaceVo0">
+        <AttrNames>
+          <Item Value="Active"/>
+          <Item Value="Text"/>
+          <Item Value="Value"/>
+          <Item Value="MakhzanType" Binds="MakhzanType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MemberSetUpVo2Iterator" id="MemberSetUpVo2">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.MemberSetUpVo"
+                      Name="MemberSetUpVo20">
+        <AttrNames>
+          <Item Value="FromDate"/>
+          <Item Value="ToDate"/>
+          <Item Value="LoanQuota"/>
+          <Item Value="PloanQuota"/>
+          <Item Value="ReserveQuota"/>
+          <Item Value="MemshipDuration"/>
+          <Item Value="LoanDuration"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CatalogPrivatePostVoIterator" id="CatalogPrivatePostVo">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CatalogDetailVO"
+                      Name="CatalogPrivatePostVo0">
+        <AttrNames>
+          <Item Value="Active"/>
+          <Item Value="Text"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CatalogPrivatePostVoIterator" id="CatalogPrivatePostVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CatalogDetailVO"
+                      Name="CatalogPrivatePostVo10">
+        <AttrNames>
+          <Item Value="Text"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PenaltyType_1Iterator" id="DayPenalty">
+      <AttrNames>
+        <Item Value="DayPenalty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PenaltyType_1Iterator" id="Recieve">
+      <AttrNames>
+        <Item Value="Recieve"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PenaltyType_2Iterator" id="DayPenalty1">
+      <AttrNames>
+        <Item Value="DayPenalty"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PenaltyType_1Iterator" id="PenaltyStatus"
+          DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="PenaltyStatus"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="2"/>
+      </ValueList>
+    </list>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action IterBinding="MemberSetUpVo1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="MemberSetUpVo1Iterator" id="MemberSetUpVo11">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.MemberSetUpVo"
+                      Name="MemberSetUpVo110">
+        <AttrNames>
+          <Item Value="Active"/>
+          <Item Value="LoanDuration"/>
+          <Item Value="LoanQuota"/>
+          <Item Value="MemshipDuration"/>
+          <Item Value="PloanQuota"/>
+          <Item Value="ReserveQuota"/>
+          <Item Value="ToDate"/>
+          <Item Value="FromDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="CatalogPlaceVoIterator" id="MakhzanType"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="MakhzanType"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>

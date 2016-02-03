@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <af:panelFormLayout id="pfl1">
+    <f:facet name="footer"/>
+    <af:inputText label="#{viewcontrollerBundle.goal_lib}" id="it1"
+    
+                  value="#{IntroductionLetter.goalLibrary}"
+                  valueChangeListener="#{IntroductionLetter.description_Changed}"
+                  partialTriggers="soc1"/>
+    <af:selectOneChoice value="#{bindings.GoalLibLOV1.inputValue}"
+                        label="#{bindings.GoalLibLOV1.label}"
+                        required="#{bindings.GoalLibLOV1.hints.mandatory}"
+                        shortDesc="#{bindings.GoalLibLOV1.hints.tooltip}"
+                        id="soc1" autoSubmit="true">
+      <f:selectItems value="#{bindings.GoalLibLOV1.items}" id="si1"/>
+    </af:selectOneChoice>
+    <af:commandButton text="انتخاب" id="cb1"
+                      action="#{IntroductionLetter.list_goal_library}">
+                    
+                      </af:commandButton>
+  </af:panelFormLayout>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:IntroductionLetter-->
+</jsp:root>

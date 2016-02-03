@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document title="ADF Progress Indicator Sample" id="d1">
+      <af:resource type="javascript" source="/js/handlePoll.js"/>
+      <af:form id="f1" usesUpload="true">
+       <af:spacer width="1" height="10" id="s1"/>
+        <af:panelBox text="Please select the file you wish to upload and press Run"
+                     id="pb1" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl1">
+            <af:spacer width="1" height="5" id="s3"/>
+            <af:inputFile label="File to upload:" id="if1"
+                          value="#{progress_bar.file}"
+                          valueChangeListener="#{progress_bar.uploadedFileChanged}"/>
+            <af:spacer width="1" height="5" id="s2"/>
+            <af:commandButton text="Run" id="cb2"
+                              actionListener="#{progress_bar.doUpload}">
+              <af:clientListener method="handlePoll" type="click"/>
+            </af:commandButton>
+            <af:poll id="pollid" interval="-1"
+                     binding="#{progress_bar.pollid}"
+                     clientComponent="true"
+                     pollListener="#{progress_bar.pollListenerFunc}"/>
+          </af:panelFormLayout>
+        </af:panelBox>
+        <af:panelBox text="#{progress_bar.file.filename} is being uploaded..." id="pb2"
+                     showDisclosure="false"
+                     
+                     partialTriggers="pollid cb2">
+          <af:spacer width="1" height="10" id="s4"/>
+          <af:panelFormLayout id="pfl3">
+            <af:progressIndicator id="progressIndicator"
+                                  value="#{progress_bar}">
+              <af:outputFormatted value="#{progress_bar.percentageUploaded}% completed"
+                                  id="of1"/>
+            </af:progressIndicator>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

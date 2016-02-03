@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MemberStatusHistory"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="MEMBER_STATUS_HISTORY"
+  AliasName="MemberStatusHistory"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.MemberStatusHistoryImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ArtId"
+    DefaultValue="0"
+    Precision="10"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_STATUS_HISTORY"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="STATUS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_STATUS_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DayDate"
+    IsNotNull="true"
+    Precision="8"
+    Scale="0"
+    ColumnName="DAY_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_STATUS_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.MemberStatusHistory.DayDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Reason"
+    Precision="300"
+    ColumnName="REASON"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MEMBER_STATUS_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.MemberStatusHistory.Reason_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MEMBER_STATUS_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.MemberStatusHistory.UserName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="IntmemArtId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="INTMEM_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_STATUS_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LibArtId"
+    Precision="3"
+    Scale="0"
+    ColumnName="LIB_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_STATUS_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StatusEndDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="STATUS_END_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_STATUS_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemsthisIntmemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemsthisIntmemFkAssoc.InitMember"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemsthisIntmemFkAssoc.MemberStatusHistory"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InitMember1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemStatusHisFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemStatusHisFkAssoc.InitMember1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemStatusHisFkAssoc.MemberStatusHistory1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Library"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.MemStatHistLibraryFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.MemStatHistLibraryFkAssoc.Library"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.MemStatHistLibraryFkAssoc.MemberStatusHistory"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="MemsthisPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="MEMSTHIS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC006682">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006682"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC006683">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006683"/>
+      <Attr Name="_checkCondition" Value='"STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC006684">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006684"/>
+      <Attr Name="_checkCondition" Value='"DAY_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC006685">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006685"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC006686">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006686"/>
+      <Attr Name="_checkCondition" Value='"INTMEM_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="MemsthisIntmemFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="INTMEM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="MEMSTHIS_INTMEM_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="MemsthisLibFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LIB_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="MEMSTHIS_LIB_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

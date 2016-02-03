@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="ReportLabelFarsiListBookPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="VirtualBookList_FarsiLabelVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VirtualBookList_FarsiLabelVO1Iterator"/>
+    <searchRegion Binds="VirtualBookList_FarsiLabelVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="VirtualBookList_FarsiLabelVO1Query"/>
+    <iterator Binds="Rep_VirtualBook_FarsiLabelVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="Rep_VirtualBook_FarsiLabelVO1Iterator"/>
+    <searchRegion Binds="Rep_VirtualBook_FarsiLabelVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Rep_VirtualBook_FarsiLabelVO1Query"/>
+    <iterator Binds="Rep_PhysicalBook_FarsiLabelVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="Rep_PhysicalBook_FarsiLabelVO1Iterator"/>
+    <searchRegion Binds="Rep_PhysicalBook_FarsiLabelVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Rep_PhysicalBook_FarsiLabelVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VirtualBookList_FarsiLabelVO1Iterator"
+          id="VirtualBookList_FarsiLabelVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.report.VirtualBookListVO"
+                      Name="VirtualBookList_FarsiLabelVO10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="CallNo"/>
+          <Item Value="Title"/>
+          <Item Value="ProviderName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Rep_VirtualBook_FarsiLabelVO1Iterator"
+          id="Rep_VirtualBook_FarsiLabelVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VirtualBookVO"
+                      Name="Rep_VirtualBook_FarsiLabelVO10">
+        <AttrNames>
+          <Item Value="Title"/>
+          <Item Value="ArtId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Rep_PhysicalBook_FarsiLabelVO1Iterator"
+          id="Rep_PhysicalBook_FarsiLabelVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.report.Rep_PhysicalBookVO"
+                      Name="Rep_PhysicalBook_FarsiLabelVO10">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="RegId"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="ReplicateNo"/>
+          <Item Value="ExistenceStatus"/>
+          <Item Value="LoanStatus"/>
+          <Item Value="Place"/>
+          <Item Value="SafetyStatus"/>
+          <Item Value="UserName"/>
+          <Item Value="InsertDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="labelFarsi_printAllTitles" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="labelFarsi_printAllTitles"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.labelFarsi_printAllTitles_AppModuleDataControl_dataProvider_labelFarsi_printAllTitles_result"/>
+    <methodAction id="labelFarsi_printTitle" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="labelFarsi_printTitle"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.labelFarsi_printTitle_AppModuleDataControl_dataProvider_labelFarsi_printTitle_result"/>
+    <methodAction id="labelFarsi_printVolNo" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="labelFarsi_printVolNo"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.labelFarsi_printVolNo_AppModuleDataControl_dataProvider_labelFarsi_printVolNo_result"/>
+    <methodAction id="labelFarsi_printPartNo" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="labelFarsi_printPartNo"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.labelFarsi_printPartNo_AppModuleDataControl_dataProvider_labelFarsi_printPartNo_result"/>
+    <methodAction id="labelFarsi_printRepNo" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="labelFarsi_printRepNo"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.labelFarsi_printRepNo_AppModuleDataControl_dataProvider_labelFarsi_printRepNo_result"/>
+  </bindings>
+</pageDefinition>

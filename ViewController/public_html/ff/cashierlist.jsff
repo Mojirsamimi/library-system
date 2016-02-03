@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="pfl1">
+    <af:table value="#{bindings.CashierListVo1.collectionModel}" var="row"
+              rows="#{bindings.CashierListVo1.rangeSize}"
+              emptyText="#{bindings.CashierListVo1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.CashierListVo1.rangeSize}"
+              rowBandingInterval="0"
+              filterModel="#{bindings.CashierListVo1Query.queryDescriptor}"
+              queryListener="#{bindings.CashierListVo1Query.processQuery}"
+              filterVisible="true" varStatus="vs"
+              selectedRowKeys="#{bindings.CashierListVo1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.CashierListVo1.collectionModel.makeCurrent}"
+              rowSelection="single" id="t1">
+      <af:column sortProperty="Fname" filterable="true" sortable="true"
+                 headerText="#{bindings.CashierListVo1.hints.Fname.label}"
+                 id="c3">
+        <af:outputText value="#{row.Fname}" id="ot1"/>
+      </af:column>
+      <af:column sortProperty="Lname" filterable="true" sortable="true"
+                 headerText="#{bindings.CashierListVo1.hints.Lname.label}"
+                 id="c5">
+        <af:outputText value="#{row.Lname}" id="ot4"/>
+      </af:column>
+      <af:column sortProperty="Barcode" filterable="true" sortable="true"
+                 headerText="#{bindings.CashierListVo1.hints.Barcode.label}"
+                 id="c7">
+        <af:outputText value="#{row.Barcode}" id="ot5"/>
+      </af:column>
+      <af:column sortProperty="KeyNumber" filterable="true" sortable="true"
+                 headerText="#{bindings.CashierListVo1.hints.KeyNumber.label}"
+                 id="c2">
+        <af:outputText value="#{row.KeyNumber}" id="ot2">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.CashierListVo1.hints.KeyNumber.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="ReceiptTime" filterable="true" sortable="true"
+                 headerText="#{bindings.CashierListVo1.hints.ReceiptTime.label}"
+                 id="c4">
+        <af:outputText value="#{row.ReceiptTime}" id="ot3">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.CashierListVo1.hints.ReceiptTime.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="ReceiptDate" filterable="true" sortable="true"
+                 headerText="#{bindings.CashierListVo1.hints.ReceiptDate.label}"
+                 id="c6">
+        <af:outputText value="#{row.ReceiptDate}" id="ot6">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.CashierListVo1.hints.ReceiptDate.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="CasheType" filterable="true" sortable="true"
+                 headerText="#{bindings.CashierListVo1.hints.CasheType.label}"
+                 id="c1">
+        <af:outputText value="#{row.CasheType}" id="ot7">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.CashierListVo1.hints.CasheType.format}"/>
+        </af:outputText>
+      </af:column>
+    </af:table>
+    <f:facet name="footer"/>
+  </af:panelFormLayout>
+</jsp:root>

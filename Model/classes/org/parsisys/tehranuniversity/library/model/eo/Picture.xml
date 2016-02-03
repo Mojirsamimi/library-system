@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Picture"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="PICTURE"
+  AliasName="Picture"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Picture"
+    IsQueriable="false"
+    IsNotNull="true"
+    Precision="2147483647"
+    Scale="0"
+    ColumnName="PICTURE"
+    SQLType="LONGVARBINARY"
+    Type="oracle.jbo.domain.Raw"
+    ColumnType="LONG RAW"
+    TableName="PICTURE"/>
+  <Attribute
+    Name="PersArtId"
+    IsNotNull="true"
+    Precision="8"
+    Scale="0"
+    ColumnName="PERS_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PICTURE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Person"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonPictureFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonPictureFkAssoc.Person"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonPictureFkAssoc.Picture"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PicPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PIC_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Picture.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005629">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005629"/>
+      <Attr Name="_checkCondition" Value='"PICTURE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Picture.Picture"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005630">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005630"/>
+      <Attr Name="_checkCondition" Value='"PERS_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Picture.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PicPersFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PERS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PIC_PERS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Picture.PersArtId"/>
+    </AttrArray>
+  </Key>
+</Entity>

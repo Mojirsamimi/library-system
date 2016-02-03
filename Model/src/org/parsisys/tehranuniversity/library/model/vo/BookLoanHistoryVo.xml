@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BookLoanHistoryVo"
+  Version="11.1.1.56.60"
+  SelectList="Person.BARCODE, 
+       Person.FNAME, 
+       Person.LNAME, 
+       Person.ART_ID, 
+       Loan.LOAN_DATE, 
+       Loan.REAL_RET_DATE, 
+       Loan.RET_DATE, 
+       Loan.LOAN_USER, 
+       Loan.LABCOL, 
+       Loan.ART_ID AS ART_ID1, 
+       Loan.RETURN_USER, 
+       InitMember.ART_ID AS ART_ID2, 
+       Loan.PHBOOK_ART_ID"
+  FromList="LOAN Loan, INIT_MEMBER InitMember, PERSON Person"
+  Where="(Loan.MEM_ART_ID = InitMember.ART_ID(+)) AND (InitMember.PERS_ART_ID = Person.ART_ID(+))"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  OrderBy="Loan.LOAN_DATE desc">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Loan"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Loan"/>
+  <EntityUsage
+    Name="InitMember"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc.InitMember1"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.BookLoanHistoryVo.Loan"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Loan.MemArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="Person"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Person"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMem_currLibFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMem_currLibFkAssoc.Person1"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.BookLoanHistoryVo.InitMember"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.PersArtId"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.LibArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Person.ArtId"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Person.CurrLibArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Barcode"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Barcode"
+    EntityUsage="Person"
+    AliasName="BARCODE"/>
+  <ViewAttribute
+    Name="Fname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fname"
+    EntityUsage="Person"
+    AliasName="FNAME"/>
+  <ViewAttribute
+    Name="Lname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Lname"
+    EntityUsage="Person"
+    AliasName="LNAME"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Person"
+    AliasName="ART_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="LoanDate"
+    PrecisionRule="true"
+    EntityAttrName="LoanDate"
+    EntityUsage="Loan"
+    AliasName="LOAN_DATE"/>
+  <ViewAttribute
+    Name="RealRetDate"
+    PrecisionRule="true"
+    EntityAttrName="RealRetDate"
+    EntityUsage="Loan"
+    AliasName="REAL_RET_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.BookLoanHistoryVo.RealRetDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RetDate"
+    PrecisionRule="true"
+    EntityAttrName="RetDate"
+    EntityUsage="Loan"
+    AliasName="RET_DATE"/>
+  <ViewAttribute
+    Name="LoanUser"
+    PrecisionRule="true"
+    EntityAttrName="LoanUser"
+    EntityUsage="Loan"
+    AliasName="LOAN_USER"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Loan"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="ArtId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Loan"
+    AliasName="ART_ID1"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="ReturnUser"
+    PrecisionRule="true"
+    EntityAttrName="ReturnUser"
+    EntityUsage="Loan"
+    AliasName="RETURN_USER"/>
+  <ViewAttribute
+    Name="ArtId2"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="InitMember"
+    AliasName="ART_ID2"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="PhbookArtId"
+    PrecisionRule="true"
+    EntityAttrName="PhbookArtId"
+    EntityUsage="Loan"
+    AliasName="PHBOOK_ART_ID"/>
+  <ViewCriteria
+    Name="NullRetDateVC"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.BookLoanHistoryVo"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow264"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="RealRetDate"
+        ViewAttribute="RealRetDate"
+        Operator="ISBLANK"
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Labcol"/>
+    <Item Value="ArtId1"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,310 @@
+<Rep_VirtualBookVO>
+   <Rep_VirtualBookVORow>
+      <ActiveChangeDate>13780901</ActiveChangeDate>
+      <ActiveChangeUser>NOSA_USER</ActiveChangeUser>
+      <ActiveStatus>1</ActiveStatus>
+      <ArtId>3</ArtId>
+      <CallNo>BP135 .A2K6K3</CallNo>
+      <CallNoType>1</CallNoType>
+      <Cutter>1</Cutter>
+      <Edition>چاپ 2</Edition>
+      <InsertDate>13780901</InsertDate>
+      <Labcol>1100</Labcol>
+      <PhysicalDesc>4 جلد؛ 25 س م</PhysicalDesc>
+      <PubDate>1382 ه</PubDate>
+      <ReadingOrder>1</ReadingOrder>
+      <Reference>0</Reference>
+      <RepAuthor>تاليف ابي جعفرمحمدبن يعقوب بن اسحق الكليني الرازي؛ مع الشرح و الترجمه محمدباقرالكمرئي ؛ صححه و قابله علي عده نسخ خطيه ثمينه محمد باقر البهبودي ، علي اكبر الغفاري</RepAuthor>
+      <Title>الاصول من الكافي</Title>
+      <TitlePrintable>1</TitlePrintable>
+      <UniformTitlePrintable>0</UniformTitlePrintable>
+      <UserName>NOSA_USER</UserName>
+      <VolumeCount>4</VolumeCount>
+      <FCallNo5> .A2K6K3</FCallNo5>
+      <FCallNo6>BP135 </FCallNo6>
+      <Rep_PhysicalBookVO>
+         <Rep_PhysicalBookVORow>
+            <ArtId>130001</ArtId>
+            <Barcode>10007500105774</Barcode>
+            <BarcodeChangeDate>13800423</BarcodeChangeDate>
+            <BarcodeChangeUser>KARIMI</BarcodeChangeUser>
+            <ExistenceStatus>1</ExistenceStatus>
+            <InsertDate>13800423</InsertDate>
+            <Labcol>1100</Labcol>
+            <LoanStatus>1</LoanStatus>
+            <Place>3</Place>
+            <RegId>ب24127</RegId>
+            <SafetyStatus>1</SafetyStatus>
+            <StatusChangeDate>13900323</StatusChangeDate>
+            <StatusChangeUser>HAMIDIEH</StatusChangeUser>
+            <UserName>KARIMI</UserName>
+            <VbookArtId>3</VbookArtId>
+            <VolNo>1</VolNo>
+            <CF_PartNo>p.null</CF_PartNo>
+            <CF_ReplicateNo>p.null</CF_ReplicateNo>
+            <CF_VolNo>p.1</CF_VolNo>
+            <CallNo>BP135 .A2K6K3</CallNo>
+            <ArtId1>3</ArtId1>
+            <Labcol1>1100</Labcol1>
+            <FCallNo5> .A2K6K3</FCallNo5>
+            <FCallNo6>BP135 </FCallNo6>
+         </Rep_PhysicalBookVORow>
+         <Rep_PhysicalBookVORow>
+            <ArtId>130002</ArtId>
+            <Barcode>10007500105775</Barcode>
+            <BarcodeChangeDate>13800423</BarcodeChangeDate>
+            <BarcodeChangeUser>KARIMI</BarcodeChangeUser>
+            <ExistenceStatus>1</ExistenceStatus>
+            <InsertDate>13800423</InsertDate>
+            <Labcol>1100</Labcol>
+            <LoanStatus>1</LoanStatus>
+            <Place>3</Place>
+            <RegId>ب24128</RegId>
+            <SafetyStatus>1</SafetyStatus>
+            <StatusChangeDate>13810229</StatusChangeDate>
+            <StatusChangeUser>AKHERAT</StatusChangeUser>
+            <UserName>KARIMI</UserName>
+            <VbookArtId>3</VbookArtId>
+            <VolNo>2</VolNo>
+            <CF_PartNo>p.null</CF_PartNo>
+            <CF_ReplicateNo>p.null</CF_ReplicateNo>
+            <CF_VolNo>p.2</CF_VolNo>
+            <CallNo>BP135 .A2K6K3</CallNo>
+            <ArtId1>3</ArtId1>
+            <Labcol1>1100</Labcol1>
+            <FCallNo5> .A2K6K3</FCallNo5>
+            <FCallNo6>BP135 </FCallNo6>
+         </Rep_PhysicalBookVORow>
+         <Rep_PhysicalBookVORow>
+            <ArtId>130003</ArtId>
+            <Barcode>10007500105777</Barcode>
+            <BarcodeChangeDate>13800423</BarcodeChangeDate>
+            <BarcodeChangeUser>KARIMI</BarcodeChangeUser>
+            <ExistenceStatus>1</ExistenceStatus>
+            <InsertDate>13800423</InsertDate>
+            <Labcol>1100</Labcol>
+            <LoanStatus>1</LoanStatus>
+            <Place>3</Place>
+            <RegId>ب24129</RegId>
+            <SafetyStatus>1</SafetyStatus>
+            <StatusChangeDate>13801030</StatusChangeDate>
+            <StatusChangeUser>PEERY</StatusChangeUser>
+            <UserName>KARIMI</UserName>
+            <VbookArtId>3</VbookArtId>
+            <VolNo>3</VolNo>
+            <CF_PartNo>p.null</CF_PartNo>
+            <CF_ReplicateNo>p.null</CF_ReplicateNo>
+            <CF_VolNo>p.3</CF_VolNo>
+            <CallNo>BP135 .A2K6K3</CallNo>
+            <ArtId1>3</ArtId1>
+            <Labcol1>1100</Labcol1>
+            <FCallNo5> .A2K6K3</FCallNo5>
+            <FCallNo6>BP135 </FCallNo6>
+         </Rep_PhysicalBookVORow>
+         <Rep_PhysicalBookVORow>
+            <ArtId>130004</ArtId>
+            <Barcode>10007500105776</Barcode>
+            <BarcodeChangeDate>13800423</BarcodeChangeDate>
+            <BarcodeChangeUser>KARIMI</BarcodeChangeUser>
+            <ExistenceStatus>1</ExistenceStatus>
+            <InsertDate>13800423</InsertDate>
+            <Labcol>1100</Labcol>
+            <LoanStatus>1</LoanStatus>
+            <Place>3</Place>
+            <RegId>ب24130</RegId>
+            <SafetyStatus>1</SafetyStatus>
+            <StatusChangeDate>13840713</StatusChangeDate>
+            <StatusChangeUser>HAGHIRI</StatusChangeUser>
+            <UserName>KARIMI</UserName>
+            <VbookArtId>3</VbookArtId>
+            <VolNo>4</VolNo>
+            <CF_PartNo>p.null</CF_PartNo>
+            <CF_ReplicateNo>p.null</CF_ReplicateNo>
+            <CF_VolNo>p.4</CF_VolNo>
+            <CallNo>BP135 .A2K6K3</CallNo>
+            <ArtId1>3</ArtId1>
+            <Labcol1>1100</Labcol1>
+            <FCallNo5> .A2K6K3</FCallNo5>
+            <FCallNo6>BP135 </FCallNo6>
+         </Rep_PhysicalBookVORow>
+      </Rep_PhysicalBookVO>
+      <ProviderVO>
+         <ProviderVORow>
+            <ArtId>38120</ArtId>
+            <BDDate>1284 -</BDDate>
+            <Labcol>1100</Labcol>
+            <Provider1>كمره اي، محمدباقر</Provider1>
+            <ProviderKind>1</ProviderKind>
+            <ReadingOrder>1</ReadingOrder>
+            <ReferenceType>1</ReferenceType>
+            <VbookProviderVO>
+               <VbookProviderVORow>
+                  <PrvArtId>38120</PrvArtId>
+                  <VbookArtId>3</VbookArtId>
+                  <Labcol>1100</Labcol>
+                  <ArtId>4799</ArtId>
+                  <PrvroleArtId>297</PrvroleArtId>
+                  <EntryKind>2</EntryKind>
+                  <OrderNo>1</OrderNo>
+                  <Printable>1</Printable>
+                  <printableBoolean>true</printableBoolean>
+                  <Provider1>كمره اي، محمدباقر</Provider1>
+                  <ProviderKind>1</ProviderKind>
+                  <ReadingOrder>1</ReadingOrder>
+                  <Labcol1>1100</Labcol1>
+                  <ArtId1>38120</ArtId1>
+                  <Role>مترجم</Role>
+                  <ArtId2>297</ArtId2>
+                  <ProviderText>كمره اي، محمدباقر</ProviderText>
+                  <BDDateText>1284 -</BDDateText>
+                  <Provider_KindVO>oracle.jbo.server.ViewRowSetImpl@165234b</Provider_KindVO>
+                  <Reading_OrderVO>oracle.jbo.server.ViewRowSetImpl@f03cb9</Reading_OrderVO>
+                  <CheckBox01View1>oracle.jbo.server.ViewRowSetImpl@22c86e</CheckBox01View1>
+               </VbookProviderVORow>
+            </VbookProviderVO>
+            <PrvKindLovVO1>oracle.jbo.server.ViewRowSetImpl@194b2f4</PrvKindLovVO1>
+            <ReadingOrderLovVO1>oracle.jbo.server.ViewRowSetImpl@170eb6d</ReadingOrderLovVO1>
+         </ProviderVORow>
+         <ProviderVORow>
+            <ArtId>32769</ArtId>
+            <Labcol>1100</Labcol>
+            <Provider1>غفاري، علي اكبر</Provider1>
+            <ProviderKind>1</ProviderKind>
+            <ReadingOrder>1</ReadingOrder>
+            <ReferenceType>1</ReferenceType>
+            <VbookProviderVO>
+               <VbookProviderVORow>
+                  <PrvArtId>32769</PrvArtId>
+                  <VbookArtId>4026</VbookArtId>
+                  <Labcol>1100</Labcol>
+                  <ArtId>10667</ArtId>
+                  <PrvroleArtId>330</PrvroleArtId>
+                  <EntryKind>2</EntryKind>
+                  <OrderNo>1</OrderNo>
+                  <Printable>1</Printable>
+                  <printableBoolean>true</printableBoolean>
+                  <Provider1>غفاري، علي اكبر</Provider1>
+                  <ProviderKind>1</ProviderKind>
+                  <ReadingOrder>1</ReadingOrder>
+                  <Labcol1>1100</Labcol1>
+                  <ArtId1>32769</ArtId1>
+                  <Role>مصحح</Role>
+                  <ArtId2>330</ArtId2>
+                  <ProviderText>غفاري، علي اكبر</ProviderText>
+                  <Provider_KindVO>oracle.jbo.server.ViewRowSetImpl@3dfc8b</Provider_KindVO>
+                  <Reading_OrderVO>oracle.jbo.server.ViewRowSetImpl@18f36ef</Reading_OrderVO>
+                  <CheckBox01View1>oracle.jbo.server.ViewRowSetImpl@15facb0</CheckBox01View1>
+               </VbookProviderVORow>
+            </VbookProviderVO>
+            <PrvKindLovVO1>oracle.jbo.server.ViewRowSetImpl@429303</PrvKindLovVO1>
+            <ReadingOrderLovVO1>oracle.jbo.server.ViewRowSetImpl@c1d947</ReadingOrderLovVO1>
+         </ProviderVORow>
+         <ProviderVORow>
+            <ArtId>89048</ArtId>
+            <Labcol>1100</Labcol>
+            <Provider1>بهبودي، محمدباقر</Provider1>
+            <ProviderKind>1</ProviderKind>
+            <ReadingOrder>1</ReadingOrder>
+            <ReferenceType>1</ReferenceType>
+            <VbookProviderVO>
+               <VbookProviderVORow>
+                  <PrvArtId>89048</PrvArtId>
+                  <VbookArtId>91329</VbookArtId>
+                  <Labcol>1100</Labcol>
+                  <ArtId>149114</ArtId>
+                  <PrvroleArtId>330</PrvroleArtId>
+                  <EntryKind>2</EntryKind>
+                  <OrderNo>1</OrderNo>
+                  <Printable>1</Printable>
+                  <printableBoolean>true</printableBoolean>
+                  <Provider1>بهبودي، محمدباقر</Provider1>
+                  <ProviderKind>1</ProviderKind>
+                  <ReadingOrder>1</ReadingOrder>
+                  <Labcol1>1100</Labcol1>
+                  <ArtId1>89048</ArtId1>
+                  <Role>مصحح</Role>
+                  <ArtId2>330</ArtId2>
+                  <ProviderText>بهبودي، محمدباقر</ProviderText>
+                  <Provider_KindVO>oracle.jbo.server.ViewRowSetImpl@13fec04</Provider_KindVO>
+                  <Reading_OrderVO>oracle.jbo.server.ViewRowSetImpl@1a00061</Reading_OrderVO>
+                  <CheckBox01View1>oracle.jbo.server.ViewRowSetImpl@178e951</CheckBox01View1>
+               </VbookProviderVORow>
+            </VbookProviderVO>
+            <PrvKindLovVO1>oracle.jbo.server.ViewRowSetImpl@11dd4fb</PrvKindLovVO1>
+            <ReadingOrderLovVO1>oracle.jbo.server.ViewRowSetImpl@189c90f</ReadingOrderLovVO1>
+         </ProviderVORow>
+         <ProviderVORow>
+            <ArtId>38018</ArtId>
+            <BDDate>- 328 يا29ق</BDDate>
+            <Labcol>1100</Labcol>
+            <Provider1>كليني رازي ، ابوجعفرمحمدبن يعقوب بن اسحاق</Provider1>
+            <ProviderKind>1</ProviderKind>
+            <ReadingOrder>1</ReadingOrder>
+            <ReferenceType>1</ReferenceType>
+            <VbookProviderVO>
+               <VbookProviderVORow>
+                  <PrvArtId>38018</PrvArtId>
+                  <VbookArtId>157</VbookArtId>
+                  <Labcol>1100</Labcol>
+                  <ArtId>5055</ArtId>
+                  <PrvroleArtId>362</PrvroleArtId>
+                  <EntryKind>1</EntryKind>
+                  <OrderNo>1</OrderNo>
+                  <Printable>0</Printable>
+                  <printableBoolean>false</printableBoolean>
+                  <Provider1>كليني رازي ، ابوجعفرمحمدبن يعقوب بن اسحاق</Provider1>
+                  <ProviderKind>1</ProviderKind>
+                  <ReadingOrder>1</ReadingOrder>
+                  <Labcol1>1100</Labcol1>
+                  <ArtId1>38018</ArtId1>
+                  <Role>مولف</Role>
+                  <ArtId2>362</ArtId2>
+                  <ProviderText>كليني رازي ، ابوجعفرمحمدبن يعقوب بن اسحاق</ProviderText>
+                  <BDDateText>- 328 يا29ق</BDDateText>
+                  <Provider_KindVO>oracle.jbo.server.ViewRowSetImpl@13d73f3</Provider_KindVO>
+                  <Reading_OrderVO>oracle.jbo.server.ViewRowSetImpl@1877c15</Reading_OrderVO>
+                  <CheckBox01View1>oracle.jbo.server.ViewRowSetImpl@1e378b9</CheckBox01View1>
+               </VbookProviderVORow>
+            </VbookProviderVO>
+            <PrvKindLovVO1>oracle.jbo.server.ViewRowSetImpl@ef0a03</PrvKindLovVO1>
+            <ReadingOrderLovVO1>oracle.jbo.server.ViewRowSetImpl@17a60fa</ReadingOrderLovVO1>
+         </ProviderVORow>
+         <ProviderVORow>
+            <ArtId>38018</ArtId>
+            <BDDate>- 328 يا29ق</BDDate>
+            <Labcol>1100</Labcol>
+            <Provider1>كليني رازي ، ابوجعفرمحمدبن يعقوب بن اسحاق</Provider1>
+            <ProviderKind>1</ProviderKind>
+            <ReadingOrder>1</ReadingOrder>
+            <ReferenceType>1</ReferenceType>
+            <VbookProviderVO>
+               <VbookProviderVORow>
+                  <PrvArtId>38018</PrvArtId>
+                  <VbookArtId>157</VbookArtId>
+                  <Labcol>1100</Labcol>
+                  <ArtId>5055</ArtId>
+                  <PrvroleArtId>362</PrvroleArtId>
+                  <EntryKind>1</EntryKind>
+                  <OrderNo>1</OrderNo>
+                  <Printable>0</Printable>
+                  <printableBoolean>false</printableBoolean>
+                  <Provider1>كليني رازي ، ابوجعفرمحمدبن يعقوب بن اسحاق</Provider1>
+                  <ProviderKind>1</ProviderKind>
+                  <ReadingOrder>1</ReadingOrder>
+                  <Labcol1>1100</Labcol1>
+                  <ArtId1>38018</ArtId1>
+                  <Role>مولف</Role>
+                  <ArtId2>362</ArtId2>
+                  <ProviderText>كليني رازي ، ابوجعفرمحمدبن يعقوب بن اسحاق</ProviderText>
+                  <BDDateText>- 328 يا29ق</BDDateText>
+                  <Provider_KindVO>oracle.jbo.server.ViewRowSetImpl@13d73f3</Provider_KindVO>
+                  <Reading_OrderVO>oracle.jbo.server.ViewRowSetImpl@1877c15</Reading_OrderVO>
+                  <CheckBox01View1>oracle.jbo.server.ViewRowSetImpl@1e378b9</CheckBox01View1>
+               </VbookProviderVORow>
+            </VbookProviderVO>
+            <PrvKindLovVO1>oracle.jbo.server.ViewRowSetImpl@174d77d</PrvKindLovVO1>
+            <ReadingOrderLovVO1>oracle.jbo.server.ViewRowSetImpl@1ef63c7</ReadingOrderLovVO1>
+         </ProviderVORow>
+      </ProviderVO>
+   </Rep_VirtualBookVORow>
+</Rep_VirtualBookVO>

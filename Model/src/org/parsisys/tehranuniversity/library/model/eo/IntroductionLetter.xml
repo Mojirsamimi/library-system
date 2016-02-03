@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="IntroductionLetter"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="INTRODUCTION_LETTER"
+  AliasName="IntroductionLetter"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetterImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INTRODUCTION_LETTER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="INTRODUCTION_LETTER"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MemArtId"
+    Precision="10"
+    Scale="0"
+    ColumnName="MEM_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INTRODUCTION_LETTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IntroduceDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="INTRODUCE_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INTRODUCTION_LETTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.IntroduceDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="GoalLibrary"
+    Precision="100"
+    ColumnName="GOAL_LIBRARY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTRODUCTION_LETTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.GoalLibrary_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTRODUCTION_LETTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="IssuanceUser"
+    Precision="10"
+    ColumnName="ISSUANCE_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTRODUCTION_LETTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.IssuanceUser_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CancellationUser"
+    Precision="10"
+    ColumnName="CANCELLATION_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTRODUCTION_LETTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.CancellationUser_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CancelDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="CANCEL_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INTRODUCTION_LETTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.CancelDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberIntroductionLetterFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberIntroductionLetterFkAssoc.InitMember"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberIntroductionLetterFkAssoc.IntroductionLetter"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="IntroductionletterPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="INTRODUCTIONLETTER_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007152">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007152"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007153">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007153"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007154">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007154"/>
+      <Attr Name="_checkCondition" Value='"MEM_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007155">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007155"/>
+      <Attr Name="_checkCondition" Value='"INTRODUCE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.IntroduceDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007156">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007156"/>
+      <Attr Name="_checkCondition" Value='"GOAL_LIBRARY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.GoalLibrary"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007157">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007157"/>
+      <Attr Name="_checkCondition" Value='"ISSUANCE_USER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.IntroductionLetter.IssuanceUser"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

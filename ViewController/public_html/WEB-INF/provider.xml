@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="provider">
+    <default-activity id="__31">setReadingOrder</default-activity>
+    <data-control-scope id="__16">
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__9">
+      <name id="__8">mainpage</name>
+      <value>#{pageFlowScope.mainpage}</value>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__15">
+      <name id="__14">catalogingReadingOrder</name>
+      <value>#{pageFlowScope.catalogingReadingOrder}</value>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__12">
+      <managed-bean-name id="__11">back</managed-bean-name>
+      <managed-bean-class id="__10">org.parsisys.tehranuniversity.library.view.beans.Back</managed-bean-class>
+      <managed-bean-scope id="__13">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name id="__3">provider_tf_bean</managed-bean-name>
+      <managed-bean-class id="__1">org.parsisys.tehranuniversity.library.view.beans.ProviderTF</managed-bean-class>
+      <managed-bean-scope id="__4">view</managed-bean-scope>
+    </managed-bean>
+    <view id="provider">
+      <page>/ff/provider.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <method-call id="methodCall1">
+      <method>#{pageFlowScope.back.create_status}</method>
+      <outcome id="__22">
+        <fixed-outcome>success</fixed-outcome>
+      </outcome>
+    </method-call>
+    <save-point-restore id="savePointRestore1">
+      <save-point-id>#{sessionScope.savepointID}</save-point-id>
+    </save-point-restore>
+    <method-call id="methodCall2">
+      <method>#{controllerContext.currentRootViewPort.createSavePoint}</method>
+      <return-value id="__62">#{sessionScope.savepointID}</return-value>
+      <outcome id="__55">
+        <fixed-outcome>success</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="setReadingOrder">
+      <method>#{pageFlowScope.back.setReadingOrderFilter}</method>
+      <outcome id="__32">
+        <fixed-outcome>toProvidet</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__57">
+      <from-activity-id id="__58">methodCall2</from-activity-id>
+      <control-flow-case id="__60">
+        <from-outcome id="__61">success</from-outcome>
+        <to-activity-id id="__59">methodCall1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__65">
+      <from-activity-id id="__66">provider</from-activity-id>
+      <control-flow-case id="__67">
+        <from-outcome id="__69">go</from-outcome>
+        <to-activity-id id="__68">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__26">
+      <from-activity-id id="__27">setReadingOrder</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome id="__30">toProvidet</from-outcome>
+        <to-activity-id id="__28">provider</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

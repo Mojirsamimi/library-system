@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="PersianProviderPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="MainSeeProvider1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="MainSeeProvider1Iterator"/>
+    <searchRegion Criteria="ProviderVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MainSeeProvider1Iterator" id="ProviderVCQuery"/>
+    <iterator Binds="MainSeeAlsoProvider1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MainSeeAlsoProvider1Iterator"/>
+    <iterator Binds="SeeAlsoProviderVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SeeAlsoProviderVo1Iterator"/>
+    <taskFlow taskFlowId="${pageFlowScope.TFBean.dynamicTaskFlowId}"
+              id="dynamicRegion1"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="refProvReadingOrder"
+                   value="#{pageFlowScope.refProvReadingOrder}"/>
+        <parameter id="refProvTab" value="#{pageFlowScope.refProvTab}"/>
+      </parameters>
+    </taskFlow>
+    <iterator Binds="SeeProvider1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="SeeProvider1Iterator"/>
+    <searchRegion Binds="SeeProvider1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SeeProvider1Query"/>
+    <searchRegion Binds="SeeAlsoProviderVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SeeAlsoProviderVo1Query"/>
+    <searchRegion Criteria="SeeAlsoProviderVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MainSeeAlsoProvider1Iterator"
+                  id="SeeAlsoProviderVCQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="MainSeeAlsoProvider1Iterator" id="Provider11">
+      <AttrNames>
+        <Item Value="Provider1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MainSeeAlsoProvider1Iterator"
+                     id="ForeignName1">
+      <AttrNames>
+        <Item Value="ForeignName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MainSeeAlsoProvider1Iterator" id="BDDate">
+      <AttrNames>
+        <Item Value="BDDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MainSeeAlsoProvider1Iterator" StaticList="false"
+          Uses="LOV_ProviderKind" id="ProviderKind1" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="MainSeeProvider1Iterator" id="Provider12">
+      <AttrNames>
+        <Item Value="Provider1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MainSeeProvider1Iterator" id="ForeignName2">
+      <AttrNames>
+        <Item Value="ForeignName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MainSeeProvider1Iterator" id="BDDate1">
+      <AttrNames>
+        <Item Value="BDDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MainSeeProvider1Iterator" StaticList="false"
+          Uses="LOV_ProviderKind" id="ProviderKind2" DTSupportsMRU="true"/>
+    <action IterBinding="MainSeeProvider1Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.MainSeeProvider1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MainSeeAlsoProvider1Iterator" id="CreateInsert1"
+            InstanceName="AppModuleDataControl.MainSeeAlsoProvider1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="MainSeeProvider1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MainSeeAlsoProvider1Iterator" id="ArtId1">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SeeProvider1Iterator" id="SeeProvider1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeProvider"
+                      Name="SeeProvider10">
+        <AttrNames>
+          <Item Value="ProviderText"/>
+          <Item Value="ForeignNameText"/>
+          <Item Value="BDDateText"/>
+          <Item Value="ProviderKind"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SeeProvider1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="SeeAlsoProviderVo1Iterator" id="SeeAlsoProviderVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoProviderVo"
+                      Name="SeeAlsoProviderVo10">
+        <AttrNames>
+          <Item Value="ProviderText"/>
+          <Item Value="ForeignNameText"/>
+          <Item Value="BDDateText"/>
+          <Item Value="ProviderKind"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SeeAlsoProviderVo1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

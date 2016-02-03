@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="Model"
+   Version="11.1.1.56.60"
+   SeparateXMLFiles="true"
+   PackageName="org.parsisys.tehranuniversity.library.model" >
+   <DesignTime>
+      <Attr Name="_jprName" Value="../../../../../../Model.jpr" />
+      <Attr Name="_appModuleNames1" Value="testAM.TestAppMod" />
+      <Attr Name="_appModuleNames0" Value="org.parsisys.tehranuniversity.library.model.am.AppModule" />
+      <Attr Name="_NamedConnection" Value="Connection1" />
+   </DesignTime>
+   <Containee
+      Name="am"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.am" >
+      <DesignTime>
+         <Attr Name="_AM" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="Assoc"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.eo.Assoc" >
+      <DesignTime>
+         <Attr Name="_AS" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="CommonEOs"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.eo.CommonEOs" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="eo"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.eo" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="CommonVOs"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.vo.CommonVOs" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="lov"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.vo.lov" >
+   </Containee>
+   <Containee
+      Name="report"
+      PackageName="org.parsisys.tehranuniversity.library.model.vo.report"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="RO"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.vo.RO" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="VL"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.vo.VL" >
+      <DesignTime>
+         <Attr Name="_VL" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="vo"
+      ObjectType="JboPackage"
+      PackageName="org.parsisys.tehranuniversity.library.model.vo" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="testAM"
+      ObjectType="JboPackage"
+      PackageName="testAM" >
+      <DesignTime>
+         <Attr Name="_AM" Value="true" />
+      </DesignTime>
+   </Containee>
+</JboProject>

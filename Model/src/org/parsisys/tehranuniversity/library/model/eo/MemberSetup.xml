@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MemberSetup"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="MEMBER_SETUP"
+  AliasName="MemberSetup"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.MemberSetupImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Post"
+    Precision="3"
+    Scale="0"
+    ColumnName="POST"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoanQuota"
+    Precision="3"
+    Scale="0"
+    ColumnName="LOAN_QUOTA"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoanDuration"
+    Precision="3"
+    Scale="0"
+    ColumnName="LOAN_DURATION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ToDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="TO_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <validation:LengthValidationBean
+      Name="ToDate_Rule_1"
+      ResId="ToDate_Rule_1"
+      OnAttribute="ToDate"
+      CompareType="EQUALTO"
+      DataType="CHARACTER"
+      CompareLength="8"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="FromDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="FROM_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    Scale="0"
+    ColumnName="ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReserveQuota"
+    Precision="3"
+    Scale="0"
+    ColumnName="RESERVE_QUOTA"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MemshipDuration"
+    Precision="4"
+    Scale="0"
+    ColumnName="MEMSHIP_DURATION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PloanQuota"
+    Precision="3"
+    Scale="0"
+    ColumnName="PLOAN_QUOTA"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PostQueryParam"
+    ColumnName="POST_QUERY_PARAM"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MEMBER_SETUP"/>
+  <AccessorAttribute
+    Name="MemberExtentionHistory"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemexthisMemsetupFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemexthisMemsetupFkAssoc.MemberExtentionHistory"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemexthisMemsetupFkAssoc.MemberSetup"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CatalogDetail"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.CatalogPrivateMemberSetupFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.CatalogPrivateMemberSetupFkAssoc.CatalogDetail"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.CatalogPrivateMemberSetupFkAssoc.MemberSetup"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="MemsetupPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="MEMSETUP_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007185">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007185"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007186">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007186"/>
+      <Attr Name="_checkCondition" Value='"POST" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.Post"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007187">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007187"/>
+      <Attr Name="_checkCondition" Value='"LOAN_QUOTA" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.LoanQuota"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007188">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007188"/>
+      <Attr Name="_checkCondition" Value='"LOAN_DURATION" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.LoanDuration"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007189">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007189"/>
+      <Attr Name="_checkCondition" Value='"TO_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007190">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007190"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007191">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007191"/>
+      <Attr Name="_checkCondition" Value='"FROM_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.FromDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007192">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007192"/>
+      <Attr Name="_checkCondition" Value='"ACTIVE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.Active"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007193">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007193"/>
+      <Attr Name="_checkCondition" Value='"RESERVE_QUOTA" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.MemberSetup.ReserveQuota"/>
+    </AttrArray>
+  </Key>
+  <validation:CompareValidationBean
+    Name="MemberSetup_Rule_0"
+    ResId="ill_post_rldate"
+    OnAttribute="ToDate"
+    OperandType="ATTR"
+    Inverse="false"
+    CompareType="GREATERTHAN"
+    CompareValue="FromDate">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="ToDate"/>
+      <validation:Item
+        Value="FromDate"/>
+    </validation:OnAttributes>
+  </validation:CompareValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

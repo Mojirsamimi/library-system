@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="pfl1">
+    <af:inputText value="#{bindings.Title.inputValue}"
+                  label="#{bindings.Title.hints.label}"
+                  required="#{bindings.Title.hints.mandatory}"
+                  columns="#{bindings.Title.hints.displayWidth}"
+                  maximumLength="#{bindings.Title.hints.precision}"
+                  shortDesc="#{bindings.Title.hints.tooltip}" id="it1">
+      <f:validator binding="#{bindings.Title.validator}"/>
+    </af:inputText>
+    <f:facet name="footer"/>
+  </af:panelFormLayout>
+</jsp:root>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:f="http://java.sun.com/jsf/core">
+           <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+   <af:panelFormLayout id="pfl1">
+   <af:popup id="p2" contentDelivery="immediate"
+             binding="#{cid_public_non_cash_penalty.popUpEditYesNo}">
+            <af:panelWindow title="#{viewcontrollerBundle.notice}" id="pw2" modal="true">
+              <af:panelFormLayout id="pfl5" rows="1" maxColumns="1">
+               <af:outputText id="ot1"
+                              value="#{cid_public_non_cash_penalty.popupText}"/>
+               <f:facet name="footer">
+                <af:panelGroupLayout id="pgl1" layout="horizontal" valign="middle"
+                           halign="center">
+      <af:commandButton id="cb1" text="#{viewcontrollerBundle.yes}"
+                        inlineStyle="width:60.0px;"
+                       
+                        partialSubmit="true"
+                        action="#{cid_public_non_cash_penalty.popUpYesbtn_edit}"/>
+     <af:commandButton id="cb2" text="#{viewcontrollerBundle.no}" action="end_edit"
+                       inlineStyle="width:60.0px;"/>
+                       
+                       
+      </af:panelGroupLayout>   
+               </f:facet>
+                
+              </af:panelFormLayout>
+            </af:panelWindow>
+          </af:popup>
+   
+      <af:inputText value="#{bindings.PenaltyDesc.inputValue}"
+                    label="#{bindings.PenaltyDesc.hints.label}"
+                    required="#{bindings.PenaltyDesc.hints.mandatory}"
+                    columns="#{bindings.PenaltyDesc.hints.displayWidth}"
+                    maximumLength="#{bindings.PenaltyDesc.hints.precision}"
+                    shortDesc="#{bindings.PenaltyDesc.hints.tooltip}" id="it1" readOnly="true"
+                    >
+         <f:validator binding="#{bindings.PenaltyDesc.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.ActionDesc.inputValue}"
+                    label="#{bindings.ActionDesc.hints.label}"
+                    required="#{bindings.ActionDesc.hints.mandatory}"
+                    columns="#{bindings.ActionDesc.hints.displayWidth}"
+                    maximumLength="#{bindings.ActionDesc.hints.precision}"
+                    shortDesc="#{bindings.ActionDesc.hints.tooltip}" id="it2" readOnly="true"
+                   >
+         <f:validator binding="#{bindings.ActionDesc.validator}"/>
+      </af:inputText>
+      
+       <af:inputText label="#{viewcontrollerBundle.new_penalty_desc}" id="it3"
+                  value="#{cid_public_non_cash_penalty.penaltyDesc}"
+                   binding="#{cid_public_non_cash_penalty.penaltyDescInputtxt}"
+                     partialTriggers="cb3 cb4 cb1 cb2"/>
+    <af:inputText label="#{viewcontrollerBundle.new_penalty_pay}" id="it4"
+                  value="#{cid_public_non_cash_penalty.payDesc}"
+                 binding="#{cid_public_non_cash_penalty.penaltyPayInputtxt}" />
+      
+      <f:facet name="footer">
+   <af:panelGroupLayout id="pgl2" layout="horizontal" valign="middle"
+                           halign="center">
+      <af:commandButton id="cb3" text="#{viewcontrollerBundle.create}"
+                        inlineStyle="width:60.0px;"
+                        actionListener="#{cid_public_non_cash_penalty.preEdit_savebtn}"/>
+     <af:commandButton id="cb4" text="#{viewcontrollerBundle.cancel}" action="end_edit"
+                       inlineStyle="width:60.0px;"/>
+                       
+                       
+      </af:panelGroupLayout>   
+      </f:facet>
+   </af:panelFormLayout>
+   
+</jsp:root>

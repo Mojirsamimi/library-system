@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_PENALTY_PAYMENTPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllPersonVC" id="removeAllPersonVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <invokeAction id="removeAllInitMemCurrLibVC_execute"
+                  Binds="removeAllInitMemCurrLibVC"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <iterator Binds="PersonVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO1Iterator"/>
+    <searchRegion Criteria="search_name_id_barcode"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PersonVO1Iterator" id="searchnameidbarcodeQuery"/>
+    <iterator Binds="InitMemberVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="InitMemberVO1Iterator"/>
+    <iterator Binds="PenaltyPaymentVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="PenaltyPaymentVO1Iterator"/>
+    <searchRegion Binds="PenaltyPaymentVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PenaltyPaymentVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InitMemberVO1Iterator" StaticList="false"
+          Uses="LOV_MemshipStatus" id="MemshipStatus" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="InitMemberVO1Iterator" id="DebitSum">
+      <AttrNames>
+        <Item Value="DebitSum"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PenaltyPaymentVO1Iterator" id="PenaltyPaymentVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PenaltyPaymentVO"
+                      Name="PenaltyPaymentVO10">
+        <AttrNames>
+          <Item Value="DayDate"/>
+          <Item Value="Value"/>
+          <Item Value="Description"/>
+          <Item Value="UserName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="removeAllPersonVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPersonVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllInitMemCurrLibVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllInitMemCurrLibVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

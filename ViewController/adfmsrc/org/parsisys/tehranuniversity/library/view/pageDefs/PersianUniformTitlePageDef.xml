@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="PersianUniformTitlePageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="MainSeeUniformTitle1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MainSeeUniformTitle1Iterator"/>
+    <searchRegion Criteria="TitleVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MainSeeUniformTitle1Iterator" id="TitleVCQuery"/>
+    <iterator Binds="SeeUniformTitle1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="SeeUniformTitle1Iterator"/>
+    <iterator Binds="MainSeeAlsoUniformTitleVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MainSeeAlsoUniformTitleVO1Iterator"/>
+    <searchRegion Criteria="TitleVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MainSeeAlsoUniformTitleVO1Iterator"
+                  id="TitleVCQuery1"/>
+    <iterator Binds="SeeAlsoUniformTitleVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SeeAlsoUniformTitleVo1Iterator"/>
+    <taskFlow id="dynamicRegion1"
+              taskFlowId="${pageFlowScope.TFBean.dynamicTaskFlowId}"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="refUniTitleReadingOrder"
+                   value="#{pageFlowScope.refUniTitleReadingOrder}"/>
+        <parameter id="refUniTitleTab" value="#{pageFlowScope.refUniTitleTab}"/>
+      </parameters>
+    </taskFlow>
+    <searchRegion Binds="SeeUniformTitle1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SeeUniformTitle1Query"/>
+    <searchRegion Binds="SeeAlsoUniformTitleVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SeeAlsoUniformTitleVo1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="MainSeeUniformTitle1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MainSeeAlsoUniformTitleVO1Iterator"
+                     id="Title1">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MainSeeUniformTitle1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="MainSeeAlsoUniformTitleVO1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="MainSeeUniformTitle1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MainSeeAlsoUniformTitleVO1Iterator"
+                     id="ArtId1">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="SeeUniformTitle1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="SeeUniformTitle1Iterator" id="SeeUniformTitle1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeUniformTitle"
+                      Name="SeeUniformTitle10">
+        <AttrNames>
+          <Item Value="TitleText"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="UniformTitleRefrence"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.UniformTitleRefrence"
+                      Name="SeeUniformTitle10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Labcol"/>
+          <Item Value="ReadingOrder"/>
+          <Item Value="ReferenceType"/>
+          <Item Value="Title"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SeeAlsoUniformTitleVo1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="SeeAlsoUniformTitleVo1Iterator"
+          id="SeeAlsoUniformTitleVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoUniformTitleVo"
+                      Name="SeeAlsoUniformTitleVo10">
+        <AttrNames>
+          <Item Value="TitleText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

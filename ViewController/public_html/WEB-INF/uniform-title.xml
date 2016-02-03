@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="uniform-title">
+    <default-activity id="__1">unfirom-title</default-activity>
+    <data-control-scope id="__10">
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__9">
+      <name id="__8">mainpage</name>
+      <value>#{pageFlowScope.mainpage}</value>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__18">
+      <name id="__11">catalogingReadingOrder</name>
+      <value>#{pageFlowScope.catalogingReadingOrder}</value>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__22">
+      <managed-bean-name id="__19">back</managed-bean-name>
+      <managed-bean-class id="__20">org.parsisys.tehranuniversity.library.view.beans.Back</managed-bean-class>
+      <managed-bean-scope id="__21">view</managed-bean-scope>
+    </managed-bean>
+    <view id="unfirom-title">
+      <page>/ff/unfirom-title.jsff</page>
+    </view>
+    <task-flow-return id="finish">
+      <outcome id="__2">
+        <name>finish</name>
+      </outcome>
+    </task-flow-return>
+    <method-call id="createStatus">
+      <method>#{viewScope.back.create_status}</method>
+      <outcome id="__12">
+        <fixed-outcome>ok</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">unfirom-title</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">go</from-outcome>
+        <to-activity-id id="__6">finish</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id id="__14">createStatus</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome id="__15">ok</from-outcome>
+        <to-activity-id id="__17">unfirom-title</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

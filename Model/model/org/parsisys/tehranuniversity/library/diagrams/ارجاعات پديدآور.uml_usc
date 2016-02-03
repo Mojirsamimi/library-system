@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:53febb35-0c5f-4085-8418-82d65fbfa515'
+   isAbstract='false'
+   isLeaf='false'
+   name='ارجاعات پديدآور'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:beda5ba7-9932-4b2b-b968-145e11124c67'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:ffe5ac4e-34b5-4a2c-b28c-60a52ee26867'>
+   <addition href='urn:uuid:6e47f7ce-b522-496b-b0d0-34585eeba6de'/>
+  </include>
+  <include xmi:uuid='urn:uuid:8010e18f-9c3a-4468-a944-a903e5456cb6'>
+   <addition href='urn:uuid:0987e6a0-de86-4e6f-ba7b-5004a6affc1d'/>
+  </include>
+  <include xmi:uuid='urn:uuid:998327a5-0ca9-49e5-854e-691343b3abd9'>
+   <addition href='urn:uuid:29635fda-3950-4bac-b275-b8ac1c14b342'/>
+  </include>
+  <include xmi:uuid='urn:uuid:e416f283-b33c-49c5-8cbd-7fbd1cb7dc88'>
+   <addition href='urn:uuid:cb45ffc3-e064-4501-81c9-687f00993d1b'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

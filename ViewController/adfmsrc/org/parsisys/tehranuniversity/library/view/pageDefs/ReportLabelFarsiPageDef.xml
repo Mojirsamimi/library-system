@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="ReportLabelFarsiPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="VirtualBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO1Iterator"/>
+    <searchRegion Binds="VirtualBookVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="VirtualBookVO1Query"/>
+    <iterator Binds="PhysicalBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PhysicalBookVO1Iterator"/>
+    <searchRegion Binds="PhysicalBookVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PhysicalBookVO1Query"/>
+    <iterator Binds="LabelFarsi_label_virtualBook" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LabelFarsi_label_virtualBookIterator"/>
+    <searchRegion Binds="LabelFarsi_label_virtualBookIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LabelFarsi_label_virtualBookQuery"/>
+    <iterator Binds="PhysicalBookVO2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PhysicalBookVO2Iterator"/>
+    <searchRegion Binds="PhysicalBookVO2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PhysicalBookVO2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VirtualBookVO1Iterator" id="VirtualBookVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO"
+                      Name="VirtualBookVO10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Title"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PhysicalBookVO1Iterator" id="PhysicalBookVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+                      Name="PhysicalBookVO10">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="RegId"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="ReplicateNo"/>
+          <Item Value="ExistenceStatus"/>
+          <Item Value="LoanStatus"/>
+          <Item Value="Place"/>
+          <Item Value="SafetyStatus"/>
+          <Item Value="UserName"/>
+          <Item Value="InsertDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="LabelFarsi_label_virtualBookIterator"
+          id="LabelFarsi_label_virtualBook">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO"
+                      Name="LabelFarsi_label_virtualBook0">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Title"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PhysicalBookVO2Iterator" id="PhysicalBookVO2">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+                      Name="PhysicalBookVO20">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="RegId"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="ReplicateNo"/>
+          <Item Value="ExistenceStatus"/>
+          <Item Value="LoanStatus"/>
+          <Item Value="Place"/>
+          <Item Value="SafetyStatus"/>
+          <Item Value="UserName"/>
+          <Item Value="InsertDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

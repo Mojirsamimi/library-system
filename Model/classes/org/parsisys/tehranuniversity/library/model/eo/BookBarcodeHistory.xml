@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BookBarcodeHistory"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="BOOK_BARCODE_HISTORY"
+  AliasName="BookBarcodeHistory"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistoryImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_BARCODE_HISTORY"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.userSession.userData.labcol]]></TransientExpression>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="BOOK_BARCODE_HISTORY"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DayDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="DAY_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_BARCODE_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Barcode"
+    Precision="14"
+    ColumnName="BARCODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_BARCODE_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="14"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PhbookArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="PHBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_BARCODE_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_BARCODE_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="PhysicalBook1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookBkBrcdHistFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookBkBrcdHistFkAssoc.PhysicalBook1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookBkBrcdHistFkAssoc.BookBarcodeHistory1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.PhysicalBookImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="BarcodeAltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BarcodeAltKey"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.Barcode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BarcodeAltKey2"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BOOK_BARCODE_HISTORY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.Barcode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BkbarhisPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="BKBARHIS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007093">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007093"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007094">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007094"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007095">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007095"/>
+      <Attr Name="_checkCondition" Value='"DAY_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.DayDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007096">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007096"/>
+      <Attr Name="_checkCondition" Value='"BARCODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.Barcode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007097">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007097"/>
+      <Attr Name="_checkCondition" Value='"PHBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.PhbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007098">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007098"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BkbarhisPhbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PHBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BKBARHIS_PHBOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookBarcodeHistory.PhbookArtId"/>
+    </AttrArray>
+  </Key>
+</Entity>

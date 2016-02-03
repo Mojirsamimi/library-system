@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:41960c68-2048-4326-82f2-3632bda48789'
+   isAbstract='false'
+   isLeaf='false'
+   name='ورود اطلاعات كتاب جديد'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:4a75a861-2582-447b-80e6-21741c8d8e4b'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

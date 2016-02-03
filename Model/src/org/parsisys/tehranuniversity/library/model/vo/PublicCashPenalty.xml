@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PublicCashPenalty"
+  Version="11.1.1.56.60"
+  SelectList="PublicCashPenalty.ART_ID, 
+       PublicCashPenalty.DAY_DATE, 
+       PublicCashPenalty.DESCRIPTION, 
+       PublicCashPenalty.LABCOL, 
+       PublicCashPenalty.MEM_ART_ID, 
+       PublicCashPenalty.USER_NAME, 
+       PublicCashPenalty.VALUE"
+  FromList="PUBLIC_CASH_PENALTY PublicCashPenalty"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.PublicCashPenaltyRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.PublicCashPenaltyImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="PublicCashPenalty"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="PublicCashPenalty"
+    AliasName="ART_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="DayDate"
+    PrecisionRule="true"
+    EntityAttrName="DayDate"
+    EntityUsage="PublicCashPenalty"
+    AliasName="DAY_DATE"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="PublicCashPenalty"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="PublicCashPenalty"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="MemArtId"
+    PrecisionRule="true"
+    EntityAttrName="MemArtId"
+    EntityUsage="PublicCashPenalty"
+    AliasName="MEM_ART_ID"/>
+  <ViewAttribute
+    Name="UserName"
+    PrecisionRule="true"
+    EntityAttrName="UserName"
+    EntityUsage="PublicCashPenalty"
+    AliasName="USER_NAME"/>
+  <ViewAttribute
+    Name="Value"
+    PrecisionRule="true"
+    EntityAttrName="Value"
+    EntityUsage="PublicCashPenalty"
+    AliasName="VALUE"/>
+  <ViewLinkAccessor
+    Name="InitMemberVO"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.InitMemberPublicCashPenaltyVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

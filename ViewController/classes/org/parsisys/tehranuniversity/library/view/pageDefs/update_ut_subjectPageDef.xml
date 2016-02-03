@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="update_ut_subjectPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="IsoSubjectVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="IsoSubjectVo1Iterator"/>
+    <searchRegion Criteria="SearchSubjectVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="IsoSubjectVo1Iterator" id="SearchSubjectVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="IsoSubjectVo1Iterator" id="IsoSubjectVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.IsoSubjectVo"
+                      Name="IsoSubjectVo10">
+        <AttrNames>
+          <Item Value="Subject"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

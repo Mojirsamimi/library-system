@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InitMemPenaltyPayVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemPenaltyPayFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="InitMemberVO"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InitMemberVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PenaltyPaymentVO"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.PenaltyPaymentVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PenaltyPaymentVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.PenaltyPaymentVO.MemArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

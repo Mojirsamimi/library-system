@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/PortalUTemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:panelGroupLayout id="pgl1" layout="vertical" valign="middle"
+                                 halign="center">
+              <af:spacer width="10" height="50" id="s1"/>
+              
+                <af:outputText value="کاربر گرامی شما به این صفحه دسترسی ندارید"
+                               id="ot1" inlineStyle="font-size:large;"/>
+                 <af:spacer width="10" height="20" id="s2"/>
+             
+                <af:commandLink text="بازگشت" id="cl1"
+                                actionListener="#{sessionUser.backToLastPageActionListener}"/>
+                
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="popup"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

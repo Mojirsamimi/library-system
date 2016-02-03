@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BookIsbn"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="BOOK_ISBN"
+  AliasName="BookIsbn"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.BookIsbnImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_superClass" Value="fadak.base.TemplateEntityObject"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_ISBN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Isbn"
+    Precision="500"
+    ColumnName="ISBN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_ISBN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_ISBN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrderNo"
+    Precision="2"
+    Scale="0"
+    ColumnName="ORDER_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_ISBN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="2"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookBkIsbnFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookBkIsbnFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookBkIsbnFkAssoc.BookIsbn"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="BisbnPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="BISBN_PK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.Isbn"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.VbookArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.OrderNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007100">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007100"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007101">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007101"/>
+      <Attr Name="_checkCondition" Value='"ISBN" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.Isbn"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007102">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007102"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007103">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007103"/>
+      <Attr Name="_checkCondition" Value='"ORDER_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.OrderNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BisbnVbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="VBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BISBN_VBOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookIsbn.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

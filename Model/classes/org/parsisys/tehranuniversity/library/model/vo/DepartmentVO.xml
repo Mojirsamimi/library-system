@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentVO"
+  Version="11.1.1.56.60"
+  SelectList="Department.DEPT_CODE, 
+       Department.DEPT_NAME, 
+       Department.ART_ID, 
+       Department.ACTIVE"
+  FromList="DEPARTMENT Department"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Department"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Department"/>
+  <ViewAttribute
+    Name="DeptCode"
+    PrecisionRule="true"
+    EntityAttrName="DeptCode"
+    EntityUsage="Department"
+    AliasName="DEPT_CODE"/>
+  <ViewAttribute
+    Name="DeptName"
+    PrecisionRule="true"
+    EntityAttrName="DeptName"
+    EntityUsage="Department"
+    AliasName="DEPT_NAME"/>
+  <ViewAttribute
+    Name="ArtId"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Department"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="Active"
+    PrecisionRule="true"
+    EntityAttrName="Active"
+    EntityUsage="Department"
+    AliasName="ACTIVE"/>
+</ViewObject>

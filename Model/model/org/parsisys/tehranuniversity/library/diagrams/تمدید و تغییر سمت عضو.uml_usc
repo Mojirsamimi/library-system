@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:21bc70a7-d388-4e08-89c7-4bd205753a91'
+   isAbstract='false'
+   isLeaf='false'
+   name='تمدید و تغییر سمت عضو'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:d1d62b64-8434-4161-bd55-67b4599f8c39'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:dfa269f8-426b-4aa5-aaa5-ca81111f21da'>
+   <addition href='urn:uuid:b641565e-38bf-4048-8735-8c8729512d57'/>
+  </include>
+  <include xmi:uuid='urn:uuid:820b08c5-b0a9-4e2e-9be8-1da0de1d15b4'>
+   <addition href='urn:uuid:e7fc5208-4a4c-443a-89a2-7464588238cd'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

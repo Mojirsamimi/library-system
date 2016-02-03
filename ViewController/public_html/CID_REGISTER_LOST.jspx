@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+                      xmlns:fadak="/fadak"
+
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+ ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+            <f:facet name="popup">
+        <af:popup  id="tf" contentDelivery="lazyUncached"
+                binding="#{pageFlowScope.TFBean.region_popup}">
+      <af:panelWindow title="#{cid_register_lost.title}"
+                      closeIconVisible="false">
+       <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                  regionNavigationListener="#{pageFlowScope.TFBean.navigation}"                  
+                  />
+      </af:panelWindow>
+      </af:popup>
+       </f:facet>
+          <f:facet name="center">
+          <af:panelHeader text="جریمه گم شدن کتاب">
+           
+            <f:facet name="toolbar">
+          <af:toolbar id="t1">
+                  <fadak:ToolbarSet debug="true" iteratorname="PersonVO1Iterator" id="ts1"
+                                    disabled_delete="true"
+                                    disabled_create="true" showcreate="false"
+                                    showdelete="false"
+                                    disabled_EditCommand="false"
+                                    disabled_refresh="false"
+                                    disabled_rollback="false"
+                                    disabled_search="false"
+                                    disabled_commit="false" showcommit="false"
+                                    showEditCommand="false" showquery="false"
+                                    showrefresh="false" showrollback="false"
+                                    showsearch="false"/>
+          </af:toolbar>
+
+          </f:facet>
+              <af:panelSplitter id="ps1" orientation="vertical"
+                                splitterPosition="150">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1" headerText="جستجوی عضو" disclosed="true"
+                                value="#{bindings.searchnameidbarcodeQuery.queryDescriptor}"
+                                model="#{bindings.searchnameidbarcodeQuery.queryModel}"
+                                queryListener="#{bindings.searchnameidbarcodeQuery.processQuery}"
+                                queryOperationListener="#{bindings.searchnameidbarcodeQuery.processQueryOperation}"
+                                rows="2" maxColumns="2" saveQueryMode="hidden"
+                                modeChangeVisible="false"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" layout="vertical"
+                                         valign="middle" halign="center"
+                                         partialTriggers="qryId1">
+                       <af:panelFormLayout id="pfl1" rows="1" maxColumns="5"
+                                          fieldWidth="100">
+                        <af:inputText value="#{bindings.Barcode.inputValue}"
+                                      label="#{bindings.Barcode.hints.label}"
+                                      required="#{bindings.Barcode.hints.mandatory}"
+                                      columns="#{bindings.Barcode.hints.displayWidth}"
+                                      maximumLength="#{bindings.Barcode.hints.precision}"
+                                      shortDesc="#{bindings.Barcode.hints.tooltip}"
+                                      id="it12" readOnly="true">
+                          <f:validator binding="#{bindings.Barcode.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Id.inputValue}"
+                                      label="#{bindings.Id.hints.label}"
+                                      required="#{bindings.Id.hints.mandatory}"
+                                      columns="#{bindings.Id.hints.displayWidth}"
+                                      maximumLength="#{bindings.Id.hints.precision}"
+                                      shortDesc="#{bindings.Id.hints.tooltip}"
+                                      id="it13" readOnly="true">
+                          <f:validator binding="#{bindings.Id.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Fname.inputValue}"
+                                      label="#{bindings.Fname.hints.label}"
+                                      required="#{bindings.Fname.hints.mandatory}"
+                                      columns="#{bindings.Fname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Fname.hints.precision}"
+                                      shortDesc="#{bindings.Fname.hints.tooltip}"
+                                      id="it14" readOnly="true">
+                          <f:validator binding="#{bindings.Fname.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Lname.inputValue}"
+                                      label="#{bindings.Lname.hints.label}"
+                                      required="#{bindings.Lname.hints.mandatory}"
+                                      columns="#{bindings.Lname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Lname.hints.precision}"
+                                      shortDesc="#{bindings.Lname.hints.tooltip}"
+                                      id="it15" readOnly="true">
+                          <f:validator binding="#{bindings.Lname.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.MemshipStatus.inputValue}"
+                                            label="#{bindings.MemshipStatus.label}"
+                                            required="#{bindings.MemshipStatus.hints.mandatory}"
+                                            shortDesc="#{bindings.MemshipStatus.hints.tooltip}"
+                                            id="soc2" readOnly="true">
+                          <f:selectItems value="#{bindings.MemshipStatus.items}"
+                                         id="si2"/>
+                        </af:selectOneChoice>
+                       
+                        <f:facet name="footer"/>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="30" id="s1"/>
+                      
+                      
+                      <af:panelCollection id="pc1"
+                                           inlineStyle="width:90%; height:180.0px;">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                         
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.RegisterLostVO1.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.RegisterLostVO1.rangeSize}"
+                                  emptyText="#{bindings.RegisterLostVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.RegisterLostVO1.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.RegisterLostVO1Query.queryDescriptor}"
+                                  queryListener="#{bindings.RegisterLostVO1Query.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.RegisterLostVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.RegisterLostVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="t2"
+                                  columnStretching="column:c5"
+                                  partialTriggers=":::r1 :::tf">
+                          <af:column sortProperty="Barcode" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.Barcode.label}"
+                                     id="c1">
+                            <af:outputText value="#{row.Barcode}" id="ot7"/>
+                          </af:column>
+                          <af:column sortProperty="Title" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.Title.label}"
+                                     id="c5">
+                            <af:outputText value="#{row.Title}" id="ot11"/>
+                          </af:column>
+                          <af:column sortProperty="ProviderName"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.ProviderName.label}"
+                                     id="c4">
+                            <af:outputText value="#{row.ProviderName}"
+                                           id="ot12"/>
+                          </af:column>
+                          <af:column sortProperty="RealRetDate"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.RealRetDate.label}"
+                                     id="c2">
+                            <af:outputText value="#{row.RealRetDate}" id="ot9">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.RegisterLostVO1.hints.RealRetDate.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="ReturnUser" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.ReturnUser.label}"
+                                     id="c3">
+                            <af:outputText value="#{row.ReturnUser}" id="ot8"/>
+                          </af:column>
+                          <af:column sortProperty="Value" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.Value.label}"
+                                     id="c8">
+                            <af:outputText value="#{row.Value}" id="ot13">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.RegisterLostVO1.hints.Value.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="DayDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.DayDate.label}"
+                                     id="c6">
+                            <af:outputText value="#{row.DayDate}" id="ot6">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.RegisterLostVO1.hints.DayDate.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="UserName" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.RegisterLostVO1.hints.UserName.label}"
+                                     id="c7">
+                            <af:outputText value="#{row.UserName}" id="ot10"/>
+                          </af:column>
+                        </af:table>
+                        <f:facet name="secondaryToolbar">
+                          <af:toolbar id="t3">
+                            <af:commandImageLink action="#{pageFlowScope.TFBean.registerLost}"
+                                             disabled="#{bindings.ArtId.inputValue==null}"
+                                              icon="/icons/list-add.png"
+                                              shortDesc="ثبت جریمه"
+                                              partialSubmit="true" id="cil1">
+                              <af:setActionListener from="#{'new'}"
+                                                    to="#{cid_register_lost.path}"/>
+                              <af:setActionListener from="#{'ایجاد جریمه'}"
+                                                    to="#{cid_register_lost.title}"/>
+                            </af:commandImageLink>
+                            <af:commandImageLink action="#{pageFlowScope.TFBean.registerLost}"
+                                             disabled="#{bindings.RegisterLostVO1.currentRow==null}"
+                                              icon="/icons/list-edit.png"
+                                              shortDesc="#{'ویرایش جریمه'}"
+                                              partialSubmit="true" id="cil2">
+                              <af:setActionListener from="#{'edit'}"
+                                                    to="#{cid_register_lost.path}"/>
+                              <af:setActionListener from="ویرایش جریمه"
+                                                    to="#{cid_register_lost.title}"/>
+                            </af:commandImageLink>
+                          </af:toolbar>
+                        </f:facet>
+                      </af:panelCollection>
+                      <af:panelFormLayout id="pfl2" rows="1" maxColumns="1"
+                                          labelAlignment="start"
+                                          partialTriggers="tf r1">
+                        <af:panelLabelAndMessage label="#{bindings.Description.hints.label}"
+                                                 id="plam6" >
+                          <af:outputText value="#{bindings.Description.inputValue}"
+                                         id="ot14"  />
+                        </af:panelLabelAndMessage>
+                        <f:facet name="footer"/>
+                      </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

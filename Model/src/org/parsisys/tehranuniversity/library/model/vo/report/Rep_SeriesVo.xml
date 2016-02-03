@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Rep_SeriesVo"
+  Version="11.1.1.56.60"
+  SelectList="Series.LABCOL, 
+       Series.ORDER_NO, 
+       Series.PRINTABLE, 
+       Series.SERIES AS SERIES1, 
+       Series.VBOOK_ART_ID"
+  FromList="SERIES Series"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.report.Rep_SeriesVoRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.report.Rep_SeriesVoImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Series"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Series"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Series"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="OrderNo"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="Series"
+    AliasName="ORDER_NO"/>
+  <ViewAttribute
+    Name="Printable"
+    PrecisionRule="true"
+    EntityAttrName="Printable"
+    EntityUsage="Series"
+    AliasName="PRINTABLE"/>
+  <ViewAttribute
+    Name="Series1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Series"
+    EntityUsage="Series"
+    AliasName="SERIES1"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="Series"
+    AliasName="VBOOK_ART_ID"/>
+</ViewObject>

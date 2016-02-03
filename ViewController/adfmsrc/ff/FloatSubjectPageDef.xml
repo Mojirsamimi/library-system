@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="FloatSubjectPageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FloatSubjectVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="FloatSubjectVO1Iterator"/>
+    <searchRegion Binds="FloatSubjectVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FloatSubjectVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="FloatSubjectVO1Iterator" id="FloatSubjectVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.FloatSubjectVO"
+                      Name="FloatSubjectVO10">
+        <AttrNames>
+          <Item Value="Subject"/>
+          <Item Value="ReadingOrder"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="select_float_subject" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="select_float_subject"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

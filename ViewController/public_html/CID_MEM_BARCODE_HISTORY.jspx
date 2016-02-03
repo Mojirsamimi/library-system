@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:fadak="/fadak"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+          <af:panelHeader text="سابقه بارکد عضو"
+                          helpTopicId="memBarcodeHistory">
+          <f:facet name="toolbar">
+          <af:toolbar id="t1">
+                  <fadak:ToolbarSet debug="true" iteratorname="PersonVO1Iterator" id="ts1"
+                                    showcommit="false" showcreate="false"
+                                    showdelete="false" showEditCommand="false"
+                                    showquery="false" showrefresh="false"
+                                    showrollback="false" showsearch="false"/>
+
+          </af:toolbar>
+          </f:facet>
+              <af:panelSplitter id="ps1" orientation="vertical"
+                                splitterPosition="140">
+                <f:facet name="first">
+                
+               
+                      <af:panelGroupLayout layout="vertical" id="pgl1">
+                        <af:panelHeader text=" " id="ph1">
+                          <af:query id="qryId1" headerText="جستجو عضو"
+                                    disclosed="true"
+                                    value="#{bindings.searchnameidbarcodeQuery4.queryDescriptor}"
+                                    model="#{bindings.searchnameidbarcodeQuery4.queryModel}"
+                                    queryListener="#{bindings.searchnameidbarcodeQuery4.processQuery}"
+                                    queryOperationListener="#{bindings.searchnameidbarcodeQuery4.processQueryOperation}"
+                                    rows="2" maxColumns="2"
+                                    clientComponent="false"
+                                    displayMode="default" fieldWidth="200"
+                                    modeChangeVisible="false"
+                                    saveQueryMode="hidden" labelWidth="200"/>
+                        </af:panelHeader>
+                      </af:panelGroupLayout>
+                   
+           
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" layout="scroll"
+                                         valign="middle" halign="center">
+                      <af:panelFormLayout id="pfl1" rows="1" maxColumns="4"
+                                          fieldWidth="100">
+                        <af:panelLabelAndMessage label="#{bindings.Barcode.hints.label}"
+                                                 id="plam1">
+                          <af:outputText value="#{bindings.Barcode.inputValue}"
+                                         id="ot4" partialTriggers="qryId1"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.Id.hints.label}"
+                                                 id="plam2">
+                          <af:outputText value="#{bindings.Id.inputValue}"
+                                         id="ot5" partialTriggers="qryId1"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.Fname.hints.label}"
+                                                 id="plam3">
+                          <af:outputText value="#{bindings.Fname.inputValue}"
+                                         id="ot6" partialTriggers="qryId1"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.Lname.hints.label}"
+                                                 id="plam4">
+                          <af:outputText value="#{bindings.Lname.inputValue}"
+                                         id="ot7" partialTriggers="qryId1"/>
+                        </af:panelLabelAndMessage>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="10" id="s1"/>
+                      <af:panelCollection id="pc1" clientComponent="true"
+                                          inlineStyle="height:200.0px;">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.MemberBarcodeHistory1.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.MemberBarcodeHistory1.rangeSize}"
+                                  emptyText="#{bindings.MemberBarcodeHistory1.viewable ? 'رکوردی برای نمایش وجود ندارد.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.MemberBarcodeHistory1.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.MemberBarcodeHistory1Query.queryDescriptor}"
+                                  queryListener="#{bindings.MemberBarcodeHistory1Query.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.MemberBarcodeHistory1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.MemberBarcodeHistory1.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="t2"
+                                  partialTriggers=":::qryId1"
+                                  columnStretching="column:c3">
+                          <af:column sortProperty="Barcode" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberBarcodeHistory1.hints.Barcode.label}"
+                                     id="c2" width="150">
+                            <af:outputText value="#{row.Barcode}" id="ot3"/>
+                          </af:column>
+                          <af:column sortProperty="DayDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberBarcodeHistory1.hints.DayDate.label}"
+                                     id="c1" width="150">
+                            <af:outputText value="#{row.DayDate}" id="ot2">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.MemberBarcodeHistory1.hints.DayDate.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="UserName" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberBarcodeHistory1.hints.UserName.label}"
+                                     id="c3">
+                            <af:outputText value="#{row.UserName}" id="ot1"/>
+                          </af:column>
+                        </af:table>
+                      </af:panelCollection>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

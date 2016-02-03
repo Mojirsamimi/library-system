@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Rep_VbookProviderVo"
+  Version="11.1.1.56.60"
+  SelectList="VbookProvider.ART_ID, 
+       VbookProvider.ENTRY_KIND, 
+       VbookProvider.LABCOL, 
+       VbookProvider.ORDER_NO, 
+       VbookProvider.PRINTABLE, 
+       VbookProvider.PRV_ART_ID, 
+       VbookProvider.PRVROLE_ART_ID, 
+       VbookProvider.TITLE_REFER, 
+       VbookProvider.VBOOK_ART_ID, 
+       Provider.PROVIDER AS PROVIDER1, 
+       Provider.LABCOL AS LABCOL1, 
+       Provider.ART_ID AS ART_ID1, 
+       Provider.B_D_DATE, 
+       ProviderRole.ROLE, 
+       ProviderRole.ART_ID AS ART_ID2"
+  FromList="VBOOK_PROVIDER VbookProvider, PROVIDER Provider, PROVIDER_ROLE ProviderRole"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VbookProviderVoRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VbookProviderVoImpl"
+  Where="((VbookProvider.LABCOL = Provider.LABCOL(+)) AND (VbookProvider.PRV_ART_ID = Provider.ART_ID(+))) AND (VbookProvider.PRVROLE_ART_ID = ProviderRole.ART_ID(+))">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="VbookProvider"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.VbookProvider"/>
+  <EntityUsage
+    Name="Provider"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Provider"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc.Provider1"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VbookProviderVo.VbookProvider"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.PrvArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Provider.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Provider.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="ProviderRole"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.ProviderRole"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvRoleFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvRoleFkAssoc.ProviderRole"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VbookProviderVo.VbookProvider"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.PrvroleArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.ProviderRole.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="VbookProvider"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="EntryKind"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="EntryKind"
+    EntityUsage="VbookProvider"
+    AliasName="ENTRY_KIND"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="VbookProvider"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="OrderNo"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="VbookProvider"
+    AliasName="ORDER_NO"/>
+  <ViewAttribute
+    Name="Printable"
+    PrecisionRule="true"
+    EntityAttrName="Printable"
+    EntityUsage="VbookProvider"
+    AliasName="PRINTABLE"/>
+  <ViewAttribute
+    Name="PrvArtId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="PrvArtId"
+    EntityUsage="VbookProvider"
+    AliasName="PRV_ART_ID"/>
+  <ViewAttribute
+    Name="PrvroleArtId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="PrvroleArtId"
+    EntityUsage="VbookProvider"
+    AliasName="PRVROLE_ART_ID"/>
+  <ViewAttribute
+    Name="TitleRefer"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="TitleRefer"
+    EntityUsage="VbookProvider"
+    AliasName="TITLE_REFER"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="VbookProvider"
+    AliasName="VBOOK_ART_ID"/>
+  <ViewAttribute
+    Name="Provider1"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Provider"
+    EntityUsage="Provider"
+    AliasName="PROVIDER1"/>
+  <ViewAttribute
+    Name="Labcol1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Provider"
+    AliasName="LABCOL1"/>
+  <ViewAttribute
+    Name="ArtId1"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Provider"
+    AliasName="ART_ID1"/>
+  <ViewAttribute
+    Name="BDDate"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="BDDate"
+    EntityUsage="Provider"
+    AliasName="B_D_DATE"/>
+  <ViewAttribute
+    Name="Role"
+    PrecisionRule="true"
+    EntityAttrName="Role"
+    EntityUsage="ProviderRole"
+    AliasName="ROLE"/>
+  <ViewAttribute
+    Name="ArtId2"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="ProviderRole"
+    AliasName="ART_ID2"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ArtId"/>
+    <Item Value="Labcol"/>
+  </AttrArray>
+</ViewObject>

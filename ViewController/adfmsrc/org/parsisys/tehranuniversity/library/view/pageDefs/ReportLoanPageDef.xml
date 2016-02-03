@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="ReportLoanPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="CMemSetupPostLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CMemSetupPostLOVIterator"/>
+    <iterator Binds="PersTypeLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersTypeLOVIterator"/>
+    <iterator Binds="DeptLOV" RangeSize="100" DataControl="AppModuleDataControl"
+              id="DeptLOVIterator"/>
+    <iterator Binds="DegreeLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="DegreeLOVIterator"/>
+    <iterator Binds="OriginLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="OriginLOVIterator"/>
+    <iterator Binds="MajorLOV" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MajorLOVIterator"/>
+    <iterator Binds="PersStatusLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersStatusLOVIterator"/>
+    <iterator Binds="PersCategoryLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersCategoryLOVIterator"/>
+    <iterator Binds="ReportPersonLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ReportPersonLOVIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="CMemSetupPostLOVIterator" ListOperMode="navigation"
+          ListIter="CMemSetupPostLOVIterator" id="CMemSetupPostLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="PersTypeLOVIterator" ListOperMode="navigation"
+          ListIter="PersTypeLOVIterator" id="PersTypeLOV" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="DeptLOVIterator" ListOperMode="navigation"
+          ListIter="DeptLOVIterator" id="DeptLOV" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="ArtId"/>
+        <Item Value="DeptName"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="DegreeLOVIterator" ListOperMode="navigation"
+          ListIter="DegreeLOVIterator" id="DegreeLOV" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="OriginLOVIterator" ListOperMode="navigation"
+          ListIter="OriginLOVIterator" id="OriginLOV" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="MajorLOVIterator" ListOperMode="navigation"
+          ListIter="MajorLOVIterator" id="MajorLOV" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="ArtId"/>
+        <Item Value="MjrName"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="PersStatusLOVIterator" ListOperMode="navigation"
+          ListIter="PersStatusLOVIterator" id="PersStatusLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="PersCategoryLOVIterator" ListOperMode="navigation"
+          ListIter="PersCategoryLOVIterator" id="PersCategoryLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_Origine" id="Origine" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_Degree" id="Degree" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_DeptArtId" id="DeptArtId" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_MjrArtId" id="MjrArtId" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_PersType" id="PersType" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_CmemSetupPost" id="CmemSetupPost" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_PersStatus" id="PersStatus" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_PersCategory" id="PersCategory" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_Affiliation" id="Affiliation" DTSupportsMRU="true"/>
+    <list IterBinding="ReportPersonLOVIterator" StaticList="false"
+          Uses="LOV_SecArtId" id="SecArtId" DTSupportsMRU="true"/>
+  </bindings>
+</pageDefinition>

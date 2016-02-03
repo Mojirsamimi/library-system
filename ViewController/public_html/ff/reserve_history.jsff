@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl1" layout="vertical" valign="middle"
+                       halign="center">
+    <af:panelCollection id="pc1" inlineStyle="height:350.0px;">
+      <f:facet name="menus"/>
+      <f:facet name="toolbar"/>
+      <f:facet name="statusbar"/>
+      <af:table value="#{bindings.ReserveVO3.collectionModel}" var="row"
+                rows="#{bindings.ReserveVO3.rangeSize}"
+                emptyText="#{bindings.ReserveVO3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.ReserveVO3.rangeSize}"
+                rowBandingInterval="0"
+                filterModel="#{bindings.ReserveVO3Query.queryDescriptor}"
+                queryListener="#{bindings.ReserveVO3Query.processQuery}"
+                filterVisible="true" varStatus="vs"
+                selectedRowKeys="#{bindings.ReserveVO3.collectionModel.selectedRow}"
+                selectionListener="#{bindings.ReserveVO3.collectionModel.makeCurrent}"
+                rowSelection="single" id="t1" partialTriggers="soc1">
+        <af:column sortProperty="ArtId" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.ArtId.label}"
+                   id="c1">
+          <af:inputText value="#{row.bindings.ArtId.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.ArtId.label}"
+                        required="#{bindings.ReserveVO3.hints.ArtId.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.ArtId.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.ArtId.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.ArtId.tooltip}"
+                        id="it2" readOnly="true">
+            <f:validator binding="#{row.bindings.ArtId.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="Fname" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.Fname.label}"
+                   id="c4">
+          <af:inputText value="#{row.bindings.Fname.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.Fname.label}"
+                        required="#{bindings.ReserveVO3.hints.Fname.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.Fname.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.Fname.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.Fname.tooltip}"
+                        id="it3" readOnly="true">
+            <f:validator binding="#{row.bindings.Fname.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="Lname" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.Lname.label}"
+                   id="c6">
+          <af:inputText value="#{row.bindings.Lname.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.Lname.label}"
+                        required="#{bindings.ReserveVO3.hints.Lname.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.Lname.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.Lname.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.Lname.tooltip}"
+                        id="it1" readOnly="true">
+            <f:validator binding="#{row.bindings.Lname.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="Barcode" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.Barcode.label}"
+                   id="c8">
+          <af:inputText value="#{row.bindings.Barcode.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.Barcode.label}"
+                        required="#{bindings.ReserveVO3.hints.Barcode.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.Barcode.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.Barcode.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.Barcode.tooltip}"
+                        id="it7" readOnly="true">
+            <f:validator binding="#{row.bindings.Barcode.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="VolNo" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.VolNo.label}"
+                   id="c10">
+          <af:inputText value="#{row.bindings.VolNo.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.VolNo.label}"
+                        required="#{bindings.ReserveVO3.hints.VolNo.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.VolNo.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.VolNo.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.VolNo.tooltip}"
+                        id="it4" readOnly="true">
+            <f:validator binding="#{row.bindings.VolNo.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="PartNo" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.PartNo.label}"
+                   id="c9">
+          <af:inputText value="#{row.bindings.PartNo.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.PartNo.label}"
+                        required="#{bindings.ReserveVO3.hints.PartNo.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.PartNo.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.PartNo.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.PartNo.tooltip}"
+                        id="it9" readOnly="true">
+            <f:validator binding="#{row.bindings.PartNo.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="DayDate" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.DayDate.label}"
+                   id="c3">
+          <af:inputText value="#{row.bindings.DayDate.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.DayDate.label}"
+                        required="#{bindings.ReserveVO3.hints.DayDate.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.DayDate.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.DayDate.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.DayDate.tooltip}"
+                        id="it5" readOnly="true">
+            <f:validator binding="#{row.bindings.DayDate.validator}"/>
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.ReserveVO3.hints.DayDate.format}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="UserName" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.UserName.label}"
+                   id="c2">
+          <af:inputText value="#{row.bindings.UserName.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.UserName.label}"
+                        required="#{bindings.ReserveVO3.hints.UserName.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.UserName.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.UserName.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.UserName.tooltip}"
+                        id="it6" readOnly="true">
+            <f:validator binding="#{row.bindings.UserName.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="RetDate" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.RetDate.label}"
+                   id="c5">
+          <af:inputText value="#{row.bindings.RetDate.inputValue}"
+                        label="#{bindings.ReserveVO3.hints.RetDate.label}"
+                        required="#{bindings.ReserveVO3.hints.RetDate.mandatory}"
+                        columns="#{bindings.ReserveVO3.hints.RetDate.displayWidth}"
+                        maximumLength="#{bindings.ReserveVO3.hints.RetDate.precision}"
+                        shortDesc="#{bindings.ReserveVO3.hints.RetDate.tooltip}"
+                        id="it8" readOnly="true">
+            <f:validator binding="#{row.bindings.RetDate.validator}"/>
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.ReserveVO3.hints.RetDate.format}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="Active" filterable="true" sortable="true"
+                   headerText="#{bindings.ReserveVO3.hints.Active.label}"
+                   id="c7">
+          <af:selectOneChoice value="#{row.bindings.Active.inputValue}"
+                              label="#{row.bindings.Active.label}"
+                              required="#{bindings.ReserveVO3.hints.Active.mandatory}"
+                              shortDesc="#{bindings.ReserveVO3.hints.Active.tooltip}"
+                              id="soc1" autoSubmit="true"
+                              valueChangeListener="#{viewScope.reserve_history.activeValueChangeListener}">
+            <f:selectItems value="#{row.bindings.Active.items}" id="si1"/>
+          </af:selectOneChoice>
+        </af:column>
+      </af:table>
+    </af:panelCollection>
+    <af:spacer width="10" height="20" id="s1"/>
+    <af:commandButton text="بازگشت" id="cb1" action="end"/>
+    
+  </af:panelGroupLayout>
+</jsp:root>

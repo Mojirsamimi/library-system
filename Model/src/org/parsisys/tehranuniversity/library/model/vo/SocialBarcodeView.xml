@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SocialBarcodeView"
+  Version="11.1.1.56.60"
+  SelectList="SocialBarcode.BARCODE, 
+       SocialBarcode.LABCOL"
+  FromList="SOCIAL_BARCODE SocialBarcode"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.SocialBarcodeViewRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.SocialBarcodeViewImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SocialBarcode"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.SocialBarcode"/>
+  <ViewAttribute
+    Name="Barcode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Barcode"
+    EntityUsage="SocialBarcode"
+    AliasName="BARCODE"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="SocialBarcode"
+    AliasName="LABCOL"/>
+</ViewObject>

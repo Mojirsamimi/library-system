@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="testAM.TestAppMod">
+      <AppModuleConfig DeployPlatform="LOCAL" JDBCName="Connection1" jbo.project="org.parsisys.tehranuniversity.library.model.Model" name="TestAppModLocal" ApplicationName="testAM.TestAppMod">
+         <AM-Pooling jbo.poolminavailablesize="2" jbo.ampool.minavailablesize="2"/>
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="testAM.TestAppMod"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="TestAppModShared" ApplicationName="testAM.TestAppMod" DeployPlatform="LOCAL" JDBCName="Connection1" jbo.project="org.parsisys.tehranuniversity.library.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="testAM.TestAppMod"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

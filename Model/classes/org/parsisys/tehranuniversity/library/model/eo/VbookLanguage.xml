@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VbookLanguage"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="VBOOK_LANGUAGE"
+  AliasName="VbookLanguage"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.VbookLanguageImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_superClass" Value="fadak.base.TemplateEntityObject"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_LANGUAGE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_LANGUAGE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LangArtId"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="LANG_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_LANGUAGE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LangArtId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkLangFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkLangFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkLangFkAssoc.VbookLanguage"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Language"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbkLangLangFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbkLangLangFkAssoc.Language"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbkLangLangFkAssoc.VbookLanguage"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC007289">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007289"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007290">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007290"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007291">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007291"/>
+      <Attr Name="_checkCondition" Value='"LANG_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.LangArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VblangPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="VBLANG_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.VbookArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.LangArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VblangVbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="VBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBLANG_VBOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookLanguage.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="VbookLanguage_Rule_0"
+    ResId="err_duplicate_vbookLanguage"
+    KeyName="VblangPk">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Labcol"/>
+      <validation:Item
+        Value="VbookArtId"/>
+      <validation:Item
+        Value="LangArtId"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

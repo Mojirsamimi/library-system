@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="LOAN_AT_LIB_LISTPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllVirtualBookVC"
+                  id="removeAllVirtualBookVC_execute" Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="LoanAtLibListVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LoanAtLibListVO1Iterator"/>
+    <iterator Binds="VirtualBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="LoanAtLibListVO1Iterator" id="LoanAtLibListVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.LoanAtLibListVO"
+                      Name="LoanAtLibListVO10">
+        <AttrNames>
+          <Item Value="Title"/>
+          <Item Value="Barcode"/>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="LoanDate"/>
+          <Item Value="RetDate"/>
+          <Item Value="RealRetDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanAtLibListVO1Iterator" id="Title1">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanAtLibListVO1Iterator" id="CallNo">
+      <AttrNames>
+        <Item Value="CallNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanAtLibListVO1Iterator" id="LoanUser">
+      <AttrNames>
+        <Item Value="LoanUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanAtLibListVO1Iterator" id="ReturnUser">
+      <AttrNames>
+        <Item Value="ReturnUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanAtLibListVO1Iterator" id="ProviderName">
+      <AttrNames>
+        <Item Value="ProviderName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="removeAllVirtualBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllVirtualBookVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

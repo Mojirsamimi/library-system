@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CidConstVO"
+  Version="11.1.1.56.60"
+  SelectList="CidConst.CONST_KEY, 
+       CidConst.DESCRIPTION, 
+       CidConst.CONST_VALUE"
+  FromList="CID_CONST CidConst"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.CidConstVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.CidConstVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="CidConst"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.CidConst"/>
+  <ViewAttribute
+    Name="ConstKey"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ConstKey"
+    EntityUsage="CidConst"
+    AliasName="CONST_KEY"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="CidConst"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="ConstValue"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ConstValue"
+    EntityUsage="CidConst"
+    AliasName="CONST_VALUE"/>
+</ViewObject>

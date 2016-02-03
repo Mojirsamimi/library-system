@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="org.parsisys.tehranuniversity.library.model.am.AppModule">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="org.parsisys.tehranuniversity.library.model.Model" name="AppModuleLocal" ApplicationName="org.parsisys.tehranuniversity.library.model.am.AppModule">
+         <AM-Pooling jbo.poolmaxavailablesize="2" jbo.poolminavailablesize="2"/>
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="org.parsisys.tehranuniversity.library.model.am.AppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="org.parsisys.tehranuniversity.library.model.Model" name="AppModuleShared" ApplicationName="org.parsisys.tehranuniversity.library.model.am.AppModule">
+         <AM-Pooling jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1" jbo.ampool.resetnontransactionalstate="false"/>
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="org.parsisys.tehranuniversity.library.model.am.AppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

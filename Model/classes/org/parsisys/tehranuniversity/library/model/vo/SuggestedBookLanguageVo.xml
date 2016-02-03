@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SuggestedBookLanguageVo"
+  Version="11.1.1.56.60"
+  SelectList="SuggestedBookLanguage.ART_ID, 
+       SuggestedBookLanguage.LABCOL, 
+       SuggestedBookLanguage.LANGUAGE_ART_ID, 
+       SuggestedBookLanguage.VBOOK_ART_ID"
+  FromList="BOOK.SUGGESTED_BOOK_LANGUAGE SuggestedBookLanguage"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="LanguageVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.LanguageVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Language"
+    ListVOName="LanguageVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_Language_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LanguageArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Language1"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SuggestedBookLanguage"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.SuggestedBookLanguage"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="SuggestedBookLanguage"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="SuggestedBookLanguage"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="LanguageArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LanguageArtId"
+    EntityUsage="SuggestedBookLanguage"
+    AliasName="LANGUAGE_ART_ID"
+    LOVName="LOV_Language">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="SuggestedBookLanguage"
+    AliasName="VBOOK_ART_ID"/>
+  <ViewLinkAccessor
+    Name="SuggestedVirtualBookVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.SuggestedBookSuggestedLangVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

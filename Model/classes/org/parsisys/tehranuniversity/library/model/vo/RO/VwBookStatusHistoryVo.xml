@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VwBookStatusHistoryVo"
+  Version="11.1.1.56.60"
+  OrderBy='DAY_DATE desc'
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ExistenceStatusVo"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="PerCatalog_existence_statusVC"
+      FullName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO.PerCatalog_existence_statusVC"/>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="SafetyStatusVO"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="PerCatalog_Safety_StatusVC"
+      FullName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO.PerCatalog_Safety_StatusVC"/>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="LoanStatusVO"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="PerCatalog_Loan_StatusVC"
+      FullName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO.PerCatalog_Loan_StatusVC"/>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="PlaceVO"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoSpcLovVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Book_PlaceVC"
+      FullName="org.parsisys.tehranuniversity.library.model.vo.RO.RoSpcLovVO.Book_PlaceVC"/>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_ExistenceStatus"
+    ListVOName="ExistenceStatusVo"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExistenceStatus"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Text"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SafetyStatus"
+    ListVOName="SafetyStatusVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SafetyStatus"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Text"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LoanStatus"
+    ListVOName="LoanStatusVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LoanStatus"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Text"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Place"
+    ListVOName="PlaceVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Place"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Text"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT 
+    BOOK_VW_BOOK_STATUS_HISTORY.ART_ID ART_ID, 
+    BOOK_VW_BOOK_STATUS_HISTORY.PHBOOK_ART_ID PHBOOK_ART_ID, 
+    BOOK_VW_BOOK_STATUS_HISTORY.DAY_DATE DAY_DATE, 
+    BOOK_VW_BOOK_STATUS_HISTORY.LOAN_STATUS LOAN_STATUS, 
+    BOOK_VW_BOOK_STATUS_HISTORY.EXISTENCE_STATUS EXISTENCE_STATUS, 
+    BOOK_VW_BOOK_STATUS_HISTORY.SAFETY_STATUS SAFETY_STATUS, 
+    BOOK_VW_BOOK_STATUS_HISTORY.PLACE PLACE, 
+    BOOK_VW_BOOK_STATUS_HISTORY.USER_NAME USER_NAME 
+FROM 
+    VW_BOOK_STATUS_HISTORY BOOK_VW_BOOK_STATUS_HISTORY]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="ArtId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ART_ID"
+    Expression="ART_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhbookArtId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PHBOOK_ART_ID"
+    Expression="PHBOOK_ART_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DayDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="8"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="DAY_DATE"
+    Expression="DAY_DATE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.RO.VwBookStatusHistoryVo.DayDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LoanStatus"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="LOAN_STATUS"
+    Expression="LOAN_STATUS"
+    SQLType="NUMERIC"
+    LOVName="LOV_LoanStatus">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.RO.VwBookStatusHistoryVo.LoanStatus_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExistenceStatus"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="EXISTENCE_STATUS"
+    Expression="EXISTENCE_STATUS"
+    SQLType="NUMERIC"
+    LOVName="LOV_ExistenceStatus">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.RO.VwBookStatusHistoryVo.ExistenceStatus_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SafetyStatus"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="SAFETY_STATUS"
+    Expression="SAFETY_STATUS"
+    SQLType="NUMERIC"
+    LOVName="LOV_SafetyStatus">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.RO.VwBookStatusHistoryVo.SafetyStatus_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Place"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PLACE"
+    Expression="PLACE"
+    SQLType="NUMERIC"
+    LOVName="LOV_Place">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.RO.VwBookStatusHistoryVo.Place_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="USER_NAME"
+    Expression="USER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.RO.VwBookStatusHistoryVo.UserName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExistanceStatusText"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsSelected="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

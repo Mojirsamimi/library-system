@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OtherTitle"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="OTHER_TITLE"
+  AliasName="OtherTitle"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.OtherTitleImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_superClass" Value="fadak.base.TemplateEntityObject"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="OTHER_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="OTHER_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OtherTitle"
+    IsNotNull="true"
+    Precision="500"
+    ColumnName="OTHER_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OTHER_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.OtherTitle_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <validation:PreDefinedValidationBean
+      Name="OtherTitle_Rule_0"
+      ResId="required_othertitle"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
+  </Attribute>
+  <Attribute
+    Name="Printable"
+    Precision="1"
+    Scale="0"
+    ColumnName="PRINTABLE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="OTHER_TITLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrderNo"
+    Precision="2"
+    Scale="0"
+    ColumnName="ORDER_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="OTHER_TITLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TitleKind"
+    Precision="1"
+    Scale="0"
+    ColumnName="TITLE_KIND"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="OTHER_TITLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookOthrTtlFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookOthrTtlFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookOthrTtlFkAssoc.OtherTitle"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="OtitlePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="OTITLE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.OtherTitle"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007211">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007211"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007212">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007212"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007213">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007213"/>
+      <Attr Name="_checkCondition" Value='"OTHER_TITLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.OtherTitle"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007214">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007214"/>
+      <Attr Name="_checkCondition" Value='"PRINTABLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.Printable"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007215">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007215"/>
+      <Attr Name="_checkCondition" Value='"ORDER_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.OrderNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007216">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007216"/>
+      <Attr Name="_checkCondition" Value='"TITLE_KIND" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.TitleKind"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="OtitleVbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="VBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="OTITLE_VBOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.OtherTitle.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+  <validation:UniqueKeyValidationBean
+    Name="OtherTitle_Rule_0"
+    ResId="duplicate_othertitle_for_vbook"
+    KeyName="OtitlePk">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Labcol"/>
+      <validation:Item
+        Value="OtherTitle"/>
+      <validation:Item
+        Value="VbookArtId"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

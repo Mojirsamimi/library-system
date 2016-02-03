@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InitMember"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="INIT_MEMBER"
+  AliasName="InitMember"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ArtId"
+    DefaultValue="0"
+    Precision="10"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LibArtId"
+    Precision="3"
+    Scale="0"
+    ColumnName="LIB_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PersArtId"
+    Precision="8"
+    Scale="0"
+    ColumnName="PERS_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoanedCount"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="LOANED_COUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReservedCount"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="RESERVED_COUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.ReservedCount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="RecalledCount"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="RECALLED_COUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.RecalledCount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="MemshipCategory"
+    IsNotNull="true"
+    Precision="2"
+    Scale="0"
+    ColumnName="MEMSHIP_CATEGORY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.MemshipCategory_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="MemshipStatus"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="MEMSHIP_STATUS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.MemshipStatus_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DebitSum"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="DEBIT_SUM"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.DebitSum_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DebitNonCash"
+    IsNotNull="true"
+    Precision="1"
+    Scale="0"
+    ColumnName="DEBIT_NON_CASH"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StatusEndDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="STATUS_END_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoanedInPlaceCount"
+    Precision="3"
+    Scale="0"
+    ColumnName="LOANED_IN_PLACE_COUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IntroductionLetterCount"
+    Precision="3"
+    Scale="0"
+    ColumnName="INTRODUCTION_LETTER_COUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INIT_MEMBER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.IntroductionLetterCount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="$none$">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.StartDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="EndDate"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="$none$">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.InitMember.EndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="NewEndDate"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="$none$"/>
+  <AccessorAttribute
+    Name="Person"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberFkAssoc.Person"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberFkAssoc.InitMember"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MemberExtentionHistory"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMember_MemExtHist_FkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMember_MemExtHist_FkAssoc.MemberExtentionHistory"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMember_MemExtHist_FkAssoc.InitMember"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Member"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemberFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemberFkAssoc.Member"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemberFkAssoc.InitMember"
+    Type="fadak.base.TemplateEntityObject"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="IntroductionLetter"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberIntroductionLetterFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberIntroductionLetterFkAssoc.IntroductionLetter"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberIntroductionLetterFkAssoc.InitMember"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Person1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMem_currLibFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMem_currLibFkAssoc.Person1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMem_currLibFkAssoc.InitMemberCurrLib1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.PersonImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MemberStatusHistory"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemsthisIntmemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemsthisIntmemFkAssoc.MemberStatusHistory"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_MemsthisIntmemFkAssoc.InitMember"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="MemberStatusHistory1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemStatusHisFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemStatusHisFkAssoc.MemberStatusHistory1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemStatusHisFkAssoc.InitMember1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Loan1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc.Loan1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc.InitMember1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Person2"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemPersonFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemPersonFkAssoc.Person2"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemPersonFkAssoc.InitMember1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.PersonImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PublicCashPenalty"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicCashPenaltyFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicCashPenaltyFkAssoc.PublicCashPenalty"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicCashPenaltyFkAssoc.InitMember"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PublicNonCashPenalty"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicNonCashPenaltyFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicNonCashPenaltyFkAssoc.PublicNonCashPenalty"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicNonCashPenaltyFkAssoc.InitMember"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PenaltyPayment"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemPenaltyPayFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemPenaltyPayFkAssoc.PenaltyPayment"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemPenaltyPayFkAssoc.InitMember"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Person3"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberCurrentLibFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberCurrentLibFkAssoc.Person3"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberCurrentLibFkAssoc.InitMemberCurrentLib2"
+    Type="org.parsisys.tehranuniversity.library.model.eo.PersonImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Reserve"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberReserveFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberReserveFkAssoc.Reserve"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberReserveFkAssoc.InitMember1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Loan"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLoanFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLoanFkAssoc.Loan"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLoanFkAssoc.InitMember"
+    Type="org.parsisys.tehranuniversity.library.model.eo.LoanImpl"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Cashier"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemCashierFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemCashierFkAssoc.Cashier"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemCashierFkAssoc.InitMember"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Library"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLibraryFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLibraryFkAssoc.Library"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLibraryFkAssoc.InitMember"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ExtraChargeEo"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemExtraChargeFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemExtraChargeFkAssoc.ExtraChargeEo"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemExtraChargeFkAssoc.InitMember"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="InitMemberKey">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INITMEMBERKEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.LibArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="IntmemPersLibUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INTMEM_PERS_LIB_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.LibArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="IntmemPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="INTMEM_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005577">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005577"/>
+      <Attr Name="_checkCondition" Value='"LIB_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC005578">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005578"/>
+      <Attr Name="_checkCondition" Value='"PERS_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC005579">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005579"/>
+      <Attr Name="_checkCondition" Value='"LOANED_COUNT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.LoanedCount"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005580">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005580"/>
+      <Attr Name="_checkCondition" Value='"RESERVED_COUNT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.ReservedCount"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005581">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005581"/>
+      <Attr Name="_checkCondition" Value='"RECALLED_COUNT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.RecalledCount"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005582">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005582"/>
+      <Attr Name="_checkCondition" Value='"MEMSHIP_CATEGORY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.MemshipCategory"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005583">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005583"/>
+      <Attr Name="_checkCondition" Value='"MEMSHIP_STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.MemshipStatus"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005584">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005584"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC005585">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005585"/>
+      <Attr Name="_checkCondition" Value='"DEBIT_SUM" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.DebitSum"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005586">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005586"/>
+      <Attr Name="_checkCondition" Value='"DEBIT_NON_CASH" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.DebitNonCash"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="IntmemLibFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LIB_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INTMEM_LIB_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.LibArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="IntmemPersFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PERS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="INTMEM_PERS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

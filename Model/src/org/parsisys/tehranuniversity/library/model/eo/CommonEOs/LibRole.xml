@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LibRole"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="LIB_ROLE"
+  AliasName="LibRole"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibRoleImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="DummyVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.DummyVO"
+    RowLevelBinds="true"/>
+  <Attribute
+    Name="ArtId"
+    DefaultValue="0"
+    Precision="2"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LIB_ROLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RoleName"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="ROLE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LIB_ROLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LIB_ROLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SecurityCode"
+    Precision="1000"
+    ColumnName="SECURITY_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LIB_ROLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="LibUser1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibRoleAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibRoleAssoc.LibUser1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibRoleAssoc.LibRole1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LibUser"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserAssoc.LibUser"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserAssoc.LibRole"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LibUserRole"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserRoleFkAssooc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserRoleFkAssooc.LibUserRole"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserRoleFkAssooc.LibRole"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="LibrolePrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="LIBROLE_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibRole.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

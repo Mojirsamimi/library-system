@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Rep_PublisherVo"
+  Version="11.1.1.56.60"
+  SelectList="Publisher.ART_ID, 
+       Publisher.LABCOL, 
+       Publisher.PLACE, 
+       Publisher.PUBLISHER AS PUBLISHER1, 
+       Publisher.READING_ORDER"
+  FromList="PUBLISHER Publisher"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.report.Rep_PublisherVoRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.report.Rep_PublisherVoImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Publisher"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Publisher"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Publisher"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Publisher"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="Place"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Place"
+    EntityUsage="Publisher"
+    AliasName="PLACE"/>
+  <ViewAttribute
+    Name="Publisher1"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Publisher"
+    EntityUsage="Publisher"
+    AliasName="PUBLISHER1"/>
+  <ViewAttribute
+    Name="ReadingOrder"
+    PrecisionRule="true"
+    EntityAttrName="ReadingOrder"
+    EntityUsage="Publisher"
+    AliasName="READING_ORDER"/>
+</ViewObject>

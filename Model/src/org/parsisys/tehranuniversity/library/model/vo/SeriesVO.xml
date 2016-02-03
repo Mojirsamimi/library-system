@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SeriesVO"
+  Version="11.1.1.56.60"
+  SelectList="Series.PRINTABLE, 
+       Series.SERIES AS SERIES1, 
+       Series.LABCOL, 
+       Series.VBOOK_ART_ID, 
+       Series.ORDER_NO"
+  FromList="SERIES Series"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Partial"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.SeriesVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.SeriesVOImpl"
+  OrderBy="Series.ORDER_NO">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="SeriesVO_VirtualBookVOLookup"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO"/>
+  <ViewAccessor
+    Name="CheckBox01View1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.CheckBox01View"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_VirtualBookVO"
+    ListVOName="SeriesVO_VirtualBookVOLookup"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_VirtualBookVO_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VbookArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Labcol"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CallNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Printable"
+    ListVOName="CheckBox01View1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_Printable_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Printable"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="NumberValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BooleanValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Series"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Series"/>
+  <ViewAttribute
+    Name="Printable"
+    PrecisionRule="true"
+    EntityAttrName="Printable"
+    EntityUsage="Series"
+    AliasName="PRINTABLE"
+    LOVName="LOV_Printable"
+    DefaultValue="0">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Series1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Series"
+    EntityUsage="Series"
+    AliasName="SERIES1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.SeriesVO.Series1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Series"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="Series"
+    AliasName="VBOOK_ART_ID"
+    LOVName="LOV_VirtualBookVO">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="100"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrderNo"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="Series"
+    AliasName="ORDER_NO">
+    <TransientExpression><![CDATA[(rowSet.max("OrderNo")==null?0:rowSet.max("OrderNo"))+1]]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="printBoolean"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

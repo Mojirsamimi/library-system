@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="englishCatalogingPageDef"
+                ControllerClass="org.parsisys.tehranuniversity.library.view.beans.PageListenerBeanEnglish"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+ <parameters>
+    <parameter id="persian" value=""/>
+  </parameters>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllVirtualBookVC"
+                  id="removeAllVirtualBookVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <invokeAction Binds="removeAllPhysicalBookVC"
+                  id="removeAllPhysicalBookVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <iterator Binds="VirtualBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO1Iterator"/>
+    <taskFlow id="dynamicRegion1"
+              taskFlowId="${pageFlowScope.TFBean.dynamicTaskFlowId}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="vbookId"/>
+        <parameter id="mainpage" value="#{pageFlowScope.mainpage}"/>
+        <parameter id="catalogingReadingOrder"
+                   value="#{pageFlowScope.catalogingReadingOrder}"/>
+      </parameters>
+    </taskFlow>
+    <iterator Binds="VbookPublisherVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VbookPublisherVO1Iterator"/>
+    <iterator Binds="SeriesVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="SeriesVO1Iterator"/>
+    <searchRegion Binds="SeriesVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SeriesVO1Query"/>
+    <iterator Binds="VbookSubjectVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VbookSubjectVO1Iterator"/>
+    <iterator Binds="VbookOtherProviderVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VbookOtherProviderVO1Iterator"/>
+    <searchRegion Binds="VbookOtherProviderVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="VbookOtherProviderVO1Query"/>
+    <iterator Binds="VbookUniTtlVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VbookUniTtlVO1Iterator"/>
+    <searchRegion Binds="VbookUniTtlVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="VbookUniTtlVO11Query"/>
+    <iterator Binds="OtherTitleVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="OtherTitleVO1Iterator"/>
+    <iterator Binds="PhysicalBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PhysicalBookVO1Iterator"/>
+    <searchRegion Binds="PhysicalBookVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PhysicalBookVO1Query"/>
+    <iterator Binds="BookIsbnVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="BookIsbnVO1Iterator"/>
+    <searchRegion Binds="BookIsbnVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BookIsbnVO1Query"/>
+    <iterator Binds="NoteVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="NoteVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="VirtualBookVO1Iterator"
+                  id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="VbookLanguageVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VbookLanguageVO1Iterator"/>
+    <iterator Binds="UniformTitleVO2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="UniformTitleVO2Iterator"/>
+    <iterator Binds="ProviderVO2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ProviderVO2Iterator"/>
+    <iterator id="VbookMainProviderVO1Iterator" Binds="VbookMainProviderVO1"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="CallNo">
+      <AttrNames>
+        <Item Value="CallNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="VirtualBookVO1Iterator" StaticList="false"
+          Uses="LOV_CallNoType" id="CallNoType" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="CNT">
+      <AttrNames>
+        <Item Value="CNT"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="InsertDate">
+      <AttrNames>
+        <Item Value="InsertDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="VirtualBookVO1Iterator" StaticList="false"
+          Uses="LOV_ActiveStatus" id="ActiveStatus" DTSupportsMRU="true"/>
+    <list IterBinding="VirtualBookVO1Iterator" StaticList="false"
+          Uses="LOV_Cutter" id="Cutter" DTSupportsMRU="true"/>
+    <button IterBinding="VirtualBookVO1Iterator" id="Reference"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="Reference"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="OrigTitle">
+      <AttrNames>
+        <Item Value="OrigTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="UniformTitle1">
+      <AttrNames>
+        <Item Value="UniformTitle1"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <tree IterBinding="VbookPublisherVO1Iterator" id="VbookPublisherVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.VbookPublisherVO"
+                      Name="VbookPublisherVO10">
+        <AttrNames>
+          <Item Value="Publisher1"/>
+          <Item Value="Place"/>
+          <Item Value="OrderNo"/>
+          <Item Value="Printable" Binds="Printable"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="VbookMainProviderVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="RepAuthor">
+      <AttrNames>
+        <Item Value="RepAuthor"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Manufacturer">
+      <AttrNames>
+        <Item Value="Manufacturer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Edition">
+      <AttrNames>
+        <Item Value="Edition"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="PubDate">
+      <AttrNames>
+        <Item Value="PubDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="GeoAreaCode">
+      <AttrNames>
+        <Item Value="GeoAreaCode"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SeriesVO1Iterator" id="SeriesVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeriesVO"
+                      Name="SeriesVO10">
+        <AttrNames>
+          <Item Value="Series1"/>
+          <Item Value="OrderNo"/>
+          <Item Value="printBoolean"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="PhysicalDesc">
+      <AttrNames>
+        <Item Value="PhysicalDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Abstract11">
+      <AttrNames>
+        <Item Value="Abstract11"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="VbookSubjectVO1Iterator" id="VbookSubjectVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVO"
+                      Name="VbookSubjectVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Subject1"/>
+          <Item Value="FloatSubject2"/>
+          <Item Value="printableBoolean"/>
+          <Item Value="SubjectText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VbookOtherProviderVO1Iterator"
+          id="VbookOtherProviderVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.VbookProviderVO"
+                      Name="VbookOtherProviderVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+        
+          <Item Value="TitleRefer"/>
+          <Item Value="PrvArtId"/>
+          <Item Value="printableBoolean"/>
+          <Item Value="EntryKind"/>
+          <Item Value="ProviderText"/>
+          <Item Value="ForeignNameText"/>
+          <Item Value="BDDateText"/>
+          <Item Value="Role"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="VbookUniTtlVO1Iterator" id="VbookUniTtlVO11">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.VbookUniTtlVO"
+                      Name="VbookUniTtlVO110">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Uniform_Title"/>
+          <Item Value="printableBoolean"/>
+          <Item Value="UniformTitleText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OtherTitleVO1Iterator" id="OtherTitleVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.OtherTitleVO"
+                      Name="OtherTitleVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="OtherTitle1"/>
+          <Item Value="printBoolean"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="CatalogSource">
+      <AttrNames>
+        <Item Value="CatalogSource"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="NbibNo">
+      <AttrNames>
+        <Item Value="NbibNo"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PhysicalBookVO1Iterator" id="PhysicalBookVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+                      Name="PhysicalBookVO10">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="RegId"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="ReplicateNo"/>
+          <Item Value="ExistenceStatus"/>
+          <Item Value="LoanStatus"/>
+          <Item Value="Place"/>
+          <Item Value="SafetyStatus"/>
+          <Item Value="Description"/>
+          <Item Value="PubDate"/>
+          <Item Value="UserName"/>
+          <Item Value="InsertDate"/>
+          <Item Value="FileName"/>
+          <Item Value="ArtId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="IsoLog">
+      <AttrNames>
+        <Item Value="IsoLog"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="BookIsbnVO1Iterator" id="BookIsbnVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.BookIsbnVO"
+                      Name="BookIsbnVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Isbn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="NoteVO1Iterator" id="NoteVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.NoteVO"
+                      Name="NoteVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Note1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="BiblioNote">
+      <AttrNames>
+        <Item Value="BiblioNote"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="IndexNote">
+      <AttrNames>
+        <Item Value="IndexNote"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Contents">
+      <AttrNames>
+        <Item Value="Contents"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="VbookMainProviderVO1Iterator" ListOperMode="navigation"
+          ListIter="VbookMainProviderVO1Iterator" id="VbookMainProviderVO11"
+          DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="OrderNo"/>
+        <Item Value="Role"/>
+      </AttrNames>
+    </list>
+    <button IterBinding="VirtualBookVO1Iterator" StaticList="false"
+            Uses="LOV_TitlePrintable" id="TitlePrintable" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="TitlePrintable"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="VolumeCount">
+      <AttrNames>
+        <Item Value="VolumeCount"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="VirtualBookVO1Iterator" StaticList="false"
+            Uses="LOV_UniformTitlePrintable" id="UniformTitlePrintable"
+            DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="UniformTitlePrintable"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <button IterBinding="VbookPublisherVO1Iterator" StaticList="false"
+            Uses="LOV_Printable" id="Printable" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Printable"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <button IterBinding="SeriesVO1Iterator" StaticList="false"
+            Uses="LOV_Printable" id="Printable1" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Printable"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <button IterBinding="VbookSubjectVO1Iterator" StaticList="false"
+            Uses="LOV_Printable" id="Printable2" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Printable"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <button IterBinding="VbookOtherProviderVO1Iterator" StaticList="false"
+            Uses="LOV_Printable" id="Printable3" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="Printable"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="0"/>
+      </ValueList>
+    </button>
+    <button IterBinding="SeriesVO1Iterator" id="printBoolean"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="printBoolean"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="VbookSubjectVO1Iterator" id="printableBoolean"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="printableBoolean"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="t"/>
+        <Item Value="f"/>
+      </ValueList>
+    </button>
+    <button IterBinding="VbookOtherProviderVO1Iterator" id="printableBoolean1"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="printableBoolean"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="fal"/>
+        <Item Value="df"/>
+      </ValueList>
+    </button>
+    <button IterBinding="VbookUniTtlVO1Iterator" id="printableBoolean2"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="printableBoolean"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="r"/>
+        <Item Value="t"/>
+      </ValueList>
+    </button>
+    <button IterBinding="OtherTitleVO1Iterator" id="printBoolean1"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="printBoolean"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="t"/>
+        <Item Value="d"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="ReadingOrder">
+      <AttrNames>
+        <Item Value="ReadingOrder"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="VbookLanguageVO1Iterator" id="VbookLanguageVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.VbookLanguageVO"
+                      Name="VbookLanguageVO10">
+        <AttrNames>
+          <Item Value="LangArtId"/>
+          <Item Value="Labcol"/>
+          <Item Value="VbookArtId"/>
+          <Item Value="LangArtIdLOV"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="removeAllVirtualBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllVirtualBookVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllPhysicalBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPhysicalBookVC"
+                  IsViewObjectMethod="false"/>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UniformTitleVO2Iterator" id="Title1">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProviderVO2Iterator" id="Provider1">
+      <AttrNames>
+        <Item Value="Provider1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProviderVO2Iterator" id="ForeignName">
+      <AttrNames>
+        <Item Value="ForeignName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProviderVO2Iterator" id="BDDate">
+      <AttrNames>
+        <Item Value="BDDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="VbookPublisherVO1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

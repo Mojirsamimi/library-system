@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SeeFarsiKeyword"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="SEE_FARSI_KEYWORD"
+  AliasName="SeeFarsiKeyword"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_FARSI_KEYWORD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FkeywArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="FKEYW_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_FARSI_KEYWORD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FkeywArtIdRelatedTo"
+    Precision="6"
+    Scale="0"
+    ColumnName="FKEYW_ART_ID_RELATED_TO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_FARSI_KEYWORD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="FarsiKeyword"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_SfkFkeywRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_SfkFkeywRelatedToFkAssoc.FarsiKeyword"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_SfkFkeywRelatedToFkAssoc.SeeFarsiKeyword"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="FarsiKeyword1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SfkFkeywFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SfkFkeywFkAssoc.FarsiKeyword1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SfkFkeywFkAssoc.SeeFarsiKeyword1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="VwFarsiKeyword"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeFarsiKeywordVwFarsiKeywordRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeFarsiKeywordVwFarsiKeywordRelatedToFkAssoc.VwFarsiKeyword"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeFarsiKeywordVwFarsiKeywordRelatedToFkAssoc.SeeFarsiKeyword"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SeefarsikeywordPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SEEFARSIKEYWORD_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.FkeywArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.FkeywArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008332">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008332"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008333">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008333"/>
+      <Attr Name="_checkCondition" Value='"FKEYW_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.FkeywArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008334">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008334"/>
+      <Attr Name="_checkCondition"
+        Value='"FKEYW_ART_ID_RELATED_TO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.FkeywArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfkFkeywFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="FKEYW_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SFK_FKEYW_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.FkeywArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfkFkeywRelatedToFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="FKEYW_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SFK_FKEYW_RELATED_TO_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeFarsiKeyword.FkeywArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+</Entity>

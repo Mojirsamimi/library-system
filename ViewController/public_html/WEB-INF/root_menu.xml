@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns="http://myfaces.apache.org/trinidad/menu">
+ <itemNode icon="/icons/applications-office.png" focusViewId="/lib"
+           label="سیستم جامع کتابخانه " id="library"
+           action="adfMenu_LibrarySystemIntermidiatePage">
+  <itemNode focusViewId="/amanatdesk" id="memship" label="میز امانت"
+            action="adfMenu_LoandeskIntermidiatePage">
+   <itemNode focusViewId="/subs" id="subscribe" label="عضویت"
+             action="adfMenu_MemshipIntermidiatePage">
+    <itemNode id="itemNode_CID_Member" label="مشخصات عضو"
+              action="adfMenu_CID_Member" focusViewId="/CID_Member"/>
+    <itemNode id="itemNode_INTRODUCTION_LETTER" label="معرفی نامه"
+              action="adfMenu_INTRODUCTION_LETTER"
+              focusViewId="/INTRODUCTION_LETTER"/>
+    <itemNode id="itemNode_CID_EXTEND" label="تمدید و تغییر سمت عضو"
+              action="adfMenu_CID_EXTEND" focusViewId="/CID_EXTEND"/>
+    <itemNode id="itemNode_CID_MEM_STATUS_CHANGE" label="تغییر وضعیت عضو"
+              action="adfMenu_CID_MEM_STATUS_CHANGE"
+              focusViewId="/CID_MEM_STATUS_CHANGE"/>
+    <itemNode id="itemNode_CID_MEM_STATUS_HISTORY" label="سابقه وضعیت عضو"
+              action="adfMenu_CID_MEM_STATUS_HISTORY"
+              focusViewId="/CID_MEM_STATUS_HISTORY"/>
+    <itemNode id="itemNode_CID_MEM_BARCODE_CHANGE" label="تغییر بارکد عضو"
+              action="adfMenu_CID_MEM_BARCODE_CHANGE"
+              focusViewId="/CID_MEM_BARCODE_CHANGE"/>
+    <itemNode id="itemNode_CID_MEM_BARCODE_HISTORY" label="سابقه بارکد عضو"
+              action="adfMenu_CID_MEM_BARCODE_HISTORY"
+              focusViewId="/CID_MEM_BARCODE_HISTORY"/>
+    <itemNode id="itemNode_CID_MEM_LOAN_HISTORY" label="سابقه امانت عضو"
+              action="adfMenu_CID_MEM_LOAN_HISTORY"
+              focusViewId="/CID_MEM_LOAN_HISTORY"/>
+    <itemNode id="itemNode_CID_CLEARING" label="تسویه حساب عضو"
+              action="adfMenu_CID_CLEARING" focusViewId="/CID_CLEARING"/>
+   </itemNode>
+   <itemNode id="itemNode_MemshipIntermidiatePage" label="عضویت"
+             action="adfMenu_MemshipIntermidiatePage"
+             focusViewId="/MemshipIntermidiatePage"/>
+   <itemNode focusViewId="/amanat" id="loan" label="امانت"
+             action="adfMenu_LoanIntermidiatePage">
+    <itemNode id="itemNode_CID_LOAN" label="امانت و تمدید کتاب"
+              action="adfMenu_CID_LOAN" focusViewId="/CID_LOAN"/>
+    <itemNode id="itemNode_CID_RETURN_BOOK" label="بازگشت کتاب"
+              action="adfMenu_CID_RETURN_BOOK" focusViewId="/CID_RETURN_BOOK"/>
+    <itemNode id="itemNode_CID_BOOK_BARCODE_CHANGE" label="تغییر بارکد کتاب"
+              action="adfMenu_CID_BOOK_BARCODE_CHANGE"
+              focusViewId="/CID_BOOK_BARCODE_CHANGE"/>
+    <itemNode id="itemNode_CID_BOOK_LOAN_HISTORY" label="سابقه امانت کتاب"
+              action="adfMenu_CID_BOOK_LOAN_HISTORY"
+              focusViewId="/CID_BOOK_LOAN_HISTORY"/>
+    <itemNode id="itemNode_LOAN_AT_LIB_LIST" label="فهرست کتاب های امانت در محل"
+              action="adfMenu_LOAN_AT_LIB_LIST"
+              focusViewId="/LOAN_AT_LIB_LIST"/>
+    <itemNode id="itemNode_CID_BOOK_EXISTENCE" label="کنترل موجودی کتاب"
+              action="adfMenu_CID_BOOK_EXISTENCE"
+              focusViewId="/CID_BOOK_EXISTENCE"/>
+   </itemNode>
+   <itemNode id="itemNode_LoanIntermidiatePage" label="امانت"
+             action="adfMenu_LoanIntermidiatePage"
+             focusViewId="/LoanIntermidiatePage"/>
+   <itemNode focusViewId="/reserve" id="reserve" label="رزرو"
+             action="adfMenu_ReserveIntermidiatePage">
+    <itemNode id="itemNode_CID_RESERVE" label="رزرو کتاب"
+              action="adfMenu_CID_RESERVE" focusViewId="/CID_RESERVE"/>
+    <itemNode id="itemNode_CID_BOOK_RESERVE_HISTORY" label="سابقه رزرو کتاب"
+              action="adfMenu_CID_BOOK_RESERVE_HISTORY"
+              focusViewId="/CID_BOOK_RESERVE_HISTORY"/>
+    <itemNode id="itemNode_CID_PRINT_RESERVE" label="چاپ برگه اعلام رزرو"
+              action="adfMenu_CID_PRINT_RESERVE"
+              focusViewId="/CID_PRINT_RESERVE"/>
+   </itemNode>
+   <itemNode id="itemNode_ReserveIntermidiatePage" label="رزرو"
+             action="adfMenu_ReserveIntermidiatePage"
+             focusViewId="/ReserveIntermidiatePage"/>
+   <itemNode focusViewId="/fine" id="fine" label="جریمه"
+             action="adfMenu_PanaltyIntermidiatePage">
+    <itemNode id="itemNode_CID_LOAN_CASH_PENALTY" label="جریمه تاخیر امانت"
+              action="adfMenu_CID_LOAN_CASH_PENALTY"
+              focusViewId="/CID_LOAN_CASH_PENALTY"/>
+   <itemNode id="itemNode_CID_REGISTER_LOST" label="جریمه گم شدن کتاب"
+           action="adfMenu_CID_REGISTER_LOST" focusViewId="/CID_REGISTER_LOST"/>
+    <itemNode id="itemNode_CID_MEMBER_PENALTY_HISTORY"
+              label="سابقه جریمه و پرداخت"
+              action="adfMenu_CID_MEMBER_PENALTY_HISTORY"
+              focusViewId="/CID_MEMBER_PENALTY_HISTORY"/>
+    <itemNode id="itemNode_CID_PENALTY_PAY" label="پرداخت"
+              action="adfMenu_CID_PENALTY_PAY" focusViewId="/CID_PENALTY_PAY"/>
+    <itemNode id="itemNode_CID_PUBLIC_CASH_PENALTY" label="جریمه نقدی عمومی"
+              action="adfMenu_CID_PUBLIC_CASH_PENALTY"
+              focusViewId="/CID_PUBLIC_CASH_PENALTY"/>
+    <itemNode id="itemNode_CID_PUBLIC_NON_CASH_PENALTY" label="جریمه غیر نقدی"
+              action="adfMenu_CID_PUBLIC_NON_CASH_PENALTY"
+              focusViewId="/CID_PUBLIC_NON_CASH_PENALTY"/>
+    <itemNode id="itemNode_IntermidiatePageCharge" label="هزینه ها"
+              action="adfMenu_IntermidiatePageCharge"
+              focusViewId="/IntermidiatePageCharge">
+     <itemNode id="itemNode_Extra_Charge" label="درج هزینه"
+               action="adfMenu_Extra_Charge" focusViewId="/Extra_Charge"/>
+    </itemNode>
+   </itemNode>
+   <itemNode id="itemNode_BarcodeSearchIntrmidiatePage" label="جستجوی بارکد"
+             action="adfMenu_BarcodeSearchIntrmidiatePage"
+             focusViewId="/BarcodeSearchIntrmidiatePage">
+    <itemNode id="itemNode_CID_BARCODE_SEARCH" label="جستجوی بارکد"
+              action="adfMenu_CID_BARCODE_SEARCH"
+              focusViewId="/CID_BARCODE_SEARCH"/>
+   </itemNode>
+   <itemNode id="itemNode_PanaltyIntermidiatePage" label="جریمه"
+             action="adfMenu_PanaltyIntermidiatePage"
+             focusViewId="/PanaltyIntermidiatePage"/>
+  </itemNode>
+  <itemNode id="itemNode_LoandeskIntermidiatePage" label="میز امانت"
+            action="adfMenu_LoandeskIntermidiatePage"
+            focusViewId="/LoandeskIntermidiatePage"/>
+  <itemNode focusViewId="/bookMenu" id="bookM" label="کتاب"
+            action="adfMenu_BookIntermidiatePage">
+   <itemNode focusViewId="/bookVer" id="bookVer" label="تغییر نسخه های کتاب"
+             action="adfMenu_BookVerChangeIntermidiatePage">
+    <itemNode id="itemNode_BOOK_STATUS_BARCODE_CHANGE"
+              label="تغییر وضعیت و بارکد نسخه "
+              action="adfMenu_BOOK_STATUS_BARCODE_CHANGE"
+              focusViewId="/BOOK_STATUS_BARCODE_CHANGE"/>
+    <itemNode id="itemNode_BOOK_STATUS_HISTORY" label="سابقه وضعیت نسخه کتاب"
+              action="adfMenu_BOOK_STATUS_HISTORY"
+              focusViewId="/BOOK_STATUS_HISTORY"/>
+    <itemNode id="itemNode_CID_BOOK_BARCODE_HISTORY"
+              label="سابقه بارکد نسخه کتاب"
+              action="adfMenu_CID_BOOK_BARCODE_HISTORY"
+              focusViewId="/CID_BOOK_BARCODE_HISTORY"/>
+   </itemNode>
+   <itemNode id="itemNode_BookVerChangeIntermidiatePage"
+             label="تغییر نسخه های کتاب"
+             action="adfMenu_BookVerChangeIntermidiatePage"
+             focusViewId="/BookVerChangeIntermidiatePage"/>
+   <itemNode focusViewId="/cataloging" id="bookCatalog" label="فهرست نویسی کتاب"
+             action="adfMenu_CatalogingIntermidiatePage">
+    <itemNode id="itemNode_persianCataloging" label="فهرست نویسی کتاب فارسی"
+              action="adfMenu_persianCataloging"
+              focusViewId="/persianCataloging"/>
+              <itemNode id="itemNode_englishCataloging" label="فهرست نویسی کتاب انگلیسی"
+              action="englishCatalog"
+              focusViewId="/englishCataloging"/>
+   </itemNode>
+   
+   <itemNode id="itemNode_CatalogingIntermidiatePage" label="فهرست نویسی کتاب"
+             action="adfMenu_CatalogingIntermidiatePage"
+             focusViewId="/CatalogingIntermidiatePage"/>
+   <itemNode id="itemNode_IntermdiatePageBookFarsiCard"
+             label="چاپ کار برگه"
+             action="adfMenu_IntermdiatePageBookFarsiCard"
+             focusViewId="/IntermdiatePageBookFarsiCard">
+    <itemNode id="itemNode_ReportFarsiCard" label="کتاب های فارسی/ لاتین"
+              action="adfMenu_ReportFarsiCard" focusViewId="/ReportFarsiCard"/>
+   </itemNode>
+   <itemNode id="itemNode_IntermdiatePageBookLabel"
+             label="چاپ برچسب"
+             action="adfMenu_IntermdiatePageBookLabel"
+             focusViewId="/IntermdiatePageBookLabel">
+    <itemNode id="itemNode_ReportLabelFarsiListBook"
+              label="برچسب كتاب فارسي/ لاتین"
+              action="adfMenu_ReportLabelFarsiListBook"
+              focusViewId="/ReportLabelFarsiListBook"/>
+   </itemNode>
+   <itemNode id="itemNode_suggestedintermidiatepage"
+             label="كتاب هاي سفارشي"
+             action="adfMenu_suggestedintermidiatepage"
+             focusViewId="/suggestedintermidiatepage">
+    <itemNode id="itemNode_SuggestedBook" label="سفارش كتاب"
+              action="adfMenu_SuggestedBook" focusViewId="/SuggestedBook"/>
+    <itemNode id="itemNode_suggestedbooklist" label="ليست كتاب هاي سفارشي"
+              action="adfMenu_suggestedbooklist"
+              focusViewId="/suggestedbooklist"/>
+   </itemNode>
+   <itemNode id="itemNode_RecentBookIntermidiatepage"
+             label="تازه های کتاب"
+             action="adfMenu_RecentBookIntermidiatepage"
+             focusViewId="/RecentBookIntermidiatepage">
+    <itemNode id="itemNode_RecentBook" label="تازه های کتاب"
+              action="adfMenu_RecentBook" focusViewId="/RecentBook"/>
+   </itemNode>
+  </itemNode>
+  <itemNode id="itemNode_BookIntermidiatePage" label="کتاب"
+            action="adfMenu_BookIntermidiatePage"
+            focusViewId="/BookIntermidiatePage"/>
+  <itemNode id="itemNode_RefrenceIntermidiatePage"
+            label="برگه های ارجاعی"
+            action="adfMenu_RefrenceIntermidiatePage"
+            focusViewId="/RefrenceIntermidiatePage">
+   <itemNode id="itemNode_PersianRefrenceIntermidiatePage"
+             label="فارسی"
+             action="adfMenu_PersianRefrenceIntermidiatePage"
+             focusViewId="/PersianRefrenceIntermidiatePage">
+    <itemNode id="itemNode_PersianUniformTitle"
+              label="عنوان"
+              action="adfMenu_PersianUniformTitle"
+              focusViewId="/PersianUniformTitle"/>
+    <itemNode id="itemNode_PersianSubject" label="موضوع"
+              action="adfMenu_PersianSubject" focusViewId="/PersianSubject"/>
+    <itemNode id="itemNode_PersianProvider" label="پدید آور"
+              action="adfMenu_PersianProvider" focusViewId="/PersianProvider"/>
+    <itemNode id="itemNode_FarsiKeywordView" label="کلید واژه"
+              action="adfMenu_FarsiKeywordView"
+              focusViewId="/FarsiKeywordView"/>
+   </itemNode>
+   <itemNode id="itemNode_LatinRefrenceIntermidiatePage"
+             label="لاتین"
+             action="adfMenu_LatinRefrenceIntermidiatePage"
+             focusViewId="/LatinRefrenceIntermidiatePage">
+    <itemNode id="itemNode_LatinUniformTitle" label="عنوان"
+              action="adfMenu_LatinUniformTitle"
+              focusViewId="/LatinUniformTitle"/>
+    <itemNode id="itemNode_LatinSubject" label="موضوع"
+              action="adfMenu_LatinSubject" focusViewId="/LatinSubject"/>
+    <itemNode id="itemNode_LatinProvider" label="پدید آور"
+              action="adfMenu_LatinProvider" focusViewId="/LatinProvider"/>
+   </itemNode>
+  </itemNode>
+  <itemNode id="itemNode_Sandoogh" label="صندوق امانت"
+            action="adfMenu_Sandoogh" focusViewId="/Sandoogh"/>
+  <itemNode id="itemNode_bookRequestIntermidiatepage"
+            label="سفارش کتاب"
+            action="adfMenu_bookRequestIntermidiatepage"
+            focusViewId="/bookRequestIntermidiatepage">
+   <itemNode id="itemNode_BookRequestNew" label="درخواست کتاب از مخزن"
+             action="adfMenu_BookRequestNew" focusViewId="/BookRequestNew"/>
+   <itemNode id="itemNode_bookRequest-A" label="خروج کتاب از مخزن"
+             action="adfMenu_bookRequest-A" focusViewId="/bookRequest-A"/>
+  </itemNode>
+  <itemNode id="itemNode_ReportIntermidiatePage"
+            label="گزارش ها"
+            action="adfMenu_ReportIntermidiatePage"
+            focusViewId="/ReportIntermidiatePage">
+   <itemNode id="itemNode_RafUpload" label="گزارش رف خوانی"
+             action="adfMenu_RafUpload" focusViewId="/RafUpload"/>
+   <itemNode id="itemNode_ReportLoan" label="گزارش میز امانت"
+             action="adfMenu_ReportLoan" focusViewId="/ReportLoan"/>
+   <itemNode id="itemNode_ReportCataloging" label="گزارش فهرست نویسی"
+             action="adfMenu_ReportCataloging" focusViewId="/ReportCataloging"/>
+   <itemNode id="itemNode_reportRecent" label="گزارش تازه های کتاب"
+             action="adfMenu_reportRecent" focusViewId="/reportRecent"/>
+   <itemNode id="itemNode_report_date_ExtraCharge" label="گزارش هزینه ها"
+             action="adfMenu_report_date_ExtraCharge"
+             focusViewId="/report_date_ExtraCharge"/>
+  </itemNode>
+  <itemNode id="itemNode_SettingsIntermidiatePage"
+           label="تنظیمات"
+           action="adfMenu_SettingsIntermidiatePage"
+           focusViewId="/SettingsIntermidiatePage">
+   <itemNode id="itemNode_RoleAndPermission" label="نقش و کاربران"
+             action="adfMenu_RoleAndPermission"
+             focusViewId="/RoleAndPermission"/>
+   <itemNode id="itemNode_DataEntry" label="تنظیم سیستم"
+             action="adfMenu_DataEntry" focusViewId="/DataEntry"/>
+  </itemNode>
+ </itemNode>
+ <itemNode id="itemNode_LibrarySystemIntermidiatePage"
+           label="سیستم جامع کتابخانه"
+           action="adfMenu_LibrarySystemIntermidiatePage"
+           focusViewId="/LibrarySystemIntermidiatePage"/>
+ <itemNode id="itemNode_logIn" label="label_logIn" action="adfMenu_logIn"
+           focusViewId="/logIn"/>
+</menu>

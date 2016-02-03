@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_MemberPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllInitMemCurrLibVC"
+                  id="removeAllInitMemCurrLibVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <invokeAction Binds="removeAllPersonVC" id="removeAllPersonVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <invokeAction Binds="removeAllInitMemberVC"
+                  id="removeAllInitMemberVC_execute" Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="PersonVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="AddressVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="AddressVO1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="AddressVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AddressVO1Query"/>
+    <iterator Binds="TelephoneVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="TelephoneVO1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="TelephoneVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TelephoneVO1Query"/>
+    <iterator Binds="InitMemberVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="InitMemberVO1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="InitMemberVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="InitMemberVO1Query"/>
+    <taskFlow taskFlowId="${pageFlowScope.TFBean.dynamicTaskFlowId}"
+              id="dynamicRegion1"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"
+              Refresh="default" activation="immediate">
+      <parameters>
+        <parameter id="param" value="#{sessionUser.rand}"/>
+      </parameters>
+    </taskFlow>
+    <iterator Binds="InitMemberCurrLibVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="InitMemberCurrLibVOIterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="EmailVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EmailVO1Iterator" ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="EmailVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="EmailVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PersonVO1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="CertificateNo">
+      <AttrNames>
+        <Item Value="CertificateNo"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="PersonVO1Iterator"
+                  Uses="LOV_Affiliation" id="Affiliation"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_Origine"
+          id="Origine" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_PersType"
+          id="PersType" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PersTypeText">
+      <AttrNames>
+        <Item Value="PersTypeText"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_Degree"
+          id="Degree" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersStatus" id="PersStatus" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersCategory" id="PersCategory" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PersCategoryText">
+      <AttrNames>
+        <Item Value="PersCategoryText"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_CmemsetupArtId" id="CmemsetupArtId" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_DeptArtId" id="DeptArtId" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Picture1">
+      <AttrNames>
+        <Item Value="Picture1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Post">
+      <AttrNames>
+        <Item Value="Post"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="DeptName">
+      <AttrNames>
+        <Item Value="DeptName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Pers_Offstat_Desc">
+      <AttrNames>
+        <Item Value="Pers_Offstat_Desc"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AddressVO1Iterator" id="AddressVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.AddressVO"
+                      Name="AddressVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Address1"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TelephoneVO1Iterator" id="TelephoneVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.TelephoneVO"
+                      Name="TelephoneVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Telephone1"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="InitMemberVO1Iterator" id="InitMemberVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO"
+                      Name="InitMemberVO10">
+        <AttrNames>
+          <Item Value="LibName"/>
+          <Item Value="LoanedCount"/>
+          <Item Value="LoanedInPlaceCount"/>
+          <Item Value="ReservedCount"/>
+          <Item Value="DebitNonCash"/>
+          <Item Value="DebitSum"/>
+          <Item Value="IntroductionLetterCount"/>
+          <Item Value="MemshipCategory"/>
+          <Item Value="MemshipStatus"/>
+          <Item Value="RecalledCount"/>
+          <Item Value="DebitNonCashText"/>
+          <Item Value="MemshipCategoryText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PersonVO1Iterator" id="Find"
+            Action="iteratorFind" RequiresUpdateModel="true"/>
+    <action IterBinding="PersonVO1Iterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_SecArtId"
+          id="SecArtId" DTSupportsMRU="true"/>
+    <listOfValues StaticList="false" IterBinding="PersonVO1Iterator"
+                  Uses="LOV_MjrArtId" id="MjrArtId"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_MjrArtId"
+          id="MjrArtId1" DTSupportsMRU="true"/>
+    <listOfValues StaticList="false" IterBinding="PersonVO1Iterator"
+                  Uses="LOV_DeptArtId" id="DeptArtId1"/>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator"
+                     id="Description1">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="EmailVO1Iterator" id="EmailVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.EmailVO"
+                      Name="EmailVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Email1"/>
+          <Item Value="Active" />
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PostText">
+      <AttrNames>
+        <Item Value="PostText"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_CmemSetupPost" id="CmemSetupPost" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PostEndDate">
+      <AttrNames>
+        <Item Value="PostEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="removeAllPersonVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPersonVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllInitMemberVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllInitMemberVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllInitMemCurrLibVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllInitMemCurrLibVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

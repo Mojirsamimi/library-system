@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RafReportVo"
+  Version="11.1.1.56.60"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.RO.RafReportVoRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.RO.RafReportVoImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="p_place"
+    Kind="where"
+    Type="oracle.jbo.domain.Number"/>
+  <Variable
+    Name="p_labcol"
+    Kind="where"
+    Type="oracle.jbo.domain.Number">
+    <TransientExpression><![CDATA[adf.userSession.userData.labcolno]]></TransientExpression>
+  </Variable>
+  <SQLQuery>
+    <![CDATA[SELECT  1 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+               decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               DECODE(physical_book.barcode,social_barcode.barcode,'موجود','رفع مغایرت موجود - مفقود') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=1
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  2 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+               decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'امانت','رفع مغایرت امانت - موجود') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=2
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  3 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+                decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'رفع مغایرت مفقود - موجود','مفقود') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=3
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  4 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+                decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'رفع مغایرت نامشخص - مفقود','رفع مغایرت نامشخص - موجود') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=4
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  5 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+               decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'وجین','رفع مغایرت') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=5
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  6 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+               decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'حذف','رفع مغایرت') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=6
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  7 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+               decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'رفع مغایرت','صحافی') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=7
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  8 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+               decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'قفسه رزرو','رفع مغایرت') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=8
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+UNION
+
+SELECT  9 a,call_no,reg_id,PHYSICAL_BOOK.BARCODE,virtual_book.art_id,
+               decode(reading_order,1,title) title_farsi,
+               decode(reading_order,2,title) title_latin,
+               decode(physical_book.barcode,social_barcode.barcode,'رفع مغایرت قفسه - موجود','قفسه بازگشت') status
+FROM     physical_book,social_barcode,virtual_book
+WHERE physical_book.labcol=:p_labcol and social_barcode.labcol=:p_labcol and virtual_book.labcol=:p_labcol and physical_book.barcode  = social_barcode.barcode (+)
+AND       physical_book.vbook_art_id=virtual_book.art_id
+AND       physical_book.barcode is not null
+AND       existence_status=9
+and         reading_order=1
+and         reference=0
+and         (physical_book.place=:p_place OR :p_place IS NULL)
+
+ORDER BY a,status desc,call_no]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="A"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="A"
+    Expression="A"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CallNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CALL_NO"
+    Expression="CALL_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RegId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="35"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REG_ID"
+    Expression="REG_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Barcode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="14"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BARCODE"
+    Expression="BARCODE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="14"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ArtId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ART_ID"
+    Expression="ART_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TitleFarsi"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TITLE_FARSI"
+    Expression="TITLE_FARSI"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TitleLatin"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TITLE_LATIN"
+    Expression="TITLE_LATIN"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Status"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="45"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STATUS"
+    Expression="STATUS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </ViewAttribute>
+</ViewObject>

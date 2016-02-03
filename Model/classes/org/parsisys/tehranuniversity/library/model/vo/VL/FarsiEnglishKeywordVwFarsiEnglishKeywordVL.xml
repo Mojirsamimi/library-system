@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FarsiEnglishKeywordVwFarsiEnglishKeywordVL"
+  Version="11.1.1.56.60">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="FarsiEnglishKeywordVo"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.FarsiEnglishKeywordVo"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="FarsiEnglishKeywordVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.FarsiEnglishKeywordVo.FkeywArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="VwFarsiEnglishKeywordVo"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.RO.VwFarsiEnglishKeywordVo">
+    <DesignTime>
+      <Attr Name="_finderName" Value="VwFarsiEnglishKeywordVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.RO.VwFarsiEnglishKeywordVo.FkeywArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

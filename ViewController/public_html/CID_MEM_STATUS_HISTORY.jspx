@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+            xmlns:fadak="/fadak"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+        <af:panelHeader text="سابقه وضعیت عضو" helpTopicId="memStatusHistory">
+         <f:facet name="toolbar">
+          <af:toolbar id="t1">
+                  <fadak:ToolbarSet debug="true" iteratorname="PersonVO1Iterator" id="ts1"
+                                    showcommit="false" showcreate="false"
+                                    showdelete="false" showEditCommand="false"
+                                    showquery="false" showrefresh="false"
+                                    showrollback="false" showsearch="false"/>
+
+          </af:toolbar>
+          </f:facet>
+              <af:panelSplitter id="ps1" orientation="vertical"
+                                splitterPosition="140">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1" headerText="جستجوی عضو" disclosed="true"
+                                value="#{bindings.searchnameidbarcodeQuery.queryDescriptor}"
+                                model="#{bindings.searchnameidbarcodeQuery.queryModel}"
+                                queryListener="#{bindings.searchnameidbarcodeQuery.processQuery}"
+                                queryOperationListener="#{bindings.searchnameidbarcodeQuery.processQueryOperation}"
+                                rows="2" maxColumns="2"
+                                resultComponentId="::pc1:t2" labelWidth="200"
+                                saveQueryMode="hidden"
+                                modeChangeVisible="false" fieldWidth="200"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" valign="middle"
+                                         halign="center" layout="scroll"
+                                         partialTriggers="qryId1">
+                      <af:panelFormLayout id="pfl1" rows="1" maxColumns="4">
+                        <f:facet name="footer"/>
+                        <af:panelLabelAndMessage label="#{bindings.Barcode.hints.label}"
+                                                 id="plam1">
+                          <af:outputText value="#{bindings.Barcode.inputValue}"
+                                         id="ot6"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.Id.hints.label}"
+                                                 id="plam2">
+                          <af:outputFormatted value="#{bindings.Id.inputValue}"
+                                              id="of1"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.Fname.hints.label}"
+                                                 id="plam3">
+                          <af:outputText value="#{bindings.Fname.inputValue}"
+                                         id="ot7"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.Lname.hints.label}"
+                                                 id="plam4">
+                          <af:outputText value="#{bindings.Lname.inputValue}"
+                                         id="ot8" partialTriggers="qryId1"/>
+                        </af:panelLabelAndMessage>
+                      </af:panelFormLayout>
+                      <af:inputText value="#{bindings.LibName.inputValue}"
+                                    label="#{bindings.LibName.hints.label}"
+                                    required="#{bindings.LibName.hints.mandatory}"
+                                    columns="#{bindings.LibName.hints.displayWidth}"
+                                    maximumLength="#{bindings.LibName.hints.precision}"
+                                    shortDesc="#{bindings.LibName.hints.tooltip}"
+                                    id="it2" rendered="true" disabled="true"
+                                    visible="false">
+                        <f:validator binding="#{bindings.LibName.validator}"/>
+                      </af:inputText>
+                      <af:spacer width="10" height="10" id="s1"/>
+                      <af:panelCollection id="pc1"
+                                          inlineStyle="width:80%; height:200.0px;">
+                        <af:table value="#{bindings.MemberStatusHistoryVO11.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.MemberStatusHistoryVO11.rangeSize}"
+                                  emptyText="#{bindings.MemberStatusHistoryVO11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.MemberStatusHistoryVO11.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.MemberStatusHistoryVO1Query.queryDescriptor}"
+                                  queryListener="#{bindings.MemberStatusHistoryVO1Query.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.MemberStatusHistoryVO11.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.MemberStatusHistoryVO11.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="t2"
+                                  partialTriggers=":::qryId1"
+                                  columnStretching="column:c4">
+                          <af:column sortProperty="UserName" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberStatusHistoryVO11.hints.UserName.label}"
+                                     id="c5">
+                            <af:outputText value="#{row.UserName}" id="ot2"/>
+                          </af:column>
+                          <af:column sortProperty="LibName" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberStatusHistoryVO11.hints.LibName.label}"
+                                     id="c4">
+                            <af:outputText value="#{row.LibName}" id="ot5"/>
+                          </af:column>
+                          <af:column sortProperty="StatusText" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberStatusHistoryVO11.hints.StatusText.label}"
+                                     id="c2">
+                            <af:outputText value="#{row.StatusText}" id="ot4"/>
+                          </af:column>
+                          <af:column sortProperty="DayDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberStatusHistoryVO11.hints.DayDate.label}"
+                                     id="c1">
+                            <af:outputText value="#{row.DayDate}" id="ot3">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.MemberStatusHistoryVO11.hints.DayDate.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="Reason" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemberStatusHistoryVO11.hints.Reason.label}"
+                                     id="c3" width="200">
+                            <af:outputText value="#{row.Reason}" id="ot1"/>
+                          </af:column>
+                        </af:table>
+                      </af:panelCollection>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          
+          
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

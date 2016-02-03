@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SuggestedSubjectVo"
+  Version="11.1.1.56.60"
+  SelectList="SuggestedSubject.ART_ID, 
+       SuggestedSubject.LABCOL, 
+       SuggestedSubject.SUBJECT, 
+       SuggestedSubject.VBOOK_ART_ID"
+  FromList="BOOK.SUGGESTED_SUBJECT SuggestedSubject"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SuggestedSubject"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubject"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="SuggestedSubject"
+    AliasName="ART_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="SuggestedSubject"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="Subject"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="SuggestedSubject"
+    AliasName="SUBJECT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.SuggestedSubjectVo.Subject_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="SuggestedSubject"
+    AliasName="VBOOK_ART_ID"/>
+  <ViewLinkAccessor
+    Name="SuggestedVirtualBookVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.SuggestedBookSuggestedSubjectVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

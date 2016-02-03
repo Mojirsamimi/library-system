@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="FarsiKeywordViewPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="FarsiKeywordVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="FarsiKeywordVO1Iterator"/>
+    <iterator Binds="SeeFarsiKeywordVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SeeFarsiKeywordVo1Iterator"/>
+    <iterator Binds="FarsiEnglishKeywordVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="FarsiEnglishKeywordVo1Iterator"/>
+    <iterator Binds="FarsiDescriptorVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="FarsiDescriptorVo1Iterator"/>
+    <searchRegion Criteria="DescVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="FarsiDescriptorVo1Iterator" id="DescVCQuery"/>
+    <searchRegion Binds="FarsiEnglishKeywordVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FarsiEnglishKeywordVo1Query"/>
+    <searchRegion Binds="SeeFarsiKeywordVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SeeFarsiKeywordVo1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FarsiDescriptorVo1Iterator" id="Descriptor">
+      <AttrNames>
+        <Item Value="Descriptor"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FarsiEnglishKeywordVo1Iterator"
+          id="FarsiEnglishKeywordVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.FarsiEnglishKeywordVo"
+                      Name="FarsiEnglishKeywordVo10">
+        <AttrNames>
+          <Item Value="Equal"/>
+          <Item Value="Edesc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SeeFarsiKeywordVo1Iterator" id="SeeFarsiKeywordVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeFarsiKeywordVo"
+                      Name="SeeFarsiKeywordVo10">
+        <AttrNames>
+          <Item Value="Fqual"/>
+          <Item Value="Fdesc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="FarsiKeywordVO1Iterator" id="FqualArtId">
+      <AttrNames>
+        <Item Value="FqualArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FarsiKeywordVO1Iterator" id="FdescArtId">
+      <AttrNames>
+        <Item Value="FdescArtId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

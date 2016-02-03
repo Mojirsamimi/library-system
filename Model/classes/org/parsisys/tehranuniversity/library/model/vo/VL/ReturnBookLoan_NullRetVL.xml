@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ReturnBookLoan_NullRetVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoan_NullRetDate_FkAssoc"
+  Where="(:Bind_ArtId = Loan.PHBOOK_ART_ID) AND (:Bind_Labcol = Loan.LABCOL)  AND Loan.real_ret_date IS NULL">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="ReturnBookVO1"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.ReturnBookVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ReturnBookVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.ReturnBookVO.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.ReturnBookVO.Labcol"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="LoanVO"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.LoanVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Loan_NullRetVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.LoanVO.PhbookArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.LoanVO.Labcol"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

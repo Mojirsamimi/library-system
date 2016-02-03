@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="pfl1">
+    <f:facet name="footer">
+      <af:panelGroupLayout id="pgl1">
+        <af:commandButton text="ثبت" id="cb1"
+                          disabled="#{!bindings.Commit.enabled}"/>
+        <af:commandButton text="انصراف" id="cb2" action="go"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <af:inputText label="امتیاز" id="it1" value="#{pageFlowScope.rank.rank}"/>
+  </af:panelFormLayout>
+</jsp:root>

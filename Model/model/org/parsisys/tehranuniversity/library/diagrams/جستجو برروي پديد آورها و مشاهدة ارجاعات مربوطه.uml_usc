@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:cb45ffc3-e064-4501-81c9-687f00993d1b'
+   isAbstract='false'
+   isLeaf='false'
+   name='جستجو برروي پديد آورها و مشاهدة ارجاعات مربوطه'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:720358f2-d31b-4170-a642-02d10880209e'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>EnUTtemplate</display-name>
+        <facet>
+          <facet-name>center</facet-name>
+        </facet>
+        <facet>
+          <facet-name>popup</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>test</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+
+      </component>
+    </af:xmlContent>
+    
+     <af:panelStretchLayout topHeight="30px" id="pt_psl1" bottomHeight="20px">
+      <f:facet name="top">
+       
+          <af:panelStretchLayout id="pt_psl4" startWidth="95%">
+            <f:facet name="bottom"/>
+            <f:facet name="center"/>
+            <f:facet name="start">
+              <af:toolbox id="pt_t1">
+                <af:menuBar id="pt_mb1">
+                  <af:menu text="میز امانت" id="pt_m1">
+                    <af:menu text="عضویت" id="pt_m4">
+                      <af:commandMenuItem text="مشخصات عضو"
+                                          action="adfMenu_CID_Member"
+                                          id="pt_cmi17"/>
+                      <af:commandMenuItem text="معرفی نامه" id="pt_cmi1"
+                                          action="adfMenu_INTRODUCTION_LETTER"/>
+                      <af:commandMenuItem text="تمدید و تغییر سمت عضو"
+                                          action="adfMenu_CID_EXTEND"
+                                          id="pt_cmi25"/>
+                      <af:commandMenuItem text="تغییر وضعیت عضو" id="pt_cmi12"
+                                          action="adfMenu_CID_MEM_STATUS_CHANGE"/>
+                      <af:commandMenuItem text="سابقه وضعیت عضو" id="pt_cmi2"
+                                          action="adfMenu_CID_MEM_STATUS_HISTORY"/>
+                      <af:commandMenuItem text="تغییر بارکد عضو" id="pt_cmi18"
+                                          action="adfMenu_CID_MEM_BARCODE_CHANGE"/>
+                      <af:commandMenuItem text="سابقه بارکد عضو" id="pt_cmi3"
+                                          action="adfMenu_CID_MEM_BARCODE_HISTORY"/>
+                      <af:commandMenuItem text="سابقه امانت عضو" id="pt_cmi4"
+                                          action="adfMenu_CID_MEM_LOAN_HISTORY"/>
+                      <af:commandMenuItem text="تسویه حساب عضو" id="pt_cmi19"
+                                          action="adfMenu_CID_CLEARING"/>
+                    </af:menu>
+                    <af:menu text="امانت" id="pt_m6">
+                      <af:commandMenuItem text="امانت و تمدید کتاب" id="pt_cmi7"
+                                          action="adfMenu_CID_LOAN"/>
+                      <af:commandMenuItem text="بازگشت کتاب" id="pt_cmi20"
+                                          action="adfMenu_CID_RETURN_BOOK"/>
+                      <af:commandMenuItem text="تغییر بارکد کتاب" id="pt_cmi21"
+                                          action="adfMenu_CID_BOOK_BARCODE_CHANGE"/>
+                      <af:commandMenuItem text="سابقه امانت کتاب" id="pt_cmi5"
+                                          action="adfMenu_CID_BOOK_LOAN_HISTORY"/>
+                      <af:commandMenuItem text="فهرست کتاب های امانت در محل"
+                                          id="pt_cmi6"
+                                          action="adfMenu_LOAN_AT_LIB_LIST"/>
+                      <af:commandMenuItem text="کنترل موجودی کتاب" id="pt_cmi8"
+                                          action="adfMenu_CID_BOOK_EXISTENCE"/>
+                    </af:menu>
+                    <af:menu text="رزرو" id="pt_m2">
+                      <af:commandMenuItem text="رزرو کتاب" id="pt_cmi9"
+                                          action="adfMenu_CID_RESERVE"/>
+                      <af:commandMenuItem text="سابقه رزرو کتاب" id="pt_cmi11"
+                                          action="adfMenu_CID_BOOK_RESERVE_HISTORY"/>
+                      <af:commandMenuItem text="چاپ برگه اعلام رزرو"
+                                          id="pt_cmi10"
+                                          action="adfMenu_CID_PRINT_RESERVE"/>
+                    </af:menu>
+                    <af:menu text="جریمه" id="pt_m3">
+                      <af:commandMenuItem text="جریمه تاخیر امانت" id="pt_cmi13"
+                                          action="adfMenu_CID_LOAN_CASH_PENALTY"/>
+                      <af:commandMenuItem text="جریمه گم شدن کتاب" id="pt_cmi14"
+                                          action="adfMenu_CID_REGISTER_LOST"/>
+                      <af:commandMenuItem text="جریمه نقدی عمومی" id="pt_cmi15"
+                                          action="adfMenu_CID_PUBLIC_CASH_PENALTY"/>
+                      <af:commandMenuItem text="پرداخت" id="pt_cmi22"
+                                          action="adfMenu_CID_PENALTY_PAY"/>
+                      <af:commandMenuItem text="جریمه غیر نقدی" id="pt_cmi16"
+                                          action="adfMenu_CID_PUBLIC_NON_CASH_PENALTY"/>
+                      <af:commandMenuItem text="سابقه جریمه و پرداخت"
+                                          id="pt_cmi23"
+                                          action="adfMenu_CID_MEMBER_PENALTY_HISTORY"/>
+                    <af:menu text="هزینه ها" id="pt_m18">
+                      <af:commandMenuItem text="درج هزینه" id="pt_cmi44"
+                                          action="adfMenu_Extra_Charge"/>
+                    </af:menu>
+                  </af:menu>
+                    <af:commandMenuItem text="جستجوی بارکد" id="pt_cmi24"
+                                        action="adfMenu_CID_BARCODE_SEARCH"/>
+                  </af:menu>
+                  <af:menu text="کتاب" id="pt_m7">
+                    <af:menu text="تغییر نسخه های کتاب" id="pt_m8">
+                      <af:commandMenuItem text="سابقه وضعیت نسخه کتاب"
+                                          id="pt_cmi27"
+                                          action="adfMenu_BOOK_STATUS_HISTORY"/>
+                      <af:commandMenuItem text="تغییر وضعیت و بارکد نسخه"
+                                          id="pt_cmi26"
+                                          action="adfMenu_BOOK_STATUS_BARCODE_CHANGE"/>
+                      <af:commandMenuItem text="سابقه بارکد نسخه کتاب"
+                                          id="pt_cmi28"
+                                          action="adfMenu_CID_BOOK_BARCODE_HISTORY"/>
+                    </af:menu>
+                    <af:menu text="فهرست نویسی کتاب" id="pt_m5">
+                      <af:commandMenuItem text="فارسی" id="pt_cmi29"
+                                          action="adfMenu_persianCataloging"/>
+                      <af:commandMenuItem text="انگلیسی" id="pt_ctmi29"
+                                          action="enCatalog"/>
+                    
+                  </af:menu>
+                
+                  <af:commandMenuItem text="تازه های کتاب" id="pt_cmi31"
+                                        action="adfMenu_RecentBook"/>
+                    <af:menu text="كتاب هاي سفارشي" id="pt_m16">
+                      <af:commandMenuItem text="سفارش كتاب" id="pt_cmi43"
+                                          action="adfMenu_SuggestedBook"/>
+                      <af:commandMenuItem text="ليست كتاب هاي سفارشي"
+                                          id="pt_cmi42"
+                                          action="adfMenu_suggestedbooklist"/>
+                    </af:menu>
+                  </af:menu>
+                  <af:menu text="برگه های ارجاعی" id="pt_m10">
+                    <af:menu text="فارسی" id="pt_m12">
+                      <af:commandMenuItem text="عنوان" id="pt_cmi33"
+                                          action="adfMenu_PersianUniformTitle"/>
+                      <af:commandMenuItem text="موضوع" id="pt_cmi32"
+                                          action="adfMenu_PersianSubject"/>
+                      <af:commandMenuItem text="پدیدآور" id="pt_cmi35"
+                                          action="adfMenu_PersianProvider"/>
+                     <!-- <af:commandMenuItem text="کلید واژه" id="pt_cmi34"
+                                          action="adfMenu_FarsiKeywordView"/>-->
+                    </af:menu>
+                    <af:menu text="لاتین" id="pt_m11">
+                      <af:commandMenuItem text="عنوان" id="pt_cmi37"
+                                          action="adfMenu_LatinUniformTitle"/>
+                      <af:commandMenuItem text="موضوع" id="pt_cmi38"
+                                          action="adfMenu_LatinSubject"/>
+                      <af:commandMenuItem text="پدیدآور" id="pt_cmi36"
+                                          action="adfMenu_LatinProvider"/>
+                    </af:menu>
+                  </af:menu>
+                  <af:menu text="سفارش کتاب" id="pt_m14">
+                    <af:commandMenuItem text="درخواست کتاب از مخزن"
+                                        id="pt_cmi40"
+                                        action="adfMenu_BookRequestNew"/>
+                  </af:menu>
+                <af:menu text="صندوق امانت" id="pt_m13">
+                    <af:commandMenuItem text="صندوق" id="pt_cmi39"
+                                        action="adfMenu_Sandoogh"/>
+                  </af:menu>
+                <af:menu text="گزارش" id="pt_m15">
+                    <af:commandMenuItem text="رف خوانی" id="pt_cmi41"
+                                        action="adfMenu_RafUpload"/>
+                  <af:commandMenuItem text="گزارش میز امانت" id="pt_cmi47"
+                                      action="adfMenu_ReportLoan"/>
+                  <af:commandMenuItem text="گزارش فهرست نویسی" id="pt_cmi46"
+                                      action="adfMenu_ReportCataloging"/>
+                  <af:commandMenuItem text="تازه های کتاب" id="pt_cmi48"
+                                      action="adfMenu_reportRecent"/>
+                  <af:commandMenuItem text="گزارش هزینه ها" id="pt_cmi45"
+                                      action="adfMenu_report_date_ExtraCharge"/>
+                </af:menu>
+                  <af:menu text="تنظیم ها" id="pt_m9">
+                    <af:commandMenuItem text="نقش و کاربران" id="pt_cmi30"
+                                        action="adfMenu_RoleAndPermission"/>
+                  <af:commandMenuItem text="تنظیم سیستم" id="pt_cmi49"
+                                      action="adfMenu_DataEntry"/>
+                </af:menu>
+              </af:menuBar>
+                <af:messages id="pt_m17"/>
+                <af:breadCrumbs id="pt_bc1">
+                  <f:facet name="nodeStamp">
+                    <af:commandNavigationItem text="commandNavigationItem 1"
+                                              id="pt_cni1"/>
+                  </f:facet>
+                </af:breadCrumbs>
+              </af:toolbox>
+            </f:facet>
+            <f:facet name="end">
+            <af:statusIndicator/>
+          </f:facet>
+            <f:facet name="top"/>
+          </af:panelStretchLayout>
+       
+      </f:facet>
+      <f:facet name="center">
+        <af:decorativeBox id="pt_db1" theme="dark" topLandmark="navigation"
+                          topHeight="45" centerLandmark="main">
+          <f:facet name="top">
+            <af:panelBox showHeader="never" showDisclosure="false"
+                         background="dark" ramp="core"
+                         inlineStyle="height:40.0px;">
+              <af:panelStretchLayout id="pt_psl3" startWidth="500px"
+                                     endWidth="300px">
+                <f:facet name="start">
+                  <af:breadCrumbs id="pt_bc2" var="menuInfo"
+                                  value="#{root_menu}">
+                    <f:facet name="nodeStamp">
+                      <af:commandNavigationItem text="#{menuInfo.label}"
+                                                id="pt_cni4"
+                                                icon="#{menuInfo.icon}"
+                                                destination="#{menuInfo.destination}"
+                                                action="#{menuInfo.doAction}">
+                        <af:setActionListener from="#{menuInfo.focusViewId}"
+                                              to="#{sessionUser.current_page}"/>
+                      </af:commandNavigationItem>
+                    </f:facet>
+                  </af:breadCrumbs>
+                  
+                </f:facet>
+                <f:facet name="end">
+                  <af:panelBorderLayout id="pt_pbl1">
+                    <f:facet name="start">
+                      <af:panelGroupLayout id="pt_pgl1" layout="horizontal"
+                                           valign="middle" halign="center">
+                        <af:outputText value="#{session_common_bean.shamsiToday} "
+                                       id="pt_ot1"/>
+                        <af:outputText value= " | #{sessionUser.libname} | "
+                                       id="pt_ot3"
+                                       inlineStyle="font-size:9.0pt; text-align:left; vertical-align:middle;"
+                                       noWrap="true"/>
+                        <af:outputText value=" #{sessionUser.username}"
+                                       id="pt_ot2"
+                                       inlineStyle="font-size:small;"
+                                       noWrap="true"/>
+                                       <af:spacer id="pt_s1" width="5"/>
+                         <af:commandImageLink id="pt_cil1" shortDesc="Log Out"
+                                           icon="/icons/system-log-out-en.png"
+                                           action="#{sessionUser.logoutAction}"
+                                           immediate="true"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="end">
+                      
+                    </f:facet>
+                  </af:panelBorderLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </af:panelBox>
+          </f:facet>
+          <f:facet name="center">
+            <af:decorativeBox id="pt_db2" theme="light" topHeight="20px">
+              <f:facet name="center">
+                <af:facetRef facetName="center"/>
+              </f:facet>
+             
+            </af:decorativeBox>
+          </f:facet>
+        </af:decorativeBox>
+      </f:facet>
+      <f:facet name="bottom">
+        
+          <af:panelStretchLayout id="pt_psl2" startWidth="200px"
+                                 endWidth="600px" bottomHeight="1px"
+                                 topHeight="10px">
+            <f:facet name="center">
+              <af:panelGroupLayout inlineStyle="text-align:left" valign="middle"
+                                   halign="end">
+                <af:outputFormatted value="Copyright &amp;copy; Parsi Group, Inc. All rights reserved | www.parsisys.org "
+                                    id="pt_of1" styleUsage="pageStamp"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="start">
+              <af:panelGroupLayout inlineStyle="text-align:right" halign="end"
+                                   valign="middle">
+                <af:outputFormatted value="www.parsisys.org  " id="pt_of2"
+                                    styleUsage="pageStamp"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="end"/>
+            <f:facet name="bottom">
+              <af:facetRef facetName="popup"/>
+            </f:facet>
+          <f:facet name="top">
+        
+          </f:facet>
+        </af:panelStretchLayout>
+        
+      </f:facet>
+    </af:panelStretchLayout>
+    
+  </af:pageTemplateDef>
+</jsp:root>

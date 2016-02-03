@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:fadak="/fadak"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+          <af:panelHeader text="#{viewcontrollerBundle.book_barcode_change}"
+                          helpTopicId="bookBarcodeChange">
+             <f:facet name="toolbar">
+
+          <af:toolbar id="t1">
+                            <fadak:ToolbarSet debug="true" iteratorname="BookBarcodeChangeIterator" id="ts1"
+                                              showdelete="false"
+                                              showcreate="false"
+                                              showEditCommand="false"
+                                              showcommit="false"
+                                              showquery="false"
+                                              showrefresh="false"
+                                              showsearch="false"
+                                              showrollback="false"/>
+
+          </af:toolbar>
+         </f:facet>
+              <af:panelSplitter id="ps1" splitterPosition="120"
+                                orientation="vertical">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1"
+                                headerText="#{viewcontrollerBundle.book_search}" disclosed="true"
+                                value="#{bindings.searchbarcoderegIdQuery.queryDescriptor}"
+                                model="#{bindings.searchbarcoderegIdQuery.queryModel}"
+                                queryListener="#{bindings.searchbarcoderegIdQuery.processQuery}"
+                                queryOperationListener="#{bindings.searchbarcoderegIdQuery.processQueryOperation}"
+                                rows="1" maxColumns="2" saveQueryMode="hidden"
+                                modeChangeVisible="false"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout layout="vertical"
+                                         xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                         id="pgl3" valign="baseline"
+                                         halign="start"
+                                         partialTriggers="qryId1">
+                      <af:panelFormLayout id="pfl3" rows="3" maxColumns="2"
+                                          labelWidth="100" fieldWidth="300">
+                        <af:inputText value="#{bindings.Barcode.inputValue}"
+                                      label="#{bindings.Barcode.hints.label}"
+                                      required="#{bindings.Barcode.hints.mandatory}"
+                                      columns="#{bindings.Barcode.hints.displayWidth}"
+                                      maximumLength="#{bindings.Barcode.hints.precision}"
+                                      shortDesc="#{bindings.Barcode.hints.tooltip}"
+                                      id="it5" readOnly="true">
+                          <f:validator binding="#{bindings.Barcode.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Title.inputValue}"
+                                      label="#{bindings.Title.hints.label}"
+                                      required="#{bindings.Title.hints.mandatory}"
+                                      columns="#{bindings.Title.hints.displayWidth}"
+                                      maximumLength="#{bindings.Title.hints.precision}"
+                                      shortDesc="#{bindings.Title.hints.tooltip}"
+                                      id="it1" readOnly="true">
+                          <f:validator binding="#{bindings.Title.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.ProviderName.inputValue}"
+                                      label="#{bindings.ProviderName.hints.label}"
+                                      required="#{bindings.ProviderName.hints.mandatory}"
+                                      columns="#{bindings.ProviderName.hints.displayWidth}"
+                                      maximumLength="#{bindings.ProviderName.hints.precision}"
+                                      shortDesc="#{bindings.ProviderName.hints.tooltip}"
+                                      id="it2" readOnly="true">
+                          <f:validator binding="#{bindings.ProviderName.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.RegId.inputValue}"
+                                      label="#{bindings.RegId.hints.label}"
+                                      required="#{bindings.RegId.hints.mandatory}"
+                                      columns="#{bindings.RegId.hints.displayWidth}"
+                                      maximumLength="#{bindings.RegId.hints.precision}"
+                                      shortDesc="#{bindings.RegId.hints.tooltip}"
+                                      id="it6" readOnly="true">
+                          <f:validator binding="#{bindings.RegId.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.CallNo.inputValue}"
+                                      label="#{bindings.CallNo.hints.label}"
+                                      required="#{bindings.CallNo.hints.mandatory}"
+                                      columns="#{bindings.CallNo.hints.displayWidth}"
+                                      maximumLength="#{bindings.CallNo.hints.precision}"
+                                      shortDesc="#{bindings.CallNo.hints.tooltip}"
+                                      id="it3" readOnly="true"
+                                      inlineStyle="text-align:left;"
+                                      styleClass="AFFieldTextLTRMarker">
+                          <f:validator binding="#{bindings.CallNo.validator}"/>
+                        </af:inputText>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="30" id="s1"/>
+                      <af:panelFormLayout id="pfl2" rows="2" maxColumns="2"
+                                          labelAlignment="start"
+                                          fieldWidth="100" labelWidth="200">
+                        <f:facet name="footer"/>
+                        <af:selectOneChoice value="#{bindings.LoanStatus.inputValue}"
+                                            label="#{bindings.LoanStatus.label}"
+                                            required="#{bindings.LoanStatus.hints.mandatory}"
+                                            shortDesc="#{bindings.LoanStatus.hints.tooltip}"
+                                            id="soc1" readOnly="true">
+                          <f:selectItems value="#{bindings.LoanStatus.items}"
+                                         id="si1"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.SafetyStatus.inputValue}"
+                                            label="#{bindings.SafetyStatus.label}"
+                                            required="#{bindings.SafetyStatus.hints.mandatory}"
+                                            shortDesc="#{bindings.SafetyStatus.hints.tooltip}"
+                                            id="soc2" readOnly="true">
+                          <f:selectItems value="#{bindings.SafetyStatus.items}"
+                                         id="si2"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.ExistenceStatus.inputValue}"
+                                            label="#{bindings.ExistenceStatus.label}"
+                                            required="#{bindings.ExistenceStatus.hints.mandatory}"
+                                            shortDesc="#{bindings.ExistenceStatus.hints.tooltip}"
+                                            id="soc3" readOnly="true">
+                          <f:selectItems value="#{bindings.ExistenceStatus.items}"
+                                         id="si3"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.Place.inputValue}"
+                                            label="#{bindings.Place.label}"
+                                            required="#{bindings.Place.hints.mandatory}"
+                                            shortDesc="#{bindings.Place.hints.tooltip}"
+                                            id="soc4" readOnly="true">
+                          <f:selectItems value="#{bindings.Place.items}"
+                                         id="si4"/>
+                        </af:selectOneChoice>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="30" id="s2"/>
+                      <af:panelFormLayout id="pfl1">
+                        <f:facet name="footer"/>
+                        <af:panelLabelAndMessage id="plam1"
+                                                 partialTriggers="qryId1">
+                          <af:panelGroupLayout id="pgl2" layout="horizontal"
+                                               valign="middle" halign="center"
+                                               partialTriggers="qryId1">
+                            <af:inputText label="بارکد جدید کتاب" id="it4"
+                                          value="#{viewScope.cid_book_barcode_change.bookNewBarcode}"
+                                          maximumLength="14"/>
+                            <af:spacer width="30" height="10" id="s3"/>
+                            <af:commandButton text="#{viewcontrollerBundle.barcode_change}"
+                                              disabled="#{!bindings.saveBookBarcodeChange.enabled}"
+                                              id="cb2"
+                                              actionListener="#{viewScope.cid_book_barcode_change.showErrorResult}"/>
+                          </af:panelGroupLayout>
+                        </af:panelLabelAndMessage>
+                      </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          </f:facet>
+          <f:facet name="popup"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:cid_book_barcode_change-->
+</jsp:root>

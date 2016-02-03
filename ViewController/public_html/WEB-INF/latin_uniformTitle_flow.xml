@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="latin_uniformTitle_flow">
+    <default-activity id="__1">router1</default-activity>
+    <router id="router1">
+      <case>
+        <expression>#{latin_uniTitle.path=='main'}</expression>
+        <outcome id="__38">gomain</outcome>
+      </case>
+      <case>
+        <expression>#{latin_uniTitle.path=='sub'}</expression>
+        <outcome id="__39">gosub</outcome>
+      </case>
+      <case>
+        <expression>#{latin_uniTitle.path=='alsomain'}</expression>
+        <outcome id="__40">goalsomain</outcome>
+      </case>
+      <case>
+        <expression>#{latin_uniTitle.path=='alsosub'}</expression>
+        <outcome id="__41">goalsosub</outcome>
+      </case>
+      <default-outcome>hh</default-outcome>
+    </router>
+    <view id="latin_unititle_insert_main">
+      <page>/ff/latin_unititle_insert_main.jsff</page>
+    </view>
+    <view id="latin_unititle_insert_sub">
+      <page>/ff/latin_unititle_insert_sub.jsff</page>
+    </view>
+    <view id="latin_alsoUnititle_insert_main">
+      <page>/ff/latin_alsoUnititle_insert_main.jsff</page>
+    </view>
+    <view id="latin_alsoUnititle_inser_sub">
+      <page>/ff/latin_alsoUnititle_inser_sub.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__12">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">router1</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome id="__33">gomain</from-outcome>
+        <to-activity-id id="__5">latin_unititle_insert_main</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome id="__34">gosub</from-outcome>
+        <to-activity-id id="__7">latin_unititle_insert_sub</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome id="__35">goalsomain</from-outcome>
+        <to-activity-id id="__8">latin_alsoUnititle_insert_main</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome id="__36">goalsosub</from-outcome>
+        <to-activity-id id="__11">latin_alsoUnititle_inser_sub</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id id="__14">latin_unititle_insert_main</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome id="__17">go</from-outcome>
+        <to-activity-id id="__15">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id id="__19">latin_unititle_insert_sub</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome id="__22">go</from-outcome>
+        <to-activity-id id="__21">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id id="__24">latin_alsoUnititle_insert_main</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome id="__27">go</from-outcome>
+        <to-activity-id id="__25">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id id="__29">latin_alsoUnititle_inser_sub</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome id="__32">go</from-outcome>
+        <to-activity-id id="__30">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

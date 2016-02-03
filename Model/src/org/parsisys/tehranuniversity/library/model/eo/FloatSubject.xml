@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FloatSubject"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="FLOAT_SUBJECT"
+  AliasName="FloatSubject"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.FloatSubjectImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="DummyVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.DummyVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MessageVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.MessageVO"
+    RowLevelBinds="true"/>
+  <Attribute
+    Name="Labcol"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FLOAT_SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FLOAT_SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.ArtId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Subject"
+    Precision="250"
+    ColumnName="SUBJECT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FLOAT_SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.Subject_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ReadingOrder"
+    Precision="1"
+    Scale="0"
+    ColumnName="READING_ORDER"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FLOAT_SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.ReadingOrder_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Labcolold"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOLOLD"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FLOAT_SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="VbookSubject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFltFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFltFkAssoc.VbookSubject"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFltFkAssoc.FloatSubject"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="FloatsubjectPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="FLOATSUBJECT_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008170">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008170"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008171">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008171"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008172">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008172"/>
+      <Attr Name="_checkCondition" Value='"SUBJECT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.Subject"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008173">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008173"/>
+      <Attr Name="_checkCondition" Value='"READING_ORDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.ReadingOrder"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

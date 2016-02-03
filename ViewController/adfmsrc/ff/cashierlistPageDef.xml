@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="cashierlistPageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CashierListVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CashierListVo1Iterator"/>
+    <searchRegion Binds="CashierListVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CashierListVo1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CashierListVo1Iterator" id="CashierListVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CashierListVo"
+                      Name="CashierListVo10">
+        <AttrNames>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="Barcode"/>
+          <Item Value="KeyNumber"/>
+          <Item Value="ReceiptTime"/>
+          <Item Value="ReceiptDate"/>
+          <Item Value="CasheType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CardRow"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="CARD_ROW"
+  AliasName="CardRow"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.CardRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CARD_ROW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CrdArtId"
+    Precision="20"
+    Scale="0"
+    ColumnName="CRD_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CARD_ROW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RowNo"
+    Precision="3"
+    Scale="0"
+    ColumnName="ROW_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="CARD_ROW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Item"
+    Precision="2000"
+    ColumnName="ITEM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CARD_ROW">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Card"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.CrdCrdrowFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.CrdCrdrowFkAssoc.Card"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.CrdCrdrowFkAssoc.CardRow"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CardrowPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CARDROW_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.CrdArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.RowNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007139">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007139"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007140">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007140"/>
+      <Attr Name="_checkCondition" Value='"CRD_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.CrdArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007141">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007141"/>
+      <Attr Name="_checkCondition" Value='"ROW_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.RowNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007142">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007142"/>
+      <Attr Name="_checkCondition" Value='"ITEM" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.Item"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CrdrowCrdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CRD_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CRDROW_CRD_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CardRow.CrdArtId"/>
+    </AttrArray>
+  </Key>
+</Entity>

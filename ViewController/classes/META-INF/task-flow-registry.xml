@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/loan_cash_penaltyFlow_new.xml" id="loan_cash_penaltyFlow_new" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/public_non_cash_penaltyflow.xml" id="public_non_cash_penaltyflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="inputParameter0"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/provider_role.xml" id="provider_role" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="catalogingReadingOrder"/>
+      <input-parameter name="mainpage"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/reserve_detailflow.xml" id="reserve_detailflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/loan_atlib_detail_flow.xml" id="loan_atlib_detail_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/adfc-config2.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/persian_subject_flow.xml" id="persian_subject_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/portal_reserve_memflow.xml" id="portal_reserve_memflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/penalty_paymentflow.xml" id="penalty_paymentflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/reserve_memflow.xml" id="reserve_memflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/loan_cash_penaltyFlow_edit.xml" id="loan_cash_penaltyFlow_edit" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/adfc-config-error-pages.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/persian_provider_flow.xml" id="persian_provider_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/public_cash_penalty_flow.xml" id="public_cash_penalty_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/provider.xml" id="provider" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="catalogingReadingOrder"/>
+      <input-parameter name="mainpage"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/subject.xml" id="subject" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="catalogingReadingOrder"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/internet_system.xml" id="internet_system" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/latin_provider_flow.xml" id="latin_provider_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/persian_uniformTitle_flow.xml" id="persian_uniformTitle_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/ref_select_provider.xml" id="ref_select_provider" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="refProvTab"/>
+      <input-parameter name="refProvReadingOrder"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/new_personflow.xml" id="new_personflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/register_lostflow.xml" id="register_lostflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/adfc-config-portal.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/change_person_flow.xml" id="change_person_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="param"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/vbbok_rank_flow.xml" id="vbbok_rank_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/ref_select_subject.xml" id="ref_select_subject" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="refSubReadingOrder"/>
+      <input-parameter name="refSubTab"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/latin_uniformTitle_flow.xml" id="latin_uniformTitle_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/ref_select_uni_title.xml" id="ref_select_uni_title" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="refUniTitleReadingOrder"/>
+      <input-parameter name="refUniTitleTab"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/publisher.xml" id="publisher" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="catalogingReadingOrder"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/uniform-title.xml" id="uniform-title" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="catalogingReadingOrder"/>
+      <input-parameter name="mainpage"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/FloatSubject.xml" id="FloatSubject" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="catalogingReadingOrder"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/department_flow.xml" id="department_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/userRole_flow.xml" id="userRole_flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/Introduction_letterflow.xml" id="Introduction_letterflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/reserve_historyflow.xml" id="reserve_historyflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+</task-flow-registry>

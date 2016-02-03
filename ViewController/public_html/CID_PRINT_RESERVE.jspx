@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:panelHeader text="#{viewcontrollerBundle.reserve_ready_list}" id="ph1">
+              <f:facet name="context"/>
+              <f:facet name="menuBar"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="legend"/>
+              <f:facet name="info"/>
+              <af:panelGroupLayout id="pgl1" layout="vertical" valign="middle"
+                                   halign="center">
+                <af:panelCollection id="pc1"
+                                    inlineStyle="width:95%; height:400.0px;">
+                  <af:table value="#{bindings.PrintReserveVO.collectionModel}"
+                            var="row"
+                            rows="#{bindings.PrintReserveVO.rangeSize}"
+                            emptyText="#{bindings.PrintReserveVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.PrintReserveVO.rangeSize}"
+                            rowBandingInterval="0"
+                            filterModel="#{bindings.PrintReserveVOQuery.queryDescriptor}"
+                            queryListener="#{bindings.PrintReserveVOQuery.processQuery}"
+                            filterVisible="true" varStatus="vs"
+                            selectedRowKeys="#{bindings.PrintReserveVO.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.PrintReserveVO.collectionModel.makeCurrent}"
+                            rowSelection="single" id="t1"
+                            columnStretching="column:c3"
+                            partialTriggers=":::sbc1">
+                    <af:column sortProperty="Title" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.PrintReserveVO.hints.Title.label}"
+                               id="c3">
+                      <af:outputText value="#{row.Title}" id="ot4"/>
+                    </af:column>
+                    <af:column sortProperty="Barcode" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.PrintReserveVO.hints.Barcode.label}"
+                               id="c5">
+                      <af:outputText value="#{row.Barcode}" id="ot1"/>
+                    </af:column>
+                    <af:column sortProperty="Fname" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.PrintReserveVO.hints.Fname.label}"
+                               id="c4">
+                      <af:outputText value="#{row.Fname}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="Lname" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.PrintReserveVO.hints.Lname.label}"
+                               id="c1">
+                      <af:outputText value="#{row.Lname}" id="ot6"/>
+                    </af:column>
+                    <af:column sortProperty="RetDate" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.PrintReserveVO.hints.RetDate.label}"
+                               id="c2">
+                      <af:outputText value="#{row.RetDate}" id="ot2">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.PrintReserveVO.hints.RetDate.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="Active" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.PrintReserveVO.hints.Active.label}"
+                               id="c6">
+                      <af:selectOneChoice value="#{row.bindings.Active.inputValue}"
+                                          label="#{row.bindings.Active.label}"
+                                          required="#{bindings.PrintReserveVO.hints.Active.mandatory}"
+                                          shortDesc="#{bindings.PrintReserveVO.hints.Active.tooltip}"
+                                          id="soc1" readOnly="true">
+                        <f:selectItems value="#{row.bindings.Active.items}"
+                                       id="si1"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column id="c7"
+                               headerText="#{viewcontrollerBundle.print}"
+                               width="15">
+                      <af:selectBooleanCheckbox value="#{row.bindings.Print.inputValue}"
+                                                label="#{row.bindings.Print.label}"
+                                                shortDesc="#{bindings.PrintReserveVO.hints.Print.tooltip}"
+                                                id="sbc2"
+                                                 />
+                    </af:column>
+                  </af:table>
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <f:facet name="statusbar"/>
+                </af:panelCollection>
+                <af:panelGroupLayout id="pgl3" layout="horizontal"
+                                     valign="middle" halign="center">
+                  <af:selectBooleanCheckbox text="#{viewcontrollerBundle.ready_print_reserve}"
+                                            valueChangeListener="#{viewScope.cid_print_reserve.check_all_checkBoxes}"
+                                            id="sbc1" autoSubmit="true"/>
+                  <af:spacer width="30" height="10" id="s1"/>
+                  <af:commandButton text="لیست کلی" id="cb1"
+                                    action="#{viewScope.cid_print_reserve.runPopUP}">
+                    <af:setActionListener from="#{initParam.reportServer}/reports/rwservlet?utdbuser&amp;destype=cache&amp;report=LIST_RESERVE.rdf"
+                                          to="#{viewScope.cid_print_reserve.reportPath}"/>
+                  </af:commandButton>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:panelHeader>
+          </f:facet>
+          <f:facet name="popup">
+           <af:popup id="reportPop" childCreation="deferred" 
+                  contentDelivery="lazyUncached">
+                  <af:panelWindow title="انتخاب فرمت گزارش"  modal="true"
+                                  id="pw1">
+                  <af:panelGroupLayout layout="horizontal" id="pgl2">
+                   <af:goLink shortDesc="RTF"  destination="#{viewScope.cid_print_reserve.reportPath}&amp;desformat=rtf"
+                           targetFrame="_blank"
+                             inlineStyle="padding:10.0px;">
+                              <af:image source="/icons/word.PNG"/>
+                
+                </af:goLink>
+                  <af:goLink shortDesc="Html/CSS"  destination="#{viewScope.cid_print_reserve.reportPath}&amp;desformat=htmlcss" targetFrame="_blank"
+                             inlineStyle="padding:10.0px;" id="gl1">
+                  <af:image source="/icons/htmlcss.png" id="i1"/>
+                  </af:goLink>
+                     <af:goLink shortDesc="Html" inlineStyle="padding:10.0px;" destination="#{viewScope.cid_print_reserve.reportPath}&amp;desformat=html" targetFrame="_blank"
+                                id="gl2">
+                  <af:image source="/icons/html.png"  id="i2"/>
+                  </af:goLink>
+                     <af:goLink shortDesc="XML"  inlineStyle="padding:10.0px;" destination="#{viewScope.cid_print_reserve.reportPath}&amp;desformat=xml" targetFrame="_blank"
+                                id="gl4">
+                  <af:image source="/icons/xml.png" id="i3"/>
+                  </af:goLink>
+                  <af:goLink shortDesc="CSV" inlineStyle="padding:10.0px;" destination="#{viewScope.cid_print_reserve.reportPath}&amp;desformat=delimiteddata" targetFrame="_blank"
+                             id="gl3">
+                  <af:image source="/icons/csv.png" id="i4"/>
+                  </af:goLink>
+                  </af:panelGroupLayout>
+                  </af:panelWindow>
+        </af:popup>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

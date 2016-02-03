@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="englishCataloging">
+    <page>/englishCataloging.jsp</page>
+  </view>
+  <view id="TestPage">
+    <page>/TestPage.jspx</page>
+  </view>
+  <control-flow-rule id="__2">
+    <from-activity-id id="__1">*</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome id="__5">enCatalog</from-outcome>
+      <to-activity-id id="__3">englishCataloging</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__6">
+    <managed-bean-name id="__9">reportDownloader</managed-bean-name>
+    <managed-bean-class id="__7">org.parsisys.tehranuniversity.library.view.beans.ReportDownloader</managed-bean-class>
+    <managed-bean-scope id="__8">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

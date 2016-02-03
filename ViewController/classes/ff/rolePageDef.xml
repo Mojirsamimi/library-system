@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="rolePageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProviderRoleVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ProviderRoleVO1Iterator"/>
+    <searchRegion Binds="ProviderRoleVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ProviderRoleVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ProviderRoleVO1Iterator" id="ProviderRoleVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ProviderRoleVO"
+                      Name="ProviderRoleVO10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Role"/>
+          <Item Value="ReadingOrder"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="copy_role_main_page" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="copy_role_main_page"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.copy_role_main_page_AppModuleDataControl_dataProvider_copy_role_main_page_result"/>
+    <methodAction id="select_role" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="select_role"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

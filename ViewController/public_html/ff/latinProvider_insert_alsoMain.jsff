@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="pfl1" rows="4" maxColumns="1">
+    <af:inputText label="Provider Also main" id="it1"
+                  value="#{latin_provider.provider_also}"/>
+    <af:inputText label="Foreign Name" id="it2"
+                  value="#{latin_provider.provider_fName_also}"/>
+    <af:inputText label="BD Date" id="it3"
+                  value="#{latin_provider.provider_bdDate_also}"/>
+    <af:selectOneChoice value="#{bindings.ProviderKind.inputValue}"
+                        label="Provider Type"
+                        required="#{bindings.ProviderKind.hints.mandatory}"
+                        shortDesc="#{bindings.ProviderKind.hints.tooltip}"
+                        id="soc1">
+      <f:selectItems value="#{bindings.ProviderKind.items}" id="si1"/>
+    </af:selectOneChoice>
+    <f:facet name="footer">
+    <af:panelGroupLayout id="pgl1" layout="horizontal" halign="center">
+        <af:commandButton text="Save" id="cb1"
+                         
+                          action="#{latin_provider.insertAlsoMain}"
+                          partialSubmit="true"/>
+        <af:commandButton text="Cancel" id="cb2" action="go"/>
+      </af:panelGroupLayout>
+    
+    </f:facet>
+  </af:panelFormLayout>
+</jsp:root>

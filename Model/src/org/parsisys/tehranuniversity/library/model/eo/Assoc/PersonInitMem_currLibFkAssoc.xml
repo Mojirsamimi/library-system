@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PersonInitMem_currLibFkAssoc"
+  Version="11.1.1.56.60"
+  Where="(:Bind_ArtId = InitMember.PERS_ART_ID)  AND (:Bind_CurrLibArtId = InitMember.LIB_ART_ID)">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Person1"
+    Cardinality="1"
+    Source="true"
+    Owner="org.parsisys.tehranuniversity.library.model.eo.Person"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Person1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Person.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Person.CurrLibArtId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="InitMemberCurrLib1"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.eo.InitMember">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="InitMemberCurrLib1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.PersArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.LibArtId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

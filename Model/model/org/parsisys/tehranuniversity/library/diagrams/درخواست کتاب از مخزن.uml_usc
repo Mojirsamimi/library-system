@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:e0bda4d4-d7f4-4a4e-a53a-5aa21fb83d52'
+   isAbstract='false'
+   isLeaf='false'
+   name='درخواست کتاب از مخزن'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:040ab2d2-1d27-4b7d-b368-003fd87d63bc'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

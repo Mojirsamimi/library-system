@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LoanCashPenalty"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="LOAN_CASH_PENALTY"
+  AliasName="LoanCashPenalty"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenaltyImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN_CASH_PENALTY"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Value"
+    Precision="6"
+    Scale="0"
+    ColumnName="VALUE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.Value_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DayDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="DAY_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DayDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="500"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LOAN_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LoanPenaltyType"
+    Precision="1"
+    Scale="0"
+    ColumnName="LOAN_PENALTY_TYPE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoanArtId"
+    IsNotNull="true"
+    Precision="12"
+    Scale="0"
+    ColumnName="LOAN_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN_CASH_PENALTY"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LOAN_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.userSession.userData.username]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="UserName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Loan"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanCashPenLoanFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanCashPenLoanFkAssoc.Loan"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanCashPenLoanFkAssoc.LoanCashPenalty"
+    Type="org.parsisys.tehranuniversity.library.model.eo.LoanImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Loan1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanLoanCashPenaltyFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanLoanCashPenaltyFkAssoc.Loan1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanLoanCashPenaltyFkAssoc.LoanCashPenalty1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.LoanImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="LoancshpnPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="LOANCSHPN_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.LoanArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007167">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007167"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007168">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007168"/>
+      <Attr Name="_checkCondition" Value='"VALUE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.Value"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007169">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007169"/>
+      <Attr Name="_checkCondition" Value='"DAY_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.DayDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007170">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007170"/>
+      <Attr Name="_checkCondition" Value='"LOAN_PENALTY_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.LoanPenaltyType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007171">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007171"/>
+      <Attr Name="_checkCondition" Value='"LOAN_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.LoanArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007172">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007172"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="LoanCashPenLoanFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LOAN_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="LOAN_CASH_PEN_LOAN_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.LoanCashPenalty.LoanArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

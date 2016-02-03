@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="new_IntroductionLetterPageDef"
+                Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="GoalLibLOV1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="GoalLibLOV1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="GoalLibLOV1Iterator" ListOperMode="navigation"
+          ListIter="GoalLibLOV1Iterator" id="GoalLibLOV1" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="GoalLibrary"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="report_ExtraChargePageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="ExtraChargeReportVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="ExtraChargeReportVOIterator"/>
+    <searchRegion Criteria="ExtraCharge_DateVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ExtraChargeReportVOIterator"
+                  id="ExtraChargeDateVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ExtraChargeReportVOIterator" id="ExtraChargeReportVO">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ExtraChargeVO"
+                      Name="ExtraChargeReportVO0">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="ChargeId"/>
+          <Item Value="Description"/>
+          <Item Value="ChargeValue"/>
+          <Item Value="InsertDate"/>
+          <Item Value="SumCharge"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ExtraChargeReportVOIterator" id="SumCharge">
+      <AttrNames>
+        <Item Value="SumCharge"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

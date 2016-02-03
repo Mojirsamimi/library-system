@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_RETURN_BOOKPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="ReturnBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ReturnBookVO1Iterator"/>
+    <searchRegion Criteria="SearchBarcodeVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ReturnBookVO1Iterator" id="SearchBarcodeVCQuery"
+                  TrackQueryPerformed="Page"/>
+    <iterator Binds="LoanVO1" RangeSize="10" DataControl="AppModuleDataControl"
+              id="LoanVO1Iterator"/>
+    <iterator Binds="InitMemberVO3" RangeSize="10"
+              DataControl="AppModuleDataControl" id="InitMemberVO3Iterator"/>
+    <iterator Binds="PersonVO2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO2Iterator"/>
+    <taskFlow id="vbbok_rank_flow1"
+              taskFlowId="/WEB-INF/vbbok_rank_flow.xml#vbbok_rank_flow"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="ProviderName">
+      <AttrNames>
+        <Item Value="ProviderName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanVO1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberVO3Iterator" id="ArtId1">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO2Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO2Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="BookTypeText">
+      <AttrNames>
+        <Item Value="BookTypeText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="DelayMonth">
+      <AttrNames>
+        <Item Value="DelayMonth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="DelayDay">
+      <AttrNames>
+        <Item Value="DelayDay"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="HolyWeek">
+      <AttrNames>
+        <Item Value="HolyWeek"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnBookVO1Iterator" id="PenaltyOffer">
+      <AttrNames>
+        <Item Value="PenaltyOffer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanVO1Iterator" id="LoanStatusText">
+      <AttrNames>
+        <Item Value="LoanStatusText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoanVO1Iterator" id="LoanUser">
+      <AttrNames>
+        <Item Value="LoanUser"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

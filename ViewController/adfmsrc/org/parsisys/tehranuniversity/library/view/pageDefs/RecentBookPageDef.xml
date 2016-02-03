@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="RecentBookPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="RecentBooksVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="RecentBooksVo1Iterator"/>
+    <searchRegion Binds="RecentBooksVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="RecentBooksVo1Query"/>
+    <searchRegion Criteria="RecentBooksPeriodVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="RecentBooksVo1Iterator" id="RecentBooksPeriodVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RecentBooksVo1Iterator" id="RecentBooksVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.RecentBooksVo"
+                      Name="RecentBooksVo10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Title"/>
+          <Item Value="CallNo"/>
+          <Item Value="Manufacturer"/>
+          <Item Value="OrigTitle"/>
+          <Item Value="PubDate"/>
+          <Item Value="UniformTitle"/>
+          <Item Value="VolumeCount"/>
+          <Item Value="InsertDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

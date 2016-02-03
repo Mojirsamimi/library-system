@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="loanCashPenalty_insertPageDef"
+                Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LoanCashPenaltyVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LoanCashPenaltyVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="LoanCashPenaltyVO1Iterator" id="PenaltyCalc">
+      <AttrNames>
+        <Item Value="PenaltyCalc"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

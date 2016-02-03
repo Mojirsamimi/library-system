@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VbookSubSubVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="VbookSubjectVO"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="VbookSubjectVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVO.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVO.SubjArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SubjectVo"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.SubjectVo">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SubjectVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.SubjectVo.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.SubjectVo.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

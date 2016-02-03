@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MemberExtensionHistory"
+  Version="11.1.1.56.60"
+  SelectList="MemberExtentionHistory.ART_ID, 
+       MemberExtentionHistory.INSERT_DATE, 
+       MemberExtentionHistory.LABCOL, 
+       MemberExtentionHistory.MEM_ART_ID, 
+       MemberExtentionHistory.MEMSETUP_ART_ID, 
+       MemberExtentionHistory.REC_TYPE, 
+       MemberExtentionHistory.USER_NAME"
+  FromList="MEMBER_EXTENTION_HISTORY MemberExtentionHistory"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.MemberExtensionHistoryRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.MemberExtensionHistoryImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="MemberExtentionHistory"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.MemberExtentionHistory"/>
+  <ViewAttribute
+    Name="ArtId"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="MemberExtentionHistory"
+    AliasName="ART_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="InsertDate"
+    PrecisionRule="true"
+    EntityAttrName="InsertDate"
+    EntityUsage="MemberExtentionHistory"
+    AliasName="INSERT_DATE"/>
+  <ViewAttribute
+    Name="Labcol"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="MemberExtentionHistory"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="MemArtId"
+    PrecisionRule="true"
+    EntityAttrName="MemArtId"
+    EntityUsage="MemberExtentionHistory"
+    AliasName="MEM_ART_ID"/>
+  <ViewAttribute
+    Name="MemsetupArtId"
+    PrecisionRule="true"
+    EntityAttrName="MemsetupArtId"
+    EntityUsage="MemberExtentionHistory"
+    AliasName="MEMSETUP_ART_ID"/>
+  <ViewAttribute
+    Name="RecType"
+    PrecisionRule="true"
+    EntityAttrName="RecType"
+    EntityUsage="MemberExtentionHistory"
+    AliasName="REC_TYPE"/>
+  <ViewAttribute
+    Name="UserName"
+    PrecisionRule="true"
+    EntityAttrName="UserName"
+    EntityUsage="MemberExtentionHistory"
+    AliasName="USER_NAME"/>
+  <ViewLinkAccessor
+    Name="InitMemberVO"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.InitMemberMemExtHistVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

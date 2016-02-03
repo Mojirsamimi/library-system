@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProviderRoleVO"
+  Version="11.1.1.56.60"
+  SelectList="ProviderRole.ART_ID, 
+       ProviderRole.READING_ORDER, 
+       ProviderRole.ROLE, 
+       ProviderRole.ACTIVE, 
+       ProviderRole.DESCRIPTION"
+  FromList="PROVIDER_ROLE ProviderRole"
+  OrderBy="role"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.ProviderRoleVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.ProviderRoleVOImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_objectSuperClassName" Value="fadak.base.TemplateViewObject"/>
+    <Attr Name="_rowSuperClassName" Value="fadak.base.TemplateViewRow"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="readingOrder1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.readingOrder"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ReadingOrder"
+    ListVOName="readingOrder1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_ReadingOrder_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReadingOrder"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="keyAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ProviderRole"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.ProviderRole"/>
+  <ViewAttribute
+    Name="ArtId"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="ProviderRole"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="ReadingOrder"
+    PrecisionRule="true"
+    EntityAttrName="ReadingOrder"
+    EntityUsage="ProviderRole"
+    AliasName="READING_ORDER"
+    LOVName="LOV_ReadingOrder">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="reading_order_label"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="EditOnUpdateInsert"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+  <ViewAttribute
+    Name="Role"
+    PrecisionRule="true"
+    EntityAttrName="Role"
+    EntityUsage="ProviderRole"
+    AliasName="ROLE"/>
+  <ViewAttribute
+    Name="Active"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Active"
+    EntityUsage="ProviderRole"
+    AliasName="ACTIVE"
+    DefaultValue="1"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="ProviderRole"
+    AliasName="DESCRIPTION"/>
+  <ViewCriteria
+    Name="PersianProviderRoleVOCriteria"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.ProviderRoleVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow38"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ReadingOrder"
+        ViewAttribute="ReadingOrder"
+        Operator="="
+        Conjunction="AND"
+        Value="1"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="EnglishProviderRoleVOCriteria"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.ProviderRoleVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow39"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ReadingOrder"
+        ViewAttribute="ReadingOrder"
+        Operator="="
+        Conjunction="AND"
+        Value="2"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+   <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

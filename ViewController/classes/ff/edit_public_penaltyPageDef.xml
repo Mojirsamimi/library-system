@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="edit_public_penaltyPageDef"
+                Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PublicCashPenaltyVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="PublicCashPenaltyVOIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PublicCashPenaltyVOIterator" id="Value">
+      <AttrNames>
+        <Item Value="Value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PublicCashPenaltyVOIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="edit_publicPenalty" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="edit_publicPenalty"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="value" NDValue="#{bindings.Value}"
+                 NDType="java.lang.Integer"/>
+      <NamedData NDName="description" NDValue="#{bindings.Description}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

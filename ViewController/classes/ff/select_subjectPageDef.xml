@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="select_subjectPageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RefSelectSubjectVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="RefSelectSubjectVOIterator"/>
+    <searchRegion Binds="RefSelectSubjectVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="RefSelectSubjectVOQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RefSelectSubjectVOIterator" id="RefSelectSubjectVO">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SubjectVo"
+                      Name="RefSelectSubjectVO0">
+        <AttrNames>
+          <Item Value="Subject1"/>
+          <Item Value="ReadingOrder"/>
+          <Item Value="ArtId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="RefSelectSubjectVOIterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

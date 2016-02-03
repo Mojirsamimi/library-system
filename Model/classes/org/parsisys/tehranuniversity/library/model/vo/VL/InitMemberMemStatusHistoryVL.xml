@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InitMemberMemStatusHistoryVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberMemStatusHisFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="InitMemberVO"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="InitMemberVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO.LibArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MemberStatusHistoryVO"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.MemberStatusHistoryVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="MemberStatusHistoryVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.MemberStatusHistoryVO.IntmemArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.MemberStatusHistoryVO.LibArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="selectPubPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PublisherVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PublisherVO1Iterator"/>
+    <searchRegion Binds="PublisherVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PublisherVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PublisherVO1Iterator" id="PublisherVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.Publisher_PersianVO"
+                      Name="PublisherVO10">
+        <AttrNames>
+          <Item Value="Publisher1"/>
+          <Item Value="Place"/>
+          <Item Value="ReadingOrder"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

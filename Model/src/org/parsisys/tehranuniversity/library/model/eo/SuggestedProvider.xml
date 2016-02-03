@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SuggestedProvider"
+  Version="11.1.1.56.60"
+  DBObjectType="table"
+  DBObjectName="BOOK.SUGGESTED_PROVIDER"
+  AliasName="SuggestedProvider"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.SuggestedProviderImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ArtId"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PROVIDER"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PROVIDER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Provider"
+    IsNotNull="true"
+    Precision="300"
+    ColumnName="PROVIDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK.SUGGESTED_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.Provider_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ForeignName"
+    Precision="200"
+    ColumnName="FOREIGN_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK.SUGGESTED_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.ForeignName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="BdDate"
+    Precision="50"
+    ColumnName="BD_DATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK.SUGGESTED_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.BdDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ProviderKind"
+    Precision="1"
+    Scale="0"
+    ColumnName="PROVIDER_KIND"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProviderRoleArtId"
+    IsNotNull="true"
+    ColumnName="PROVIDER_ROLE_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.ProviderRoleArtId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="SuggestedVirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedProviderFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedProviderFkAssoc.SuggestedVirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedProviderFkAssoc.SuggestedProvider"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SuggestedVirtualBookImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SuggestedProviderPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUGGESTED_PROVIDER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020331">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020331"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0020332">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020332"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020333">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020333"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020349">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020349"/>
+      <Attr Name="_checkCondition" Value='"PROVIDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider.Provider"/>
+    </AttrArray>
+  </Key>
+</Entity>

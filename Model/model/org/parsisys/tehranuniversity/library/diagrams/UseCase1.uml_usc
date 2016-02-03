@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:4a9a259d-58af-433d-a556-9d234ee8dfa9'
+   isAbstract='false'
+   isLeaf='false'
+   name='UseCase1'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:fc65a8d9-f72d-47f6-ac65-8e78e879c0b6'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

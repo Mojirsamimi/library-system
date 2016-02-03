@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:6e6a6b8d-3db2-4c5f-9ff9-7cc479b5665f'
+   isAbstract='false'
+   isLeaf='false'
+   name='سابقه وضعیت عضو'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:5986711e-dceb-477f-96e8-88ca98da9ca0'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:63c23539-69df-47c7-b735-cc44792b50e0'>
+   <addition href='urn:uuid:cd2d22f2-f78e-4b9b-b371-3f6b33d2eea0'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

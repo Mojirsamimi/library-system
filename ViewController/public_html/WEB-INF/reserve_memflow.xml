@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="reserve_memflow">
+    <default-activity id="__1">new_reserve_mem</default-activity>
+    <managed-bean id="__13">
+      <managed-bean-name id="__11">cid_reserve_mem</managed-bean-name>
+      <managed-bean-class id="__12">org.parsisys.tehranuniversity.library.view.beans.CidReserve</managed-bean-class>
+      <managed-bean-scope id="__14">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="new_reserve_mem">
+      <page>/ff/new_reserve_mem.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">new_reserve_mem</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">end</from-outcome>
+        <to-activity-id id="__6">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

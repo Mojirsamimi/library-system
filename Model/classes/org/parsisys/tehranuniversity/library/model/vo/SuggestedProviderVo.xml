@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SuggestedProviderVo"
+  Version="11.1.1.56.60"
+  SelectList="SuggestedProvider.LABCOL, 
+       SuggestedProvider.ART_ID, 
+       SuggestedProvider.BD_DATE, 
+       SuggestedProvider.FOREIGN_NAME, 
+       SuggestedProvider.PROVIDER, 
+       SuggestedProvider.PROVIDER_KIND, 
+       SuggestedProvider.VBOOK_ART_ID, 
+       SuggestedProvider.PROVIDER_ROLE_ART_ID"
+  FromList="BOOK.SUGGESTED_PROVIDER SuggestedProvider"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ProviderRoleVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.ProviderRoleVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProviderRole"
+    ListVOName="ProviderRoleVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_ProviderRole_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProviderRoleArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Role"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SuggestedProvider"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.SuggestedProvider"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="SuggestedProvider"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="SuggestedProvider"
+    AliasName="ART_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="BdDate"
+    PrecisionRule="true"
+    EntityAttrName="BdDate"
+    EntityUsage="SuggestedProvider"
+    AliasName="BD_DATE"/>
+  <ViewAttribute
+    Name="ForeignName"
+    PrecisionRule="true"
+    EntityAttrName="ForeignName"
+    EntityUsage="SuggestedProvider"
+    AliasName="FOREIGN_NAME"/>
+  <ViewAttribute
+    Name="Provider"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Provider"
+    EntityUsage="SuggestedProvider"
+    AliasName="PROVIDER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.SuggestedProviderVo.Provider_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProviderKind"
+    PrecisionRule="true"
+    EntityAttrName="ProviderKind"
+    EntityUsage="SuggestedProvider"
+    AliasName="PROVIDER_KIND"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="SuggestedProvider"
+    AliasName="VBOOK_ART_ID"/>
+  <ViewAttribute
+    Name="ProviderRoleArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProviderRoleArtId"
+    EntityUsage="SuggestedProvider"
+    AliasName="PROVIDER_ROLE_ART_ID"
+    LOVName="LOV_ProviderRole">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="SuggestedVirtualBookVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.SuggestedBookSuggestedProviderVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

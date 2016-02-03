@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Publisher"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="PUBLISHER"
+  AliasName="Publisher"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.PublisherImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="MessageVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.MessageVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DummyVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.DummyVO"
+    RowLevelBinds="true"/>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLISHER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLISHER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Place"
+    IsUnique="true"
+    Precision="100"
+    ColumnName="PLACE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLISHER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Publisher.Place_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Publisher"
+    IsUnique="true"
+    Precision="200"
+    ColumnName="PUBLISHER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLISHER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Publisher.Publisher_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ReadingOrder"
+    Precision="1"
+    Scale="0"
+    ColumnName="READING_ORDER"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLISHER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Publisher.ReadingOrder_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="VbookPublisher"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbpubPubFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbpubPubFkAssoc.VbookPublisher"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbpubPubFkAssoc.Publisher"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="VbookPublisher1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPubPubFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPubPubFkAssoc.VbookPublisher1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPubPubFkAssoc.Publisher1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookPublisherFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookPublisherFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookPublisherFkAssoc.Publisher"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="BookPubPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="BOOK_PUB_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PubPlacePublisherUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PUB_PLACE_PUBLISHER_UK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.Place"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.Publisher"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008305">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008305"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008306">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008306"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008307">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008307"/>
+      <Attr Name="_checkCondition" Value='"PLACE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.Place"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008308">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008308"/>
+      <Attr Name="_checkCondition" Value='"PUBLISHER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.Publisher"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008309">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008309"/>
+      <Attr Name="_checkCondition" Value='"READING_ORDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Publisher.ReadingOrder"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

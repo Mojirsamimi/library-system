@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LibUser"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="LIB_USER"
+  AliasName="LibUser"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LIB_USER"
+    PrimaryKey="true"
+    IsUnique="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LIB_USER"
+    PrimaryKey="true"
+    IsUnique="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    Precision="20"
+    ColumnName="PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LIB_USER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    Precision="50"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LIB_USER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Enable"
+    Precision="1"
+    Scale="0"
+    ColumnName="ENABLE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LIB_USER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="LibUserRole"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUser_LibUserRoleFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUser_LibUserRoleFkAssoc.LibUserRole"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUser_LibUserRoleFkAssoc.LibUser"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LibUserRole1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserRole_LibUserFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserRole_LibUserFkAssoc.LibUserRole1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserRole_LibUserFkAssoc.LibUser"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LibRole"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserAssoc.LibRole"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserAssoc.LibUser"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Library"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibraryFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibraryFkAssoc.Library"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibraryFkAssoc.LibUser"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="LibRole1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibRoleAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibRoleAssoc.LibRole1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibUserLibRoleAssoc.LibUser1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="LibuserPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="LIBUSER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUser.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUser.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008197">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008197"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC008198">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008198"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC008199">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008199"/>
+      <Attr Name="_checkCondition" Value='"PASSWORD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUser.Password"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008200">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008200"/>
+      <Attr Name="_checkCondition" Value='"NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUser.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008201">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008201"/>
+      <Attr Name="_checkCondition" Value='"ENABLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUser.Enable"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UserNaneLabcolAltkey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="LIBUSERKEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUser.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUser.UserName"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="INTRODUCTION_LETTERPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+            <invokeAction Binds="removeAllPersonVC" id="removeAllPersonVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <invokeAction Binds="removeAllInitMemCurrLibVC"
+                  id="removeAllInitMemCurrLibVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="PersonVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO1Iterator"/>
+    <searchRegion Criteria="search_barcode_id"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PersonVO1Iterator" id="searchbarcodeidQuery"/>
+    <iterator Binds="InitMemberCurrLibVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="InitMemberCurrLibVOIterator"/>
+    <iterator Binds="IntroductionLetterVO" RangeSize="5"
+              DataControl="AppModuleDataControl"
+              id="IntroductionLetterVOIterator"/>
+    <searchRegion Binds="IntroductionLetterVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="IntroductionLetterVOQuery"/>
+    <iterator Binds="GoalLibLOV1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="GoalLibLOV1Iterator"/>
+    <taskFlow taskFlowId="${pageFlowScope.TFBean.dynamicTaskFlowId}"
+              id="dynamicRegion1"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"
+              activation="deferred"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PersType">
+      <AttrNames>
+        <Item Value="PersType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="DeptName">
+      <AttrNames>
+        <Item Value="DeptName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PostText">
+      <AttrNames>
+        <Item Value="PostText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PersCategory">
+      <AttrNames>
+        <Item Value="PersCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="SecArtId">
+      <AttrNames>
+        <Item Value="SecArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PersStatus">
+      <AttrNames>
+        <Item Value="PersStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Picture1">
+      <AttrNames>
+        <Item Value="Picture1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator"
+                     id="MemshipCategoryText">
+      <AttrNames>
+        <Item Value="MemshipCategoryText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="StatStDate">
+      <AttrNames>
+        <Item Value="StatStDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="StatEndDate">
+      <AttrNames>
+        <Item Value="StatEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="IntroductionLetterVOIterator" id="IntroductionLetterVO">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.IntroductionLetterVO"
+                      Name="IntroductionLetterVO0">
+        <AttrNames>
+          <Item Value="GoalLibrary"/>
+          <Item Value="IntroduceDate"/>
+          <Item Value="IssuanceUser"/>
+          <Item Value="Description"/>
+          <Item Value="CancelDate"/>
+          <Item Value="CancellationUser"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="GoalLibLOV1Iterator" ListOperMode="multiSelect"
+          ListIter="GoalLibLOV1Iterator" id="GoalLibLOV1" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="GoalLibrary"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="GoalLibrary"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues IterBinding="IntroductionLetterVOIterator"
+                     id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="DebitSum">
+      <AttrNames>
+        <Item Value="DebitSum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator"
+                     id="DebitNonCashText">
+      <AttrNames>
+        <Item Value="DebitNonCashText"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersCategory" id="PersCategory1" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_PersType"
+          id="PersType1" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_SecArtId"
+          id="SecArtId1" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersStatus" id="PersStatus1" DTSupportsMRU="true"/>
+    <list IterBinding="InitMemberCurrLibVOIterator" StaticList="false"
+          Uses="LOV_MemshipStatus" id="MemshipStatus1" DTSupportsMRU="true"/>
+    <methodAction id="clearing_IntroductionLetter" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="clearing_IntroductionLetter"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.clearing_IntroductionLetter_AppModuleDataControl_dataProvider_clearing_IntroductionLetter_result"/>
+                    <methodAction id="removeAllPersonVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPersonVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllInitMemCurrLibVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllInitMemCurrLibVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<MetadataDirectory xmlns="http://xmlns.oracle.com/adfm/metainf" version="11.1.1.0.0">
+   <BusinessComponentServiceRegistry path="testAM/common/bc4j.xcfg"/>
+   <BusinessComponentServiceRegistry path="org/parsisys/tehranuniversity/library/model/am/common/bc4j.xcfg"/>
+   <BusinessComponentProjectRegistry path="org/parsisys/tehranuniversity/library/model/Model.jpx"/>
+</MetadataDirectory>

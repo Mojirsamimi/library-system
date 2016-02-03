@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="internet_reservePageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+ <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+            <invokeAction Binds="removeAllPersonVC" id="removeAllPersonVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <invokeAction Binds="removeAllInitMemCurrLibVC"
+                  id="removeAllInitMemCurrLibVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <invokeAction Binds="removeAllVirtualBookVC"
+                  id="removeAllVirtualBookVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <invokeAction Binds="removeAllPhysicalBookVC"
+                  id="removeAllPhysicalBookVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <iterator Binds="VirtualBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO1Iterator"/>
+    <searchRegion Criteria="Search_CallNo_ArtId_TitleVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="VirtualBookVO1Iterator"
+                  id="SearchCallNoArtIdTitleVCQuery"/>
+    <iterator Binds="PhysicalBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PhysicalBookVO1Iterator"/>
+    <searchRegion Binds="PhysicalBookVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PhysicalBookVO11Query"/>
+    <taskFlow taskFlowId="${pageFlowScope.TFBean.dynamicTaskFlowId}"
+              id="dynamicRegion1"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="PhysicalBookVolPartVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="PhysicalBookVolPartVO1Iterator"/>
+    <searchRegion Binds="PhysicalBookVolPartVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PhysicalBookVolPartVO1Query"/>
+    <iterator Binds="PersonVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO1Iterator"/>
+    <accessorIterator MasterBinding="PersonVO1Iterator"
+                      Binds="InitMemberCurrLibVO1" RangeSize="25"
+                      DataControl="AppModuleDataControl"
+                      BeanClass="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO"
+                      id="InitMemberCurrLibVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="CallNo">
+      <AttrNames>
+        <Item Value="CallNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="VbookCNT">
+      <AttrNames>
+        <Item Value="VbookCNT"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="OrigTitle">
+      <AttrNames>
+        <Item Value="OrigTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PhysicalBookVO1Iterator" id="PhysicalBookVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+                      Name="PhysicalBookVO10">
+        <AttrNames>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PhysicalBookVO1Iterator" id="PhysicalBookVO11">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+                      Name="PhysicalBookVO110">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="RegId"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="LoanStatus"/>
+          <Item Value="SafetyStatus"/>
+          <Item Value="ExistenceStatus"/>
+          <Item Value="Place"/>
+          <Item Value="PubDate"/>
+          <Item Value="RetDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="ProviderName">
+      <AttrNames>
+        <Item Value="ProviderName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PhysicalBookVolPartVO1Iterator"
+          id="PhysicalBookVolPartVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.RO.PhysicalBookVolPartVO"
+                      Name="PhysicalBookVolPartVO10">
+        <AttrNames>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="CertificateNo">
+      <AttrNames>
+        <Item Value="CertificateNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_Origine"
+          id="Origine" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="PersonVO1Iterator"
+                  Uses="LOV_Affiliation" id="Affiliation"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_PersType"
+          id="PersType" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_Degree"
+          id="Degree" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersStatus" id="PersStatus" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_SecArtId"
+          id="SecArtId" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersCategory" id="PersCategory" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_MjrArtId"
+          id="MjrArtId" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_CmemsetupArtId" id="CmemsetupArtId" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_DeptArtId" id="DeptArtId" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVO1Iterator"
+                     id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+     <methodAction id="removeAllPersonVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPersonVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllInitMemCurrLibVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllInitMemCurrLibVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllPhysicalBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPhysicalBookVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllVirtualBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllVirtualBookVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

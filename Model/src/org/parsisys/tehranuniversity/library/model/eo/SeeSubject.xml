@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SeeSubject"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="SEE_SUBJECT"
+  AliasName="SeeSubject"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.SeeSubjectImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SubjArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="SUBJ_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SubjArtIdRelatedTo"
+    Precision="7"
+    Scale="0"
+    ColumnName="SUBJ_ART_ID_RELATED_TO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Subject1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjFkAssoc.Subject1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjFkAssoc.SeeSubject1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SubjectImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Subject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeSubjSubjRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeSubjSubjRelatedToFkAssoc.Subject"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeSubjSubjRelatedToFkAssoc.SeeSubject"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SubjectImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SeesubjectPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SEESUBJECT_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.SubjArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.SubjArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008339">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008339"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+  <Key
+    Name="SysC008340">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008340"/>
+      <Attr Name="_checkCondition" Value='"SUBJ_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.SubjArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008341">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008341"/>
+      <Attr Name="_checkCondition"
+        Value='"SUBJ_ART_ID_RELATED_TO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.SubjArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SeeSubjSubjFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SUBJ_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SEE_SUBJ_SUBJ_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.SubjArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SeeSubjSubjRelatedToFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SUBJ_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SEE_SUBJ_SUBJ_RELATED_TO_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeSubject.SubjArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+</Entity>

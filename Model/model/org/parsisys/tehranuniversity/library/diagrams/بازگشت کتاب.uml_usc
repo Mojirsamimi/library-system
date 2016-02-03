@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:d18ecbcb-4be2-460b-86f2-4d7de20c7c9a'
+   isAbstract='false'
+   isLeaf='false'
+   name='بازگشت کتاب'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:b473ecdf-4514-45e2-ae11-34ed36317fa8'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:3fdeafbf-ff2e-42a1-ba37-ebd811d7479d'>
+   <addition href='urn:uuid:437bef93-0305-4add-94a2-6e9c64089d32'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

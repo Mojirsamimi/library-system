@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:b8feae9c-72d0-49d5-83a8-2668d5eb4244'
+   isAbstract='false'
+   isLeaf='false'
+   name='تسویه حساب عضو'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:c6118bc2-0c64-4d7f-ad37-0680a75f8de8'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:45d8b263-5c4d-4235-9b40-ff831ff6af53'>
+   <addition href='urn:uuid:3a653f00-bf58-4c87-b890-eaaa4cbb48b1'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SuggestedSubject"
+  Version="11.1.1.56.60"
+  DBObjectType="table"
+  DBObjectName="BOOK.SUGGESTED_SUBJECT"
+  AliasName="SuggestedSubject"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubjectImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ArtId"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_SUBJECT"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Subject"
+    IsNotNull="true"
+    Precision="250"
+    ColumnName="SUBJECT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK.SUGGESTED_SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubject.Subject_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="SuggestedVirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedSubjectFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedSubjectFkAssoc.SuggestedVirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedSubjectFkAssoc.SuggestedSubject"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SuggestedVirtualBookImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SuggestedSubjectPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUGGESTED_SUBJECT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubject.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubject.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020344">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020344"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0020345">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020345"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubject.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020346">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020346"/>
+      <Attr Name="_checkCondition" Value='"SUBJECT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubject.Subject"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020347">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020347"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedSubject.VbookArtId"/>
+    </AttrArray>
+  </Key>
+</Entity>

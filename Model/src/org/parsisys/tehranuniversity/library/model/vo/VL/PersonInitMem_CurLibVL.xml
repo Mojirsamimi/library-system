@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PersonInitMem_CurLibVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMem_currLibFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="PersonVO1"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.PersonVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="PersonVO1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.PersonVO.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="InitMemberCurrLibVO1"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="InitMemberCurrLibVO1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.InitMemberVO.PersArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

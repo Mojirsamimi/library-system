@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:fadak="/fadak"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+         
+      <f:facet name="popup">
+       
+        <af:popup  id="tf" contentDelivery="lazyUncached"
+                binding="#{pageFlowScope.TFBean.region_popup}">
+      <af:panelWindow title="#{pageFlowScope.cid_loan_cash_penalty.title}"
+                      closeIconVisible="false">
+       <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                  regionNavigationListener="#{pageFlowScope.TFBean.navigation}"/>
+      </af:panelWindow>
+      </af:popup>
+      
+      
+     
+       </f:facet>
+          <f:facet name="center">
+          <af:panelHeader text="جریمه تاخیر امانت" helpTopicId="loanPenalty">
+           <f:facet name="toolbar">
+          <af:toolbar id="t1">
+                  <fadak:ToolbarSet debug="true" iteratorname="PersonVO1Iterator" id="ts1"
+                                    disabled_delete="true"
+                                    disabled_create="true" showcreate="false"
+                                    showdelete="false" showcommit="false"
+                                    showEditCommand="false" showquery="false"
+                                    showrefresh="false" showrollback="false"
+                                    showsearch="false"/>
+
+          </af:toolbar>
+                    </f:facet>
+              <af:panelSplitter id="ps1" splitterPosition="140"
+                                orientation="vertical">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1" headerText="جستجوی عضو" disclosed="true"
+                                value="#{bindings.searchnameidbarcodeQuery.queryDescriptor}"
+                                model="#{bindings.searchnameidbarcodeQuery.queryModel}"
+                                queryListener="#{bindings.searchnameidbarcodeQuery.processQuery}"
+                                queryOperationListener="#{bindings.searchnameidbarcodeQuery.processQueryOperation}"
+                                rows="2" maxColumns="2" saveQueryMode="hidden"
+                                modeChangeVisible="false"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" layout="scroll"
+                                         valign="middle" halign="center" partialTriggers="qryId1">
+                      <af:panelFormLayout id="pfl1" rows="2" maxColumns="2"
+                                          fieldWidth="100">
+                        <af:inputText value="#{bindings.Barcode.inputValue}"
+                                      label="#{bindings.Barcode.hints.label}"
+                                      required="#{bindings.Barcode.hints.mandatory}"
+                                      columns="#{bindings.Barcode.hints.displayWidth}"
+                                      maximumLength="#{bindings.Barcode.hints.precision}"
+                                      shortDesc="#{bindings.Barcode.hints.tooltip}"
+                                      id="it12" readOnly="true">
+                          <f:validator binding="#{bindings.Barcode.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Fname.inputValue}"
+                                      label="#{bindings.Fname.hints.label}"
+                                      required="#{bindings.Fname.hints.mandatory}"
+                                      columns="#{bindings.Fname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Fname.hints.precision}"
+                                      shortDesc="#{bindings.Fname.hints.tooltip}"
+                                      id="it14" readOnly="true">
+                          <f:validator binding="#{bindings.Fname.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.MemshipStatus1.inputValue}"
+                                            label="#{bindings.MemshipStatus1.label}"
+                                            required="#{bindings.MemshipStatus1.hints.mandatory}"
+                                            shortDesc="#{bindings.MemshipStatus1.hints.tooltip}"
+                                            id="soc1" readOnly="true">
+                          <f:selectItems value="#{bindings.MemshipStatus1.items}"
+                                         id="si1"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.Id.inputValue}"
+                                      label="#{bindings.Id.hints.label}"
+                                      required="#{bindings.Id.hints.mandatory}"
+                                      columns="#{bindings.Id.hints.displayWidth}"
+                                      maximumLength="#{bindings.Id.hints.precision}"
+                                      shortDesc="#{bindings.Id.hints.tooltip}"
+                                      id="it13" readOnly="true">
+                          <f:validator binding="#{bindings.Id.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Lname.inputValue}"
+                                      label="#{bindings.Lname.hints.label}"
+                                      required="#{bindings.Lname.hints.mandatory}"
+                                      columns="#{bindings.Lname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Lname.hints.precision}"
+                                      shortDesc="#{bindings.Lname.hints.tooltip}"
+                                      id="it15" readOnly="true">
+                          <f:validator binding="#{bindings.Lname.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer"/>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="10" id="s1"/>
+                      <af:group id="g1">
+                        <af:commandButton text=""
+                                          action="#{pageFlowScope.TFBean.loanCashPenalty_new}"
+                                          id="cb3"
+                                          icon="/icons/edit-find-replace.png"
+                                          shortDesc="ثبت">
+                          <af:setActionListener from="#{'ثبت جریمه'}"
+                                                to="#{pageFlowScope.cid_loan_cash_penalty.title}"/>
+                        </af:commandButton>
+                        <af:commandButton text=""
+                                          action="#{pageFlowScope.TFBean.loanCashPenalty_edit}"
+                                          id="cb1"
+                                          icon="/icons/edit-delete.png"
+                                          shortDesc="ویرایش"
+                                          binding="#{pageFlowScope.cid_loan_cash_penalty.editbtn_disabled}">
+                          <af:setActionListener from="#{'ویرایش جریمه'}"
+                                                to="#{pageFlowScope.cid_loan_cash_penalty.title}"/>
+                        </af:commandButton>
+                      </af:group>
+                      <af:panelCollection id="pc1"
+                                          inlineStyle="width:95%; height:200.0px;">
+                        <af:table value="#{bindings.LoanCashPenaltyVO.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.LoanCashPenaltyVO.rangeSize}"
+                                  emptyText="#{bindings.LoanCashPenaltyVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.LoanCashPenaltyVO.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.LoanCashPenaltyVOQuery.queryDescriptor}"
+                                  queryListener="#{bindings.LoanCashPenaltyVOQuery.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.LoanCashPenaltyVO.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.LoanCashPenaltyVO.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="t2"
+                                  columnStretching="column:c2"
+                                  partialTriggers=":::r1 :::tf">
+                          <af:column sortProperty="Barcode" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.Barcode.label}"
+                                     id="c8">
+                            <af:inputText value="#{row.bindings.Barcode.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.Barcode.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.Barcode.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.Barcode.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.Barcode.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.Barcode.tooltip}"
+                                          id="it1">
+                              <f:validator binding="#{row.bindings.Barcode.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Title" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.Title.label}"
+                                     id="c2">
+                            <af:inputText value="#{row.bindings.Title.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.Title.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.Title.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.Title.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.Title.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.Title.tooltip}"
+                                          id="it3">
+                              <f:validator binding="#{row.bindings.Title.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="LoanDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.LoanDate.label}"
+                                     id="c5">
+                            <af:inputText value="#{row.bindings.LoanDate.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.LoanDate.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.LoanDate.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.LoanDate.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.LoanDate.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.LoanDate.tooltip}"
+                                          id="it4" readOnly="true">
+                              <f:validator binding="#{row.bindings.LoanDate.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.LoanCashPenaltyVO.hints.LoanDate.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="RetDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.RetDate.label}"
+                                     id="c9">
+                            <af:inputText value="#{row.bindings.RetDate.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.RetDate.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.RetDate.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.RetDate.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.RetDate.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.RetDate.tooltip}"
+                                          id="it2" readOnly="true">
+                              <f:validator binding="#{row.bindings.RetDate.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.LoanCashPenaltyVO.hints.RetDate.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="RealRetDate"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.RealRetDate.label}"
+                                     id="c3">
+                            <af:inputText value="#{row.bindings.RealRetDate.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.RealRetDate.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.RealRetDate.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.RealRetDate.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.RealRetDate.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.RealRetDate.tooltip}"
+                                          id="it6" readOnly="true">
+                              <f:validator binding="#{row.bindings.RealRetDate.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.LoanCashPenaltyVO.hints.RealRetDate.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="DelayDay" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.DelayDay.label}"
+                                     id="c6" width="50">
+                            <af:inputText value="#{row.bindings.DelayDay.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.DelayDay.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.DelayDay.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.DelayDay.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.DelayDay.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.DelayDay.tooltip}"
+                                          id="it5" readOnly="true">
+                              <f:validator binding="#{row.bindings.DelayDay.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.LoanCashPenaltyVO.hints.DelayDay.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="PenaltyCalc"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.PenaltyCalc.label}"
+                                     id="c7" width="70">
+                            <af:inputText value="#{row.bindings.PenaltyCalc.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.PenaltyCalc.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.PenaltyCalc.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.PenaltyCalc.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.PenaltyCalc.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.PenaltyCalc.tooltip}"
+                                          id="it8" readOnly="true">
+                              <f:validator binding="#{row.bindings.PenaltyCalc.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.LoanCashPenaltyVO.hints.PenaltyCalc.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Value" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.Value.label}"
+                                     id="c10" width="70">
+                            <af:inputText value="#{row.bindings.Value.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.Value.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.Value.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.Value.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.Value.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.Value.tooltip}"
+                                          id="it10">
+                              <f:validator binding="#{row.bindings.Value.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.LoanCashPenaltyVO.hints.Value.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="DayDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.DayDate.label}"
+                                     id="c1">
+                            <af:inputText value="#{row.bindings.DayDate.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.DayDate.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.DayDate.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.DayDate.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.DayDate.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.DayDate.tooltip}"
+                                          id="it9">
+                              <f:validator binding="#{row.bindings.DayDate.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.LoanCashPenaltyVO.hints.DayDate.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="UserName" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LoanCashPenaltyVO.hints.UserName.label}"
+                                     id="c4">
+                            <af:inputText value="#{row.bindings.UserName.inputValue}"
+                                          label="#{bindings.LoanCashPenaltyVO.hints.UserName.label}"
+                                          required="#{bindings.LoanCashPenaltyVO.hints.UserName.mandatory}"
+                                          columns="#{bindings.LoanCashPenaltyVO.hints.UserName.displayWidth}"
+                                          maximumLength="#{bindings.LoanCashPenaltyVO.hints.UserName.precision}"
+                                          shortDesc="#{bindings.LoanCashPenaltyVO.hints.UserName.tooltip}"
+                                          id="it7">
+                              <f:validator binding="#{row.bindings.UserName.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                        </af:table>
+                      </af:panelCollection>
+                      <af:panelFormLayout id="pfl2" rows="1" maxColumns="2"
+                                          fieldWidth="100">
+                        <af:inputText value="#{bindings.Description.inputValue}"
+                                      label="#{bindings.Description.hints.label}"
+                                      required="#{bindings.Description.hints.mandatory}"
+                                      columns="#{bindings.Description.hints.displayWidth}"
+                                      maximumLength="#{bindings.Description.hints.precision}"
+                                      shortDesc="#{bindings.Description.hints.tooltip}"
+                                      id="it11" partialTriggers="pc1:t2">
+                          <f:validator binding="#{bindings.Description.validator}"/>
+                        </af:inputText>
+                        <af:spacer width="10" height="10" id="s2"/>
+                        <f:facet name="footer"/>
+                      </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

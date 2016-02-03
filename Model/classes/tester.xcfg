@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="org.parsisys.tehranuniversity.library.model.am.AppModule">
+      <AppModuleConfig name="13F6B05E844" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/Connection1DS" ApplicationName="org.parsisys.tehranuniversity.library.model.am.AppModule" jbo.project="org.parsisys.tehranuniversity.library.model.Model" BC4JConfigName="AppModuleLocal" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DeployPlatform="LOCAL" JDBCName="Connection1">
+         <AM-Pooling jbo.poolminavailablesize="2" jbo.poolmaxavailablesize="2"/>
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Oracle" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="org.parsisys.tehranuniversity.library.model.am.AppModule"/>
+         <Tester FullProxyInterfaceName="org.parsisys.tehranuniversity.library.model.am.common.AppModule"/>
+         <Custom LastUsedConfiguration="AppModuleLocal" JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

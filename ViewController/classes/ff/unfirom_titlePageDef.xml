@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="unfirom_titlePageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UniformTitleVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="UniformTitleVO1Iterator"/>
+    <searchRegion Binds="UniformTitleVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="UniformTitleVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="UniformTitleVO1Iterator" id="UniformTitleVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.UniformTitleVO"
+                      Name="UniformTitleVO10">
+        <AttrNames>
+          <Item Value="Title"/>
+          <Item Value="ReadingOrder"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="copy_uniform_title" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="copy_uniform_title"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

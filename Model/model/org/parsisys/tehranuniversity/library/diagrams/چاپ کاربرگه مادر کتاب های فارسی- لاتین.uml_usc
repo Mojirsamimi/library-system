@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:d5bdb38d-3125-46d8-90b4-0f15fea5d3d1'
+   isAbstract='false'
+   isLeaf='false'
+   name='چاپ کاربرگه مادر کتاب های فارسی- لاتین'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:d32080e6-76fd-4285-81f2-27e8dcc9de6b'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

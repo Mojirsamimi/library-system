@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:fadak="/fadak"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <af:panelCollection id="pc1">
+    <f:facet name="menus"/>
+    <f:facet name="toolbar">
+      <af:toolbar id="t2">
+        <fadak:ToolbarSet rendered="#{pageFlowScope.refSubReadingOrder==1}" iteratorname="RefSelectSubjectVOIterator" id="ts1"
+        lang="persian"
+        showEditCommand="true"
+        
+        showdelete="false"
+        after_create="#{viewScope.sel_persian_subject.subjectAfterCreate}"/>
+         <fadak:ToolbarSet rendered="#{pageFlowScope.refSubReadingOrder==2}" iteratorname="RefSelectSubjectVOIterator"
+                           id="ts2"
+                            showEditCommand="true"
+        lang="english"
+        showdelete="false"
+        after_create="#{viewScope.sel_latin_subject.subjectAfterCreate}"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="statusbar">
+      <af:toolbar id="t3">
+        <af:commandButton text="انتخاب"
+        disabled="#{bindings.ArtId.inputValue==null || bindings.ArtId.inputValue.value lt 0}"
+                          rendered="#{pageFlowScope.refSubReadingOrder==1}"
+                          id="cb1"
+                          partialTriggers="ts1"
+                          action="#{viewScope.sel_persian_subject.selectSubjectAction}">
+          <af:setActionListener from="#{pageFlowScope.refSubTab}"
+                                to="#{viewScope.sel_persian_subject.tab}"/>
+        </af:commandButton>
+        <af:commandButton text="Select"
+        partialTriggers="ts2"
+         disabled="#{bindings.ArtId.inputValue==null || bindings.ArtId.inputValue.value lt 0}"
+                          rendered="#{pageFlowScope.refSubReadingOrder==2}"
+                          id="cb2"
+                          action="#{viewScope.sel_latin_subject.selectSubjectAction}">
+          <af:setActionListener from="#{pageFlowScope.refSubTab}"
+                                to="#{viewScope.sel_latin_subject.tab}"/>
+        </af:commandButton>
+        <af:spacer id="s1" width="5"/>
+        <af:commandButton text="#{viewcontrollerBundle.cancel}" partialSubmit="true" action="end" id="cb3"/>
+      </af:toolbar>
+    </f:facet>
+    <af:table value="#{bindings.RefSelectSubjectVO.collectionModel}" var="row"
+              rows="#{bindings.RefSelectSubjectVO.rangeSize}"
+              emptyText="#{bindings.RefSelectSubjectVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.RefSelectSubjectVO.rangeSize}"
+              rowBandingInterval="0"
+              filterModel="#{bindings.RefSelectSubjectVOQuery.queryDescriptor}"
+              queryListener="#{bindings.RefSelectSubjectVOQuery.processQuery}"
+              filterVisible="true" varStatus="vs"
+              selectedRowKeys="#{bindings.RefSelectSubjectVO.collectionModel.selectedRow}"
+              selectionListener="#{bindings.RefSelectSubjectVO.collectionModel.makeCurrent}"
+              rowSelection="single" id="t1" columnStretching="column:c2">
+      <af:column sortProperty="Subject1" filterable="true" sortable="true"
+                 headerText="#{bindings.RefSelectSubjectVO.hints.Subject1.label}"
+                 id="c2">
+        <af:inputText value="#{row.bindings.Subject1.inputValue}"
+                      label="#{bindings.RefSelectSubjectVO.hints.Subject1.label}"
+                      required="#{bindings.RefSelectSubjectVO.hints.Subject1.mandatory}"
+                      columns="#{bindings.RefSelectSubjectVO.hints.Subject1.displayWidth}"
+                      maximumLength="#{bindings.RefSelectSubjectVO.hints.Subject1.precision}"
+                      shortDesc="#{bindings.RefSelectSubjectVO.hints.Subject1.tooltip}"
+                      id="it1" >
+          <f:validator binding="#{row.bindings.Subject1.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="ReadingOrder" filterable="true" sortable="true"
+                 headerText="#{bindings.RefSelectSubjectVO.hints.ReadingOrder.label}"
+                 id="c1">
+        <af:selectOneChoice value="#{row.bindings.ReadingOrder.inputValue}"
+                            label="#{row.bindings.ReadingOrder.label}"
+                            required="#{bindings.RefSelectSubjectVO.hints.ReadingOrder.mandatory}"
+                            shortDesc="#{bindings.RefSelectSubjectVO.hints.ReadingOrder.tooltip}"
+                            id="soc1" readOnly="true">
+          <f:selectItems value="#{row.bindings.ReadingOrder.items}" id="si1"/>
+        </af:selectOneChoice>
+      </af:column>
+    </af:table>
+  </af:panelCollection>
+</jsp:root>

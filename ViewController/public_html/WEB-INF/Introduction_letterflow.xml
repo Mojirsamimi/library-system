@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Introduction_letterflow">
+    <default-activity id="__1">new_IntroductionLetter</default-activity>
+    <view id="new_IntroductionLetter">
+      <page>/ff/new_IntroductionLetter.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">new_IntroductionLetter</from-activity-id>
+      <control-flow-case id="__5">
+        <to-activity-id id="__6">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

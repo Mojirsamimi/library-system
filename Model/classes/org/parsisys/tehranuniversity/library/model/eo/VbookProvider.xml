@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VbookProvider"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="VBOOK_PROVIDER"
+  AliasName="VbookProvider"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.VbookProviderImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Printable"
+    DefaultValue="0"
+    Precision="1"
+    Scale="0"
+    ColumnName="PRINTABLE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EntryKind"
+    IsUnique="true"
+    Precision="1"
+    Scale="0"
+    ColumnName="ENTRY_KIND"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrderNo"
+    Precision="2"
+    Scale="0"
+    ColumnName="ORDER_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    IsUnique="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PrvArtId"
+    IsUnique="true"
+    Precision="8"
+    Scale="0"
+    ColumnName="PRV_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PrvroleArtId"
+    IsUnique="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="PRVROLE_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TitleRefer"
+    IsUnique="true"
+    Precision="500"
+    ColumnName="TITLE_REFER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="VBOOK_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Provider"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbprvPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbprvPrvFkAssoc.Provider"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbprvPrvFkAssoc.VbookProvider"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProviderRole"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvRoleFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvRoleFkAssoc.ProviderRole"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvRoleFkAssoc.VbookProvider"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkPrvFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkPrvFkAssoc.VbookProvider"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="VirtualBook1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkPrv_OneMainPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkPrv_OneMainPrvFkAssoc.VirtualBook1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkPrv_OneMainPrvFkAssoc.VbookProvider1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.VirtualBookImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Provider1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc.Provider1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc.VbookProvider1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.ProviderImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007293">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007293"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007294">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007294"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007295">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007295"/>
+      <Attr Name="_checkCondition" Value='"PRINTABLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.Printable"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007296">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007296"/>
+      <Attr Name="_checkCondition" Value='"ENTRY_KIND" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007297">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007297"/>
+      <Attr Name="_checkCondition" Value='"ORDER_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.OrderNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007298">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007298"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007299">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007299"/>
+      <Attr Name="_checkCondition" Value='"PRV_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="VbkPrvPrvRoleAltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBKPRVPRVROLEALTKEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.PrvArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.PrvroleArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VbookProviderPrvroleArtIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBOOK_PROVIDER_PRVROLE_ART_ID_"/>
+      <Attr Name="_checkCondition" Value='"PRVROLE_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="VbprvBookPrvRoleTitleUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBPRV_BOOK_PRV_ROLE_TITLE_UK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.EntryKind"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.VbookArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.TitleRefer"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.PrvroleArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.PrvArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VbprvPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="VBPRV_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VbprvPrvFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRV_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBPRV_PRV_FK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.PrvArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VbprvVbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="VBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBPRV_VBOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookProvider.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="VbookProvider_Rule_0"
+    ResId="org.parsisys.tehranuniversity.library.model.eo.VbookProvider_Rule_0"
+    KeyName="VbkPrvPrvRoleAltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="PrvArtId"/>
+      <validation:Item
+        Value="PrvroleArtId"/>
+      <validation:Item
+        Value="VbookArtId"/>
+    </validation:OnAttributes>
+    <validation:OnCondition>
+      <![CDATA[adf.userSession.userData.validation_policy=="persian_cataloging"]]>
+    </validation:OnCondition>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

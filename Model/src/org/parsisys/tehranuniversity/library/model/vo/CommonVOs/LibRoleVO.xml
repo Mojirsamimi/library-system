@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LibRoleVO"
+  Version="11.1.1.56.60"
+  SelectList="LibRole.ART_ID, 
+       LibRole.ROLE_NAME, 
+       LibRole.DESCRIPTION, 
+       LibRole.SECURITY_CODE"
+  FromList="LIB_ROLE LibRole"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibRoleVOImpl"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibRoleVORowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_rowSuperClassName" Value="fadak.base.TemplateViewRow"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="LibRole"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibRole"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="LibRole"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="RoleName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RoleName"
+    EntityUsage="LibRole"
+    AliasName="ROLE_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibRoleVO.RoleName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="LibRole"
+    AliasName="DESCRIPTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibRoleVO.Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SecurityCode"
+    PrecisionRule="true"
+    EntityAttrName="SecurityCode"
+    EntityUsage="LibRole"
+    AliasName="SECURITY_CODE"/>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="EditOnUpdateInsert"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+  <ViewLinkAccessor
+    Name="LibUserRoleVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.LibRole_LibUserRoleVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="LibUserVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.LibRole_LibUserVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

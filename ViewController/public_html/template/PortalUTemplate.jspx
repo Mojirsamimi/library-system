@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>IUTemplate</display-name>
+          <facet>
+          <facet-name>center</facet-name>
+        </facet>
+        <facet>
+          <facet-name>popup</facet-name>
+        </facet>
+      </component>
+    </af:xmlContent>
+    
+      <af:panelStretchLayout topHeight="30px" id="pt_psl1" bottomHeight="20px">
+      <f:facet name="top">
+        <af:panelStretchLayout id="pt_psl4" startWidth="95%" endWidth="5%">
+          <f:facet name="bottom"/>
+          <f:facet name="center"/>
+          <f:facet name="start">
+            <af:toolbox id="pt_t1">
+              <af:menuBar id="pt_mb1">
+                <af:menu text="کتاب" id="pt_m1">
+                  <af:commandMenuItem text="تمدید کتاب" id="pt_cmi2"
+                                      action="menu_portal_loan"/>
+                  <af:commandMenuItem text="رزرو کتاب" id="pt_cmi1"
+                                      action="menu_portal_reserve"/>
+                </af:menu>
+              </af:menuBar>
+              <af:messages id="pt_m2"/>
+            </af:toolbox>
+          </f:facet>
+          <f:facet name="end">
+            <af:statusIndicator id="pt_si1"/>
+          </f:facet>
+          <f:facet name="top"/>
+        </af:panelStretchLayout>
+      </f:facet>
+      <f:facet name="center">
+        <af:decorativeBox id="pt_db1" theme="dark" topLandmark="navigation"
+                          topHeight="45" centerLandmark="main">
+          <f:facet name="top">
+            <af:panelBox showHeader="never" showDisclosure="false"
+                         background="dark" ramp="core"
+                         inlineStyle="height:40.0px;">
+              <af:panelStretchLayout id="pt_psl3" startWidth="95%"
+                                     endWidth="5%">
+                <f:facet name="start">
+                  <af:panelGroupLayout id="pt_pgl1" layout="horizontal"
+                                       valign="middle" halign="right">
+                    <af:outputText value="#{session_common_bean.shamsiToday} "
+                                   id="pt_ot1"/>
+                    <af:outputText value=" | #{sessionUser.libname} | "
+                                   id="pt_ot3"
+                                   inlineStyle="font-size:9.0pt; text-align:left; vertical-align:middle;"/>
+                    <af:outputText value=" #{sessionUser.username}" id="pt_ot2"
+                                   inlineStyle="font-size:small;"
+                                   />
+                    <af:spacer width="10" height="10" id="pt_s1"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="end">
+                  <af:panelGroupLayout layout="scroll"
+                                       xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                       id="pt_pgl2" halign="left">
+                    <af:commandImageLink id="pt_cil1" shortDesc="خروج"
+                                         icon="/icons/system-log-out.png"
+                                         action="#{sessionUser.logoutAction}"
+                                         immediate="true" text="خروج"
+                                         iconPosition="trailing"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </af:panelBox>
+          </f:facet>
+          <f:facet name="center">
+            <af:decorativeBox id="pt_db2" theme="light" topHeight="20px">
+              <f:facet name="center">
+                <af:facetRef facetName="center"/>
+              </f:facet>
+             
+            </af:decorativeBox>
+          </f:facet>
+        </af:decorativeBox>
+      </f:facet>
+      <f:facet name="bottom">
+        
+          <af:panelStretchLayout id="pt_psl2" startWidth="200px"
+                                 endWidth="600px" bottomHeight="1px"
+                                 topHeight="10px">
+            <f:facet name="center">
+              <af:panelGroupLayout inlineStyle="text-align:left" valign="middle"
+                                   halign="end">
+                <af:outputFormatted value="Copyright &amp;copy; Parsi Group, Inc. All rights reserved "
+                                    id="pt_of1" styleUsage="pageStamp"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="start">
+              <af:panelGroupLayout inlineStyle="text-align:right" halign="end"
+                                   valign="middle">
+                <af:outputFormatted value="www.parsisys.org  " id="pt_of2"
+                                    styleUsage="pageStamp"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="end"/>
+            <f:facet name="bottom">
+              <af:facetRef facetName="popup"/>
+            </f:facet>
+          <f:facet name="top">
+        
+          </f:facet>
+        </af:panelStretchLayout>
+        
+      </f:facet>
+    </af:panelStretchLayout>
+    
+  </af:pageTemplateDef>
+</jsp:root>

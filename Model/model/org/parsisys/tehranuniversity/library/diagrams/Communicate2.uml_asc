@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:Association xmi:uuid='urn:uuid:0d613d3b-8225-4ac4-9459-3ef1a4a69211'
+   isAbstract='false'
+   isDerived='false'
+   isLeaf='false'
+   name='Communicate2'
+   visibility='public'>
+  <memberEnd href='urn:uuid:ec718113-cf86-4150-8296-6393b4674906'/>
+  <memberEnd href='urn:uuid:5452e9ae-4ef9-4fc6-b29e-ba02fd760d77'/>
+  <ownedComment xmi:uuid='urn:uuid:e593454c-065f-4e73-95c4-2a8ae45940e3'
+    body='uml_uc:Communicate'/>
+  <ownedEnd xmi:uuid='urn:uuid:ec718113-cf86-4150-8296-6393b4674906'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    aggregation='none'>
+   <association href='urn:uuid:0d613d3b-8225-4ac4-9459-3ef1a4a69211'/>
+   <type href='urn:uuid:00e12d0b-3e65-4712-a757-e8aae6a20bb5'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:af6232ad-3eba-4f68-b950-49c9f6a8c058'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:73b776a5-dcf1-4972-9707-333b2d5ff14c'
+     value='1'
+     visibility='public'/>
+  </ownedEnd>
+  <ownedEnd xmi:uuid='urn:uuid:5452e9ae-4ef9-4fc6-b29e-ba02fd760d77'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    aggregation='none'>
+   <association href='urn:uuid:0d613d3b-8225-4ac4-9459-3ef1a4a69211'/>
+   <type href='urn:uuid:82bd6024-52a2-48ac-a96a-dbec1b7d23ae'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:8b3cf68f-8cf2-4804-8880-05ac158e5330'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:fe6f4fc2-4f7e-40d6-bd89-64f8f143a959'
+     value='1'
+     visibility='public'/>
+  </ownedEnd>
+ </uml:Association>
+</xmi:XMI>

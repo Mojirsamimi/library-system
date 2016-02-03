@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BookRequest"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="BOOK_REQUEST"
+  AliasName="BookRequest"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.BookRequestImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_REQUEST"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Barcode"
+    Precision="14"
+    ColumnName="BARCODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="14"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Serial"
+    Precision="10"
+    Scale="0"
+    ColumnName="SERIAL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReqNo"
+    Precision="30"
+    ColumnName="REQ_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReqDate"
+    Precision="10"
+    ColumnName="REQ_DATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoanStat"
+    Precision="1"
+    ColumnName="LOAN_STAT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoadStat"
+    Precision="1"
+    ColumnName="LOAD_STAT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CustStat"
+    Precision="1"
+    ColumnName="CUST_STAT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Place"
+    Precision="3"
+    Scale="0"
+    ColumnName="PLACE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Fname"
+    Precision="50"
+    ColumnName="FNAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Lname"
+    Precision="50"
+    ColumnName="LNAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CallNo"
+    Precision="50"
+    ColumnName="CALL_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VolNo"
+    Precision="30"
+    ColumnName="VOL_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK_REQUEST">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="BookrequestPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="BOOKREQUEST_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.Barcode"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.ReqNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007105">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007105"/>
+      <Attr Name="_checkCondition" Value='"BARCODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.Barcode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007106">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007106"/>
+      <Attr Name="_checkCondition" Value='"SERIAL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.Serial"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007107">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007107"/>
+      <Attr Name="_checkCondition" Value='"REQ_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.ReqNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007108">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007108"/>
+      <Attr Name="_checkCondition" Value='"REQ_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.ReqDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007109">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007109"/>
+      <Attr Name="_checkCondition" Value='"LOAN_STAT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.LoanStat"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007110">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007110"/>
+      <Attr Name="_checkCondition" Value='"LOAD_STAT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.LoadStat"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007111">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007111"/>
+      <Attr Name="_checkCondition" Value='"CUST_STAT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.CustStat"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007112">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007112"/>
+      <Attr Name="_checkCondition" Value='"FNAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.Fname"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007113">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007113"/>
+      <Attr Name="_checkCondition" Value='"LNAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.Lname"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007114">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007114"/>
+      <Attr Name="_checkCondition" Value='"CALL_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.CallNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007115">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007115"/>
+      <Attr Name="_checkCondition" Value='"VOL_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.VolNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007116">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007116"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.BookRequest.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

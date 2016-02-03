@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DB_LoanMemFkAssoc"
+  Version="11.1.1.56.60">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Member"
+    Cardinality="1"
+    Source="true"
+    Owner="org.parsisys.tehranuniversity.library.model.eo.Member">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Member"/>
+      <Attr Name="_foreignKey"
+        Value="org.parsisys.tehranuniversity.library.model.eo.Member.MemPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Member.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Member.ArtId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Loan"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.eo.Loan">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Loan"/>
+      <Attr Name="_foreignKey"
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.LoanMemFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.parsisys.tehranuniversity.library.model.eo.Loan.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.MemArtId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

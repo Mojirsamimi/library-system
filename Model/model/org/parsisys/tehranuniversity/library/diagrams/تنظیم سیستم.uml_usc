@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:9d145036-2213-41ca-99c9-5bf3f4c3e35f'
+   isAbstract='false'
+   isLeaf='false'
+   name='تنظیم سیستم'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:23411dcc-b1c2-4c60-a4b7-94db3d3bfd35'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:5ccd96a3-6a8c-4cbc-80a6-f777869919ed'>
+   <addition href='urn:uuid:83128207-37ad-48e0-8825-0b713acc671c'/>
+  </include>
+  <include xmi:uuid='urn:uuid:ca32b30b-781b-4a34-9122-804af77254a7'>
+   <addition href='urn:uuid:c38b68fd-be82-4057-9167-d377cb36b445'/>
+  </include>
+  <include xmi:uuid='urn:uuid:d410cd03-bdb1-42b1-8012-ab445862e5db'>
+   <addition href='urn:uuid:e09de888-f605-405c-b7aa-8c25d720e336'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

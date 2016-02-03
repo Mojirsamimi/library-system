@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:group id="g2">
+              <af:panelGroupLayout id="pgl1">
+                <af:table value="#{bindings.LibRoleVO1.collectionModel}"
+                          var="row" rows="#{bindings.LibRoleVO1.rangeSize}"
+                          emptyText="#{bindings.LibRoleVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.LibRoleVO1.rangeSize}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.LibRoleVO1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.LibRoleVO1.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t1">
+                  <af:column sortProperty="Description" sortable="false"
+                             headerText="#{bindings.LibRoleVO1.hints.Description.label}"
+                             id="c2">
+                    <af:inputText value="#{row.bindings.Description.inputValue}"
+                                  label="#{bindings.LibRoleVO1.hints.Description.label}"
+                                  required="#{bindings.LibRoleVO1.hints.Description.mandatory}"
+                                  columns="#{bindings.LibRoleVO1.hints.Description.displayWidth}"
+                                  maximumLength="#{bindings.LibRoleVO1.hints.Description.precision}"
+                                  shortDesc="#{bindings.LibRoleVO1.hints.Description.tooltip}"
+                                  id="it4">
+                      <f:validator binding="#{row.bindings.Description.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="RoleName" sortable="false"
+                             headerText="#{bindings.LibRoleVO1.hints.RoleName.label}"
+                             id="c1">
+                    <af:inputText value="#{row.bindings.RoleName.inputValue}"
+                                  label="#{bindings.LibRoleVO1.hints.RoleName.label}"
+                                  required="#{bindings.LibRoleVO1.hints.RoleName.mandatory}"
+                                  columns="#{bindings.LibRoleVO1.hints.RoleName.displayWidth}"
+                                  maximumLength="#{bindings.LibRoleVO1.hints.RoleName.precision}"
+                                  shortDesc="#{bindings.LibRoleVO1.hints.RoleName.tooltip}"
+                                  id="it5">
+                      <f:validator binding="#{row.bindings.RoleName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                <af:panelFormLayout id="pfl1" partialTriggers="t1">
+                  <f:facet name="footer">
+                    <af:commandButton text="commandButton 1" id="cb1"
+                                      actionListener="#{pageFlowScope.role_permission_userShuttle.saveNewUser}"/>
+                  </f:facet>
+                  <af:group id="g1">
+                    <af:inputText label="name" id="it1"
+                                  value="#{pageFlowScope.role_permission_userShuttle.name}"/>
+                    <af:inputText label="usernamw 2" id="it2"
+                                  value="#{pageFlowScope.role_permission_userShuttle.userName_insert}"/>
+                    <af:inputText label="pass" id="it3"
+                                  value="#{pageFlowScope.role_permission_userShuttle.password}"/>
+                  </af:group>
+                </af:panelFormLayout>
+              </af:panelGroupLayout>
+              <af:panelFormLayout  visible="false" id="pfl2">
+                <af:inputText value="#{bindings.Enable.inputValue}"
+                              label="#{bindings.Enable.hints.label}"
+                              required="#{bindings.Enable.hints.mandatory}"
+                              columns="#{bindings.Enable.hints.displayWidth}"
+                              maximumLength="#{bindings.Enable.hints.precision}"
+                              shortDesc="#{bindings.Enable.hints.tooltip}"
+                              id="it8">
+                  <f:validator binding="#{bindings.Enable.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Enable.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Labcol.inputValue}"
+                              label="#{bindings.Labcol.hints.label}"
+                              required="#{bindings.Labcol.hints.mandatory}"
+                              columns="#{bindings.Labcol.hints.displayWidth}"
+                              maximumLength="#{bindings.Labcol.hints.precision}"
+                              shortDesc="#{bindings.Labcol.hints.tooltip}"
+                              id="it6">
+                  <f:validator binding="#{bindings.Labcol.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Labcol.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Name.inputValue}"
+                              label="#{bindings.Name.hints.label}"
+                              required="#{bindings.Name.hints.mandatory}"
+                              columns="#{bindings.Name.hints.displayWidth}"
+                              maximumLength="#{bindings.Name.hints.precision}"
+                              shortDesc="#{bindings.Name.hints.tooltip}"
+                              id="it9">
+                  <f:validator binding="#{bindings.Name.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Password.inputValue}"
+                              label="#{bindings.Password.hints.label}"
+                              required="#{bindings.Password.hints.mandatory}"
+                              columns="#{bindings.Password.hints.displayWidth}"
+                              maximumLength="#{bindings.Password.hints.precision}"
+                              shortDesc="#{bindings.Password.hints.tooltip}"
+                              id="it10">
+                  <f:validator binding="#{bindings.Password.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.UserName.inputValue}"
+                              label="#{bindings.UserName.hints.label}"
+                              required="#{bindings.UserName.hints.mandatory}"
+                              columns="#{bindings.UserName.hints.displayWidth}"
+                              maximumLength="#{bindings.UserName.hints.precision}"
+                              shortDesc="#{bindings.UserName.hints.tooltip}"
+                              id="it7">
+                  <f:validator binding="#{bindings.UserName.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+              <af:table value="#{bindings.LibUser_UserRoleVo.collectionModel}"
+                        var="row"
+                        rows="#{bindings.LibUser_UserRoleVo.rangeSize}"
+                        emptyText="#{bindings.LibUser_UserRoleVo.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.LibUser_UserRoleVo.rangeSize}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.LibUser_UserRoleVo.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.LibUser_UserRoleVo.collectionModel.makeCurrent}"
+                        rowSelection="single" id="t2" partialTriggers="::t1">
+                <af:column sortProperty="Enable" sortable="false"
+                           headerText="#{bindings.LibUser_UserRoleVo.hints.Enable.label}"
+                           id="c5">
+                  <af:inputText value="#{row.bindings.Enable.inputValue}"
+                                label="#{bindings.LibUser_UserRoleVo.hints.Enable.label}"
+                                required="#{bindings.LibUser_UserRoleVo.hints.Enable.mandatory}"
+                                columns="#{bindings.LibUser_UserRoleVo.hints.Enable.displayWidth}"
+                                maximumLength="#{bindings.LibUser_UserRoleVo.hints.Enable.precision}"
+                                shortDesc="#{bindings.LibUser_UserRoleVo.hints.Enable.tooltip}"
+                                id="it13">
+                    <f:validator binding="#{row.bindings.Enable.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.LibUser_UserRoleVo.hints.Enable.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Labcol" sortable="false"
+                           headerText="#{bindings.LibUser_UserRoleVo.hints.Labcol.label}"
+                           id="c3">
+                  <af:inputText value="#{row.bindings.Labcol.inputValue}"
+                                label="#{bindings.LibUser_UserRoleVo.hints.Labcol.label}"
+                                required="#{bindings.LibUser_UserRoleVo.hints.Labcol.mandatory}"
+                                columns="#{bindings.LibUser_UserRoleVo.hints.Labcol.displayWidth}"
+                                maximumLength="#{bindings.LibUser_UserRoleVo.hints.Labcol.precision}"
+                                shortDesc="#{bindings.LibUser_UserRoleVo.hints.Labcol.tooltip}"
+                                id="it12">
+                    <f:validator binding="#{row.bindings.Labcol.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.LibUser_UserRoleVo.hints.Labcol.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Name" sortable="false"
+                           headerText="#{bindings.LibUser_UserRoleVo.hints.Name.label}"
+                           id="c7">
+                  <af:inputText value="#{row.bindings.Name.inputValue}"
+                                label="#{bindings.LibUser_UserRoleVo.hints.Name.label}"
+                                required="#{bindings.LibUser_UserRoleVo.hints.Name.mandatory}"
+                                columns="#{bindings.LibUser_UserRoleVo.hints.Name.displayWidth}"
+                                maximumLength="#{bindings.LibUser_UserRoleVo.hints.Name.precision}"
+                                shortDesc="#{bindings.LibUser_UserRoleVo.hints.Name.tooltip}"
+                                id="it11">
+                    <f:validator binding="#{row.bindings.Name.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Password" sortable="false"
+                           headerText="#{bindings.LibUser_UserRoleVo.hints.Password.label}"
+                           id="c4">
+                  <af:inputText value="#{row.bindings.Password.inputValue}"
+                                label="#{bindings.LibUser_UserRoleVo.hints.Password.label}"
+                                required="#{bindings.LibUser_UserRoleVo.hints.Password.mandatory}"
+                                columns="#{bindings.LibUser_UserRoleVo.hints.Password.displayWidth}"
+                                maximumLength="#{bindings.LibUser_UserRoleVo.hints.Password.precision}"
+                                shortDesc="#{bindings.LibUser_UserRoleVo.hints.Password.tooltip}"
+                                id="it14">
+                    <f:validator binding="#{row.bindings.Password.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="UserName" sortable="false"
+                           headerText="#{bindings.LibUser_UserRoleVo.hints.UserName.label}"
+                           id="c6">
+                  <af:inputText value="#{row.bindings.UserName.inputValue}"
+                                label="#{bindings.LibUser_UserRoleVo.hints.UserName.label}"
+                                required="#{bindings.LibUser_UserRoleVo.hints.UserName.mandatory}"
+                                columns="#{bindings.LibUser_UserRoleVo.hints.UserName.displayWidth}"
+                                maximumLength="#{bindings.LibUser_UserRoleVo.hints.UserName.precision}"
+                                shortDesc="#{bindings.LibUser_UserRoleVo.hints.UserName.tooltip}"
+                                id="it15">
+                    <f:validator binding="#{row.bindings.UserName.validator}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:group>
+          </f:facet>
+          <f:facet name="popup"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

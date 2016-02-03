@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="public_cash_penalty_flow">
+    <default-activity id="__1">inser_update</default-activity>
+    <view id="public_cash_penalty">
+      <page>/ff/public_cash_penalty.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <router id="inser_update">
+      <case>
+        <expression>#{cid_public_cash_penalty.path=='edit'}</expression>
+        <outcome id="__19">edit</outcome>
+      </case>
+      <case>
+        <expression>#{cid_public_cash_penalty.path=='new'}</expression>
+        <outcome id="__20">new</outcome>
+      </case>
+      <default-outcome>new</default-outcome>
+    </router>
+    <view id="edit_public_penalty">
+      <page>/ff/edit_public_penalty.jsff</page>
+    </view>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">public_cash_penalty</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__22">exit_new</from-outcome>
+        <to-activity-id id="__5">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">inser_update</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__11">new</from-outcome>
+        <to-activity-id id="__10">public_cash_penalty</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome id="__14">edit</from-outcome>
+        <to-activity-id id="__13">edit_public_penalty</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__16">edit_public_penalty</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">exit_edit</from-outcome>
+        <to-activity-id id="__21">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

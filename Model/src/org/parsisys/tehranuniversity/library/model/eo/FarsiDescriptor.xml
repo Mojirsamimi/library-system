@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FarsiDescriptor"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="FARSI_DESCRIPTOR"
+  AliasName="FarsiDescriptor"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FARSI_DESCRIPTOR"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="FARSI_DESCRIPTOR"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Descriptor"
+    IsUnique="true"
+    Precision="80"
+    ColumnName="DESCRIPTOR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FARSI_DESCRIPTOR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="FarsiKeyword"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.FkeywFdescFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.FkeywFdescFkAssoc.FarsiKeyword"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.FkeywFdescFkAssoc.FarsiDescriptor"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="FarsiDescriptorUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FARSI_DESCRIPTOR_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiDescriptor.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiDescriptor.Descriptor"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FdescPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="FDESC_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiDescriptor.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiDescriptor.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008150">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008150"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiDescriptor.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008151">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008151"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiDescriptor.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008152">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008152"/>
+      <Attr Name="_checkCondition" Value='"DESCRIPTOR" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiDescriptor.Descriptor"/>
+    </AttrArray>
+  </Key>
+</Entity>

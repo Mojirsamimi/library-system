@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PenaltyType"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="PENALTY_TYPE"
+  AliasName="PenaltyType"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PENALTY_TYPE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BookType"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="BOOK_TYPE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PENALTY_TYPE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DayPenalty"
+    Precision="5"
+    Scale="0"
+    ColumnName="DAY_PENALTY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PENALTY_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PenaltyStatus"
+    Precision="1"
+    Scale="0"
+    ColumnName="PENALTY_STATUS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PENALTY_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="PhysicalBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.physicalBookPenaltyTypeFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.physicalBookPenaltyTypeFkAssoc.PhysicalBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.physicalBookPenaltyTypeFkAssoc.PenaltyType"
+    Type="org.parsisys.tehranuniversity.library.model.eo.PhysicalBookImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PenaltyTypePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PENALTY_TYPE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PenaltyType.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PenaltyType.BookType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007225">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007225"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PenaltyType.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007226">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007226"/>
+      <Attr Name="_checkCondition" Value='"BOOK_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PenaltyType.BookType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007227">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007227"/>
+      <Attr Name="_checkCondition" Value='"DAY_PENALTY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PenaltyType.DayPenalty"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007228">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007228"/>
+      <Attr Name="_checkCondition" Value='"PENALTY_STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PenaltyType.PenaltyStatus"/>
+    </AttrArray>
+  </Key>
+</Entity>

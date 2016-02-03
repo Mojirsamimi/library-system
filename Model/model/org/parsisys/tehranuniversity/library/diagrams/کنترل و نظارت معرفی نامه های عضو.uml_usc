@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:5cd77f24-9f3e-446e-8a52-a697f5aa291b'
+   isAbstract='false'
+   isLeaf='false'
+   name='کنترل و نظارت معرفی نامه های عضو'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:e61f9a73-3169-4a49-bb4a-575161b60645'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

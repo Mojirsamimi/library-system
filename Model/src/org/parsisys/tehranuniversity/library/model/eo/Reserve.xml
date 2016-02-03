@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Reserve"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="RESERVE"
+  AliasName="Reserve"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.ReserveImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESERVE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="9"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="RESERVE"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Reserve.ArtId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="RetDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="RET_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Reserve.RetDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    Scale="0"
+    ColumnName="ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Reserve.Active_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="VolNo"
+    Precision="10"
+    ColumnName="VOL_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Reserve.VolNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DayDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="DAY_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Reserve.DayDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="MemArtId"
+    Precision="10"
+    Scale="0"
+    ColumnName="MEM_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <validation:PreDefinedValidationBean
+      Name="MemArtId_Rule_0"
+      ValName="Precision : (6,0)"
+      Subtype="PRECISION_SCALE"/>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Reserve.UserName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PartNo"
+    Precision="10"
+    ColumnName="PART_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RESERVE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Reserve.PartNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Member"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_RsvMemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_RsvMemFkAssoc.Member"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_RsvMemFkAssoc.Reserve"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Member1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.MemberReserveFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.MemberReserveFkAssoc.Member1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.MemberReserveFkAssoc.Reserve"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookReserveFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookReserveFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookReserveFkAssoc.Reserve"
+    Type="org.parsisys.tehranuniversity.library.model.eo.VirtualBookImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.ReserveInitMemberFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.ReserveInitMemberFkAssoc.InitMember"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.ReserveInitMemberFkAssoc.Reserve"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InitMember1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberReserveFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberReserveFkAssoc.InitMember1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberReserveFkAssoc.Reserve"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="RsvPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="RSV_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007275">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007275"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007276">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007276"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007277">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007277"/>
+      <Attr Name="_checkCondition" Value='"ACTIVE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.Active"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007278">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007278"/>
+      <Attr Name="_checkCondition" Value='"DAY_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.DayDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007279">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007279"/>
+      <Attr Name="_checkCondition" Value='"MEM_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007280">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007280"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007281">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007281"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RsvMemFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MEM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="RSV_MEM_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="RsvVbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="VBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="RSV_VBOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Reserve.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VbookCrdCrdRwVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookCrdFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="VirtualBookVO"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="VirtualBookVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CardCardRowVO"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.CardCardRowVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CardCardRowVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.CardCardRowVO.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.CardCardRowVO.VbookArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

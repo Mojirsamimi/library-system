@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="LatinSubjectPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="LatinMainSeeSubjectVo" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LatinMainSeeSubjectVoIterator"/>
+    <searchRegion Criteria="SubjectVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="LatinMainSeeSubjectVoIterator" id="SubjectVCQuery"/>
+    <iterator Binds="LatinMainSeeAlsoSubjectVo" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LatinMainSeeAlsoSubjectVoIterator"/>
+    <searchRegion Criteria="SubjectVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="LatinMainSeeAlsoSubjectVoIterator"
+                  id="SubjectVCQuery1"/>
+    <taskFlow id="dynamicRegion1"
+              taskFlowId="#{pageFlowScope.TFBean.dynamicTaskFlowId}"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="refSubReadingOrder"
+                   value="#{pageFlowScope.refSubReadingOrder}"/>
+        <parameter id="refSubTab" value="#{pageFlowScope.refSubTab}"/>
+      </parameters>
+    </taskFlow>
+    <iterator Binds="LatinSeeSubjectVo" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LatinSeeSubjectVoIterator"/>
+    <searchRegion Binds="LatinSeeSubjectVoIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LatinSeeSubjectVoQuery"/>
+    <iterator Binds="LatinSeeAlsoSubjectVO_rtype1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LatinSeeAlsoSubjectVO_rtype1Iterator"/>
+    <searchRegion Binds="LatinSeeAlsoSubjectVO_rtype1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LatinSeeAlsoSubjectVO_rtype1Query"/>
+    <iterator Binds="LatinSeeAlsoSubjectVO_rtype2" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LatinSeeAlsoSubjectVO_rtype2Iterator"/>
+    <searchRegion Binds="LatinSeeAlsoSubjectVO_rtype2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LatinSeeAlsoSubjectVO_rtype2Query"/>
+    <iterator Binds="LatinSeeAlsoSubjectVO_rtype3" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LatinSeeAlsoSubjectVO_rtype3Iterator"/>
+    <searchRegion Binds="LatinSeeAlsoSubjectVO_rtype3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="LatinSeeAlsoSubjectVO_rtype3Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="LatinMainSeeSubjectVoIterator" id="Subject1">
+      <AttrNames>
+        <Item Value="Subject1"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="LatinMainSeeSubjectVoIterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="LatinMainSeeAlsoSubjectVoIterator"
+                     id="Subject11">
+      <AttrNames>
+        <Item Value="Subject1"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="LatinMainSeeAlsoSubjectVoIterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="LatinMainSeeSubjectVoIterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LatinMainSeeAlsoSubjectVoIterator"
+                     id="ArtId1">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="LatinSeeSubjectVoIterator" id="LatinSeeSubjectVo">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeSubjectVo"
+                      Name="LatinSeeSubjectVo0">
+        <AttrNames>
+          <Item Value="SubjectText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="LatinSeeSubjectVoIterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="LatinSeeAlsoSubjectVO_rtype1Iterator"
+          id="LatinSeeAlsoSubjectVO_rtype1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoSubjectVO"
+                      Name="LatinSeeAlsoSubjectVO_rtype10">
+        <AttrNames>
+          <Item Value="SubjectText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="LatinSeeAlsoSubjectVO_rtype1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="LatinSeeAlsoSubjectVO_rtype2Iterator"
+          id="LatinSeeAlsoSubjectVO_rtype2">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoSubjectVO"
+                      Name="LatinSeeAlsoSubjectVO_rtype20">
+        <AttrNames>
+          <Item Value="SubjectText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="LatinSeeAlsoSubjectVO_rtype2Iterator" id="Delete2"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="LatinSeeAlsoSubjectVO_rtype3Iterator"
+          id="LatinSeeAlsoSubjectVO_rtype3">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoSubjectVO"
+                      Name="LatinSeeAlsoSubjectVO_rtype30">
+        <AttrNames>
+          <Item Value="SubjectText"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="LatinSeeAlsoSubjectVO_rtype3Iterator" id="Delete3"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

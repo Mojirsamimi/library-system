@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Rep_VBookFarsiCardProviderVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookProviderFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="Rep_VirtualBookFarsiCard"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VirtualBookFarsiCard"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Rep_VirtualBookFarsiCard"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VirtualBookFarsiCard.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VirtualBookFarsiCard.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Rep_ProviderVo"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.report.Rep_ProviderVo">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Rep_ProviderVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.report.Rep_ProviderVo.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.report.Rep_ProviderVo.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

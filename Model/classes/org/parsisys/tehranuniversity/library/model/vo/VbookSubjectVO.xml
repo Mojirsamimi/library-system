@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VbookSubjectVO"
+  Version="11.1.1.56.60"
+  SelectList="VbookSubject.SUBJ_ART_ID, 
+       VbookSubject.LABCOL, 
+       VbookSubject.VBOOK_ART_ID, 
+       VbookSubject.FLOAT_SUBJ_ART_ID, 
+       VbookSubject.ORDER_NO, 
+       VbookSubject.PRINTABLE, 
+       Subject.SUBJECT AS SUBJECT1, 
+       Subject.LABCOL AS LABCOL1, 
+       Subject.ART_ID, 
+       FloatSubject.SUBJECT AS SUBJECT2, 
+       FloatSubject.ART_ID AS ART_ID1, 
+       FloatSubject.LABCOL AS LABCOL2"
+  FromList="VBOOK_SUBJECT VbookSubject, SUBJECT Subject, FLOAT_SUBJECT FloatSubject"
+  Where="((VbookSubject.LABCOL = Subject.LABCOL(+)) AND (VbookSubject.SUBJ_ART_ID = Subject.ART_ID(+))) AND ((VbookSubject.LABCOL = FloatSubject.LABCOL(+)) AND (VbookSubject.FLOAT_SUBJ_ART_ID = FloatSubject.ART_ID(+)))"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Partial"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVOImpl"
+  OrderBy="ORDER_NO">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_objectSuperClassName" Value="fadak.base.TemplateViewObject"/>
+    <Attr Name="_rowSuperClassName" Value="fadak.base.TemplateViewRow"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="Reading_OrderVO"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="PerCatalog_Reading_OrderVC"
+      FullName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO.PerCatalog_Reading_OrderVC"/>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="VbookSubjectVO_VirtualBookVOLookup"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO"/>
+  <ViewAccessor
+    Name="CheckBox01View1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.CheckBox01View"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_VirtualBookVO"
+    ListVOName="VbookSubjectVO_VirtualBookVOLookup"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_VirtualBookVO_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VbookArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Labcol"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CallNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Printable"
+    ListVOName="CheckBox01View1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_Printable_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Printable"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="NumberValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BooleanValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="VbookSubject"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.VbookSubject"/>
+  <EntityUsage
+    Name="Subject"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Subject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFkAssoc.Subject1"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVO.VbookSubject"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VbookSubject.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VbookSubject.SubjArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Subject.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Subject.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="FloatSubject"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.FloatSubject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFltFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFltFkAssoc.FloatSubject"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVO.VbookSubject"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VbookSubject.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VbookSubject.FloatSubjArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.FloatSubject.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="SubjArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SubjArtId"
+    EntityUsage="VbookSubject"
+    AliasName="SUBJ_ART_ID"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="VbookSubject"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="VbookSubject"
+    AliasName="VBOOK_ART_ID"
+    LOVName="LOV_VirtualBookVO">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="100"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FloatSubjArtId"
+    PrecisionRule="true"
+    EntityAttrName="FloatSubjArtId"
+    EntityUsage="VbookSubject"
+    AliasName="FLOAT_SUBJ_ART_ID"/>
+  <ViewAttribute
+    Name="OrderNo"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="VbookSubject"
+    AliasName="ORDER_NO">
+    <TransientExpression><![CDATA[(rowSet.max("OrderNo")==null?0:rowSet.max("OrderNo"))+1]]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Printable"
+    PrecisionRule="true"
+    EntityAttrName="Printable"
+    EntityUsage="VbookSubject"
+    AliasName="PRINTABLE"
+    DefaultValue="0"
+    LOVName="LOV_Printable">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Subject1"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="Subject"
+    AliasName="SUBJECT1"/>
+  <ViewAttribute
+    Name="Labcol1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Subject"
+    AliasName="LABCOL1"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Subject"
+    AliasName="ART_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="FloatSubject2"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="FloatSubject"
+    AliasName="SUBJECT2"
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.VbookSubjectVO.FloatSubject2_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ArtId1"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="FloatSubject"
+    AliasName="ART_ID1"/>
+  <ViewAttribute
+    Name="Labcol2"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="FloatSubject"
+    AliasName="LABCOL2"/>
+  <ViewAttribute
+    Name="printableBoolean"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    DefaultValue="false"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT"/>
+  <ViewAttribute
+    Name="SubjectText"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Subject_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="SubjArtId"/>
+    <Item Value="Labcol"/>
+    <Item Value="VbookArtId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="SubjectVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.VbookSubSubVL"
+    Type="oracle.jbo.Row"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

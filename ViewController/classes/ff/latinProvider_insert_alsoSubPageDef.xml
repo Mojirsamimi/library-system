@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="latinProvider_insert_alsoSubPageDef"
+                Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LatinMainSeeAlsoProvider" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="LatinMainSeeAlsoProviderIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="LatinMainSeeAlsoProviderIterator" StaticList="false"
+          Uses="LOV_ProviderKind" id="ProviderKind" DTSupportsMRU="true"/>
+  </bindings>
+</pageDefinition>

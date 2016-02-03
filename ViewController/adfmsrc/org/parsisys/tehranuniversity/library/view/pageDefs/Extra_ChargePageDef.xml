@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="Extra_ChargePageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+            <invokeAction Binds="removeAllPersonVC" id="removeAllPersonVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <invokeAction Binds="removeAllInitMemCurrLibVC"
+                  id="removeAllInitMemCurrLibVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="PersonVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO1Iterator"/>
+    <searchRegion Criteria="search_barcode_id"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PersonVO1Iterator" id="searchbarcodeidQuery"/>
+    <iterator Binds="InitMemberCurrLibVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="InitMemberCurrLibVOIterator"/>
+    <iterator Binds="ExtraChargeVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ExtraChargeVO1Iterator"/>
+    <searchRegion Binds="ExtraChargeVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ExtraChargeVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ExtraChargeVO1Iterator" id="ExtraChargeVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ExtraChargeVO"
+                      Name="ExtraChargeVO10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Description"/>
+          <Item Value="ChargeId"/>
+          <Item Value="ChargeValue"/>
+          <Item Value="MemArtId"/>
+          <Item Value="InsertDate"/>
+          <Item Value="SumCharge"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ExtraChargeVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ExtraChargeVO1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+              <methodAction id="removeAllPersonVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPersonVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllInitMemCurrLibVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllInitMemCurrLibVC"
+                  IsViewObjectMethod="false"/>
+    <attributeValues IterBinding="ExtraChargeVO1Iterator" id="SumCharge">
+      <AttrNames>
+        <Item Value="SumCharge"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="ArtId1">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+
+ 
+ 
+    <af:panelSplitter id="ps1" splitterPosition="122" orientation="vertical"
+                      inlineStyle="width:500.0px;">
+                      
+                      
+                      
+      <f:facet name="first">
+      
+      
+        <af:panelGroupLayout layout="vertical" id="pgl1">
+          <af:panelHeader text=" " id="ph1">
+            <af:query id="qryId1" headerText="جستجوی عضو" disclosed="true"
+                      value="#{bindings.searchbarcodeQuery.queryDescriptor}"
+                      model="#{bindings.searchbarcodeQuery.queryModel}"
+                      queryListener="#{pageFlowScope.cid_reserve_mem.search_person}"
+                      queryOperationListener="#{bindings.searchbarcodeQuery.processQueryOperation}"
+                      saveQueryMode="hidden" modeChangeVisible="false"
+                      resultComponentId="::pgl2"/>
+          </af:panelHeader>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="second">
+        <af:panelGroupLayout layout="scroll"
+                            id="pgl2">
+          <af:panelBox text=" " id="pb1">
+            <af:panelGroupLayout id="pgl3">
+              <af:panelGroupLayout id="pgl4" layout="horizontal" valign="middle"
+                                   halign="center">
+                <af:panelFormLayout id="pfl1" rows="7" maxColumns="1"
+                                    partialTriggers="qryId1">
+                  <af:inputText value="#{bindings.Barcode.inputValue}"
+                                label="#{bindings.Barcode.hints.label}"
+                                required="#{bindings.Barcode.hints.mandatory}"
+                                columns="#{bindings.Barcode.hints.displayWidth}"
+                                maximumLength="#{bindings.Barcode.hints.precision}"
+                                shortDesc="#{bindings.Barcode.hints.tooltip}"
+                                id="it1" readOnly="true"
+                                partialTriggers="qryId1">
+                    <f:validator binding="#{bindings.Barcode.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Fname.inputValue}"
+                                label="#{bindings.Fname.hints.label}"
+                                required="#{bindings.Fname.hints.mandatory}"
+                                columns="#{bindings.Fname.hints.displayWidth}"
+                                maximumLength="#{bindings.Fname.hints.precision}"
+                                shortDesc="#{bindings.Fname.hints.tooltip}"
+                                id="it2" readOnly="true"
+                                partialTriggers="qryId1">
+                    <f:validator binding="#{bindings.Fname.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Lname.inputValue}"
+                                label="#{bindings.Lname.hints.label}"
+                                required="#{bindings.Lname.hints.mandatory}"
+                                columns="#{bindings.Lname.hints.displayWidth}"
+                                maximumLength="#{bindings.Lname.hints.precision}"
+                                shortDesc="#{bindings.Lname.hints.tooltip}"
+                                id="it3" readOnly="true"
+                                partialTriggers="qryId1">
+                    <f:validator binding="#{bindings.Lname.validator}"/>
+                  </af:inputText>
+                  <af:selectOneChoice value="#{bindings.PersType.inputValue}"
+                                      label="#{bindings.PersType.label}"
+                                      required="#{bindings.PersType.hints.mandatory}"
+                                      shortDesc="#{bindings.PersType.hints.tooltip}"
+                                      id="soc1" readOnly="true"
+                                      partialTriggers="qryId1">
+                    <f:selectItems value="#{bindings.PersType.items}" id="si1"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.PersStatus.inputValue}"
+                                      label="#{bindings.PersStatus.label}"
+                                      required="#{bindings.PersStatus.hints.mandatory}"
+                                      shortDesc="#{bindings.PersStatus.hints.tooltip}"
+                                      id="soc2" readOnly="true"
+                                      partialTriggers="qryId1">
+                    <f:selectItems value="#{bindings.PersStatus.items}"
+                                   id="si2"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.MemshipCategoryText.inputValue}"
+                                label="#{bindings.MemshipCategoryText.hints.label}"
+                                required="#{bindings.MemshipCategoryText.hints.mandatory}"
+                                columns="#{bindings.MemshipCategoryText.hints.displayWidth}"
+                                maximumLength="#{bindings.MemshipCategoryText.hints.precision}"
+                                shortDesc="#{bindings.MemshipCategoryText.hints.tooltip}"
+                                id="it4" readOnly="true"
+                                partialTriggers="qryId1">
+                    <f:validator binding="#{bindings.MemshipCategoryText.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.DeptName.inputValue}"
+                                label="#{bindings.DeptName.hints.label}"
+                                required="#{bindings.DeptName.hints.mandatory}"
+                                columns="#{bindings.DeptName.hints.displayWidth}"
+                                maximumLength="#{bindings.DeptName.hints.precision}"
+                                shortDesc="#{bindings.DeptName.hints.tooltip}"
+                                id="it5" readOnly="true"
+                                partialTriggers="qryId1">
+                    <f:validator binding="#{bindings.DeptName.validator}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
+                <af:panelFormLayout id="pfl3" rows="5" maxColumns="21">
+                  <af:spacer width="10" height="60" id="s1"/>
+                  <af:panelLabelAndMessage label="#{bindings.Picture1.hints.label}"
+                                           id="plam1">
+                    <af:outputText value="#{bindings.Picture1.inputValue}"
+                                   id="ot1" partialTriggers="qryId1"/>
+                  </af:panelLabelAndMessage>
+                  <af:inputText value="#{bindings.PostText.inputValue}"
+                                label="#{bindings.PostText.hints.label}"
+                                required="#{bindings.PostText.hints.mandatory}"
+                                columns="#{bindings.PostText.hints.displayWidth}"
+                                maximumLength="#{bindings.PostText.hints.precision}"
+                                shortDesc="#{bindings.PostText.hints.tooltip}"
+                                id="it6" readOnly="true"
+                                partialTriggers="qryId1">
+                    <f:validator binding="#{bindings.PostText.validator}"/>
+                  </af:inputText>
+                <af:inputText value="#{bindings.ReservedCount.inputValue}"
+                              label="#{bindings.ReservedCount.hints.label}"
+                              required="#{bindings.ReservedCount.hints.mandatory}"
+                              columns="#{bindings.ReservedCount.hints.displayWidth}"
+                              maximumLength="#{bindings.ReservedCount.hints.precision}"
+                              shortDesc="#{bindings.ReservedCount.hints.tooltip}"
+                              id="it13" readOnly="true">
+                  <f:validator binding="#{bindings.ReservedCount.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.ReservedCount.format}"/>
+                </af:inputText>
+                <af:selectOneChoice value="#{bindings.SecArtId.inputValue}"
+                                      label="#{bindings.SecArtId.label}"
+                                      required="#{bindings.SecArtId.hints.mandatory}"
+                                      shortDesc="#{bindings.SecArtId.hints.tooltip}"
+                                      id="soc3" readOnly="true"
+                                      partialTriggers="qryId1">
+                    <f:selectItems value="#{bindings.SecArtId.items}" id="si3"/>
+                  </af:selectOneChoice>
+                </af:panelFormLayout>
+            </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </af:panelBox>
+          <af:panelBox text=" " id="pb2">
+            <af:panelFormLayout id="pfl2" rows="4" maxColumns="2"
+                                partialTriggers="qryId1">
+              <af:inputText value="#{bindings.StartDate.inputValue}"
+                            label="#{bindings.StartDate.hints.label}"
+                            required="#{bindings.StartDate.hints.mandatory}"
+                            columns="#{bindings.StartDate.hints.displayWidth}"
+                            maximumLength="#{bindings.StartDate.hints.precision}"
+                            shortDesc="#{bindings.StartDate.hints.tooltip}"
+                            id="it7" readOnly="true" partialTriggers="qryId1">
+                <f:validator binding="#{bindings.StartDate.validator}"/>
+              </af:inputText>
+              <af:selectOneChoice value="#{bindings.MemshipStatus.inputValue}"
+                                  label="#{bindings.MemshipStatus.label}"
+                                  required="#{bindings.MemshipStatus.hints.mandatory}"
+                                  shortDesc="#{bindings.MemshipStatus.hints.tooltip}"
+                                  id="soc4" readOnly="true"
+                                  partialTriggers="qryId1">
+                <f:selectItems value="#{bindings.MemshipStatus.items}"
+                               id="si4"/>
+              </af:selectOneChoice>
+              <af:inputText value="#{bindings.StatStDate.inputValue}"
+                            label="#{bindings.StatStDate.hints.label}"
+                            required="#{bindings.StatStDate.hints.mandatory}"
+                            columns="#{bindings.StatStDate.hints.displayWidth}"
+                            maximumLength="#{bindings.StatStDate.hints.precision}"
+                            shortDesc="#{bindings.StatStDate.hints.tooltip}"
+                            id="it9" readOnly="true" partialTriggers="qryId1">
+                <f:validator binding="#{bindings.StatStDate.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.EndDate.inputValue}"
+                            label="#{bindings.EndDate.hints.label}"
+                            required="#{bindings.EndDate.hints.mandatory}"
+                            columns="#{bindings.EndDate.hints.displayWidth}"
+                            maximumLength="#{bindings.EndDate.hints.precision}"
+                            shortDesc="#{bindings.EndDate.hints.tooltip}"
+                            id="it10" readOnly="true" partialTriggers="qryId1">
+                <f:validator binding="#{bindings.EndDate.validator}"/>
+              </af:inputText>
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:inputText value="#{bindings.StatEndDate.inputValue}"
+                            label="#{bindings.StatEndDate.hints.label}"
+                            required="#{bindings.StatEndDate.hints.mandatory}"
+                            columns="#{bindings.StatEndDate.hints.displayWidth}"
+                            maximumLength="#{bindings.StatEndDate.hints.precision}"
+                            shortDesc="#{bindings.StatEndDate.hints.tooltip}"
+                            id="it11" readOnly="true" partialTriggers="qryId1">
+                <f:validator binding="#{bindings.StatEndDate.validator}"/>
+              </af:inputText>
+            <af:inputText value="#{bindings.Email.inputValue}"
+                          label="#{bindings.Email.hints.label}"
+                          required="#{bindings.Email.hints.mandatory}"
+                          columns="#{bindings.Email.hints.displayWidth}"
+                          maximumLength="#{bindings.Email.hints.precision}"
+                          shortDesc="#{bindings.Email.hints.tooltip}" id="it8"
+                          partialTriggers="cb6 it12"
+                          binding="#{pageFlowScope.cid_reserve_mem.email}"
+                          readOnly="true">
+              <f:validator binding="#{bindings.Email.validator}"/>
+            </af:inputText>
+            <af:commandButton   id="cb3" icon="/icons/edit-find-replace.png"
+                                  shortDesc="#{viewcontrollerBundle.Email}"
+                              partialSubmit="true">
+
+              <af:showPopupBehavior  popupId="p1"/>
+             
+            </af:commandButton>
+                
+      <af:popup id="p1" >
+        <af:panelWindow id="pw1" modal="true">
+          <af:panelFormLayout id="pfl4" rows="2" maxColumns="2"
+                              fieldWidth="200" labelWidth="300">
+            <f:facet name="footer"/>
+            <af:inputText label="#{viewcontrollerBundle.Email}" id="it12"
+                          binding="#{pageFlowScope.cid_reserve_mem.newEmail}"
+                          autoSubmit="true"/>
+                  <af:panelGroupLayout id="pgl7" layout="horizontal">
+                    <af:commandButton text="#{viewcontrollerBundle.create}"
+                                      id="cb6"
+                                      actionListener="#{pageFlowScope.cid_reserve_mem.saveNewEmailActionListener}"
+                                      partialSubmit="true"/>
+                    <af:commandButton text="#{viewcontrollerBundle.cancel}"
+                                      id="cb9"
+                                      actionListener="#{pageFlowScope.cid_reserve_mem.cancelNewEmailActionListener}"/>
+                  </af:panelGroupLayout>
+                </af:panelFormLayout>
+        </af:panelWindow>
+      </af:popup>
+      
+       <af:popup id="p2" contentDelivery="immediate">
+            <af:panelWindow title="#{viewcontrollerBundle.notice}" id="pw2" modal="true">
+              <af:panelFormLayout id="pfl5" rows="4" maxColumns="1">
+                <f:facet name="footer"/>
+                <af:outputText value="#{pageFlowScope.cid_reserve_mem.popUpTxt}"
+                               id="ot2" partialTriggers="cb2"/>
+                <af:spacer width="10" height="30" id="s3"/>
+                <af:panelGroupLayout id="pgl5" layout="horizontal"
+                                     valign="middle" halign="center">
+                  
+                  
+                  <af:commandButton text="#{viewcontrollerBundle.yes}"
+                                    id="cb5"
+                                    actionListener="#{pageFlowScope.cid_reserve_mem.popUpYesBtn}"/>
+                  <af:commandButton
+                                    id="cb4"
+                                    actionListener="#{pageFlowScope.cid_reserve_mem.popUpNoBtn}"
+                                    text="#{viewcontrollerBundle.no_label}"/>
+                </af:panelGroupLayout>
+              </af:panelFormLayout>
+            </af:panelWindow>
+          </af:popup>
+          
+           <af:popup id="p3" contentDelivery="immediate">
+            <af:panelWindow title="#{viewcontrollerBundle.notice}" id="pw3" modal="true">
+              <af:panelFormLayout id="pfl6" rows="4" maxColumns="1">
+                <f:facet name="footer"/>
+                <af:outputText value="#{pageFlowScope.cid_reserve_mem.popUpTxt}"
+                               id="ot3" partialTriggers="cb2"/>
+                <af:spacer width="10" height="30" id="s4"/>
+                <af:panelGroupLayout id="pgl6" layout="horizontal"
+                                     valign="middle" halign="center">
+                  
+                  
+                  <af:commandButton text="#{viewcontrollerBundle.yes}"
+                                    id="cb7"
+                                    actionListener="#{pageFlowScope.cid_reserve_mem.popUp_memReserveBtn_Yes}"/>
+                  <af:commandButton
+                                    id="cb8"
+                                    actionListener="#{pageFlowScope.cid_reserve_mem.popUp_memReserveBtn_No}"
+                                    text="#{viewcontrollerBundle.no_label}"/>
+                </af:panelGroupLayout>
+              </af:panelFormLayout>
+            </af:panelWindow>
+          </af:popup>
+            <f:facet name="footer">
+              <af:panelGroupLayout id="pgl8" layout="horizontal" valign="middle"
+                                   halign="center">
+                <af:spacer width="50" height="10" id="s5"/>
+                <af:commandButton clientComponent="true"
+                                  text="#{viewcontrollerBundle.return}"
+                                  partialSubmit="true" id="cb1" action="end"/>
+                <af:commandButton id="cb2"
+                                  text="#{viewcontrollerBundle.reserve_mem}"
+                                  partialSubmit="true"
+                                  action="#{pageFlowScope.cid_reserve_mem.memReserveBtnAction}"
+                                  disabled="true"
+                                  binding="#{pageFlowScope.cid_reserve_mem.mem_reserve_btn}"/>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelFormLayout>
+        </af:panelBox>
+        </af:panelGroupLayout>
+      </f:facet>
+ 
+ 
+    </af:panelSplitter>
+ 
+</jsp:root>

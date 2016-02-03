@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SeeProvider"
+  Version="11.1.1.56.60"
+  SelectList="SeeProvider.LABCOL, 
+       SeeProvider.PRV_ART_ID, 
+       SeeProvider.PRV_ART_ID_RELATED_TO"
+  FromList="SEE_PROVIDER SeeProvider"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.SeeProviderRowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.SeeProviderImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ProviderKindVO"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Provider_providerKindVC"
+      FullName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO.Provider_providerKindVC"/>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AllProviderVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.AllProviderVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PrvArtIdRelatedTo"
+    ListVOName="AllProviderVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_PrvArtIdRelatedTo_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PrvArtIdRelatedTo"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ArtId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Provider1"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProviderKind"
+    ListVOName="ProviderKindVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_ProviderKind_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProviderKind"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Text"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SeeProvider"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.SeeProvider"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="SeeProvider"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="PrvArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PrvArtId"
+    EntityUsage="SeeProvider"
+    AliasName="PRV_ART_ID"/>
+  <ViewAttribute
+    Name="PrvArtIdRelatedTo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PrvArtIdRelatedTo"
+    EntityUsage="SeeProvider"
+    AliasName="PRV_ART_ID_RELATED_TO"
+    LOVName="LOV_PrvArtIdRelatedTo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProviderText"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.VbookProviderVO.Provider1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BDDateText"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.VbookProviderVO.BDDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ForeignNameText"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.VbookProviderVO.ForeignName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProviderKind"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    LOVName="LOV_ProviderKind">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Provider.ProviderKind_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Labcol"/>
+    <Item Value="PrvArtId"/>
+    <Item Value="PrvArtIdRelatedTo"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="MainSeeProvider"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.MainSeeProviderSeeProviderVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ProviderVO"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.SeePrvPrvRelatedToFkAssoc"
+    Type="oracle.jbo.Row"
+    IsUpdateable="false"/>
+     <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

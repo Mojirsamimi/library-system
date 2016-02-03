@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:32bfcbff-e4fd-4f12-af57-b320a08cc5ee'
+   isAbstract='false'
+   isLeaf='false'
+   name='مشخصات عضو'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:384adee6-3dd4-4593-b812-c4fb0b82d893'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:b56f1946-2432-458d-8ef9-c590c7342e56'>
+   <addition href='urn:uuid:4f45b20b-5cf2-46f6-be80-b9a3e1b67db3'/>
+  </include>
+  <include xmi:uuid='urn:uuid:d1804081-59d3-4bcb-b276-91c11f9f2cd2'>
+   <addition href='urn:uuid:fe2cc7ec-c94c-4ebe-b261-ab37e373f653'/>
+  </include>
+  <include xmi:uuid='urn:uuid:649d93f7-592c-4715-bba7-97716ab6f206'>
+   <addition href='urn:uuid:c043c5eb-74a6-4319-a035-10bb81781b75'/>
+  </include>
+  <include xmi:uuid='urn:uuid:3ec6a749-1218-4f4a-9e83-0ba8ee13546b'>
+   <addition href='urn:uuid:4dbce69a-3424-4944-a51b-e0586514ab5d'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FarsiEnglishKeywordVo"
+  Version="11.1.1.56.60"
+  SelectList="FarsiEnglishKeyword.ART_ID, 
+       FarsiEnglishKeyword.EKEYW_ART_ID, 
+       FarsiEnglishKeyword.FKEYW_ART_ID, 
+       FarsiEnglishKeyword.LABCOL, 
+       VwFarsiEnglishKeyword.EQUAL, 
+       VwFarsiEnglishKeyword.FDESC_ART_ID, 
+       VwFarsiEnglishKeyword.FQUAL_ART_ID, 
+       VwFarsiEnglishKeyword.EDESC_ART_ID, 
+       VwFarsiEnglishKeyword.EQUAL_ART_ID, 
+       VwFarsiEnglishKeyword.FKEYW_ART_ID AS FKEYW_ART_ID1, 
+       VwFarsiEnglishKeyword.EKEYW_ART_ID AS EKEYW_ART_ID1, 
+       VwFarsiEnglishKeyword.FEKEYW_ART_ID, 
+       VwFarsiEnglishKeyword.EDESC"
+  FromList="FARSI_ENGLISH_KEYWORD FarsiEnglishKeyword, VW_FARSI_ENGLISH_KEYWORD VwFarsiEnglishKeyword"
+  Where="(FarsiEnglishKeyword.EKEYW_ART_ID = VwFarsiEnglishKeyword.EKEYW_ART_ID(+)) AND (FarsiEnglishKeyword.FKEYW_ART_ID = VwFarsiEnglishKeyword.FKEYW_ART_ID(+))"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="FarsiEnglishKeyword"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.FarsiEnglishKeyword"/>
+  <EntityUsage
+    Name="VwFarsiEnglishKeyword"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.VwFarsiEnglishKeyword"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.FaEngKeywordVwFaEngKeywordFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.FaEngKeywordVwFaEngKeywordFkAssoc.VwFarsiEnglishKeyword"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.FarsiEnglishKeywordVo.FarsiEnglishKeyword"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.FarsiEnglishKeyword.EkeywArtId"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.FarsiEnglishKeyword.FkeywArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VwFarsiEnglishKeyword.EkeywArtId"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.VwFarsiEnglishKeyword.FkeywArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="FarsiEnglishKeyword"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="EkeywArtId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="EkeywArtId"
+    EntityUsage="FarsiEnglishKeyword"
+    AliasName="EKEYW_ART_ID"/>
+  <ViewAttribute
+    Name="FkeywArtId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="FkeywArtId"
+    EntityUsage="FarsiEnglishKeyword"
+    AliasName="FKEYW_ART_ID"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="FarsiEnglishKeyword"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="Equal"
+    PrecisionRule="true"
+    EntityAttrName="Equal"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="EQUAL"/>
+  <ViewAttribute
+    Name="FdescArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FdescArtId"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="FDESC_ART_ID"/>
+  <ViewAttribute
+    Name="FqualArtId"
+    PrecisionRule="true"
+    EntityAttrName="FqualArtId"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="FQUAL_ART_ID"/>
+  <ViewAttribute
+    Name="EdescArtId"
+    PrecisionRule="true"
+    EntityAttrName="EdescArtId"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="EDESC_ART_ID"/>
+  <ViewAttribute
+    Name="EqualArtId"
+    PrecisionRule="true"
+    EntityAttrName="EqualArtId"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="EQUAL_ART_ID"/>
+  <ViewAttribute
+    Name="FkeywArtId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FkeywArtId"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="FKEYW_ART_ID1"/>
+  <ViewAttribute
+    Name="EkeywArtId1"
+    PrecisionRule="true"
+    EntityAttrName="EkeywArtId"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="EKEYW_ART_ID1"/>
+  <ViewAttribute
+    Name="FekeywArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FekeywArtId"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="FEKEYW_ART_ID"/>
+  <ViewAttribute
+    Name="Edesc"
+    PrecisionRule="true"
+    EntityAttrName="Edesc"
+    EntityUsage="VwFarsiEnglishKeyword"
+    AliasName="EDESC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ArtId"/>
+    <Item Value="Labcol"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="FarsiKeywordVO"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.FarsiKeywordFarsiEnglishKeywordVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="VwFarsiEnglishKeywordVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.FarsiEnglishKeywordVwFarsiEnglishKeywordVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

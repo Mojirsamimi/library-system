@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PublicCashPenalty"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="PUBLIC_CASH_PENALTY"
+  AliasName="PublicCashPenalty"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenaltyImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_CASH_PENALTY"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="8"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_CASH_PENALTY"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Value"
+    Precision="6"
+    Scale="0"
+    ColumnName="VALUE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Value_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="DayDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="DAY_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DayDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="500"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLIC_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="MemArtId"
+    Precision="10"
+    Scale="0"
+    ColumnName="MEM_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLIC_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="UserName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Member"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_PubcshpnMemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_PubcshpnMemFkAssoc.Member"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_PubcshpnMemFkAssoc.PublicCashPenalty"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicCashPenaltyFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicCashPenaltyFkAssoc.InitMember"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicCashPenaltyFkAssoc.PublicCashPenalty"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PubcshpnPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PUBCSHPN_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007251">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007251"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007252">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007252"/>
+      <Attr Name="_checkCondition" Value='"VALUE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.Value"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007253">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007253"/>
+      <Attr Name="_checkCondition" Value='"DAY_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.DayDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007254">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007254"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007255">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007255"/>
+      <Attr Name="_checkCondition" Value='"MEM_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007256">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007256"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PubcshpnMemFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MEM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PUBCSHPN_MEM_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicCashPenalty.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

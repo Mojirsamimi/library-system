@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LibUserRoleVo"
+  Version="11.1.1.56.60"
+  SelectList="LibUserRole.LABCOL, 
+       LibUserRole.LIBROLE_ART_ID, 
+       LibUserRole.LIBUSER_USER_NAME"
+  FromList="LIB_USER_ROLE LibUserRole"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="LibUserRole"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.CommonEOs.LibUserRole"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="LibUserRole"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="LibroleArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LibroleArtId"
+    EntityUsage="LibUserRole"
+    AliasName="LIBROLE_ART_ID"/>
+  <ViewAttribute
+    Name="LibuserUserName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LibuserUserName"
+    EntityUsage="LibUserRole"
+    AliasName="LIBUSER_USER_NAME"/>
+</ViewObject>

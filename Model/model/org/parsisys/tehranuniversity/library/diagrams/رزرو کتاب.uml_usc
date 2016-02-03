@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:e5fd779b-9602-4653-84c2-474780b66203'
+   isAbstract='false'
+   isLeaf='false'
+   name='رزرو کتاب'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:20872aac-4507-4417-bbf5-7f028531b5e9'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:5e8d38c4-d2f1-451f-aed8-58f67fcafae3'>
+   <addition href='urn:uuid:cf0fbb1d-3fa2-494c-b5e9-49c1d6878b45'/>
+  </include>
+  <include xmi:uuid='urn:uuid:633dd8fb-65b4-46d6-a8f5-40468c68789a'>
+   <addition href='urn:uuid:2f699848-2932-4583-be9f-4fba5779bc48'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

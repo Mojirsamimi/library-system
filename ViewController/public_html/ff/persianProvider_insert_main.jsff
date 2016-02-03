@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="pfl1" rows="4" maxColumns="1">
+    <af:inputText label="پدیدآورmain" id="it1"
+                  value="#{persian_provider.provider}"/>
+    <af:inputText label="نام لاتین" id="it2"
+                  value="#{persian_provider.provider_fName}"/>
+    <af:inputText label="تاریخ تولد و وفات" id="it3"
+                  value="#{persian_provider.provider_fName}"/>
+    <af:selectOneChoice value="#{bindings.ProviderKind.inputValue}"
+                        label="#{bindings.ProviderKind.label}"
+                        required="#{bindings.ProviderKind.hints.mandatory}"
+                        shortDesc="#{bindings.ProviderKind.hints.tooltip}"
+                        id="soc1">
+      <f:selectItems value="#{bindings.ProviderKind.items}" id="si1"/>
+    </af:selectOneChoice>
+    <f:facet name="footer">
+    <af:panelGroupLayout id="pgl1" layout="horizontal" halign="center">
+        <af:commandButton text="ذخیره" id="cb1"
+                         
+                          action="#{persian_provider.persianProvider_insert_main}"
+                          partialSubmit="true"/>
+        <af:commandButton text="لغو" id="cb2" action="go"/>
+      </af:panelGroupLayout>
+    
+    </f:facet>
+  </af:panelFormLayout>
+</jsp:root>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="penalty_paymentflow">
+    <default-activity id="__1">router1</default-activity>
+    <router id="router1">
+      <case>
+        <expression>#{cid_penalty_payment.path =='edit'}</expression>
+        <outcome id="__21">editPayment</outcome>
+      </case>
+      <case>
+        <expression>#{cid_penalty_payment.path =='new'}</expression>
+        <outcome id="__22">insertPayment</outcome>
+      </case>
+      <default-outcome>insertPayment</default-outcome>
+    </router>
+    <view id="paymentInsert">
+      <page>/ff/paymentInsert.jsff</page>
+    </view>
+    <view id="paymentEdit">
+      <page>/ff/paymentEdit.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__10">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">router1</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome id="__6">editPayment</from-outcome>
+        <to-activity-id id="__5">paymentEdit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome id="__9">insertPayment</from-outcome>
+        <to-activity-id id="__7">paymentInsert</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id id="__12">paymentInsert</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__15">exit</from-outcome>
+        <to-activity-id id="__13">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__16">
+      <from-activity-id id="__17">paymentEdit</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome id="__20">exit</from-outcome>
+        <to-activity-id id="__18">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

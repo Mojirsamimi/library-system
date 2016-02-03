@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+           xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:f="http://java.sun.com/jsf/core">
+          <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+ <af:panelFormLayout id="pfl1">
+ 
+ <af:popup id="pe1" contentDelivery="immediate"
+           binding="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.popUpEditYesNo}">
+  
+            <af:panelWindow title="تایید" id="pw2" modal="true">
+              <af:panelFormLayout id="pfl5" rows="1" maxColumns="1">
+               <af:outputText id="ot1"
+                              value="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.popUpText}"/>
+               <f:facet name="footer">
+                <af:panelGroupLayout id="pgl1" layout="horizontal" valign="middle"
+                           halign="center">
+      <af:commandButton id="cb1" text="#{viewcontrollerBundle.yes}"
+                        inlineStyle="width:60.0px;"
+                        partialSubmit="true"
+                        action="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.popUpYesbtn_editLoanPenalty}"/>
+     <af:commandButton id="cb2" text="#{viewcontrollerBundle.no}" 
+                       inlineStyle="width:60.0px;"
+                       action="exit_edit"/>
+                       
+                       
+      </af:panelGroupLayout>   
+               </f:facet>
+                
+              </af:panelFormLayout>
+            </af:panelWindow>
+          </af:popup>
+  <af:inputText value="#{bindings.PenaltyCalc.inputValue}"
+                label="#{bindings.PenaltyCalc.hints.label}"
+                required="#{bindings.PenaltyCalc.hints.mandatory}"
+                columns="#{bindings.PenaltyCalc.hints.displayWidth}"
+                maximumLength="#{bindings.PenaltyCalc.hints.precision}"
+                shortDesc="#{bindings.PenaltyCalc.hints.tooltip}" id="it1" readOnly="true">
+   <f:validator binding="#{bindings.PenaltyCalc.validator}"/>
+   <af:convertNumber groupingUsed="false"
+                     pattern="#{bindings.PenaltyCalc.format}"/>
+  </af:inputText>
+  <af:inputText value="#{bindings.Value.inputValue}"
+                label="#{bindings.Value.hints.label}"
+                required="#{bindings.Value.hints.mandatory}"
+                columns="#{bindings.Value.hints.displayWidth}"
+                maximumLength="#{bindings.Value.hints.precision}"
+                shortDesc="#{bindings.Value.hints.tooltip}" id="it2">
+   <f:validator binding="#{bindings.Value.validator}"/>
+   <af:convertNumber groupingUsed="false" pattern="#{bindings.Value.format}"/>
+  </af:inputText>
+  <af:inputText value="#{bindings.Description.inputValue}"
+                label="#{bindings.Description.hints.label}"
+                required="#{bindings.Description.hints.mandatory}"
+                columns="#{bindings.Description.hints.displayWidth}"
+                maximumLength="#{bindings.Description.hints.precision}"
+                shortDesc="#{bindings.Description.hints.tooltip}" id="it3" >
+   <f:validator binding="#{bindings.Description.validator}"/>
+  </af:inputText>
+  
+   <af:inputText label="#{viewcontrollerBundle.penalty_value}" id="it4"
+                value="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.penaltyValue}"
+                binding="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.value_clearText}"/>
+  <af:inputText label="#{viewcontrollerBundle.penalty_desc}" id="it5"
+                value="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.penaltyDesc}"
+                binding="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.desc_clearText}"/>
+ 
+  
+  <f:facet name="footer">
+   <af:panelGroupLayout id="pgl2" layout="horizontal">
+    <af:commandButton text="#{viewcontrollerBundle.penalty_save}" id="cb3"
+                      actionListener="#{pageFlowScope.cid_loan_cash_penalty_flow_edit.preEditLoanCashPenalty}"/>
+    <af:commandButton text="#{viewcontrollerBundle.cancel}" id="cb4"
+                      action="exit_edit"/>
+   </af:panelGroupLayout>
+  </f:facet>
+ </af:panelFormLayout>
+ 
+</jsp:root>

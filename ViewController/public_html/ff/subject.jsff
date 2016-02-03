@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:fadak="/fadak"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <af:panelCollection>
+  <af:table value="#{bindings.SubjectVO1.collectionModel}" var="row"
+            rows="#{bindings.SubjectVO1.rangeSize}"
+            emptyText="#{bindings.SubjectVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            fetchSize="#{bindings.SubjectVO1.rangeSize}" rowBandingInterval="0"
+            filterModel="#{bindings.SubjectVO1Query.queryDescriptor}"
+            queryListener="#{pageFlowScope.back.selectSubjectQryListener}"
+            filterVisible="true" varStatus="vs"
+            selectedRowKeys="#{bindings.SubjectVO1.collectionModel.selectedRow}"
+            selectionListener="#{bindings.SubjectVO1.collectionModel.makeCurrent}"
+            rowSelection="single" id="t1" columnStretching="column:c2">
+      <af:column sortProperty="Subject1" filterable="true" sortable="true"
+                 headerText="#{bindings.SubjectVO1.hints.Subject1.label}"
+                 id="c2">
+        <af:inputText value="#{row.bindings.Subject1.inputValue}"
+                      label="#{bindings.SubjectVO1.hints.Subject1.label}"
+                      required="#{bindings.SubjectVO1.hints.Subject1.mandatory}"
+                      columns="#{bindings.SubjectVO1.hints.Subject1.displayWidth}"
+                      maximumLength="#{bindings.SubjectVO1.hints.Subject1.precision}"
+                      shortDesc="#{bindings.SubjectVO1.hints.Subject1.tooltip}"
+                      id="it1">
+          <f:validator binding="#{row.bindings.Subject1.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="ReadingOrder" filterable="true" sortable="true"
+               headerText="#{bindings.SubjectVO1.hints.ReadingOrder.label}"
+               id="c1">
+      <af:selectOneChoice value="#{row.bindings.ReadingOrder.inputValue}"
+                          label="#{row.bindings.ReadingOrder.label}"
+                          required="#{bindings.SubjectVO1.hints.ReadingOrder.mandatory}"
+                          shortDesc="#{bindings.SubjectVO1.hints.ReadingOrder.tooltip}"
+                          id="soc1">
+        <f:selectItems value="#{row.bindings.ReadingOrder.items}" id="si1"/>
+      </af:selectOneChoice>
+    </af:column>
+  </af:table>
+    <f:facet name="secondaryToolbar">
+      <af:toolbar id="t2">
+        <fadak:ToolbarSet rendered="#{pageFlowScope.catalogingReadingOrder==1}" iteratorname="SubjectVO1Iterator" id="ts1"
+         showfirst="false"
+        showlast="false"
+        showdelete="false"
+        shownext="false"
+        showprevious="false"
+        showEditCommand="true"
+        before_create="#{pageFlowScope.back.subjectBeforeCreate}"
+                           
+                          warningChanged="false"
+                          after_create="#{pageFlowScope.back.subjectPersianAfterCreate}"
+                          RollbackAfterUnsuccessfulCommit="false"/>
+          <fadak:ToolbarSet rendered="#{pageFlowScope.catalogingReadingOrder==2}" iteratorname="SubjectVO1Iterator"
+                            id="ts2"
+         showfirst="false"
+        showlast="false"
+        shownext="false"
+        showdelete="false"
+        showprevious="false"
+        showEditCommand="true"
+        lang="english" before_create="#{pageFlowScope.back.subjectBeforeCreate}"
+                           
+                            after_create="#{pageFlowScope.back.subjectEnglishAfterCreate}"
+                            RollbackAfterUnsuccessfulCommit="false"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="statusbar">
+      <af:toolbar id="t3">
+        <af:commandButton text="#{viewcontrollerBundle.SELECT}" action="#{pageFlowScope.back.selectSubjectAction}"
+                          
+                          disabled="#{bindings.SubjectVO1Iterator.currentRow==null || bindings.SubjectVO1Iterator.currentRow.artId.value lt 0}"
+                          id="cb1" partialTriggers="ts1 ts2 t1"/>
+      </af:toolbar>
+    </f:facet>
+  </af:panelCollection>
+</jsp:root>

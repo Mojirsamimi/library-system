@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_BOOK_LOAN_HISTORYPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllBookBarcodeChangeVC"
+                  id="removeAllBookBarcodeChangeVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <invokeAction Binds="removeAllBookLoanHistory_mVC"
+                  id="removeAllBookLoanHistory_mVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="BookBarcodeChange" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="BookBarcodeChangeIterator"/>
+    <searchRegion Criteria="search_barcode_regId"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="BookBarcodeChangeIterator"
+                  id="searchbarcoderegIdQuery"/>
+    <iterator Binds="VirtualBookVO2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO2Iterator"/>
+    <iterator Binds="BookLoanHistoryVo_M" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="BookLoanHistoryVo_MIterator"/>
+    <searchRegion Binds="BookLoanHistoryVo_MIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BookLoanHistoryVo_MQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BookBarcodeChangeIterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookBarcodeChangeIterator" id="RegId">
+      <AttrNames>
+        <Item Value="RegId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO2Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO2Iterator" id="ProviderName">
+      <AttrNames>
+        <Item Value="ProviderName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="BookLoanHistoryVo_MIterator" id="BookLoanHistoryVo_M">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.BookLoanHistoryVo"
+                      Name="BookLoanHistoryVo_M0">
+        <AttrNames>
+          <Item Value="Barcode"/>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="LoanDate"/>
+          <Item Value="RetDate"/>
+          <Item Value="RealRetDate"/>
+          <Item Value="LoanUser"/>
+          <Item Value="ReturnUser"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="removeAllBookBarcodeChangeVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="removeAllBookBarcodeChangeVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllBookLoanHistory_mVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="removeAllBookLoanHistory_mVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

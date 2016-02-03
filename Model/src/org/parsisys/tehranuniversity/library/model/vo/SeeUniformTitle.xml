@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SeeUniformTitle"
+  Version="11.1.1.56.60"
+  SelectList="SeeUniformTitle.LABCOL, 
+       SeeUniformTitle.UNI_TITLE_ART_ID, 
+       SeeUniformTitle.UNI_TITLE_ART_ID_RELATED_TO"
+  FromList="SEE_UNIFORM_TITLE SeeUniformTitle"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.SeeUniformTitleImpl"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.SeeUniformTitleRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="UniformTitleVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.UniformTitleVO"
+    RowLevelBinds="true"/>
+  <EntityUsage
+    Name="SeeUniformTitle"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.SeeUniformTitle"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="SeeUniformTitle"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="UniTitleArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UniTitleArtId"
+    EntityUsage="SeeUniformTitle"
+    AliasName="UNI_TITLE_ART_ID"/>
+  <ViewAttribute
+    Name="UniTitleArtIdRelatedTo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UniTitleArtIdRelatedTo"
+    EntityUsage="SeeUniformTitle"
+    AliasName="UNI_TITLE_ART_ID_RELATED_TO"/>
+  <ViewAttribute
+    Name="TitleText"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TITLE_TEXT"
+    SQLType="VARCHAR"
+    IsSelected="false">
+    <RecalcCondition>
+      <![CDATA[true]]>
+    </RecalcCondition>
+    <Dependencies>
+      <Item
+        Value="UniTitleArtIdRelatedTo"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Title_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Labcol"/>
+    <Item Value="UniTitleArtId"/>
+    <Item Value="UniTitleArtIdRelatedTo"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="MainSeeUniformTitle"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.MainSeeUniformTitleSeeUniformTitleVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UniformTitleRefrence"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.SeeUniTitleUniTitleRefrenceVL"
+    Type="oracle.jbo.Row"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

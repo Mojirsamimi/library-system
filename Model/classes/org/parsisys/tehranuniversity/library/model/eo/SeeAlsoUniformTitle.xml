@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SeeAlsoUniformTitle"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="SEE_ALSO_UNIFORM_TITLE"
+  AliasName="SeeAlsoUniformTitle"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitleImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_superClass" Value="fadak.base.TemplateEntityObject"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_ALSO_UNIFORM_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UniTitleArtId"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="UNI_TITLE_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_ALSO_UNIFORM_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UniTitleArtIdRelatedTo"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="UNI_TITLE_ART_ID_RELATED_TO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SEE_ALSO_UNIFORM_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="UniformTitle"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.UniTitleSeeAlsoUniTitle"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.UniTitleSeeAlsoUniTitle.UniformTitle"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.UniTitleSeeAlsoUniTitle.SeeAlsoUniformTitle"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="UniformTitle1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoRelatedUniformTitleUniformTitleFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoRelatedUniformTitleUniformTitleFkAssoc.UniformTitle1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoRelatedUniformTitleUniformTitleFkAssoc.SeeAlsoUniformTitle1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.UniformTitleImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SeeAlsoTPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SEE_ALSO_T_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.UniTitleArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.UniTitleArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008325">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008325"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008326">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008326"/>
+      <Attr Name="_checkCondition" Value='"UNI_TITLE_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.UniTitleArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008327">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008327"/>
+      <Attr Name="_checkCondition"
+        Value='"UNI_TITLE_ART_ID_RELATED_TO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.UniTitleArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SeeAlsoTUniTitleFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UNI_TITLE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SEE_ALSO_T_UNI_TITLE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.UniTitleArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SeeAlsoTUniTitlerelatedFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UNI_TITLE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SEE_ALSO_T_UNI_TITLERELATED_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoUniformTitle.UniTitleArtIdRelatedTo"/>
+    </AttrArray>
+  </Key>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

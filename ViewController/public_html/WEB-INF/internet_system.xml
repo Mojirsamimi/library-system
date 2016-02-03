@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="internet_system">
+    <default-activity id="__1">internet_librarysystem</default-activity>
+    <view id="internet_loan">
+      <page>/portal_loan.jsp</page>
+    </view>
+    <view id="internet_reserve">
+      <page>/portal_reserve.jsp</page>
+    </view>
+    <view id="internet_librarysystem">
+      <page>/portal_librarysystem.jsp</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__10">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">internet_librarysystem</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">loan</from-outcome>
+        <to-activity-id id="__4">internet_loan</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome id="__9">reserve</from-outcome>
+        <to-activity-id id="__8">internet_reserve</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id id="__12">internet_reserve</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome id="__15">end</from-outcome>
+        <to-activity-id id="__14">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__16">
+      <from-activity-id id="__17">internet_loan</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome id="__20">end</from-outcome>
+        <to-activity-id id="__18">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

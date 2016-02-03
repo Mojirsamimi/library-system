@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="publisher">
+    <default-activity id="__1">selectPub</default-activity>
+    <input-parameter-definition id="__12">
+      <name id="__13">catalogingReadingOrder</name>
+      <value>#{pageFlowScope.catalogingReadingOrder}</value>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__8">
+      <managed-bean-name id="__9">back</managed-bean-name>
+      <managed-bean-class id="__11">org.parsisys.tehranuniversity.library.view.beans.Back</managed-bean-class>
+      <managed-bean-scope id="__10">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <view id="selectPub">
+      <page>/ff/selectPub.jsff</page>
+    </view>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">selectPub</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">go</from-outcome>
+        <to-activity-id id="__6">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

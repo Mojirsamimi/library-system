@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:8bdd4dd1-3461-4085-bb68-f619daef0b9b'
+   isAbstract='false'
+   isLeaf='false'
+   name='ارجاعات عنوان'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:b3727024-5736-454d-8a48-3e1b82510c9e'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+  <include xmi:uuid='urn:uuid:58716ee2-81b1-4abf-9134-d9599fe391bf'>
+   <addition href='urn:uuid:c8e6ff6b-8957-443b-960f-1b2b7623c867'/>
+  </include>
+  <include xmi:uuid='urn:uuid:03d17e78-3658-4dba-9466-6c279fbdbc7b'>
+   <addition href='urn:uuid:2c9ab63d-597a-4431-bcf0-10267a6a4984'/>
+  </include>
+  <include xmi:uuid='urn:uuid:e3aedb61-71af-41c3-8a3d-f6e72c79e775'>
+   <addition href='urn:uuid:3462906a-8ef3-4fe7-8b17-aa2508f364d2'/>
+  </include>
+  <include xmi:uuid='urn:uuid:87421b35-6514-42a9-86d6-3555e7089385'>
+   <addition href='urn:uuid:b5b6c87a-6b6f-4ad3-b60d-ce52b056b93b'/>
+  </include>
+ </uml:UseCase>
+</xmi:XMI>

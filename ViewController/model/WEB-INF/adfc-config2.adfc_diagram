@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">englishCataloging</property>
+      <property
+         name="page">/englishCataloging.jsp</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>englishCataloging&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">171.64355</property>
+      <property
+         name="x">137.70117</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule3">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">175.59766</property>
+      <property
+         name="x">445.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="WildcardControlFlowRule3"
+      to="View2">
+      <property
+         name="fromOutcome">enCatalog</property>
+      <property
+         name="sdm:polyPoints">L50,409.0,175.74707,178.70117,171.29297,R50</property>
+   </ControlFlowCase>
+   <View
+      id="View5">
+      <property
+         name="activityId">TestPage</property>
+      <property
+         name="page">/TestPage.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>TestPage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">285.79883</property>
+      <property
+         name="x">566.5</property>
+   </View>
+</SDM>

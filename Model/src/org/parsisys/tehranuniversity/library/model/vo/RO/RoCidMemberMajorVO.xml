@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RoCidMemberMajorVO"
+  Version="11.1.1.56.60"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="PersonSecArtId"
+    Kind="viewcriteria"
+    Type="oracle.jbo.domain.Number"/>
+  <SQLQuery>
+    <![CDATA[SELECT ALL MAJOR.SEC_ART_ID, MAJOR.MJR_NAME, MAJOR.ART_ID
+FROM MAJOR 
+WHERE ACTIVE=1]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="SecArtId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="6"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="SEC_ART_ID"
+    Expression="SEC_ART_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MjrName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MJR_NAME"
+    Expression="MJR_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ArtId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="6"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ART_ID"
+    Expression="ART_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="RoCidMemberMajorVOCriteria"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoCidMemberMajorVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="RoCidMemberMajorVOSubCriteria1"
+      ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.RoCidMemberMajorVO"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="vcrow24"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="RoCidMemberMajorVOSubCriteria1_vcrow24_SecArtId"
+          ViewAttribute="SecArtId"
+          Operator="="
+          Conjunction="AND"
+          Value=":PersonSecArtId"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ArtId"/>
+  </AttrArray>
+</ViewObject>

@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+  
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:fadak="/fadak"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+        <af:resource type="javascript" source="/js/handleDblClick.js"/>
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+   <af:panelCollection id="pc1" inlineStyle="height:500.0px;"
+                       styleClass="AFStretchWidth">
+  
+  <af:table value="#{bindings.ProviderVO1.collectionModel}" var="row"
+            rows="#{bindings.ProviderVO1.rangeSize}"
+            emptyText="#{bindings.ProviderVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            fetchSize="#{bindings.ProviderVO1.rangeSize}"
+            rowBandingInterval="0"
+            filterModel="#{bindings.ProviderVO1Query.queryDescriptor}"
+            queryListener="#{pageFlowScope.back.selectProviderQueryLsnr}"
+            filterVisible="true" varStatus="vs"
+            
+            selectedRowKeys="#{bindings.ProviderVO1.collectionModel.selectedRow}"
+            selectionListener="#{bindings.ProviderVO1.collectionModel.makeCurrent}"
+            rowSelection="single" id="t1"
+            partialTriggers="::ts1 ::ts2 soc3" columnStretching="column:c4">
+      <af:column sortProperty="ProviderKind" filterable="true" sortable="true"
+                 headerText="#{bindings.ProviderVO1.hints.ProviderKind.label}"
+                 id="c1" >
+        <af:selectOneChoice value="#{row.bindings.ProviderKind.inputValue}"
+                            label="#{row.bindings.ProviderKind.label}"
+                            required="#{bindings.ProviderVO1.hints.ProviderKind.mandatory}"
+                            shortDesc="#{bindings.ProviderVO1.hints.ProviderKind.tooltip}"
+                            id="soc2">
+          <f:selectItems value="#{row.bindings.ProviderKind.items}" id="si2"/>
+        </af:selectOneChoice>
+        <f:facet name="filter">
+          <af:selectOneChoice label="Label 1" id="soc3"
+                              value="#{vs.filterCriteria.ProviderKind}"
+                              autoSubmit="true">
+            <af:forEach items="#{bindings.ProviderKind1.rangeSet}" var="li">
+              <f:selectItem id="si3" itemLabel="#{li.Text}" itemValue="#{li.Value}" />
+            </af:forEach>
+          </af:selectOneChoice>
+        </f:facet>
+      </af:column>
+      <af:column sortProperty="Provider1" filterable="true" sortable="true"
+                 headerText="#{bindings.ProviderVO1.hints.Provider1.label}"
+                 id="c4">
+        <af:inputText value="#{row.bindings.Provider1.inputValue}"
+                      label="#{bindings.ProviderVO1.hints.Provider1.label}"
+                      required="#{bindings.ProviderVO1.hints.Provider1.mandatory}"
+                      columns="#{bindings.ProviderVO1.hints.Provider1.displayWidth}"
+                      maximumLength="#{bindings.ProviderVO1.hints.Provider1.precision}"
+                      shortDesc="#{bindings.ProviderVO1.hints.Provider1.tooltip}"
+                      id="it3"
+                      autoSubmit="true">
+          <f:validator binding="#{row.bindings.Provider1.validator}"/>
+        </af:inputText>
+        
+      </af:column>
+      <af:column sortProperty="ForeignName" filterable="true" sortable="true"
+                 headerText="#{bindings.ProviderVO1.hints.ForeignName.label}"
+                 id="c2">
+        <af:inputText value="#{row.bindings.ForeignName.inputValue}"
+                      label="#{bindings.ProviderVO1.hints.ForeignName.label}"
+                      required="#{bindings.ProviderVO1.hints.ForeignName.mandatory}"
+                      columns="#{bindings.ProviderVO1.hints.ForeignName.displayWidth}"
+                      maximumLength="#{bindings.ProviderVO1.hints.ForeignName.precision}"
+                      shortDesc="#{bindings.ProviderVO1.hints.ForeignName.tooltip}"
+                      id="it1">
+          <f:validator binding="#{row.bindings.ForeignName.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="BDDate" filterable="true" sortable="true"
+                 headerText="#{bindings.ProviderVO1.hints.BDDate.label}"
+                 id="c3">
+        <af:inputText value="#{row.bindings.BDDate.inputValue}"
+                      label="#{bindings.ProviderVO1.hints.BDDate.label}"
+                      required="#{bindings.ProviderVO1.hints.BDDate.mandatory}"
+                      columns="#{bindings.ProviderVO1.hints.BDDate.displayWidth}"
+                      maximumLength="#{bindings.ProviderVO1.hints.BDDate.precision}"
+                      shortDesc="#{bindings.ProviderVO1.hints.BDDate.tooltip}"
+                      id="it2">
+          <f:validator binding="#{row.bindings.BDDate.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="ReadingOrder" filterable="true" sortable="true"
+                 headerText="#{bindings.ProviderVO1.hints.ReadingOrder.label}"
+                 id="c5">
+        <af:selectOneChoice value="#{row.bindings.ReadingOrder.inputValue}"
+                            label="#{row.bindings.ReadingOrder.label}"
+                            required="#{bindings.ProviderVO1.hints.ReadingOrder.mandatory}"
+                            shortDesc="#{bindings.ProviderVO1.hints.ReadingOrder.tooltip}"
+                            id="soc1">
+          <f:selectItems value="#{row.bindings.ReadingOrder.items}" id="si1"/>
+        </af:selectOneChoice>
+      </af:column>
+      <f:facet name="header">
+       <af:clientListener method="handleTableDoubleClick"
+                                           type="dblClick"/>
+                                             <af:serverListener type="TableDoubleClickEvent"
+                                         method="#{pageFlowScope.back.providerDblClick}"/>
+      </f:facet>
+    </af:table>
+    <f:facet name="toolbar"/>
+    <f:facet name="secondaryToolbar">
+      <af:toolbar id="t2">
+        <fadak:ToolbarSet debug="true" showEditCommand="true"
+                          iteratorname="ProviderVO1Iterator" id="ts1"
+                          showfirst="false" showlast="false" shownext="false"
+                          showprevious="false" 
+                          showdelete="false"
+                          rendered="#{pageFlowScope.catalogingReadingOrder==1}"
+                          lang="persian"
+                          before_create="#{pageFlowScope.back.providerBeforeCreate}"
+                          after_create="#{pageFlowScope.back.providerPersianAfterCreate}"
+                          RollbackAfterUnsuccessfulCommit="false"/>
+        <fadak:ToolbarSet debug="true" showEditCommand="true"
+                          iteratorname="ProviderVO1Iterator" id="ts2"
+                          showfirst="false" showlast="false" shownext="false"
+                          showprevious="false" 
+                          showdelete="false"
+                          rendered="#{pageFlowScope.catalogingReadingOrder==2}"
+                          lang="english"
+                          before_create="#{pageFlowScope.back.providerBeforeCreate}"
+                          RollbackAfterUnsuccessfulCommit="false"
+                          
+                          after_create="#{pageFlowScope.back.providerEnglishAfterCreate}"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="statusbar">
+      <af:toolbar id="t3">
+        <af:commandButton rendered="#{pageFlowScope.mainpage==1}"
+                          text="#{viewcontrollerBundle.SELECT}"
+                          disabled="#{bindings.ProviderVO1Iterator.currentRow==null || bindings.ProviderVO1Iterator.currentRow.artId.value lt 0}"
+                          id="cb1"
+                          action="#{pageFlowScope.back.provider_mainpage}"
+                          partialTriggers="t1 ts1 ts2">
+        
+        </af:commandButton>
+        <af:commandButton rendered="#{pageFlowScope.mainpage==0}"
+                          text="#{viewcontrollerBundle.SELECT}" action="go"
+                          disabled="#{bindings.ProviderVO1Iterator.currentRow==null || bindings.ProviderVO1Iterator.currentRow.artId.value lt 0}"
+                          id="cb2"
+                          actionListener="#{bindings.copy_provider_other.execute}" partialTriggers="t1 ts2 ts1"/>
+      </af:toolbar>
+    </f:facet>
+  </af:panelCollection>
+ 
+</jsp:root>

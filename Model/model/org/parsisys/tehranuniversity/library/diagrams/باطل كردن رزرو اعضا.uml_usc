@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:e2b07ff9-0e10-4f86-be15-b13552e03d70'
+   isAbstract='false'
+   isLeaf='false'
+   name='باطل كردن رزرو اعضا'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:d1ea2314-e7e6-4b57-acb1-de637033bf94'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:Association xmi:uuid='urn:uuid:48a8f2e4-fed4-4853-8575-b2d4d5ec3536'
+   isAbstract='false'
+   isDerived='false'
+   isLeaf='false'
+   name='Communicate41'
+   visibility='public'>
+  <memberEnd href='urn:uuid:0c4b114a-9143-4a55-ac84-2665ac96e019'/>
+  <memberEnd href='urn:uuid:b17011be-36c4-42de-9ef9-eb87e4330ce5'/>
+  <ownedComment xmi:uuid='urn:uuid:27a20921-fe41-4fe2-a27d-b69f83c5b5bf'
+    body='uml_uc:Communicate'/>
+  <ownedEnd xmi:uuid='urn:uuid:0c4b114a-9143-4a55-ac84-2665ac96e019'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    aggregation='none'>
+   <association href='urn:uuid:48a8f2e4-fed4-4853-8575-b2d4d5ec3536'/>
+   <type href='urn:uuid:00e12d0b-3e65-4712-a757-e8aae6a20bb5'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:ff00294e-51a2-40a6-9b9a-21dfdfa01b0a'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:52fb53e1-f887-40e1-8cb3-7f4d0f4153dc'
+     value='1'
+     visibility='public'/>
+  </ownedEnd>
+  <ownedEnd xmi:uuid='urn:uuid:b17011be-36c4-42de-9ef9-eb87e4330ce5'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    aggregation='none'>
+   <association href='urn:uuid:48a8f2e4-fed4-4853-8575-b2d4d5ec3536'/>
+   <type href='urn:uuid:c3d51547-ec57-4cd8-a87f-59644bae3f43'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:3fe815a9-a197-46f0-9577-b4aef7a5dc71'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:5347ef90-1b25-4942-96b2-897f2106f574'
+     value='1'
+     visibility='public'/>
+  </ownedEnd>
+ </uml:Association>
+</xmi:XMI>

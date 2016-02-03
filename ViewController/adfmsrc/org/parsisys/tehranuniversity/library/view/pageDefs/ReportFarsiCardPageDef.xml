@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="ReportFarsiCardPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="oracle.jbo.domain.Number"
+                Name="bookFarsiCard_findArtIdFromRowNum_from"
+                IsQueriable="false"/>
+      <variable Type="oracle.jbo.domain.Number"
+                Name="bookFarsiCard_findArtIdFromRowNum_to"
+                IsQueriable="false"/>
+    </variableIterator>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="Rep_VirtualBookFarsiCardVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="Rep_VirtualBookFarsiCardVo1Iterator"/>
+    <searchRegion Binds="Rep_VirtualBookFarsiCardVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Rep_VirtualBookFarsiCardVo1Query"/>
+    <iterator Binds="VirtualBookList_farsiCardVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VirtualBookList_farsiCardVO1Iterator"/>
+    <searchRegion Binds="VirtualBookList_farsiCardVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="VirtualBookList_farsiCardVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="from">
+      <AttrNames>
+        <Item Value="bookFarsiCard_findArtIdFromRowNum_from"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="to">
+      <AttrNames>
+        <Item Value="bookFarsiCard_findArtIdFromRowNum_to"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="Rep_VirtualBookFarsiCardVo1Iterator"
+          id="Rep_VirtualBookFarsiCardVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.report.Rep_VirtualBookFarsiCard"
+                      Name="Rep_VirtualBookFarsiCardVo10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Title"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="bookFarsiCard_madar_printOne" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="bookFarsiCard_madar_printOne"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.bookFarsiCard_madar_printOne_AppModuleDataControl_dataProvider_bookFarsiCard_madar_printOne_result"/>
+    <methodAction id="bookFarsiCard_madar_printAll" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="bookFarsiCard_madar_printAll"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.bookFarsiCard_madar_printAll_AppModuleDataControl_dataProvider_bookFarsiCard_madar_printAll_result"/>
+    <tree IterBinding="VirtualBookList_farsiCardVO1Iterator"
+          id="VirtualBookList_farsiCardVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.report.VirtualBookListVO"
+                      Name="VirtualBookList_farsiCardVO10">
+        <AttrNames>
+          <Item Value="VbookRowNum"/>
+          <Item Value="ArtId"/>
+          <Item Value="CallNo"/>
+          <Item Value="Title"/>
+          <Item Value="ProviderName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="bookLatinCard_madar_printAll"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="bookLatinCard_madar_printAll"
+                  IsViewObjectMethod="false"
+                  ReturnName="AppModuleDataControl.methodResults.bookLatinCard_madar_printAll_AppModuleDataControl_dataProvider_bookLatinCard_madar_printAll_result"/>
+    <methodAction id="bookLatinCard_madar_printOne"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="bookLatinCard_madar_printOne"
+                  IsViewObjectMethod="false"
+                  ReturnName="AppModuleDataControl.methodResults.bookLatinCard_madar_printOne_AppModuleDataControl_dataProvider_bookLatinCard_madar_printOne_result"/>
+  </bindings>
+</pageDefinition>

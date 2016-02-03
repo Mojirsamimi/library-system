@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  Name="Subject"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="SUBJECT"
+  AliasName="Subject"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.SubjectImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="DummyVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.DummyVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MessageVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.MessageVO"
+    RowLevelBinds="true"/>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SUBJECT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="SUBJECT"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Subject"
+    IsUnique="true"
+    Precision="250"
+    ColumnName="SUBJECT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Subject_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ReadingOrder"
+    Precision="1"
+    Scale="0"
+    ColumnName="READING_ORDER"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReferenceType"
+    Precision="1"
+    Scale="0"
+    ColumnName="REFERENCE_TYPE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="VbookSubject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbookSubjectSubjectFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbookSubjectSubjectFkAssoc.VbookSubject"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbookSubjectSubjectFkAssoc.Subject"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SeeAlsoSubject1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjFkAssoc.SeeAlsoSubject1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjFkAssoc.Subject1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SeeSubject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjRelatedToFkAssoc.SeeSubject"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjRelatedToFkAssoc.Subject"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SeeAlsoSubject2"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjectSeeAlsoSubFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjectSeeAlsoSubFkAssoc.SeeAlsoSubject2"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjectSeeAlsoSubFkAssoc.Subject2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SeeAlsoSubject3"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoSubjSubjRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoSubjSubjRelatedToFkAssoc.SeeAlsoSubject3"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoSubjSubjRelatedToFkAssoc.Subject3"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoSubjectImpl"
+    IsUpdateable="true"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+  <AccessorAttribute
+    Name="VbookSubject1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFkAssoc.VbookSubject1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookSubSubFkAssoc.Subject1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookSubjectFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookSubjectFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookSubjectFkAssoc.Subject"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SeeSubject1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjFkAssoc.SeeSubject1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SubjSeeSubjFkAssoc.Subject1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+  <AccessorAttribute
+    Name="SeeAlsoSubject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjRelatedToFkAssoc.SeeAlsoSubject"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjRelatedToFkAssoc.Subject"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SubjPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUBJ_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SubjSubjectUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SUBJ_SUBJECT_UK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.Subject"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SubjectAltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SUBJECTALTKEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.Subject"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008346">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008346"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008347">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008347"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC008348">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008348"/>
+      <Attr Name="_checkCondition" Value='"SUBJECT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.Subject"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008349">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008349"/>
+      <Attr Name="_checkCondition" Value='"READING_ORDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.ReadingOrder"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008350">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008350"/>
+      <Attr Name="_checkCondition" Value='"REFERENCE_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Subject.ReferenceType"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="Subject_Rule_0"
+    ResId="org.parsisys.tehranuniversity.library.model.eo.Subject_Rule_0"
+    KeyName="SubjectAltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Subject"/>
+    </validation:OnAttributes>
+    <validation:OnCondition>
+      <![CDATA[adf.userSession.userData.validation_policy=="persian_cataloging"]]>
+    </validation:OnCondition>
+  </validation:UniqueKeyValidationBean>
+</Entity>

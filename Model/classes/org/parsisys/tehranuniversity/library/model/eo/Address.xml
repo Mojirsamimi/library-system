@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Address"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="ADDRESS"
+  AliasName="Address"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Address"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName="ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ADDRESS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Address.Address_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    IsNotNull="true"
+    Precision="1"
+    Scale="0"
+    ColumnName="ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADDRESS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Address.Active_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="OrderNo"
+    IsNotNull="true"
+    Precision="2"
+    Scale="0"
+    ColumnName="ORDER_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADDRESS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Address.OrderNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="5"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PersArtId"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="8"
+    Scale="0"
+    ColumnName="PERS_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="ADDRESS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Person"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonAddressFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonAddressFkAssoc.Person"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonAddressFkAssoc.Address"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AdrsAddressUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ADRS_ADDRESS_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Address.Address"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Address.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005524">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005524"/>
+      <Attr Name="_checkCondition" Value='"ADDRESS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Address.Address"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005525">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005525"/>
+      <Attr Name="_checkCondition" Value='"ACTIVE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Address.Active"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005526">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005526"/>
+      <Attr Name="_checkCondition" Value='"ORDER_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Address.OrderNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005527">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005527"/>
+      <Attr Name="_checkCondition" Value='"PERS_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Address.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AdrsPersFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PERS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ADRS_PERS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Address.PersArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

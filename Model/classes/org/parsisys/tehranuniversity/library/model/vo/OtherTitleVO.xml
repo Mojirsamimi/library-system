@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OtherTitleVO"
+  Version="11.1.1.56.60"
+  SelectList="OtherTitle.OTHER_TITLE AS OTHER_TITLE1, 
+       OtherTitle.PRINTABLE, 
+       OtherTitle.TITLE_KIND, 
+       OtherTitle.LABCOL, 
+       OtherTitle.VBOOK_ART_ID, 
+       OtherTitle.ORDER_NO"
+  FromList="OTHER_TITLE OtherTitle"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.OtherTitleVORowImpl"
+  ComponentClass="org.parsisys.tehranuniversity.library.model.vo.OtherTitleVOImpl"
+  OrderBy="ORDER_NO">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_objectSuperClassName" Value="fadak.base.TemplateViewObject"/>
+  </DesignTime>
+  <EntityUsage
+    Name="OtherTitle"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.OtherTitle"/>
+  <ViewAttribute
+    Name="OtherTitle1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OtherTitle"
+    EntityUsage="OtherTitle"
+    AliasName="OTHER_TITLE1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.OtherTitleVO.OtherTitle1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Printable"
+    PrecisionRule="true"
+    EntityAttrName="Printable"
+    EntityUsage="OtherTitle"
+    AliasName="PRINTABLE"
+    DefaultValue="0"/>
+  <ViewAttribute
+    Name="TitleKind"
+    PrecisionRule="true"
+    EntityAttrName="TitleKind"
+    EntityUsage="OtherTitle"
+    AliasName="TITLE_KIND"
+    DefaultValue="2"/>
+  <ViewAttribute
+    Name="Labcol"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="OtherTitle"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VbookArtId"
+    EntityUsage="OtherTitle"
+    AliasName="VBOOK_ART_ID"/>
+  <ViewAttribute
+    Name="OrderNo"
+    PrecisionRule="true"
+    EntityAttrName="OrderNo"
+    EntityUsage="OtherTitle"
+    AliasName="ORDER_NO">
+    <TransientExpression><![CDATA[(rowSet.max("OrderNo")==null?0:rowSet.max("OrderNo"))+1]]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="printBoolean"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

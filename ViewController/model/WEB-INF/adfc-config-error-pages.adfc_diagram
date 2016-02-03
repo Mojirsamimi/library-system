@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">AccessDenied</property>
+      <property
+         name="page">/AccessDenied.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AccessDenied&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">126.79883</property>
+      <property
+         name="x">135.36035</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">PortalAccessDenied</property>
+      <property
+         name="page">/PortalAccessDenied.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PortalAccessDenied&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">207.79883</property>
+      <property
+         name="x">349.02637</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">logInFirst</property>
+      <property
+         name="page">/logInFirst.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>logInFirst&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">260.79883</property>
+      <property
+         name="x">175.5</property>
+   </View>
+</SDM>

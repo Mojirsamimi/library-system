@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="ChangePersonPageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PersonVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO1Iterator"/>
+    <iterator Binds="InitMemberCurrLibVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="InitMemberCurrLibVOIterator"/>
+    <iterator Binds="TelephoneVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="TelephoneVO1Iterator"/>
+    <searchRegion Binds="TelephoneVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TelephoneVO1Query"/>
+    <iterator Binds="EmailVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EmailVO1Iterator"/>
+    <searchRegion Binds="EmailVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="EmailVO1Query"/>
+    <iterator Binds="AddressVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="AddressVO1Iterator"/>
+    <searchRegion Binds="AddressVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AddressVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_PersType"
+          id="PersType" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="CertificateNo">
+      <AttrNames>
+        <Item Value="CertificateNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_Origine"
+          id="Origine" DTSupportsMRU="false"/>
+    <listOfValues StaticList="false" IterBinding="PersonVO1Iterator"
+                  Uses="LOV_Affiliation" id="Affiliation"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Pers_Offstat_Desc">
+      <AttrNames>
+        <Item Value="Pers_Offstat_Desc"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_CmemSetupPost" id="CmemSetupPost" DTSupportsMRU="false"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersStatus" id="PersStatus" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="EndDate1">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="NewEndDate">
+      <AttrNames>
+        <Item Value="NewEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_DeptArtId" id="DeptArtId" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersCategory" id="PersCategory" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_SecArtId"
+          id="SecArtId" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_Degree"
+          id="Degree" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_MjrArtId"
+          id="MjrArtId" DTSupportsMRU="true"/>
+    <tree IterBinding="TelephoneVO1Iterator" id="TelephoneVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.TelephoneVO"
+                      Name="TelephoneVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Telephone1"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="EmailVO1Iterator" id="EmailVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.EmailVO"
+                      Name="EmailVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Email1"/>
+          <Item Value="Active"/>
+        </AttrNames>
+        
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AddressVO1Iterator" id="AddressVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.AddressVO"
+                      Name="AddressVO10">
+        <AttrNames>
+          <Item Value="OrderNo"/>
+          <Item Value="Address1"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TelephoneVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="false" Action="createInsertRow"/>
+    <action IterBinding="EmailVO1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="AddressVO1Iterator" id="CreateInsert2"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

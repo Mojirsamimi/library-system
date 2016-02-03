@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="RafUploadPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="RafReportVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="RafReportVo1Iterator"/>
+    <searchRegion Binds="RafReportVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="RafReportVo1Query"/>
+    <iterator Binds="BookPlaceLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="BookPlaceLOVIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RafReportVo1Iterator" id="RafReportVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.RO.RafReportVo"
+                      Name="RafReportVo10">
+        <AttrNames>
+          <Item Value="A"/>
+          <Item Value="CallNo"/>
+          <Item Value="RegId"/>
+          <Item Value="Barcode"/>
+          <Item Value="ArtId"/>
+          <Item Value="TitleFarsi"/>
+          <Item Value="TitleLatin"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="BookPlaceLOVIterator" ListOperMode="navigation"
+          ListIter="BookPlaceLOVIterator" id="BookPlaceLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

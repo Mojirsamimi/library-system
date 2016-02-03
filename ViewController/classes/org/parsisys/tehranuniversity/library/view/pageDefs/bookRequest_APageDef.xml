@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="bookRequest_APageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="PlaceLov_RoSpcLov" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="PlaceLov_RoSpcLovIterator"/>
+    <iterator Binds="BookRequest2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="BookRequest2Iterator"/>
+    <searchRegion Binds="BookRequest2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BookRequest2Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="PlaceLov_RoSpcLovIterator" ListOperMode="navigation"
+          ListIter="PlaceLov_RoSpcLovIterator" id="PlaceLov_RoSpcLov"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="BookRequest2Iterator" id="BookRequest2">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.BookRequest"
+                      Name="BookRequest20">
+        <AttrNames>
+          <Item Value="ReqNo"/>
+          <Item Value="Barcode"/>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="Serial"/>
+          <Item Value="CallNo"/>
+          <Item Value="LoadStat" Binds="LoadStat"/>
+          <Item Value="CustStat" Binds="CustStat"/>
+          <Item Value="Place"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="BookRequest2Iterator" id="LoadStat"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="LoadStat"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="T"/>
+        <Item Value="F"/>
+      </ValueList>
+    </button>
+    <button IterBinding="BookRequest2Iterator" id="CustStat"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="CustStat"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="T"/>
+        <Item Value="F"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="BookRequest2Iterator" id="ReqNo">
+      <AttrNames>
+        <Item Value="ReqNo"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

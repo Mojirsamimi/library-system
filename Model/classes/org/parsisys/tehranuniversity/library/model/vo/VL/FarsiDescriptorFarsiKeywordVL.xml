@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FarsiDescriptorFarsiKeywordVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.FkeywFdescFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="FarsiDescriptorVo"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.FarsiDescriptorVo"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="FarsiDescriptorVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.FarsiDescriptorVo.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.FarsiDescriptorVo.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="FarsiKeywordVO"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.FarsiKeywordVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="FarsiKeywordVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.FarsiKeywordVO.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.FarsiKeywordVO.FdescArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

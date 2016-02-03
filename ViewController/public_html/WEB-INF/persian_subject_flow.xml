@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="persian_subject_flow">
+    <default-activity id="__1">router1</default-activity>
+    <view id="persianSubject_insert_main">
+      <page>/ff/persianSubject_insert_main.jsff</page>
+    </view>
+    <view id="persianSubject_insert_sub">
+      <page>/ff/persianSubject_insert_sub.jsff</page>
+    </view>
+    <view id="persianSubject_insert_alsoMain">
+      <page>/ff/persianSubject_insert_alsoMain.jsff</page>
+    </view>
+    <view id="persianSubject_insert_alsoSub">
+      <page>/ff/persianSubject_insert_alsoSub.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <router id="router1">
+      <case>
+        <expression>#{persian_subject.path =='main'}</expression>
+        <outcome id="__37">goMain</outcome>
+      </case>
+      <case>
+        <expression>#{persian_subject.path =='sub'}</expression>
+        <outcome id="__38">goSub</outcome>
+      </case>
+      <case>
+        <expression>#{persian_subject.path =='alsomain'}</expression>
+        <outcome id="__39">goAlsoMain</outcome>
+      </case>
+      <case>
+        <expression>#{persian_subject.path =='alsosub'}</expression>
+        <outcome id="__40">goAlsoSub</outcome>
+      </case>
+      <default-outcome>ss</default-outcome>
+    </router>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">router1</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">goMain</from-outcome>
+        <to-activity-id id="__6">persianSubject_insert_main</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome id="__10">goSub</from-outcome>
+        <to-activity-id id="__9">persianSubject_insert_sub</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__11">
+        <from-outcome id="__13">goAlsoMain</from-outcome>
+        <to-activity-id id="__12">persianSubject_insert_alsoMain</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__15">
+        <from-outcome id="__16">goAlsoSub</from-outcome>
+        <to-activity-id id="__14">persianSubject_insert_alsoSub</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id id="__18">persianSubject_insert_main</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome id="__21">go</from-outcome>
+        <to-activity-id id="__19">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id id="__23">persianSubject_insert_sub</from-activity-id>
+      <control-flow-case id="__24">
+        <from-outcome id="__26">go</from-outcome>
+        <to-activity-id id="__25">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__27">
+      <from-activity-id id="__28">persianSubject_insert_alsoMain</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome id="__31">go</from-outcome>
+        <to-activity-id id="__30">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__32">
+      <from-activity-id id="__33">persianSubject_insert_alsoSub</from-activity-id>
+      <control-flow-case id="__34">
+        <from-outcome id="__36">go</from-outcome>
+        <to-activity-id id="__35">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VbookUniformTitle"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="VBOOK_UNIFORM_TITLE"
+  AliasName="VbookUniformTitle"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitleImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <Attr Name="_superClass" Value="fadak.base.TemplateEntityObject"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_UNIFORM_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Printable"
+    Precision="1"
+    Scale="0"
+    ColumnName="PRINTABLE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_UNIFORM_TITLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrderNo"
+    Precision="2"
+    Scale="0"
+    ColumnName="ORDER_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_UNIFORM_TITLE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_UNIFORM_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UniTitleArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="UNI_TITLE_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VBOOK_UNIFORM_TITLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkUniTtlFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkUniTtlFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookVbkUniTtlFkAssoc.VbookUniformTitle"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="UniformTitle2"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.UniTitleVbookUniTitleFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.UniTitleVbookUniTitleFkAssoc.UniformTitle2"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.UniTitleVbookUniTitleFkAssoc.VbookUniformTitle2"
+    Type="org.parsisys.tehranuniversity.library.model.eo.UniformTitleImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="UniformTitle1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookUniTtlUniTtlFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookUniTtlUniTtlFkAssoc.UniformTitle1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookUniTtlUniTtlFkAssoc.VbookUniformTitle1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.UniformTitleImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007313">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007313"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007314">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007314"/>
+      <Attr Name="_checkCondition" Value='"PRINTABLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.Printable"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007315">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007315"/>
+      <Attr Name="_checkCondition" Value='"ORDER_NO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.OrderNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007316">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007316"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007317">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007317"/>
+      <Attr Name="_checkCondition" Value='"UNI_TITLE_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="VbunititlePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="VBUNITITLE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.UniTitleArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VbookUniformVirtualBookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="VBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBOOK_UNIFORM_VIRTUAL_BOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VbunititleUniTitleFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UNI_TITLE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VBUNITITLE_UNI_TITLE_FK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VbookUniformTitle.UniTitleArtId"/>
+    </AttrArray>
+  </Key>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+  <validation:UniqueKeyValidationBean
+    Name="VbookUniformTitle_Rule_0"
+    ResId="duplicate_uniformtitle_for_vbook"
+    KeyName="VbunititlePk">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="Labcol"/>
+      <validation:Item
+        Value="UniTitleArtId"/>
+      <validation:Item
+        Value="VbookArtId"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

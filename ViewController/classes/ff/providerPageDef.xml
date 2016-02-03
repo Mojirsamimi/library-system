@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="providerPageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProviderVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ProviderVO1Iterator"
+              RowCountThreshold="0"/>
+    <searchRegion Binds="ProviderVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ProviderVO1Query"/>
+    <iterator Binds="ProviderKind" RangeSize="10"
+              DataControl="AppModuleDataControl" id="ProviderKindIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ProviderVO1Iterator" id="ProviderVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ProviderVO"
+                      Name="ProviderVO10">
+        <AttrNames>
+          <Item Value="ProviderKind"/>
+          <Item Value="Provider1"/>
+          <Item Value="ForeignName"/>
+          <Item Value="BDDate"/>
+          <Item Value="ReadingOrder"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="copy_provider_main_page" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="copy_provider_main_page"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.copy_provider_main_page_AppModuleDataControl_dataProvider_copy_provider_main_page_result"/>
+    <methodAction id="copy_provider_other" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="copy_provider_other"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+    <list IterBinding="ProviderVO1Iterator" StaticList="false"
+          Uses="LOV_ProviderKind" id="ProviderKind" DTSupportsMRU="true"/>
+    <tree IterBinding="ProviderKindIterator" id="ProviderKind1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.RO.RoPubLovVO"
+                      Name="ProviderKind10">
+        <AttrNames>
+          <Item Value="Value"/>
+          <Item Value="Text"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+                      xmlns:fadak="/fadak"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+                          <f:facet name="popup">
+            <af:group id="g1">
+              <af:popup id="tf" contentDelivery="lazyUncached"
+                        binding="#{pageFlowScope.TFBean.region_popup}"
+                        popupFetchListener="#{pageFlowScope.TFBean.popupOpen}">
+                <af:panelWindow title="#{cid_public_non_cash_penalty.title}"
+                                closeIconVisible="false" id="pw1">
+                  <af:region value="#{bindings.dynamicRegion1.regionModel}"
+                             id="r1"
+                             regionNavigationListener="#{pageFlowScope.TFBean.navigationWithoutRefresh}"
+                             binding="#{pageFlowScope.TFBean.tfRegion}"/>
+                </af:panelWindow>
+              </af:popup>
+              <af:popup id="activeChangePop">
+                <af:panelWindow id="pw2" inlineStyle="width:200.0px;">
+                  <af:panelFormLayout id="pfl2">
+                                  <af:outputText value="آیا پرداخت انجام شود؟" id="ot1"/>
+
+                    <f:facet name="footer">
+                      <af:panelGroupLayout id="pgl3">
+                        <af:commandButton text="بلی" id="cb1"
+                                          action="#{cid_public_non_cash_penalty.popUp_yesbtn_applyChange}"/>
+                        <af:commandButton text="خیر" id="cb2"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelFormLayout>
+                </af:panelWindow>
+              </af:popup>
+            </af:group>
+          </f:facet>
+          <f:facet name="center">
+          <af:panelHeader text="جریمه غیر نقدی" helpTopicId="publicNonPenalty">
+           <f:facet name="toolbar">
+          <af:toolbar id="t1">
+                  <fadak:ToolbarSet debug="true" iteratorname="PersonVO1Iterator" id="ts1"
+                                    disabled_delete="true"
+                                    disabled_create="true" showcreate="false"
+                                    showdelete="false" showcommit="false"
+                                    showEditCommand="false" showquery="false"
+                                    showrefresh="false" showrollback="false"
+                                    showsearch="false"/>
+
+          </af:toolbar>
+                    </f:facet>
+              <af:panelSplitter id="ps1" splitterPosition="150"
+                                orientation="vertical">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="scroll" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1" headerText="جستجوی عضو" disclosed="true"
+                                value="#{bindings.searchnameidbarcodeQuery.queryDescriptor}"
+                                model="#{bindings.searchnameidbarcodeQuery.queryModel}"
+                                queryListener="#{bindings.searchnameidbarcodeQuery.processQuery}"
+                                queryOperationListener="#{bindings.searchnameidbarcodeQuery.processQueryOperation}"
+                                rows="2" maxColumns="2" saveQueryMode="hidden"
+                                modeChangeVisible="false"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" layout="vertical"
+                                         valign="middle" halign="center"
+                                         partialTriggers="qryId1">
+                      <af:panelFormLayout id="pfl1" rows="1" maxColumns="5"
+                                          fieldWidth="100"
+                                          partialTriggers="qryId1">
+                        <af:inputText value="#{bindings.Barcode.inputValue}"
+                                      label="#{bindings.Barcode.hints.label}"
+                                      required="#{bindings.Barcode.hints.mandatory}"
+                                      columns="#{bindings.Barcode.hints.displayWidth}"
+                                      maximumLength="#{bindings.Barcode.hints.precision}"
+                                      shortDesc="#{bindings.Barcode.hints.tooltip}"
+                                      id="it8" readOnly="true">
+                          <f:validator binding="#{bindings.Barcode.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Id.inputValue}"
+                                      label="#{bindings.Id.hints.label}"
+                                      required="#{bindings.Id.hints.mandatory}"
+                                      columns="#{bindings.Id.hints.displayWidth}"
+                                      maximumLength="#{bindings.Id.hints.precision}"
+                                      shortDesc="#{bindings.Id.hints.tooltip}"
+                                      id="it9" readOnly="true">
+                          <f:validator binding="#{bindings.Id.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Fname.inputValue}"
+                                      label="#{bindings.Fname.hints.label}"
+                                      required="#{bindings.Fname.hints.mandatory}"
+                                      columns="#{bindings.Fname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Fname.hints.precision}"
+                                      shortDesc="#{bindings.Fname.hints.tooltip}"
+                                      id="it10" readOnly="true">
+                          <f:validator binding="#{bindings.Fname.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Lname.inputValue}"
+                                      label="#{bindings.Lname.hints.label}"
+                                      required="#{bindings.Lname.hints.mandatory}"
+                                      columns="#{bindings.Lname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Lname.hints.precision}"
+                                      shortDesc="#{bindings.Lname.hints.tooltip}"
+                                      id="it11" readOnly="true">
+                          <f:validator binding="#{bindings.Lname.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.MemshipStatus1.inputValue}"
+                                            label="#{bindings.MemshipStatus1.label}"
+                                            required="#{bindings.MemshipStatus1.hints.mandatory}"
+                                            shortDesc="#{bindings.MemshipStatus1.hints.tooltip}"
+                                            id="soc1" readOnly="true">
+                          <f:selectItems value="#{bindings.MemshipStatus1.items}"
+                                         id="si1"/>
+                        </af:selectOneChoice>
+                        <f:facet name="footer"/>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="10" id="s1"/>
+                      <af:panelCollection id="pc1"
+                                          inlineStyle="width:80%; height:150.0px;">
+                         <af:table value="#{bindings.PublicNonCashPenaltyVO1.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.PublicNonCashPenaltyVO1.rangeSize}"
+                                  emptyText="#{bindings.PublicNonCashPenaltyVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.PublicNonCashPenaltyVO1.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.PublicNonCashPenaltyVO1Query.queryDescriptor}"
+                                  queryListener="#{bindings.PublicNonCashPenaltyVO1Query.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.PublicNonCashPenaltyVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.PublicNonCashPenaltyVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="t2"
+                                  columnStretching="column:c7"
+                                   partialTriggers=":::r1 :::tf">
+                          <af:column sortProperty="PenaltyDesc"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDesc.label}"
+                                     id="c7">
+                            <af:inputText value="#{row.bindings.PenaltyDesc.inputValue}"
+                                          label="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDesc.label}"
+                                          required="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDesc.mandatory}"
+                                          columns="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDesc.displayWidth}"
+                                          maximumLength="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDesc.precision}"
+                                          shortDesc="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDesc.tooltip}"
+                                          id="it1" readOnly="true">
+                              <f:validator binding="#{row.bindings.PenaltyDesc.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="PenaltyDate"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDate.label}"
+                                     id="c2">
+                            <af:inputText value="#{row.bindings.PenaltyDate.inputValue}"
+                                          label="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDate.label}"
+                                          required="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDate.mandatory}"
+                                          columns="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDate.displayWidth}"
+                                          maximumLength="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDate.precision}"
+                                          shortDesc="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDate.tooltip}"
+                                          id="it2"
+                                          readOnly="true">
+                              <f:validator binding="#{row.bindings.PenaltyDate.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.PublicNonCashPenaltyVO1.hints.PenaltyDate.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="RegisterUser"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.PublicNonCashPenaltyVO1.hints.RegisterUser.label}"
+                                     id="c4">
+                            <af:inputText value="#{row.bindings.RegisterUser.inputValue}"
+                                          label="#{bindings.PublicNonCashPenaltyVO1.hints.RegisterUser.label}"
+                                          required="#{bindings.PublicNonCashPenaltyVO1.hints.RegisterUser.mandatory}"
+                                          columns="#{bindings.PublicNonCashPenaltyVO1.hints.RegisterUser.displayWidth}"
+                                          maximumLength="#{bindings.PublicNonCashPenaltyVO1.hints.RegisterUser.precision}"
+                                          shortDesc="#{bindings.PublicNonCashPenaltyVO1.hints.RegisterUser.tooltip}"
+                                          id="it4" readOnly="true">
+                              <f:validator binding="#{row.bindings.RegisterUser.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="ActionDesc" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDesc.label}"
+                                     id="c6">
+                            <af:inputText value="#{row.bindings.ActionDesc.inputValue}"
+                                          label="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDesc.label}"
+                                          required="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDesc.mandatory}"
+                                          columns="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDesc.displayWidth}"
+                                          maximumLength="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDesc.precision}"
+                                          shortDesc="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDesc.tooltip}"
+                                          id="it3" readOnly="true">
+                              <f:validator binding="#{row.bindings.ActionDesc.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="ActionDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDate.label}"
+                                     id="c3">
+                            <af:inputText value="#{row.bindings.ActionDate.inputValue}"
+                                          label="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDate.label}"
+                                          required="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDate.mandatory}"
+                                          columns="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDate.displayWidth}"
+                                          maximumLength="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDate.precision}"
+                                          shortDesc="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDate.tooltip}"
+                                          id="it7" readOnly="true">
+                              <f:validator binding="#{row.bindings.ActionDate.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.PublicNonCashPenaltyVO1.hints.ActionDate.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="ActionUser" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.PublicNonCashPenaltyVO1.hints.ActionUser.label}"
+                                     id="c5">
+                            <af:inputText value="#{row.bindings.ActionUser.inputValue}"
+                                          label="#{bindings.PublicNonCashPenaltyVO1.hints.ActionUser.label}"
+                                          required="#{bindings.PublicNonCashPenaltyVO1.hints.ActionUser.mandatory}"
+                                          columns="#{bindings.PublicNonCashPenaltyVO1.hints.ActionUser.displayWidth}"
+                                          maximumLength="#{bindings.PublicNonCashPenaltyVO1.hints.ActionUser.precision}"
+                                          shortDesc="#{bindings.PublicNonCashPenaltyVO1.hints.ActionUser.tooltip}"
+                                          id="it6" readOnly="true">
+                              <f:validator binding="#{row.bindings.ActionUser.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Active" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.PublicNonCashPenaltyVO1.hints.Active.label}"
+                                     id="c1">
+                            <af:selectOneChoice id="soc2" value="#{row.Active}"
+                                                valueChangeListener="#{cid_public_non_cash_penalty.activeValue_changed}"
+                                                autoSubmit="true">
+                             
+                              <af:selectItem label="پرداخت نشده" value="1" 
+                                             id="si3"/>
+                            <af:selectItem label="پرداخت شده" value="0"  id="si2"/>
+                            </af:selectOneChoice>
+                            
+                            
+                          </af:column>
+                        </af:table>
+                        <f:facet name="secondaryToolbar">
+                          <af:toolbar id="t3">
+                            <af:commandImageLink action="#{pageFlowScope.TFBean.publicNonCashPenalty}"
+                                            disabled="#{bindings.ArtId.inputValue==null}"
+                                              icon="/icons/list-add.png"
+                                              actionListener="#{cid_public_non_cash_penalty.test2}"
+                                              shortDesc="ایجاد جریمه غیر نقدی"
+                                                 id="cil1">
+                              <af:setActionListener from="#{'new'}"
+                                                    to="#{cid_public_non_cash_penalty.path}"/>
+                              <af:setActionListener from="#{'ایجاد جریمه غیر نقدی'}"
+                                                    to="#{cid_public_non_cash_penalty.title}"/>
+                            </af:commandImageLink>
+                            <af:commandImageLink action="#{pageFlowScope.TFBean.publicNonCashPenalty}"
+                                              disabled="#{bindings.PublicNonCashPenaltyVO1.currentRow==null}"
+                                              icon="/icons/list-edit.png"
+                                              actionListener="#{cid_public_non_cash_penalty.test}"
+                                              shortDesc="ویرایش جریمه غیر نقدی"
+                                                 id="cil2">
+                              <af:setActionListener from="#{'edit'}"
+                                                    to="#{cid_public_non_cash_penalty.path}"/>
+                              <af:setActionListener from="#{'ویرایش جریمه غیر نقدی'}"
+                                                    to="#{cid_public_non_cash_penalty.title}"/>
+                            </af:commandImageLink>
+                          </af:toolbar>
+                        </f:facet>
+                      </af:panelCollection>
+                     
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

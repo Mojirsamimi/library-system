@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="persian_uniformTitle_flow">
+    <default-activity id="__1">router1</default-activity>
+    <managed-bean id="__11">
+      <managed-bean-name id="__9">persian_uni_title</managed-bean-name>
+      <managed-bean-class id="__8">org.parsisys.tehranuniversity.library.view.beans.PersianUniformTitle</managed-bean-class>
+      <managed-bean-scope id="__10">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="persianUniTitle_insert">
+      <page>/ff/persianUniTitle_insert.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <router id="router1">
+      <case>
+        <expression>#{persian_uniTitle.path=='sub'}</expression>
+        <outcome id="__42">goUniTSub</outcome>
+      </case>
+      <case>
+        <expression>#{persian_uniTitle.path=='alsomain'}</expression>
+        <outcome id="__43">goAlsoMain</outcome>
+      </case>
+      <case>
+        <expression>#{persian_uniTitle.path=='alsosub'}</expression>
+        <outcome id="__44">goAlsoUniTSub</outcome>
+      </case>
+      <case>
+        <expression>#{persian_uniTitle.path=='main'}</expression>
+        <outcome id="__45">goMain</outcome>
+      </case>
+      <default-outcome>ll</default-outcome>
+    </router>
+    <view id="alsoUniformTitle_insert">
+      <page>/ff/alsoUniformTitle_insert.jsff</page>
+    </view>
+    <view id="persianUniTitle_inset_main">
+      <page>/ff/persianUniTitle_inset_main.jsff</page>
+    </view>
+    <view id="alsoUniTitle_insert_main">
+      <page>/ff/alsoUniTitle_insert_main.jsff</page>
+    </view>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">persianUniTitle_insert</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__7">go</from-outcome>
+        <to-activity-id id="__5">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id id="__13">router1</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome id="__36">goUniTSub</from-outcome>
+        <to-activity-id id="__14">persianUniTitle_insert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome id="__35">goAlsoMain</from-outcome>
+        <to-activity-id id="__16">alsoUniTitle_insert_main</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__22">
+        <from-outcome id="__34">goMain</from-outcome>
+        <to-activity-id id="__23">persianUniTitle_inset_main</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__29">
+        <from-outcome id="__37">goAlsoUniTSub</from-outcome>
+        <to-activity-id id="__28">alsoUniformTitle_insert</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id id="__19">alsoUniformTitle_insert</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome id="__39">go</from-outcome>
+        <to-activity-id id="__21">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__24">
+      <from-activity-id id="__25">persianUniTitle_inset_main</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome id="__38">go</from-outcome>
+        <to-activity-id id="__27">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id id="__31">alsoUniTitle_insert_main</from-activity-id>
+      <control-flow-case id="__33">
+        <from-outcome id="__40">go</from-outcome>
+        <to-activity-id id="__32">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

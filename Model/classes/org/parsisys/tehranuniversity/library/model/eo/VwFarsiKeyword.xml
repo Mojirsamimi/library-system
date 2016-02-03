@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VwFarsiKeyword"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="VW_FARSI_KEYWORD"
+  AliasName="VwFarsiKeyword"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Fdesc"
+    Precision="80"
+    ColumnName="FDESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="VW_FARSI_KEYWORD">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FdescArtId"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="FDESC_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VW_FARSI_KEYWORD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Fqual"
+    Precision="80"
+    ColumnName="FQUAL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="VW_FARSI_KEYWORD">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FqualArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="FQUAL_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VW_FARSI_KEYWORD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FkeywArtId"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="FKEYW_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VW_FARSI_KEYWORD"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="FarsiKeyword"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.FarsiKeywordVwFarsiKeywordFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.FarsiKeywordVwFarsiKeywordFkAssoc.FarsiKeyword"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.FarsiKeywordVwFarsiKeywordFkAssoc.VwFarsiKeyword"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SeeFarsiKeyword"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeFarsiKeywordVwFarsiKeywordRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeFarsiKeywordVwFarsiKeywordRelatedToFkAssoc.SeeFarsiKeyword"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeFarsiKeywordVwFarsiKeywordRelatedToFkAssoc.VwFarsiKeyword"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="VwfarsikeywordPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="VWFARSIKEYWORD_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VwFarsiKeyword.FkeywArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VwFarsiKeyword.FqualArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VwFarsiKeyword.FdescArtId"/>
+    </AttrArray>
+  </Key>
+</Entity>

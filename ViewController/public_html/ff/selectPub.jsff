@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:fadak="/fadak"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  
+  <af:panelCollection>
+  
+  <af:table value="#{bindings.PublisherVO1.collectionModel}" var="row"
+            rows="#{bindings.PublisherVO1.rangeSize}"
+            emptyText="#{bindings.PublisherVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            fetchSize="#{bindings.PublisherVO1.rangeSize}"
+            rowBandingInterval="0"
+            filterModel="#{bindings.PublisherVO1Query.queryDescriptor}"
+            queryListener="#{pageFlowScope.back.selectPublisherQryListener}"
+            filterVisible="true" varStatus="vs"
+            selectedRowKeys="#{bindings.PublisherVO1.collectionModel.selectedRow}"
+            selectionListener="#{bindings.PublisherVO1.collectionModel.makeCurrent}"
+            rowSelection="single" id="t1" columnStretching="column:c2">
+      <af:column sortProperty="Publisher1" filterable="true" sortable="true"
+                 headerText="#{bindings.PublisherVO1.hints.Publisher1.label}"
+                 id="c2">
+        <af:inputText value="#{row.bindings.Publisher1.inputValue}"
+                      label="#{bindings.PublisherVO1.hints.Publisher1.label}"
+                      required="#{bindings.PublisherVO1.hints.Publisher1.mandatory}"
+                      columns="#{bindings.PublisherVO1.hints.Publisher1.displayWidth}"
+                      maximumLength="#{bindings.PublisherVO1.hints.Publisher1.precision}"
+                      shortDesc="#{bindings.PublisherVO1.hints.Publisher1.tooltip}"
+                      id="it1">
+          <f:validator binding="#{row.bindings.Publisher1.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="Place" filterable="true" sortable="true"
+                 headerText="#{bindings.PublisherVO1.hints.Place.label}"
+                 id="c3">
+        <af:inputText value="#{row.bindings.Place.inputValue}"
+                      label="#{bindings.PublisherVO1.hints.Place.label}"
+                      required="#{bindings.PublisherVO1.hints.Place.mandatory}"
+                      columns="#{bindings.PublisherVO1.hints.Place.displayWidth}"
+                      maximumLength="#{bindings.PublisherVO1.hints.Place.precision}"
+                      shortDesc="#{bindings.PublisherVO1.hints.Place.tooltip}"
+                      id="it2">
+          <f:validator binding="#{row.bindings.Place.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="ReadingOrder" filterable="true" sortable="true"
+                 headerText="#{bindings.PublisherVO1.hints.ReadingOrder.label}"
+                 id="c1">
+        <af:selectOneChoice value="#{row.bindings.ReadingOrder.inputValue}"
+                            label="#{row.bindings.ReadingOrder.label}"
+                            required="#{bindings.PublisherVO1.hints.ReadingOrder.mandatory}"
+                            shortDesc="#{bindings.PublisherVO1.hints.ReadingOrder.tooltip}"
+                            id="soc1">
+          <f:selectItems value="#{row.bindings.ReadingOrder.items}" id="si1"/>
+        </af:selectOneChoice>
+      </af:column>
+   
+    </af:table>
+    <f:facet name="secondaryToolbar">
+      <af:toolbar id="t2">
+        <fadak:ToolbarSet debug="true" iteratorname="PublisherVO1Iterator" id="ts1" rendered="#{pageFlowScope.catalogingReadingOrder==1}"
+        showfirst="false"
+        showlast="false"
+        shownext="false"
+        showprevious="false"
+        showdelete="false"
+        showEditCommand="true"
+        RollbackAfterUnsuccessfulCommit="false"
+                          after_create="#{pageFlowScope.back.publisherPersianAfterCreate}"
+                          before_create="#{pageFlowScope.back.publisherBeforeCreate}"
+                          />
+         <fadak:ToolbarSet debug="true" iteratorname="PublisherVO1Iterator"
+                           id="ts2" rendered="#{pageFlowScope.catalogingReadingOrder==2}" lang="english"
+                            showfirst="false"
+        showlast="false"
+        showdelete="false"
+        shownext="false"
+        showprevious="false"
+        showEditCommand="true"
+        RollbackAfterUnsuccessfulCommit="false"
+                           after_create="#{pageFlowScope.back.publisherEnglishAfterCreate}"
+                           before_create="#{pageFlowScope.back.publisherBeforeCreate}"
+                           />
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="statusbar">
+      <af:toolbar id="t3">
+        <af:commandButton text="#{viewcontrollerBundle.SELECT}"
+                          disabled="#{bindings.PublisherVO1Iterator.currentRow==null || bindings.PublisherVO1Iterator.currentRow.artId.value lt 0}"
+                          action="#{pageFlowScope.back.select_publisher}" id="cb1"
+                          partialTriggers="ts1 ts2 t1"/>
+      </af:toolbar>
+    </f:facet>
+  </af:panelCollection>
+ 
+</jsp:root>

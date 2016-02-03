@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SuggestedPublisher"
+  Version="11.1.1.56.60"
+  DBObjectType="table"
+  DBObjectName="BOOK.SUGGESTED_PUBLISHER"
+  AliasName="SuggestedPublisher"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.SuggestedPublisherImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="ArtId"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PUBLISHER"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PUBLISHER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Publisher"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName="PUBLISHER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK.SUGGESTED_PUBLISHER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="Publisher_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Place"
+    Precision="100"
+    ColumnName="PLACE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="BOOK.SUGGESTED_PUBLISHER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.SuggestedPublisher.Place_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    IsNotNull="true"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BOOK.SUGGESTED_PUBLISHER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="SuggestedVirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedPublisherFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedPublisherFkAssoc.SuggestedVirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SuggestedBookSuggestedPublisherFkAssoc.SuggestedPublisher"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SuggestedVirtualBookImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SuggestedPublisherPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUGGESTED_PUBLISHER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedPublisher.ArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedPublisher.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020335">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020335"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0020336">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020336"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedPublisher.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020337">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020337"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedPublisher.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0020350">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0020350"/>
+      <Attr Name="_checkCondition" Value='"PUBLISHER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.SuggestedPublisher.Publisher"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

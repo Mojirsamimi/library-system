@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FaEngKeywordVwFaEngKeywordFkAssoc"
+  Version="11.1.1.56.60">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="FarsiEnglishKeyword"
+    Cardinality="1"
+    Source="true"
+    Owner="org.parsisys.tehranuniversity.library.model.eo.FarsiEnglishKeyword"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="FarsiEnglishKeyword"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiEnglishKeyword.EkeywArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.FarsiEnglishKeyword.FkeywArtId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="VwFarsiEnglishKeyword"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.eo.VwFarsiEnglishKeyword">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="VwFarsiEnglishKeyword"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VwFarsiEnglishKeyword.EkeywArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.VwFarsiEnglishKeyword.FkeywArtId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

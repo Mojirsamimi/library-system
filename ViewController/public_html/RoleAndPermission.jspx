@@ -1,0 +1,431 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:fadak="/fadak" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+ 
+ ${sessionUser.authorization} 
+  <f:view locale="ar">
+    <af:document id="d1">
+     <af:resource type="javascript" source="/js/handleDblClick.js"/>
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:panelHeader text="نقش و کاربران" id="ph2" helpTopicId="roleUser">
+              <f:facet name="context"/>
+              <f:facet name="menuBar"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="legend"/>
+              <f:facet name="info"/>
+              <af:panelTabbed id="pt3">
+                <af:showDetailItem text="نقش" id="sdi3" stretchChildren="first">
+                  <af:panelSplitter id="ps1" orientation="horizontal"
+                                    splitterPosition="500">
+                    <f:facet name="first">
+                      <af:panelCollection id="pc1" inlineStyle="width:95.0%;">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                          <af:toolbar id="t3">
+                            <fadak:ToolbarSet iteratorname="LibRoleVO1Iterator"
+                                              id="ts1" showsearch="false"
+                                              showquery="false"
+                                              showprevious="false"
+                                              shownext="false" showlast="false"
+                                              showfirst="false"
+                                              showEditCommand="true"
+                                              showrefresh="false"/>
+                          </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.LibRoleVO11.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.LibRoleVO11.rangeSize}"
+                                  emptyText="#{bindings.LibRoleVO11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.LibRoleVO11.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.LibRoleVO11Query.queryDescriptor}"
+                                  queryListener="#{bindings.LibRoleVO11Query.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.LibRoleVO11.collectionModel.selectedRow}"
+                                  selectionListener="#{viewScope.role_permission.roleTableSelectionListener}"
+                                  rowSelection="single" id="t1"
+                                  columnStretching="column:c2"
+                                  binding="#{viewScope.role_permission.roleTable}"
+                                  partialTriggers="::ts1:first ::ts1:prev ::ts1:nxt ::ts1:last ::ts1:create ::ts1:delete ::ts1:editrecord ::ts1:commit ::ts1:rollback ::ts1:dc_cil1 ::ts1:dc_cil2 ::ts1:dc_cil3">
+                          <af:column sortProperty="RoleName" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.LibRoleVO11.hints.RoleName.label}"
+                                     id="c1" width="200">
+                            <af:inputText value="#{row.bindings.RoleName.inputValue}"
+                                          simple="true"
+                                          required="#{bindings.LibRoleVO11.hints.RoleName.mandatory}"
+                                          columns="#{bindings.LibRoleVO11.hints.RoleName.displayWidth}"
+                                          maximumLength="#{bindings.LibRoleVO11.hints.RoleName.precision}"
+                                          shortDesc="#{bindings.LibRoleVO11.hints.RoleName.tooltip}"
+                                          id="it2">
+                              <f:validator binding="#{row.bindings.RoleName.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Description"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.LibRoleVO11.hints.Description.label}"
+                                     id="c2">
+                            <af:inputText value="#{row.bindings.Description.inputValue}"
+                                          simple="true"
+                                          required="#{bindings.LibRoleVO11.hints.Description.mandatory}"
+                                          columns="#{bindings.LibRoleVO11.hints.Description.displayWidth}"
+                                          maximumLength="#{bindings.LibRoleVO11.hints.Description.precision}"
+                                          shortDesc="#{bindings.LibRoleVO11.hints.Description.tooltip}"
+                                          id="it3">
+                              <f:validator binding="#{row.bindings.Description.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:clientListener method="handleTableDoubleClick"
+                                             type="dblClick"/>
+                           
+                          <af:serverListener type="TableDoubleClickEvent"
+                                             method="#{viewScope.role_permission.roleDblClick}"/>
+                        </af:table>
+                      </af:panelCollection>
+                    </f:facet>
+                    <f:facet name="second">
+                      <af:panelTabbed id="pt2" inlineStyle="width:95.0%;">
+                        <af:showDetailItem text="دسترسی" id="sdi1"
+                                           stretchChildren="first">
+                          <af:panelCollection id="pc2"
+                                              inlineStyle="width:95.0%;">
+                            <af:tree value="#{bindings.MenuListVO1.treeModel}"
+                                     var="node"
+                                     selectionListener="#{bindings.MenuListVO1.treeModel.makeCurrent}"
+                                     rowSelection="single" id="t2"
+                                     binding="#{viewScope.role_permission.permissionTree}">
+                              <f:facet name="nodeStamp">
+                                <af:group id="g1">
+                                  <af:selectBooleanCheckbox partialTriggers="sbc1"
+                                                            autoSubmit="true"
+                                                            valueChangeListener="#{viewScope.role_permission.PermissionChkBxValueChangeListener}"
+                                                            value="#{node.Slct}"
+                                                            id="sbc1"/>
+                                  <af:outputText value="#{node.Name}" id="ot1"/>
+                                  <af:outputText value="#{node.ArtId}" id="ot2"
+                                                 visible="false"
+                                                 binding="#{viewScope.role_permission.currentMenuArtId}"/>
+                                </af:group>
+                              </f:facet>
+                            </af:tree>
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar">
+                              <af:toolbar id="t5">
+                                <af:commandImageLink text="ثبت دسترسی" id="cil1"
+                                                     actionListener="#{viewScope.role_permission.insertPermissiontoRole}"/>
+                              </af:toolbar>
+                            </f:facet>
+                            <f:facet name="statusbar"/>
+                          </af:panelCollection>
+                          <af:table value="#{bindings.ItemListVO11.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.ItemListVO11.rangeSize}"
+                                    emptyText="#{bindings.ItemListVO11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.ItemListVO11.rangeSize}"
+                                    rowBandingInterval="0"
+                                    filterModel="#{bindings.ItemListVO1Query.queryDescriptor}"
+                                    queryListener="#{bindings.ItemListVO1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectedRowKeys="#{bindings.ItemListVO11.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.ItemListVO11.collectionModel.makeCurrent}"
+                                    rowSelection="single" id="t6"
+                                    binding="#{viewScope.role_permission.itemsTable}"
+                                    columnStretching="column:c3" width="95%">
+                            <af:column sortProperty="Slct" filterable="true"
+                                       sortable="true"
+                                       headerText="#{bindings.ItemListVO11.hints.Slct.label}"
+                                       id="c4" width="30">
+                              <af:selectBooleanCheckbox value="#{row.bindings.Slct.inputValue}"
+                                                        label="#{row.bindings.Slct.label}"
+                                                        shortDesc="#{bindings.ItemListVO11.hints.Slct.tooltip}"
+                                                        id="sbc2"/>
+                            </af:column>
+                            <af:column sortProperty="Name" filterable="true"
+                                       sortable="true"
+                                       headerText="#{bindings.ItemListVO11.hints.Name.label}"
+                                       id="c3">
+                              <af:inputText value="#{row.bindings.Name.inputValue}"
+                                            label="#{bindings.ItemListVO11.hints.Name.label}"
+                                            required="#{bindings.ItemListVO11.hints.Name.mandatory}"
+                                            columns="#{bindings.ItemListVO11.hints.Name.displayWidth}"
+                                            maximumLength="#{bindings.ItemListVO11.hints.Name.precision}"
+                                            shortDesc="#{bindings.ItemListVO11.hints.Name.tooltip}"
+                                            id="it7" readOnly="true">
+                                <f:validator binding="#{row.bindings.Name.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="کاربران" id="sdi2">
+                          <f:facet name="toolbar">
+                            <af:toolbar id="t4">
+                              <fadak:ToolbarSet iteratorname="MvLibRoleVO1Iterator"
+                                                id="ts2" showsearch="false"
+                                                showquery="false"
+                                                showprevious="false"
+                                                shownext="false"
+                                                showlast="false"
+                                                showfirst="false"
+                                                after_create="#{viewScope.role_permission.insertRole_fadakbtn}"/>
+                            </af:toolbar>
+                          </f:facet>
+                          <af:panelBox text=" " id="pb2" showDisclosure="false">
+                            <f:facet name="toolbar"/>
+                            <af:panelGroupLayout id="pgl3" layout="vertical">
+                              <af:panelFormLayout id="pfl1" rows="1"
+                                                  maxColumns="2" fieldWidth="50"
+                                                  labelWidth="100"
+                                                  labelAlignment="top">
+                                <af:panelLabelAndMessage label="جستجوی کاربر"
+                                                         for="it1" id="plam1">
+                                  <af:panelGroupLayout id="pgl1"
+                                                       layout="horizontal">
+                                    <af:inputText id="it1"
+                                                  value="#{viewScope.role_permission.userName}"
+                                                  columns="15"/>
+                                    <af:commandButton partialSubmit="true"
+                                                      text="جستجو" id="cb2"
+                                                      actionListener="#{viewScope.role_permission.searchUserName}"/>
+                                  </af:panelGroupLayout>
+                                </af:panelLabelAndMessage>
+                                <f:facet name="footer"/>
+                              </af:panelFormLayout>
+                              <af:panelGroupLayout id="pgl4">
+                                <af:spacer height="10" id="spacer1"/>
+                                <af:selectManyShuttle value="#{viewScope.role_permission.selectedItems}"
+                                                      id="sms1"
+                                                      partialTriggers="pc1:t1 cb2 cb4"
+                                                      leadingHeader="لیست تمامی کاربران"
+                                                      trailingHeader="کاربران دارای نقش"
+                                                      leadingDescShown="false"
+                                                      trailingDescShown="false"
+                                                      binding="#{viewScope.role_permission.usersShuttle}">
+                                  <f:selectItems value="#{viewScope.role_permission.allItems}"
+                                                 id="si1"/>
+                                </af:selectManyShuttle>
+                                <af:spacer height="10" id="s1"/>
+                                <af:commandButton text="کاربر جدید" id="cb3"
+                                                  partialSubmit="true">
+                                  <af:showPopupBehavior popupId="pnewuser"
+                                                        triggerType="click"
+                                                        align="beforeStart"/>
+                                  <af:setActionListener from=""
+                                                        to="#{viewScope.role_permission.name}"/>
+                                  <af:setActionListener from=""
+                                                        to="#{viewScope.role_permission.password}"/>
+                                  <af:setActionListener from=""
+                                                        to="#{viewScope.role_permission.userName}"/>
+                                </af:commandButton>
+                                <af:spacer id="s2" width="5"/>
+                                <af:commandButton text="ثبت تغییرات" id="cb1"
+                                                  actionListener="#{viewScope.role_permission.saveNewUser_Role}"/>
+                              </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                          </af:panelBox>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </f:facet>
+                  </af:panelSplitter>
+                </af:showDetailItem>
+                <af:showDetailItem text="کاربر" id="sdi4"
+                                   stretchChildren="first">
+                  <af:panelSplitter id="ps2" splitterPosition="110"
+                                    orientation="vertical">
+                    <f:facet name="first">
+                      <af:panelGroupLayout layout="vertical" id="pgl7">
+                        <af:panelHeader text=" " id="ph1">
+                          <af:query id="qryId1" headerText="جستجوی کاربر"
+                                    disclosed="true"
+                                    value="#{bindings.UserNameStartWithLibUserVoCriteriaQuery.queryDescriptor}"
+                                    model="#{bindings.UserNameStartWithLibUserVoCriteriaQuery.queryModel}"
+                                    queryListener="#{bindings.UserNameStartWithLibUserVoCriteriaQuery.processQuery}"
+                                    queryOperationListener="#{bindings.UserNameStartWithLibUserVoCriteriaQuery.processQueryOperation}"
+                                    saveQueryMode="hidden"
+                                    modeChangeVisible="false"/>
+                          <f:facet name="toolbar">
+                            <af:group id="g2">
+                              <af:toolbar id="t8"/>
+                              <fadak:ToolbarSet iteratorname="LibUserVo_UserTabIterator"
+                                                id="ts3" showcreate="false"
+                                                showdelete="false"
+                                                showEditCommand="false"
+                                                showquery="false"
+                                                showrefresh="false"
+                                                showrollback="false"
+                                                showsearch="false"
+                                                debug="true"/>
+                            </af:group>
+                          </f:facet>
+                        </af:panelHeader>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                      <af:panelBox text=" " id="pb3" showDisclosure="false">
+                        <f:facet name="toolbar">
+                          
+                            <af:toolbar id="t9">
+                              <af:commandButton text="تغییر رمز عبور" id="cb5"
+                                                partialSubmit="true" disabled="#{bindings.LibRoleVO_UserTabIterator.currentRow==null}"
+                                                action="#{viewScope.role_permission.preChangePass}"
+                                                partialTriggers="qryId1">
+                              
+                            </af:commandButton>
+                            </af:toolbar>
+                          
+                        </f:facet>
+                        <af:panelGroupLayout id="pgl8" layout="vertical"
+                                             valign="middle" halign="center"
+                                             partialTriggers="qryId1">
+                          <af:panelFormLayout id="pfl3" rows="1" maxColumns="3"
+                                              fieldWidth="120">
+                            <af:inputText value="#{bindings.Name.inputValue}"
+                                          label="#{bindings.Name.hints.label}"
+                                          required="#{bindings.Name.hints.mandatory}"
+                                          columns="#{bindings.Name.hints.displayWidth}"
+                                          maximumLength="#{bindings.Name.hints.precision}"
+                                          shortDesc="#{bindings.Name.hints.tooltip}"
+                                          id="it10" readOnly="true">
+                              <f:validator binding="#{bindings.Name.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.UserName.inputValue}"
+                                          label="#{bindings.UserName.hints.label}"
+                                          required="#{bindings.UserName.hints.mandatory}"
+                                          columns="#{bindings.UserName.hints.displayWidth}"
+                                          maximumLength="#{bindings.UserName.hints.precision}"
+                                          shortDesc="#{bindings.UserName.hints.tooltip}"
+                                          id="it11" readOnly="true">
+                              <f:validator binding="#{bindings.UserName.validator}"/>
+                            </af:inputText>
+                            <af:selectBooleanCheckbox value="#{bindings.Enable.inputValue}"
+                                                      label="#{bindings.Enable.label}"
+                                                      shortDesc="#{bindings.Enable.hints.tooltip}"
+                                                      id="sbc3"/>
+                            <f:facet name="footer"/>
+                          </af:panelFormLayout>
+                          <af:panelCollection id="pc3"
+                                              inlineStyle="width:50%; height:200.0px;">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.LibRoleVO_UserTab.collectionModel}"
+                                      var="row"
+                                      rows="#{bindings.LibRoleVO_UserTab.rangeSize}"
+                                      emptyText="#{bindings.LibRoleVO_UserTab.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      fetchSize="#{bindings.LibRoleVO_UserTab.rangeSize}"
+                                      rowBandingInterval="0"
+                                      filterModel="#{bindings.LibRoleVO_UserTabQuery.queryDescriptor}"
+                                      queryListener="#{bindings.LibRoleVO_UserTabQuery.processQuery}"
+                                      filterVisible="true" varStatus="vs"
+                                      selectedRowKeys="#{bindings.LibRoleVO_UserTab.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.LibRoleVO_UserTab.collectionModel.makeCurrent}"
+                                      rowSelection="single" id="t7"
+                                      columnStretching="column:c5">
+                              <af:column sortProperty="RoleName"
+                                         filterable="true" sortable="true"
+                                         headerText="#{bindings.LibRoleVO_UserTab.hints.RoleName.label}"
+                                         id="c6" width="300">
+                                <af:inputText value="#{row.bindings.RoleName.inputValue}"
+                                              label="#{bindings.LibRoleVO_UserTab.hints.RoleName.label}"
+                                              required="#{bindings.LibRoleVO_UserTab.hints.RoleName.mandatory}"
+                                              columns="#{bindings.LibRoleVO_UserTab.hints.RoleName.displayWidth}"
+                                              maximumLength="#{bindings.LibRoleVO_UserTab.hints.RoleName.precision}"
+                                              shortDesc="#{bindings.LibRoleVO_UserTab.hints.RoleName.tooltip}"
+                                              id="it8">
+                                  <f:validator binding="#{row.bindings.RoleName.validator}"/>
+                                </af:inputText>
+                              </af:column>
+                              <af:column sortProperty="Description"
+                                         filterable="true" sortable="true"
+                                         headerText="#{bindings.LibRoleVO_UserTab.hints.Description.label}"
+                                         id="c5">
+                                <af:inputText value="#{row.bindings.Description.inputValue}"
+                                              label="#{bindings.LibRoleVO_UserTab.hints.Description.label}"
+                                              required="#{bindings.LibRoleVO_UserTab.hints.Description.mandatory}"
+                                              columns="#{bindings.LibRoleVO_UserTab.hints.Description.displayWidth}"
+                                              maximumLength="#{bindings.LibRoleVO_UserTab.hints.Description.precision}"
+                                              shortDesc="#{bindings.LibRoleVO_UserTab.hints.Description.tooltip}"
+                                              id="it9">
+                                  <f:validator binding="#{row.bindings.Description.validator}"/>
+                                </af:inputText>
+                              </af:column>
+                            </af:table>
+                          </af:panelCollection>
+                        </af:panelGroupLayout>
+                      </af:panelBox>
+                    </f:facet>
+                  </af:panelSplitter>
+                </af:showDetailItem>
+              </af:panelTabbed>
+            </af:panelHeader>
+          </f:facet>
+          <f:facet name="popup">
+            <af:group id="g3">
+              <af:popup id="pnewuser">
+                <af:panelWindow id="pw1" modal="true">
+                  <af:panelBox text="#{viewcontrollerBundle.create_new_user}"
+                               id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelFormLayout id="pfl2">
+                      <af:inputText label="#{viewcontrollerBundle.name}"
+                                    id="it4"
+                                    value="#{viewScope.role_permission.name}"
+                                    partialTriggers="cb4"/>
+                      <af:inputText id="it5"
+                                    label="#{viewcontrollerBundle.username}"
+                                    value="#{viewScope.role_permission.userName_insert}"
+                                    partialTriggers="cb4"/>
+                      <af:inputText id="it6"
+                                    label="#{viewcontrollerBundle.password}"
+                                    value="#{viewScope.role_permission.password}"
+                                    secret="true" partialTriggers="cb4"/>
+                      <f:facet name="footer">
+                        <af:panelGroupLayout id="pgl6" layout="vertical"
+                                             valign="middle" halign="center">
+                          <af:commandButton text="#{viewcontrollerBundle.save}"
+                                            id="cb4"
+                                            actionListener="#{viewScope.role_permission.saveNewUser}"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelFormLayout>
+                  </af:panelBox>
+                </af:panelWindow>
+              </af:popup>
+              <af:popup id="passPopUp">
+                <af:panelWindow id="pw2">
+                  <af:panelFormLayout id="pfl4">
+                    <f:facet name="footer">
+                      <af:panelGroupLayout id="pgl2">
+                        <af:commandButton text="ثبت " id="cb6"
+                                          action="#{viewScope.role_permission.saveNewPass}"
+                                          partialSubmit="true"/>
+                        <af:commandButton text="لغو " id="cb7"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <af:inputText label="رمز عبور " id="it12"
+                                  value="#{viewScope.role_permission.newPass}"
+                                  secret="true"/>
+                    <af:inputText label="تکرار رمز عبور" id="it13"
+                                  value="#{viewScope.role_permission.repNewPass}"
+                                  secret="true"/>
+                  </af:panelFormLayout>
+                </af:panelWindow>
+              </af:popup>
+            </af:group>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+     
+    </af:document>
+  </f:view>
+</jsp:root>

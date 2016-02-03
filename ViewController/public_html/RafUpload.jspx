@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+   ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1" usesUpload="true">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:panelGroupLayout id="pgl1">
+            <af:spacer width="1" height="10" id="s1"/>
+        <af:panelBox text="بارگذاری فایل رف خوانی"
+                     id="pb1" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl1" maxColumns="1">
+                  <af:panelGroupLayout id="pgl3" layout="horizontal">
+                    <af:spacer width="5" id="s3"/>
+                    <af:inputFile label="فایل:" id="if1"
+                                  binding="#{viewScope.RafBean.rafFileInput}"
+                                  simple="false"/>
+                    <af:spacer width="5" id="s2"/>
+                    <af:commandButton text="بارگذاری فایل" id="cb2"
+                                      actionListener="#{viewScope.RafBean.uploadActionListener}"/>
+                  </af:panelGroupLayout>
+                  <af:spacer width="1" height="10" id="spacer1"/>
+                  <af:panelGroupLayout id="pgl2" layout="horizontal">
+                    <af:panelLabelAndMessage label="مخزن:" id="plam1">
+                      <af:selectOneChoice value="#{bindings.BookPlaceLOV.inputValue}"
+                                          label="#{bindings.BookPlaceLOV.label}"
+                                          required="#{bindings.BookPlaceLOV.hints.mandatory}"
+                                          shortDesc="#{bindings.BookPlaceLOV.hints.tooltip}"
+                                          id="soc1" simple="true"
+                                          disabled="#{viewScope.RafBean.allPlace}"
+                                          partialTriggers="sbc1">
+                        <f:selectItems value="#{bindings.BookPlaceLOV.items}"
+                                       id="si1"/>
+                      </af:selectOneChoice>
+                    </af:panelLabelAndMessage>
+                    <af:selectBooleanCheckbox  text="همه مخازن"
+                                              id="sbc1"
+                                              value="#{viewScope.RafBean.allPlace}"
+                                              autoSubmit="true"/>
+                    <af:spacer width="5" id="spacer2"/>
+                    <af:commandButton text="اجرای گزارش" id="cb1"
+                                      actionListener="#{viewScope.RafBean.runReportActionListener}"/>
+                  </af:panelGroupLayout>
+                  <f:facet name="footer"/>
+                </af:panelFormLayout>
+        </af:panelBox>
+              <af:panelBox text="گزارش رف خوانی" id="pb2"
+                           rendered="#{viewScope.RafBean.rendered}">
+                <f:facet name="toolbar">
+                  <af:toolbar id="t2">
+                    <af:commandButton text="خروجی اکسل" id="cb3"
+                                      icon="/icons/Office/excel 20x20.jpg">
+                      <af:exportCollectionActionListener type="excelHTML"
+                                                         exportedId="t1"/>
+                    </af:commandButton>
+                  </af:toolbar>
+                </f:facet>
+                <af:table value="#{bindings.RafReportVo1.collectionModel}"
+                          var="row" rows="#{bindings.RafReportVo1.rangeSize}"
+                          emptyText="#{bindings.RafReportVo1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.RafReportVo1.rangeSize}"
+                          rowBandingInterval="0"
+                          filterModel="#{bindings.RafReportVo1Query.queryDescriptor}"
+                          queryListener="#{bindings.RafReportVo1Query.processQuery}"
+                          filterVisible="true" varStatus="vs"
+                          selectedRowKeys="#{bindings.RafReportVo1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.RafReportVo1.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t1"
+                          inlineStyle="width:95.0%;" columnStretching="last">
+                  <af:column sortProperty="A" filterable="true" sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.A.label}"
+                             id="c3">
+                    <af:outputText value="#{row.A}" id="ot4">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.RafReportVo1.hints.A.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="CallNo" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.CallNo.label}"
+                             id="c7">
+                    <af:outputText value="#{row.CallNo}" id="ot1"/>
+                  </af:column>
+                  <af:column sortProperty="RegId" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.RegId.label}"
+                             id="c6">
+                    <af:outputText value="#{row.RegId}" id="ot5"/>
+                  </af:column>
+                  <af:column sortProperty="Barcode" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.Barcode.label}"
+                             id="c5">
+                    <af:outputText value="#{row.Barcode}" id="ot2"/>
+                  </af:column>
+                  <af:column sortProperty="ArtId" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.ArtId.label}"
+                             id="c4">
+                    <af:outputText value="#{row.ArtId}" id="ot7">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.RafReportVo1.hints.ArtId.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="TitleFarsi" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.TitleFarsi.label}"
+                             id="c8">
+                    <af:outputText value="#{row.TitleFarsi}" id="ot8"/>
+                  </af:column>
+                  <af:column sortProperty="TitleLatin" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.TitleLatin.label}"
+                             id="c2">
+                    <af:outputText value="#{row.TitleLatin}" id="ot6"/>
+                  </af:column>
+                  <af:column sortProperty="Status" filterable="true"
+                             sortable="true"
+                             headerText="#{bindings.RafReportVo1.hints.Status.label}"
+                             id="c1">
+                    <af:outputText value="#{row.Status}" id="ot3"/>
+                  </af:column>
+                </af:table>
+              </af:panelBox>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="popup"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="ref_select_uni_title">
+    <default-activity id="__1">selectUniTitle</default-activity>
+    <input-parameter-definition id="__8">
+      <name id="__9">refUniTitleReadingOrder</name>
+      <value>#{pageFlowScope.refUniTitleReadingOrder}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__14">
+      <name id="__15">refUniTitleTab</name>
+      <value>#{pageFlowScope.tab}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__13">
+      <managed-bean-name id="__10">persian_uni_title</managed-bean-name>
+      <managed-bean-class id="__12">org.parsisys.tehranuniversity.library.view.beans.PersianUniformTitle</managed-bean-class>
+      <managed-bean-scope id="__11">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__16">
+      <managed-bean-name id="__17">latin_uni_title</managed-bean-name>
+      <managed-bean-class id="__18">org.parsisys.tehranuniversity.library.view.beans.LatinUniformTitle</managed-bean-class>
+      <managed-bean-scope id="__19">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="selectUniTitle">
+      <page>/ff/selectUniTitle.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">selectUniTitle</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__7">end</from-outcome>
+        <to-activity-id id="__5">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

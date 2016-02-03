@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="SandooghPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+            <invokeAction Binds="removeAllPersonVC" id="removeAllPersonVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <invokeAction Binds="removeAllInitMemCurrLibVC"
+                  id="removeAllInitMemCurrLibVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="PersonVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PersonVO1Iterator"/>
+    <searchRegion Criteria="search_barcode_id"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PersonVO1Iterator" id="searchbarcodeidQuery"/>
+    <iterator Binds="InitMemberCurrLibVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="InitMemberCurrLibVOIterator"/>
+    <iterator Binds="CashierVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CashierVo1Iterator"/>
+    <iterator Binds="CashierListVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CashierListVo1Iterator"/>
+    <searchRegion Binds="CashierListVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CashierListVo1Query"/>
+    <iterator Binds="PP_CashierVo1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PP_CashierVo1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Fname">
+      <AttrNames>
+        <Item Value="Fname"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_PersType"
+          id="PersType" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersStatus" id="PersStatus" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="PersonVO1Iterator" id="DeptName">
+      <AttrNames>
+        <Item Value="DeptName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="Lname">
+      <AttrNames>
+        <Item Value="Lname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PersonVO1Iterator" id="PostText">
+      <AttrNames>
+        <Item Value="PostText"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PersonVO1Iterator" StaticList="false"
+          Uses="LOV_PersCategory" id="PersCategory" DTSupportsMRU="true"/>
+    <list IterBinding="PersonVO1Iterator" StaticList="false" Uses="LOV_SecArtId"
+          id="SecArtId" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator"
+                     id="MemshipCategoryText">
+      <AttrNames>
+        <Item Value="MemshipCategoryText"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="InitMemberCurrLibVOIterator" StaticList="false"
+          Uses="LOV_MemshipStatus" id="MemshipStatus" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="StatStDate">
+      <AttrNames>
+        <Item Value="StatStDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InitMemberCurrLibVOIterator" id="StatEndDate">
+      <AttrNames>
+        <Item Value="StatEndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="CashierListVo1Iterator" id="CashierListVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CashierListVo"
+                      Name="CashierListVo10">
+        <AttrNames>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="Barcode"/>
+          <Item Value="KeyNumber"/>
+          <Item Value="ReceiptTime"/>
+          <Item Value="ReceiptDate"/>
+          <Item Value="CasheType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CashierVo1Iterator" id="DelayMonth">
+      <AttrNames>
+        <Item Value="DelayMonth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CashierVo1Iterator" id="DelayDay">
+      <AttrNames>
+        <Item Value="DelayDay"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CashierVo1Iterator" id="HolyWeek">
+      <AttrNames>
+        <Item Value="HolyWeek"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CashierVo1Iterator" id="PenaltyOffer">
+      <AttrNames>
+        <Item Value="PenaltyOffer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CashierVo1Iterator" id="Penalty">
+      <AttrNames>
+        <Item Value="Penalty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CashierVo1Iterator" id="PenaltyDescription">
+      <AttrNames>
+        <Item Value="PenaltyDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PP_CashierVo1Iterator" id="KeyNumber">
+      <AttrNames>
+        <Item Value="KeyNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PP_CashierVo1Iterator" StaticList="false"
+          Uses="LOV_CashType" id="CashType" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="PP_CashierVo1Iterator" id="ReceiptTime">
+      <AttrNames>
+        <Item Value="ReceiptTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PP_CashierVo1Iterator" id="ReturnTime">
+      <AttrNames>
+        <Item Value="ReturnTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CashierVo1Iterator" id="KeyNumber1">
+      <AttrNames>
+        <Item Value="KeyNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CashierVo1Iterator" id="ReceiptDate">
+      <AttrNames>
+        <Item Value="ReceiptDate"/>
+      </AttrNames>
+    </attributeValues>
+     <methodAction id="removeAllPersonVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllPersonVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllInitMemCurrLibVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllInitMemCurrLibVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

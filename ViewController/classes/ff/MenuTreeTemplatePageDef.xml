@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="MenuTreeTemplatePageDef"
+                Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MenuListVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="MenuListVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MenuListVO1Iterator" id="MenuListVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.MenuListVO"
+                      Name="MenuListVO10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="IsLeaf"/>
+          <Item Value="Name"/>
+          <Item Value="Page"/>
+          <Item Value="ParentId"/>
+          <Item Value="SecCodePosition"/>
+          <Item Value="Slct"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

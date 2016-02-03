@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="testdummyPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="DummyVO1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DummyVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DummyVO1Iterator" id="DummyVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.RO.DummyVO"
+                      Name="DummyVO10">
+        <AttrNames>
+          <Item Value="Dummy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="testDummy1" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="testDummy1"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+    <methodAction id="testDummy2" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="testDummy2"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+    <methodAction id="reExecute" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="reExecute"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

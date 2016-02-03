@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SeeAlsoSubject3Vo"
+  Version="11.1.1.56.60"
+  SelectList="SeeAlsoSubject.LABCOL, 
+       SeeAlsoSubject.SUBJ_ART_ID, 
+       SeeAlsoSubject.SUBJ_ART_ID_RELATED_TO, 
+       Subject.SUBJECT AS SUBJECT1, 
+       Subject.LABCOL AS LABCOL1, 
+       Subject.ART_ID"
+  FromList="SEE_ALSO_SUBJECT SeeAlsoSubject, SUBJECT Subject"
+  Where="(SeeAlsoSubject.LABCOL = Subject.LABCOL) AND (SeeAlsoSubject.SUBJ_ART_ID_RELATED_TO = Subject.ART_ID)"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SeeAlsoSubject"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoSubject"/>
+  <EntityUsage
+    Name="Subject"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Subject"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjRelatedToFkAssoc.Subject"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoSubject3Vo.SeeAlsoSubject"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoSubject.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoSubject.SubjArtIdRelatedTo"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Subject.Labcol"/>
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Subject.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Labcol"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="SeeAlsoSubject"
+    AliasName="LABCOL"/>
+  <ViewAttribute
+    Name="SubjArtId"
+    PrecisionRule="true"
+    EntityAttrName="SubjArtId"
+    EntityUsage="SeeAlsoSubject"
+    AliasName="SUBJ_ART_ID"/>
+  <ViewAttribute
+    Name="SubjArtIdRelatedTo"
+    PrecisionRule="true"
+    EntityAttrName="SubjArtIdRelatedTo"
+    EntityUsage="SeeAlsoSubject"
+    AliasName="SUBJ_ART_ID_RELATED_TO"/>
+  <ViewAttribute
+    Name="Subject1"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="Subject"
+    AliasName="SUBJECT1"/>
+  <ViewAttribute
+    Name="Labcol1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Labcol"
+    EntityUsage="Subject"
+    AliasName="LABCOL1"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Subject"
+    AliasName="ART_ID"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Labcol"/>
+    <Item Value="SubjArtId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="MainSeeAlsoSubjectVo"
+    ViewLink="org.parsisys.tehranuniversity.library.model.vo.VL.MainSeeAlsoSubjectSeeAlsoSubject3VL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+</ViewObject>

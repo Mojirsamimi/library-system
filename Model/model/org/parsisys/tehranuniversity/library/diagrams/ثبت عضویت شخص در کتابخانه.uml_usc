@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.1.3.0'/>
+ <uml:UseCase xmi:uuid='urn:uuid:c043c5eb-74a6-4319-a035-10bb81781b75'
+   isAbstract='false'
+   isLeaf='false'
+   name='ثبت عضویت شخص در کتابخانه'
+   visibility='public'>
+  <extensionPoint xmi:uuid='urn:uuid:dcdf98b8-37a9-41fb-912c-eed09be51c09'
+    isLeaf='false'
+    name='DefaultExtensionPoint'/>
+ </uml:UseCase>
+</xmi:XMI>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <af:panelFormLayout id="pfl1" rows="4" maxColumns="1" fieldWidth="100">
+    
+    <af:popup id="pe1" contentDelivery="immediate"
+              binding="#{cid_public_cash_penalty.popUpEditYesNo}">
+            <af:panelWindow title="#{viewcontrollerBundle.notice}" id="pw2" modal="true">
+              <af:panelFormLayout id="pfl5" rows="1" maxColumns="1">
+               <af:outputText id="ot1"
+                              value="#{cid_public_cash_penalty.popupText}"/>
+               <f:facet name="footer">
+                <af:panelGroupLayout id="pgl1" layout="horizontal" valign="middle"
+                           halign="center">
+      <af:commandButton id="cb1" text="#{viewcontrollerBundle.yes}"
+                        inlineStyle="width:60.0px;"
+                        partialSubmit="true"
+                      
+                        action="#{cid_public_cash_penalty.popUpYesbtn_edit}"/>
+     <af:commandButton id="cb2" text="#{viewcontrollerBundle.no}" 
+                       inlineStyle="width:60.0px;"
+                       action="#{cid_public_cash_penalty.popUpNoBtn_clearText_edit}"/>
+                       
+                       
+      </af:panelGroupLayout>   
+               </f:facet>
+                
+              </af:panelFormLayout>
+            </af:panelWindow>
+          </af:popup>
+    
+    <af:inputText value="#{bindings.Value.inputValue}"
+                  label="#{bindings.Value.hints.label}"
+                  required="#{bindings.Value.hints.mandatory}"
+                  columns="30"
+                  maximumLength="#{bindings.Value.hints.precision}"
+                  shortDesc="#{bindings.Value.hints.tooltip}" id="it1" readOnly="true">
+      <f:validator binding="#{bindings.Value.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.Value.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Description.inputValue}"
+                  label="#{bindings.Description.hints.label}"
+                  required="#{bindings.Description.hints.mandatory}"
+                  columns="30"
+                  maximumLength="#{bindings.Description.hints.precision}"
+                  shortDesc="#{bindings.Description.hints.tooltip}" id="it2" readOnly="true">
+      <f:validator binding="#{bindings.Description.validator}"/>
+    </af:inputText>
+    <af:inputText label="#{viewcontrollerBundle.penalty_value}" id="it3"
+                  value="#{cid_public_cash_penalty.penaltyValue}"
+                  binding="#{cid_public_cash_penalty.clearText_penalty}"/>
+    <af:inputText label="#{viewcontrollerBundle.penalty_desc}" id="it4"
+                  value="#{cid_public_cash_penalty.penaltyDesc}"
+                  binding="#{cid_public_cash_penalty.clearText_penaltyDesc}"/>
+    <f:facet name="footer">
+      <af:panelGroupLayout id="pgl2" layout="horizontal" valign="middle"
+                           halign="center">
+         <af:commandButton 
+                        text="#{viewcontrollerBundle.penalty_save}"
+                        disabled="#{!bindings.edit_publicPenalty.enabled}"
+                        
+                        id="cb3" inlineStyle="width:60.0px;"
+                           actionListener="#{cid_public_cash_penalty.preEditSavebtn}"
+                          />
+      <af:commandButton text="#{viewcontrollerBundle.cancel}" id="cb4"
+                        actionListener="#{bindings.Rollback.execute}"
+                        
+                         action="exit_edit"
+                        inlineStyle="width:60.0px;" >
+        <af:resetActionListener/>
+      </af:commandButton>
+                           </af:panelGroupLayout>
+    </f:facet>
+  </af:panelFormLayout>
+</jsp:root>

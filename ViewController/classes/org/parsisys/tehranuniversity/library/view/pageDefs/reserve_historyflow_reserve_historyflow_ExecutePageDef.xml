@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60"
+                id="reserve_historyflow_reserve_historyflow_ExecutePageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ReserveVO3" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ReserveVO3Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ReserveVO3Iterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

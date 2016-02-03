@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="ReportCatalogingPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="ReadingOrderLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ReadingOrderLOVIterator"/>
+    <iterator Binds="SaftyStatusLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="SaftyStatusLOVIterator"/>
+    <iterator Binds="LoanStatusLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LoanStatusLOVIterator"/>
+    <iterator Binds="ExistanceStatusLOV" RangeSize="-1"
+              DataControl="AppModuleDataControl"
+              id="ExistanceStatusLOVIterator"/>
+    <iterator Binds="LanguageLOV" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LanguageLOVIterator"/>
+    <iterator Binds="ProviderRoleVO1" RangeSize="100"
+              DataControl="AppModuleDataControl" id="ProviderRoleVO1Iterator"/>
+    <iterator Binds="PlaceLOV" RangeSize="100" DataControl="AppModuleDataControl"
+              id="PlaceLOVIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="ReadingOrderLOVIterator" ListOperMode="navigation"
+          ListIter="ReadingOrderLOVIterator" id="ReadingOrderLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="keyAttr"/>
+        <Item Value="description"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="SaftyStatusLOVIterator" ListOperMode="navigation"
+          ListIter="SaftyStatusLOVIterator" id="SaftyStatusLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="LoanStatusLOVIterator" ListOperMode="navigation"
+          ListIter="LoanStatusLOVIterator" id="LoanStatusLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="ExistanceStatusLOVIterator" ListOperMode="navigation"
+          ListIter="ExistanceStatusLOVIterator" id="ExistanceStatusLOV"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="LanguageLOVIterator" ListOperMode="navigation"
+          ListIter="LanguageLOVIterator" id="LanguageLOV" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="ArtId"/>
+        <Item Value="Language1"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="ProviderRoleVO1Iterator" ListOperMode="navigation"
+          ListIter="ProviderRoleVO1Iterator" id="ProviderRoleVO1"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="ArtId"/>
+        <Item Value="Role"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="PlaceLOVIterator" ListOperMode="navigation"
+          ListIter="PlaceLOVIterator" id="PlaceLOV" DTSupportsMRU="true"
+          NullValueFlag="start" NullValueId="LOVUIHints_NullValueId">
+      <AttrNames>
+        <Item Value="Value"/>
+        <Item Value="Text"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

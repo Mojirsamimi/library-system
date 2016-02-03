@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Section"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="SECTION"
+  AliasName="Section"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="fadak.base.TemplateEntityObject">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="SecName"
+    Precision="100"
+    ColumnName="SEC_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SECTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SecCode"
+    Precision="3"
+    Scale="0"
+    ColumnName="SEC_CODE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SECTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SECTION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LibArtId"
+    Precision="3"
+    Scale="0"
+    ColumnName="LIB_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SECTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DeptArtId"
+    Precision="6"
+    Scale="0"
+    ColumnName="DEPT_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SECTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    Scale="0"
+    ColumnName="ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SECTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Person"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonSectionFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonSectionFkAssoc.Person"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonSectionFkAssoc.Section"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SectionPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SECTION_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Section.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008290">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008290"/>
+      <Attr Name="_checkCondition" Value='"SEC_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Section.SecName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008291">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008291"/>
+      <Attr Name="_checkCondition" Value='"SEC_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Section.SecCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008292">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008292"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Section.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008293">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008293"/>
+      <Attr Name="_checkCondition" Value='"DEPT_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Section.DeptArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008294">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008294"/>
+      <Attr Name="_checkCondition" Value='"ACTIVE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Section.Active"/>
+    </AttrArray>
+  </Key>
+</Entity>

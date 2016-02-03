@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fadak="/fadak">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <af:panelCollection partialTriggers="ts1 ts2" inlineStyle="height:500.0px;"
+                       styleClass="AFStretchWidth">
+  <af:table value="#{bindings.UniformTitleVO1.collectionModel}" var="row"
+            rows="#{bindings.UniformTitleVO1.rangeSize}"
+            emptyText="#{bindings.UniformTitleVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+            fetchSize="#{bindings.UniformTitleVO1.rangeSize}"
+            rowBandingInterval="0"
+            filterModel="#{bindings.UniformTitleVO1Query.queryDescriptor}"
+            queryListener="#{bindings.UniformTitleVO1Query.processQuery}"
+            filterVisible="true" varStatus="vs"
+            selectedRowKeys="#{bindings.UniformTitleVO1.collectionModel.selectedRow}"
+            selectionListener="#{bindings.UniformTitleVO1.collectionModel.makeCurrent}"
+            rowSelection="single" id="t1" autoHeightRows="-1"
+            contentDelivery="lazy" columnStretching="column:c2">
+      <af:column sortProperty="Title" filterable="true" sortable="true"
+                 headerText="#{bindings.UniformTitleVO1.hints.Title.label}"
+                 id="c2">
+        <af:inputText value="#{row.bindings.Title.inputValue}"
+                      label="#{bindings.UniformTitleVO1.hints.Title.label}"
+                      required="#{bindings.UniformTitleVO1.hints.Title.mandatory}"
+                      columns="#{bindings.UniformTitleVO1.hints.Title.displayWidth}"
+                      maximumLength="#{bindings.UniformTitleVO1.hints.Title.precision}"
+                      shortDesc="#{bindings.UniformTitleVO1.hints.Title.tooltip}"
+                      id="it1" autoSubmit="true">
+          <f:validator binding="#{row.bindings.Title.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="ReadingOrder" filterable="true" sortable="true"
+                 headerText="#{bindings.UniformTitleVO1.hints.ReadingOrder.label}"
+                 id="c1">
+        <af:selectOneChoice value="#{row.bindings.ReadingOrder.inputValue}"
+                            label="#{row.bindings.ReadingOrder.label}"
+                            required="#{bindings.UniformTitleVO1.hints.ReadingOrder.mandatory}"
+                            shortDesc="#{bindings.UniformTitleVO1.hints.ReadingOrder.tooltip}"
+                            id="soc1">
+          <f:selectItems value="#{row.bindings.ReadingOrder.items}" id="si1"/>
+        </af:selectOneChoice>
+      </af:column>
+   
+    </af:table>
+    <f:facet name="secondaryToolbar">
+      <af:toolbar id="t2">
+        <fadak:ToolbarSet rendered="#{pageFlowScope.catalogingReadingOrder==1}" iteratorname="UniformTitleVO1Iterator" id="ts1"
+                          shownext="false"
+                          debug="true"
+                          showprevious="false"
+                          showlast="false"
+                          showfirst="false"
+                          showdelete="false"
+                          showEditCommand="true"
+                          after_create="#{viewScope.back.uniformTitlePersianAfterCreate}"
+                          before_create="#{viewScope.back.uniformTitleBeforeCreate}"
+                          RollbackAfterUnsuccessfulCommit="false"/>
+                            <fadak:ToolbarSet rendered="#{pageFlowScope.catalogingReadingOrder==2}" iteratorname="UniformTitleVO1Iterator"
+                                              id="ts2"
+                                               debug="true"
+                          shownext="false"
+                          showdelete="false"
+                          showprevious="false"
+                          showlast="false"
+                          showfirst="false"
+                          showEditCommand="true"
+                          lang="english" after_create="#{viewScope.back.uniformTitleEnglishAfterCreate}"
+                              before_create="#{viewScope.back.uniformTitleBeforeCreate}"
+                                              RollbackAfterUnsuccessfulCommit="false"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="statusbar">
+      <af:toolbar id="t3">
+        <af:commandButton actionListener="#{bindings.copy_uniform_title.execute}"
+                          rendered="#{pageFlowScope.mainpage==1 }"
+                          text="#{viewcontrollerBundle.SELECT}" action="go"
+                          disabled="#{bindings.UniformTitleVO1Iterator.currentRow==null || bindings.UniformTitleVO1Iterator.currentRow.artId.value lt 0}"
+                          id="cb1"
+                          partialTriggers="ts1 ts2 t1"/>
+        <af:commandButton rendered="#{pageFlowScope.mainpage==0 }"
+                          text="#{viewcontrollerBundle.SELECT}"
+                          disabled="#{bindings.UniformTitleVO1Iterator.currentRow==null || bindings.UniformTitleVO1Iterator.currentRow.artId.value lt 0}"
+                          id="cb2"
+                          partialTriggers="ts1 ts2 t1"
+                          action="#{viewScope.back.selectOtherUniformTitleAction}"/>
+      </af:toolbar>
+    </f:facet>
+  </af:panelCollection>
+</jsp:root>

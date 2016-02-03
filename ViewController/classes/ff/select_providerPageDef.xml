@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="select_providerPageDef" Package="ff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RefSelectProviderVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="RefSelectProviderVOIterator"/>
+    <searchRegion Binds="RefSelectProviderVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="RefSelectProviderVOQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RefSelectProviderVOIterator" id="RefSelectProviderVO">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ProviderVO"
+                      Name="RefSelectProviderVO0">
+        <AttrNames>
+          <Item Value="Provider1"/>
+          <Item Value="ForeignName"/>
+          <Item Value="BDDate"/>
+          <Item Value="ProviderKind"/>
+          <Item Value="ReadingOrder"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="RefSelectProviderVOIterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

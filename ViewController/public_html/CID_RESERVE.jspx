@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:fadak="/fadak"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="popup">
+        <af:popup  id="tf" contentDelivery="lazyUncached"
+                binding="#{pageFlowScope.TFBean.region_popup}"
+                  autoCancel="disabled">
+      <af:panelWindow title="#{ReserveTitle.popupTitle}"
+                      partialTriggers="cb3 cb4 cb1" id="pw1"
+                      
+                      stretchChildren="first" contentHeight="400"
+                      contentWidth="500" inlineStyle="text-align:center;"
+                      closeIconVisible="false" modal="true">
+       <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                  regionNavigationListener="#{pageFlowScope.TFBean.navigation}"
+                  
+                  />
+      </af:panelWindow>
+      
+      </af:popup>  
+       </f:facet>
+          <f:facet name="center">
+          <af:panelHeader text="رزرو کتاب" id="ph2" helpTopicId="reserve">
+            <f:facet name="toolbar">
+          <af:toolbar id="t1">
+                            <fadak:ToolbarSet debug="true" iteratorname="VirtualBookVO1Iterator" id="ts1"
+                                              showdelete="false"
+                                              showcreate="false"
+                                              showEditCommand="false"
+                                              showcommit="false"
+                                              showquery="false"
+                                              showrefresh="false"
+                                              showrollback="false"
+                                              showsearch="false"/>
+
+          </af:toolbar>
+         </f:facet>
+              <af:panelSplitter id="ps1" orientation="vertical"
+                                splitterPosition="140">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1" headerText="جستجوی کتاب" disclosed="true"
+                                value="#{bindings.SearchCallNoArtIdTitleVCQuery.queryDescriptor}"
+                                model="#{bindings.SearchCallNoArtIdTitleVCQuery.queryModel}"
+                                queryListener="#{viewScope.cid_reserve.search_virtual_book}"
+                                queryOperationListener="#{bindings.SearchCallNoArtIdTitleVCQuery.processQueryOperation}"
+                                rows="2" maxColumns="2"
+                                modeChangeVisible="false"
+                                saveQueryMode="hidden"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" layout="scroll"
+                                         valign="middle" halign="center"
+                                         partialTriggers="qryId1">
+                      <af:panelFormLayout id="pfl1" rows="2" maxColumns="3"
+                                          labelWidth="100">
+                        <af:inputText value="#{bindings.CallNo.inputValue}"
+                                      label="#{bindings.CallNo.hints.label}"
+                                      required="#{bindings.CallNo.hints.mandatory}"
+                                      columns="#{bindings.CallNo.hints.displayWidth}"
+                                      maximumLength="#{bindings.CallNo.hints.precision}"
+                                      shortDesc="#{bindings.CallNo.hints.tooltip}"
+                                      
+                                      id="it3" readOnly="true"
+                                      styleClass="AFFieldTextLTRMarker">
+                          <f:validator binding="#{bindings.CallNo.validator}"/>
+                        </af:inputText>
+                          <af:inputText value="#{bindings.Title.inputValue}"
+                                      label="#{bindings.Title.hints.label}"
+                                      required="#{bindings.Title.hints.mandatory}"
+                                      columns="#{bindings.Title.hints.displayWidth}"
+                                      maximumLength="#{bindings.Title.hints.precision}"
+                                      shortDesc="#{bindings.Title.hints.tooltip}"
+                                      
+                                      id="it4" readOnly="true"
+                                      >
+                          <f:validator binding="#{bindings.Title.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.VbookCNT.inputValue}"
+                                      label="#{bindings.VbookCNT.hints.label}"
+                                      required="#{bindings.VbookCNT.hints.mandatory}"
+                                      columns="#{bindings.VbookCNT.hints.displayWidth}"
+                                      maximumLength="#{bindings.VbookCNT.hints.precision}"
+                                      shortDesc="#{bindings.VbookCNT.hints.tooltip}"
+                                      partialTriggers="qryId1"
+                                      id="it5" readOnly="true"
+                                      >
+                          <f:validator binding="#{bindings.VbookCNT.validator}"/>
+                           <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.VbookCNT.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.ArtId.inputValue}"
+                                      label="#{bindings.ArtId.hints.label}"
+                                      required="#{bindings.ArtId.hints.mandatory}"
+                                      columns="#{bindings.ArtId.hints.displayWidth}"
+                                      maximumLength="#{bindings.ArtId.hints.precision}"
+                                      shortDesc="#{bindings.ArtId.hints.tooltip}"
+                                      id="it1" readOnly="true">
+                          <f:validator binding="#{bindings.ArtId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.ArtId.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.ProviderName.inputValue}"
+                                      label="#{bindings.ProviderName.hints.label}"
+                                      required="#{bindings.ProviderName.hints.mandatory}"
+                                      columns="#{bindings.ProviderName.hints.displayWidth}"
+                                      maximumLength="#{bindings.ProviderName.hints.precision}"
+                                      shortDesc="#{bindings.ProviderName.hints.tooltip}"
+                                      id="it2" readOnly="true">
+                          <f:validator binding="#{bindings.ProviderName.validator}"/>
+                        </af:inputText>
+                         <af:inputText value="#{bindings.OrigTitle.inputValue}"
+                                      label="#{bindings.OrigTitle.hints.label}"
+                                      required="#{bindings.OrigTitle.hints.mandatory}"
+                                      columns="#{bindings.OrigTitle.hints.displayWidth}"
+                                      maximumLength="#{bindings.OrigTitle.hints.precision}"
+                                      shortDesc="#{bindings.OrigTitle.hints.tooltip}"
+                                      partialTriggers="qryId1"
+                                      id="it6" readOnly="true">
+                          <f:validator binding="#{bindings.OrigTitle.validator}"/>
+                        </af:inputText>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="10" id="s1"/>
+                      <af:group id="g1">
+                        <af:panelFormLayout id="pfl3" rows="1" maxColumns="2">
+                          <af:commandButton id="cb2"
+                                            text="#{viewcontrollerBundle.part_no}"
+                                            binding="#{viewScope.cid_reserve.partNo_btn}"
+                                            disabled="true"/>
+                          <af:commandButton text="#{viewcontrollerBundle.vol_no}"
+                                            id="cb5"
+                                            binding="#{viewScope.cid_reserve.volNo_btn}"
+                                            disabled="true"/>
+                        </af:panelFormLayout>
+                        <af:panelCollection id="pc1"
+                                            inlineStyle="width:25%; height:150.0px;">
+                          <af:table value="#{bindings.PhysicalBookVolPartVO1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.PhysicalBookVolPartVO1.rangeSize}"
+                                    emptyText="#{bindings.PhysicalBookVolPartVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.PhysicalBookVolPartVO1.rangeSize}"
+                                    rowBandingInterval="0"
+                                    filterModel="#{bindings.PhysicalBookVolPartVO1Query.queryDescriptor}"
+                                    queryListener="#{bindings.PhysicalBookVolPartVO1Query.processQuery}"
+                                    filterVisible="true" varStatus="vs"
+                                    selectedRowKeys="#{bindings.PhysicalBookVolPartVO1.collectionModel.selectedRow}"
+                                    selectionListener="#{viewScope.cid_reserve.PhbookVolPartSelectionListener}"
+                                    rowSelection="single" id="t2"
+                                    columnStretching="last">
+                            <af:column sortProperty="VolNo" filterable="true"
+                                       sortable="true"
+                                       headerText="#{bindings.PhysicalBookVolPartVO1.hints.VolNo.label}"
+                                       id="c2">
+                              <af:outputText value="#{row.VolNo}" id="ot5"/>
+                            </af:column>
+                            <af:column sortProperty="PartNo" filterable="true"
+                                       sortable="true"
+                                       headerText="#{bindings.PhysicalBookVolPartVO1.hints.PartNo.label}"
+                                       id="c1">
+                              <af:outputText value="#{row.PartNo}" id="ot6"/>
+                            </af:column>
+                          </af:table>
+                        </af:panelCollection>
+                      </af:group>
+                      <af:spacer width="10" height="10" id="s2"/>
+                      <af:panelFormLayout id="pfl2" rows="1" maxColumns="3">
+                        <af:commandButton action="#{pageFlowScope.TFBean.reserve_detail}"
+                                          id="cb3"
+                                          text="#{viewcontrollerBundle.detail_ver}"
+                                          shortDesc="#{viewcontrollerBundle.ADD_ROLE}"
+                                          partialSubmit="true"
+                                          binding="#{viewScope.cid_reserve.showDetail_btn}"
+                                          disabled="true"
+                                          partialTriggers="pc1:t2">
+                          <af:setActionListener from="#{viewcontrollerBundle.detail_ver}"
+                                                to="#{ReserveTitle.popupTitle}"/>
+                        </af:commandButton>
+                        <af:commandButton action="#{pageFlowScope.TFBean.reserve_history}"
+                                          id="cb4" text="لیست رزرو کنندگان"
+                                          shortDesc="#{viewcontrollerBundle.ADD_ROLE}"
+                                          partialSubmit="true"
+                                          binding="#{viewScope.cid_reserve.reserveList_btn}"
+                                          disabled="true"
+                                          partialTriggers="pc1:t2">
+                          <af:setActionListener from="لیست رزروکنندگان"
+                                                to="#{ReserveTitle.popupTitle}"/>
+                        </af:commandButton>
+                        <af:commandButton id="cb1"
+                                          text="#{viewcontrollerBundle.book_reserve}"
+                                          partialSubmit="true"
+                                          binding="#{viewScope.cid_reserve.reserve1_btn}"
+                                          disabled="true"
+                                          action="#{viewScope.cid_reserve.reserveBtnAction}"
+                                          partialTriggers="pc1:t2"
+                                          windowModalityType="applicationModal">
+                          <af:setActionListener from="#{viewcontrollerBundle.book_reserve}"
+                                                to="#{ReserveTitle.popupTitle}"/>
+                        </af:commandButton>
+                        <f:facet name="footer"/>
+                      </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          </f:facet>
+        </af:pageTemplate>
+      
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

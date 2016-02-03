@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Loan"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="LOAN"
+  AliasName="Loan"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.LoanImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LoanDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="LOAN_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Loan.LoanDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="RetDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="RET_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Loan.RetDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="RealRetDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="REAL_RET_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Loan.RealRetDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="12"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="LOAN"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MemArtId"
+    Precision="10"
+    Scale="0"
+    ColumnName="MEM_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PhbookArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="PHBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReturnUser"
+    Precision="30"
+    ColumnName="RETURN_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Loan.ReturnUser_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LoanUser"
+    Precision="30"
+    ColumnName="LOAN_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Loan.LoanUser_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LoanType"
+    Precision="1"
+    Scale="0"
+    ColumnName="LOAN_TYPE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReturnType"
+    Precision="1"
+    Scale="0"
+    ColumnName="RETURN_TYPE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NextRetDate"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="$none$">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Loan.NextRetDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="PhysicalBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanPhbookFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanPhbookFkAssoc.PhysicalBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanPhbookFkAssoc.Loan"
+    Type="fadak.base.TemplateEntityObject"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Member"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanMemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanMemFkAssoc.Member"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanMemFkAssoc.Loan"
+    Type="fadak.base.TemplateEntityObject"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PhysicalBook1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanPhBookFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanPhBookFkAssoc.PhysicalBook1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanPhBookFkAssoc.Loan1"
+    Type="fadak.base.TemplateEntityObject"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLoanFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLoanFkAssoc.InitMember"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberLoanFkAssoc.Loan"
+    Type="fadak.base.TemplateEntityObject"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PhysicalBook_Spc"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoan_NullRetDate_FkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoan_NullRetDate_FkAssoc.PhysicalBook_Spc"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoan_NullRetDate_FkAssoc.Loan_Spc"
+    Type="org.parsisys.tehranuniversity.library.model.eo.PhysicalBookImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PhysicalBook2"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoanFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoanFkAssoc.PhysicalBook2"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoanFkAssoc.Loan2"
+    Type="org.parsisys.tehranuniversity.library.model.eo.PhysicalBookImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InitMember1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc.InitMember1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanInitMemFkAssoc.Loan1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LoanCashPenalty"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanCashPenLoanFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanCashPenLoanFkAssoc.LoanCashPenalty"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanCashPenLoanFkAssoc.Loan"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LoanCashPenalty1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanLoanCashPenaltyFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanLoanCashPenaltyFkAssoc.LoanCashPenalty1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanLoanCashPenaltyFkAssoc.Loan1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="LoanPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="LOAN_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.parsisys.tehranuniversity.library.model.eo.Loan.Labcol"/>
+      <Item Value="org.parsisys.tehranuniversity.library.model.eo.Loan.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007158">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007158"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.parsisys.tehranuniversity.library.model.eo.Loan.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007159">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007159"/>
+      <Attr Name="_checkCondition" Value='"LOAN_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.LoanDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007160">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007160"/>
+      <Attr Name="_checkCondition" Value='"RET_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.RetDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007161">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007161"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007162">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007162"/>
+      <Attr Name="_checkCondition" Value='"MEM_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007163">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007163"/>
+      <Attr Name="_checkCondition" Value='"PHBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.PhbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007164">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007164"/>
+      <Attr Name="_checkCondition" Value='"LOAN_USER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.LoanUser"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007165">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007165"/>
+      <Attr Name="_checkCondition" Value='"LOAN_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.LoanType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="LoanMemFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MEM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="LOAN_MEM_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.parsisys.tehranuniversity.library.model.eo.Loan.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="LoanPhbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PHBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="LOAN_PHBOOK_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.parsisys.tehranuniversity.library.model.eo.Loan.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Loan.PhbookArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

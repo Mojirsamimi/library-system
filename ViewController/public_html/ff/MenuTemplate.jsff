@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox text=" " id="pb1" showDisclosure="false">
+    <f:facet name="toolbar"/>
+  
+    <af:panelSplitter id="ps1" orientation="horizontal" firstBorder="all"
+                      disabled="true">
+      <f:facet name="first">
+        <af:panelGroupLayout id="pgl2" layout="scroll">
+          <af:panelFormLayout id="pfl1">
+            <af:showDetail id="sd1" disclosedText="میز امانت"
+                           undisclosedText="میز امانت" disclosed="true">
+              <af:showDetail disclosed="#{sessionUser.current_page=='/subs'}"
+                             id="sd4" disclosedText="عضویت"
+                             undisclosedText="عضویت">
+                <af:commandLink text="مشخصات عضو" id="cl1"
+                                action="adfMenu_CID_Member"/>
+                <br/>
+                <af:commandLink text="معرفی نامه" id="cl2"
+                                action="adfMenu_INTRODUCTION_LETTER"/>
+                <br/>
+                <af:commandLink text="تمدید و تغییر سمت عضو" id="cl3"
+                                action="adfMenu_CID_EXTEND"/>
+                <br/>
+                <af:commandLink text="تغییر وضعیت عضو" id="cl9"
+                                action="adfMenu_CID_MEM_STATUS_CHANGE"/>
+                <br/>
+                <af:commandLink text="سابقه وضعیت عضو" id="cl10"
+                                action="adfMenu_CID_MEM_STATUS_HISTORY"/>
+                <br/>
+                <af:commandLink text="تغییر بارکد عضو" id="cl11"
+                                action="adfMenu_CID_MEM_BARCODE_CHANGE"/>
+                <br/>
+                <af:commandLink text="سابقه بارکد عضو" id="cl12"
+                                action="adfMenu_CID_MEM_BARCODE_HISTORY"/>
+                <br/>
+                <af:commandLink text="سابقه امانت عضو" id="cl13"
+                                action="adfMenu_CID_MEM_LOAN_HISTORY"/>
+                <br/>
+                <af:commandLink text="تسویه حساب عضو" id="cl14"
+                                action="adfMenu_CID_CLEARING"/>
+                <br/>
+              </af:showDetail>
+              <af:showDetail disclosed="#{sessionUser.current_page=='/amanat'}"
+                             id="sd5" disclosedText="امانت"
+                             undisclosedText="امانت">
+                <af:commandLink text="امانت و تمدید کتاب" id="cl15"
+                                action="adfMenu_CID_LOAN"/>
+                <br/>
+                <af:commandLink text="بازگشت کتاب" id="cl16"
+                                action="adfMenu_CID_RETURN_BOOK"/>
+                <br/>
+                <af:commandLink text="تغییر بارکد کتاب" id="cl17"
+                                action="adfMenu_CID_BOOK_BARCODE_CHANGE"/>
+                <br/>
+                <af:commandLink text="سابقه امانت کتاب" id="cl18"
+                                action="adfMenu_CID_BOOK_LOAN_HISTORY"/>
+                <br/>
+                <af:commandLink text="فهرست کتاب های امانت در محل" id="cl19"
+                                action="adfMenu_LOAN_AT_LIB_LIST"/>
+                <br/>
+                <af:commandLink text="کنترل موجودی کتاب" id="cl20"
+                                action="adfMenu_CID_BOOK_EXISTENCE"/>
+                <br/>
+              </af:showDetail>
+              <af:showDetail disclosed="#{sessionUser.current_page=='/reserve'}"
+                             id="sd2" disclosedText="رزرو"
+                             undisclosedText="رزرو">
+                <af:commandLink text="رزرو کتاب" id="cl21"
+                                action="adfMenu_CID_RESERVE"/>
+                <br/>
+                <af:commandLink text="سابقه رزرو کتاب" id="cl22"
+                                action="adfMenu_CID_BOOK_RESERVE_HISTORY"/>
+                <br/>
+                <af:commandLink text="چاپ برگه اعلام رزرو" id="cl23"
+                                action="adfMenu_CID_PRINT_RESERVE"/>
+                <br/>
+              </af:showDetail>
+              <af:showDetail disclosed="#{sessionUser.current_page=='/fine'}"
+                             id="sd6" disclosedText="جریمه"
+                             undisclosedText="جریمه">
+                <af:commandLink text="جریمه تاخیر امانت" id="cl25"
+                                action="adfMenu_CID_LOAN_CASH_PENALTY"/>
+                <br/>
+                <af:commandLink text="جریمه گم شدن کتاب" id="cl26"
+                                action="adfMenu_CID_REGISTER_LOST"/>
+                <br/>
+                <af:commandLink text="جریمه نقدی عمومی" id="cl27"
+                                action="adfMenu_CID_PUBLIC_CASH_PENALTY"/>
+                <br/>
+                <af:commandLink text="جریمه غیر نقدی" id="cl28"
+                                action="adfMenu_CID_PUBLIC_NON_CASH_PENALTY"/>
+                <br/>
+                <af:commandLink text="پرداخت" id="cl29"
+                                action="adfMenu_CID_PENALTY_PAY"/>
+                <br/>
+                <af:commandLink text="سابقه جریمه و پرداخت" id="cl24"
+                                action="adfMenu_CID_MEMBER_PENALTY_HISTORY"/>
+                                
+              <af:showDetail disclosed="#{sessionUser.current_page=='/IntermidiatePageCharge'}"
+                           id="sd19" disclosedText="هزینه ها">
+              <af:commandLink text="درج هزینه" id="cl45"
+                              action="adfMenu_Extra_Charge"/>
+                              
+            </af:showDetail>          
+                                
+              </af:showDetail>
+              <af:showDetail disclosed="#{sessionUser.current_page=='/BarcodeSearchIntrmidiatePage'}"
+                             id="sd9" disclosedText="جستجوی بارکد"
+                             undisclosedText="جستجوی بارکد">
+                <af:commandLink text="جستجوی بارکد" id="cl30"
+                                action="adfMenu_CID_BARCODE_SEARCH"/>
+              </af:showDetail>
+            </af:showDetail>
+            <af:showDetail id="sd3" disclosedText="کتاب" disclosed="true">
+              <af:showDetail disclosed="#{sessionUser.current_page=='/bookVer'}"
+                             id="sd7" disclosedText="تغییر نسخه های کتاب"
+                             undisclosedText="تغییر نسخه های کتاب">
+                <af:commandLink text="تغییر وضعیت و بارکد نسخه" id="cl6"
+                                action="adfMenu_BOOK_STATUS_BARCODE_CHANGE"/>
+                <br/>
+                <af:commandLink text="سابقه وضعیت نسخه کتاب" id="cl7"
+                                action="adfMenu_BOOK_STATUS_HISTORY"/>
+                <br/>
+                <af:commandLink text="سابقه بارکد نسخه کتاب" id="cl8"
+                                action="adfMenu_CID_BOOK_BARCODE_HISTORY"/>
+              </af:showDetail>
+              <af:showDetail disclosed="#{sessionUser.current_page=='/cataloging'}"
+                             id="sd8" disclosedText="فهرست نویسی کتاب">
+                <af:commandLink text="فارسی" id="cl4"
+                                action="adfMenu_persianCataloging"/>
+                <br/>
+                <af:commandLink text="لاتین" id="cl5"/>
+              </af:showDetail>
+              <af:showDetail disclosed="#{sessionUser.current_page=='/RecentBookIntermidiatepage'}"
+                             id="sd11" disclosedText="تازه های کتاب"
+                             undisclosedText="تازه های کتاب">
+                <af:commandLink text="تازه های کتاب" id="cl32"
+                                action="adfMenu_RecentBook"/>
+              </af:showDetail>
+               <af:showDetail disclosed="#{sessionUser.current_page=='/suggestedintermidiatepage'}"
+                             id="sd18" disclosedText="كتاب هاي سفارشي">
+                <af:commandLink text="سفارش كتاب" id="cl44"
+                                action="adfMenu_SuggestedBook"/>
+                <br/>
+                <af:commandLink text="ليست كتاب هاي سفارشي" id="cl43"
+                                action="adfMenu_suggestedbooklist"/>
+                
+              </af:showDetail>
+               <af:showDetail disclosed="#{sessionUser.current_page=='/IntermdiatePageBookFarsiCard'}"
+                             id="sd20" disclosedText="چاپ کاربرگه">
+                
+                <af:commandLink text="کاربرگه کتاب فارسی/ لاتین" id="cl51"
+                                action="adfMenu_ReportFarsiCard"/>
+                
+              </af:showDetail>
+               <af:showDetail disclosed="#{sessionUser.current_page=='/IntermdiatePageBookLabel'}"
+                             id="sd21" disclosedText="چاپ برچسب">
+                
+                <af:commandLink text="برچسب کتاب فارسی/ لاتین" id="cl52"
+                                action="adfMenu_ReportLabelFarsiListBook"/>
+                
+              </af:showDetail>
+            </af:showDetail>
+            <af:showDetail disclosed="true" id="sd12"
+                           disclosedText="برگه های ارجاعی">
+              <af:showDetail disclosed="#{sessionUser.current_page=='/PersianRefrenceIntermidiatePage'}"
+                             id="sd13" disclosedText="فارسی">
+                <af:commandLink text="عنوان" id="cl33"
+                                action="adfMenu_PersianUniformTitle"/>
+                <br/>
+                <af:commandLink text="موضوع" id="cl34"
+                                action="adfMenu_PersianSubject"/>
+                <br/>
+                <af:commandLink text="پدیدآور" id="cl35"
+                                action="adfMenu_PersianProvider"/>
+                <br/>
+                <!--<af:commandLink text="کلید واژه" id="cl36"
+                                action="adfMenu_FarsiKeywordView"/>
+                <br/>-->
+              </af:showDetail>
+              <af:showDetail disclosed="#{sessionUser.current_page=='/LatinRefrenceIntermidiatePage'}"
+                             id="sd14" disclosedText="لاتین">
+                <af:commandLink text="عنوان" id="cl37"
+                                action="adfMenu_LatinUniformTitle"/>
+                <br/>
+                <af:commandLink text="موضوع" id="cl38"
+                                action="adfMenu_LatinSubject"/>
+                <br/>
+                <af:commandLink text="پدیدآور" id="cl39"
+                                action="adfMenu_LatinProvider"/>
+                <br/>
+              </af:showDetail>
+            </af:showDetail>
+            <af:showDetail disclosed="#{sessionUser.current_page=='/bookRequestIntermidiatepage'}"
+                           id="sd16" disclosedText="سفارش کتاب">
+              <af:commandLink text="درخواست کتاب از مخزن" id="cl41"
+                              action="adfMenu_BookRequestNew"/>
+                              
+                              <br/>
+                <af:commandLink text="خروج کتاب از مخزن" id="cl36"
+                                action="adfMenu_bookRequest-A"/>
+                                
+                                  
+                <br/>
+            </af:showDetail>
+            <af:showDetail disclosed="#{sessionUser.current_page=='/Sandoogh'}"
+                           id="sd15" disclosedText="صندوق امانت">
+              <af:commandLink text="صندوق" id="cl40" action="adfMenu_Sandoogh"/>
+            </af:showDetail>
+             
+            <af:showDetail disclosed="#{sessionUser.current_page=='/ReportIntermidiatePage'}"
+                           id="sd17" disclosedText="گزارش">
+              <af:commandLink text="گزارش رف خوانی" id="cl42"
+                              action="adfMenu_RafUpload"/>
+              <br/>
+              <af:commandLink text="گزارش میزامانت" id="cl48"
+                              action="adfMenu_ReportLoan"/>
+              <br/>
+              <af:commandLink text="گزارش فهرست نویسی" id="cl47"
+                              action="adfMenu_ReportCataloging"/>
+              <br/>
+               <af:commandLink text="گزارش تازه ها" id="cl49"
+                              action="adfMenu_reportRecent"/>
+              <br/>
+              <af:commandLink text="گزارش هزینه ها" id="cl46"
+                              action="adfMenu_report_date_ExtraCharge"/>
+            </af:showDetail>
+            
+            <af:showDetail disclosed="#{sessionUser.current_page=='/SettingsIntermidiatePage'}"
+                           id="sd10" disclosedText="تنظیمات">
+              <af:commandLink text="نقش و کاربران" id="cl31"
+                              action="adfMenu_RoleAndPermission"/>
+                              <br/> 
+               <af:commandLink text="تنظیم های سیستم" id="cl50"
+                              action="adfMenu_DataEntry"/>
+            </af:showDetail>
+            <f:facet name="footer"/>
+          </af:panelFormLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="second">
+    
+        <af:panelGroupLayout id="pgl1" halign="center" layout="vertical">
+          <af:spacer id="s1" height="50"/>
+          <af:image source="/images/ut-logo.gif" shortDesc="لوگو" id="i1"/>
+          <af:outputText value="سیستم جامع کتابخانه" id="ot1"
+                         inlineStyle="font-size:x-large;"/>
+           <af:outputText value="دانشگاه تهران" id="ot2"
+                          inlineStyle="font-size:large;"/>
+        </af:panelGroupLayout>
+      </f:facet>
+    </af:panelSplitter>
+  </af:panelBox>
+</jsp:root>

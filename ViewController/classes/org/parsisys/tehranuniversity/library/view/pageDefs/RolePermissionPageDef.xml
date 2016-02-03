@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="RolePermissionPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="LibRoleVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LibRoleVO1Iterator"/>
+    <iterator Binds="LibUserVo2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LibUserVo2Iterator"/>
+   
+  </executables>
+  <bindings>
+    <tree IterBinding="LibRoleVO1Iterator" id="LibRoleVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibRoleVO"
+                      Name="LibRoleVO10">
+        <AttrNames>
+          <Item Value="Description"/>
+          <Item Value="RoleName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="LibUserVo2Iterator" id="Enable">
+      <AttrNames>
+        <Item Value="Enable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LibUserVo2Iterator" id="Labcol">
+      <AttrNames>
+        <Item Value="Labcol"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LibUserVo2Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LibUserVo2Iterator" id="Password">
+      <AttrNames>
+        <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LibUserVo2Iterator" id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="LibUser_UserRoleVoIterator" id="LibUser_UserRoleVo">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibUserVo"
+                      Name="LibUser_UserRoleVo0">
+        <AttrNames>
+          <Item Value="Enable"/>
+          <Item Value="Labcol"/>
+          <Item Value="Name"/>
+          <Item Value="Password"/>
+          <Item Value="UserName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

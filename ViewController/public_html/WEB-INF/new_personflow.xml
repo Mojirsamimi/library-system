@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="new_personflow">
+    <default-activity id="__1">CreateInsert</default-activity>
+    <transaction id="__7">
+      <new-transaction/>
+    </transaction>
+    <data-control-scope id="__15">
+      <isolated/>
+    </data-control-scope>
+    <managed-bean id="__14">
+      <managed-bean-name id="__29">insert_person_bean</managed-bean-name>
+      <managed-bean-class id="__28">org.parsisys.tehranuniversity.library.view.beans.InsertPersonBean</managed-bean-class>
+      <managed-bean-scope id="__27">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__2">
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="InsertPerson">
+      <page>/ff/InsertPerson.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__8">
+        <name>taskFlowReturn1</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <method-call id="method_call_init_person">
+      <method>#{pageFlowScope.insert_person_bean.initPerson}</method>
+      <outcome id="__30">
+        <fixed-outcome>insert_person</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__9">
+      <from-activity-id id="__10">InsertPerson</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome id="__13">end</from-outcome>
+        <to-activity-id id="__11">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__31">
+      <from-activity-id id="__32">method_call_init_person</from-activity-id>
+      <control-flow-case id="__35">
+        <from-outcome id="__33">insert_person</from-outcome>
+        <to-activity-id id="__34">InsertPerson</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__36">
+      <from-activity-id id="__37">CreateInsert</from-activity-id>
+      <control-flow-case id="__38">
+        <from-outcome id="__40">CreateInsert</from-outcome>
+        <to-activity-id id="__39">method_call_init_person</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+    <visibility id="__3"/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:fadak="/fadak">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+            <af:panelHeader text="خروج کتاب از مخزن" id="ph1">
+              
+              <f:facet name="toolbar"/>
+              <af:panelSplitter id="ps1" orientation="vertical"
+                                splitterPosition="70">
+                <f:facet name="first">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelFormLayout id="pfl1">
+                      <f:facet name="footer">
+                        <af:selectOneChoice value="#{bindings.PlaceLov_RoSpcLov.inputValue}"
+                                            label="ابتدا مخزن مورد نظر را انتخاب کنید"
+                                            required="#{bindings.PlaceLov_RoSpcLov.hints.mandatory}"
+                                            shortDesc="#{bindings.PlaceLov_RoSpcLov.hints.tooltip}"
+                                            id="soc1" autoSubmit="true">
+                          <f:selectItems value="#{bindings.PlaceLov_RoSpcLov.items}"
+                                         id="si1"/>
+                        </af:selectOneChoice>
+                      </f:facet>
+                    </af:panelFormLayout>
+                  </af:panelBox>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text="  " id="pb2" showDisclosure="false">
+                    <f:facet name="toolbar">
+                      <af:toolbar id="t3">
+                        <fadak:ToolbarSet iteratorname="BookRequest2Iterator" id="ts1"
+                                          showcreate="false"
+                                          showdelete="false"
+                                          showEditCommand="false"
+                                          showfirst="false" showlast="false"
+                                          shownext="false"
+                                          showprevious="false"
+                                          showquery="false"
+                                          showrollback="true"
+                                          showrefresh="true"/>
+                      </af:toolbar>
+                    </f:facet>
+                    <af:panelGroupLayout id="pgl1" layout="scroll">
+                      <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                        <af:table value="#{bindings.BookRequest2.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.BookRequest2.rangeSize}"
+                                  emptyText="#{bindings.BookRequest2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.BookRequest2.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.BookRequest2Query.queryDescriptor}"
+                                  queryListener="#{bindings.BookRequest2Query.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.BookRequest2.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.BookRequest2.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="t1"
+                                  partialTriggers=":::soc1"
+                                  columnStretching="column:c8">
+                          <af:column rowHeader="true" width="20"
+                                     headerText="ردیف" id="c5">
+                            <af:outputText value="#{vs.index+1}" id="ot5"/>
+                          </af:column>
+                          <af:column sortProperty="ReqNo" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.ReqNo.label}"
+                                     id="c9" width="200">
+                            <af:inputText value="#{row.bindings.ReqNo.inputValue}"
+                                          label="#{bindings.BookRequest2.hints.ReqNo.label}"
+                                          required="#{bindings.BookRequest2.hints.ReqNo.mandatory}"
+                                          columns="#{bindings.BookRequest2.hints.ReqNo.displayWidth}"
+                                          maximumLength="#{bindings.BookRequest2.hints.ReqNo.precision}"
+                                          shortDesc="#{bindings.BookRequest2.hints.ReqNo.tooltip}"
+                                          id="it1" readOnly="true">
+                              <f:validator binding="#{row.bindings.ReqNo.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Barcode" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.Barcode.label}"
+                                     id="c8" width="200">
+                            <af:inputText value="#{row.bindings.Barcode.inputValue}"
+                                          label="#{bindings.BookRequest2.hints.Barcode.label}"
+                                          required="#{bindings.BookRequest2.hints.Barcode.mandatory}"
+                                          columns="#{bindings.BookRequest2.hints.Barcode.displayWidth}"
+                                          maximumLength="#{bindings.BookRequest2.hints.Barcode.precision}"
+                                          shortDesc="#{bindings.BookRequest2.hints.Barcode.tooltip}"
+                                          id="it2" readOnly="true">
+                              <f:validator binding="#{row.bindings.Barcode.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Fname" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.Fname.label}"
+                                     id="c4">
+                            <af:inputText value="#{row.bindings.Fname.inputValue}"
+                                          label="#{bindings.BookRequest2.hints.Fname.label}"
+                                          required="#{bindings.BookRequest2.hints.Fname.mandatory}"
+                                          columns="#{bindings.BookRequest2.hints.Fname.displayWidth}"
+                                          maximumLength="#{bindings.BookRequest2.hints.Fname.precision}"
+                                          shortDesc="#{bindings.BookRequest2.hints.Fname.tooltip}"
+                                          id="it8" readOnly="true">
+                              <f:validator binding="#{row.bindings.Fname.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Lname" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.Lname.label}"
+                                     id="c3">
+                            <af:inputText value="#{row.bindings.Lname.inputValue}"
+                                          label="#{bindings.BookRequest2.hints.Lname.label}"
+                                          required="#{bindings.BookRequest2.hints.Lname.mandatory}"
+                                          columns="#{bindings.BookRequest2.hints.Lname.displayWidth}"
+                                          maximumLength="#{bindings.BookRequest2.hints.Lname.precision}"
+                                          shortDesc="#{bindings.BookRequest2.hints.Lname.tooltip}"
+                                          id="it3" readOnly="true">
+                              <f:validator binding="#{row.bindings.Lname.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="Serial" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.Serial.label}"
+                                     id="c6" width="200">
+                            <af:inputText value="#{row.bindings.Serial.inputValue}"
+                                          label="#{bindings.BookRequest2.hints.Serial.label}"
+                                          required="#{bindings.BookRequest2.hints.Serial.mandatory}"
+                                          columns="#{bindings.BookRequest2.hints.Serial.displayWidth}"
+                                          maximumLength="#{bindings.BookRequest2.hints.Serial.precision}"
+                                          shortDesc="#{bindings.BookRequest2.hints.Serial.tooltip}"
+                                          id="it5" readOnly="true">
+                              <f:validator binding="#{row.bindings.Serial.validator}"/>
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.BookRequest2.hints.Serial.format}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="CallNo" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.CallNo.label}"
+                                     id="c2" width="200">
+                            <af:inputText value="#{row.bindings.CallNo.inputValue}"
+                                          label="#{bindings.BookRequest2.hints.CallNo.label}"
+                                          required="#{bindings.BookRequest2.hints.CallNo.mandatory}"
+                                          columns="#{bindings.BookRequest2.hints.CallNo.displayWidth}"
+                                          maximumLength="#{bindings.BookRequest2.hints.CallNo.precision}"
+                                          shortDesc="#{bindings.BookRequest2.hints.CallNo.tooltip}"
+                                          id="it6" readOnly="true">
+                              <f:validator binding="#{row.bindings.CallNo.validator}"/>
+                            </af:inputText>
+                          </af:column>
+                          <af:column sortProperty="LoadStat"
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.LoadStat.label}"
+                                     id="c1" width="40">
+                            <af:selectBooleanCheckbox value="#{row.bindings.LoadStat.inputValue}"
+                                                      label="#{row.bindings.LoadStat.label}"
+                                                      shortDesc="#{bindings.BookRequest2.hints.LoadStat.tooltip}"
+                                                      id="sbc1"/>
+                          </af:column>
+                          <af:column sortProperty="CustStat" 
+                                     sortable="true"
+                                     headerText="#{bindings.BookRequest2.hints.CustStat.label}"
+                                     id="c7" width="30">
+                            <af:selectBooleanCheckbox value="#{row.bindings.CustStat.inputValue}"
+                                                      label="#{row.bindings.CustStat.label}"
+                                                      shortDesc="#{bindings.BookRequest2.hints.CustStat.tooltip}"
+                                                      readOnly="true"
+                                                      id="sbc2"/>
+                          </af:column>
+                        </af:table>
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                          <af:toolbar id="t2">
+                            <af:commandButton text="چاپ درخواست " id="cb1"
+                                              action="#{viewScope.book_request_A.runReport}">
+                              <af:setActionListener from="#{initParam.reportServer}/reports/rwservlet?utdbuser&amp;destype=cache&amp;report=BOOK_REQUEST_A.rdf&amp;FROM_REQ_NO=#{bindings.ReqNo.attributeValue}&amp;TO_REQ_NO=#{bindings.ReqNo.attributeValue}&amp;W_PLACE=#{bindings.PlaceLov_RoSpcLov.attributeValue}&amp;labcol=#{sessionUser.labcol}"
+                                                    to="#{viewScope.book_request_A.reportPath}"/>
+                            </af:commandButton>
+                          </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                      </af:panelCollection>
+                      <af:panelFormLayout id="pfl2" maxColumns="3" rows="1"
+                                          labelWidth="100">
+                        <f:facet name="footer"/>
+                       <!-- <af:inputText label="از ردیف" id="it4"
+                                      value="#{viewScope.book_request_A.fromRow}"/>
+                        <af:inputText label="تا ردیف" id="it7"
+                                      value="#{viewScope.book_request_A.toRow}"/> !-->
+                      </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          </f:facet>
+          <f:facet name="popup">
+          <af:popup id="reportPop" childCreation="deferred" 
+                  contentDelivery="lazyUncached"
+                         >
+                  <af:panelWindow title="انتخاب فرمت گزارش"  modal="true"
+                                  id="pw4">
+                  
+                  <af:panelGroupLayout layout="horizontal" id="pgl11">
+                   <af:goLink shortDesc="RTF" destination="#{viewScope.book_request_A.reportPath}&amp;desformat=rtf" 
+                           targetFrame="_blank"
+                             inlineStyle="padding:10.0px;">
+                              <af:image source="/icons/word.PNG"/>
+                
+                </af:goLink>
+                   <af:goLink shortDesc="Html/CSS"  destination="#{viewScope.book_request_A.reportPath}&amp;desformat=htmlcss" targetFrame="_blank"
+                             inlineStyle="padding:10.0px;" id="gl1"
+                            >
+                  <af:image source="/icons/htmlcss.png" id="i2"/>
+                  </af:goLink>
+                  <af:goLink shortDesc="Html" inlineStyle="padding:10.0px;" destination="#{viewScope.book_request_A.reportPath}&amp;desformat=html" targetFrame="_blank"
+                                id="gl2"  >
+                  <af:image source="/icons/html.png"  id="i3"/>
+                  </af:goLink>
+                  
+                    <af:goLink shortDesc="XML"  inlineStyle="padding:10.0px;" destination="#{viewScope.book_request_A.reportPath}&amp;desformat=xml" targetFrame="_blank"
+                                id="gl3"  >
+                  <af:image source="/icons/xml.png" id="i4"/>
+                  </af:goLink>
+                  <af:goLink shortDesc="CSV" inlineStyle="padding:10.0px;" destination="#{viewScope.book_request_A.reportPath}&amp;desformat=delimiteddata" targetFrame="_blank"
+                             id="gl4"  >
+                  <af:image source="/icons/csv.png" id="i5"/>
+                  </af:goLink>
+                  </af:panelGroupLayout>
+                </af:panelWindow>
+              </af:popup>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

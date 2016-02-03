@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_BOOK_BARCODE_CHANGEPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllBookBarcodeChangeVC"
+                  id="removeAllBookBarcodeChangeVC_execute"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.initialRender}"/>
+    <iterator Binds="BookBarcodeChange" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="BookBarcodeChangeIterator"/>
+    <searchRegion Criteria="search_barcode_regIdVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="BookBarcodeChangeIterator"
+                  id="searchbarcoderegIdVCQuery"/>
+    <searchRegion Criteria="search_barcode_regId"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="BookBarcodeChangeIterator"
+                  id="searchbarcoderegIdQuery"/>
+    <iterator Binds="VirtualBookVO2" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VirtualBookVO2Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO2Iterator" id="CallNo">
+      <AttrNames>
+        <Item Value="CallNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BookBarcodeChangeIterator" StaticList="false"
+          Uses="LOV_LoanStatus" id="LoanStatus" DTSupportsMRU="true"/>
+    <list IterBinding="BookBarcodeChangeIterator" StaticList="false"
+          Uses="LOV_SafetyStatus" id="SafetyStatus" DTSupportsMRU="true"/>
+    <list IterBinding="BookBarcodeChangeIterator" StaticList="false"
+          Uses="LOV_ExistenceStatus" id="ExistenceStatus" DTSupportsMRU="true"/>
+    <list IterBinding="BookBarcodeChangeIterator" StaticList="false"
+          Uses="LOV_Place" id="Place" DTSupportsMRU="true"/>
+    <methodAction id="bookBarcodeChange" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="bookBarcodeChange"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="barcode"
+                 NDValue="#{pageFlowScope.NewBarcodeBean.bookNewBarcode}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="VirtualBookVO2Iterator" id="ProviderName">
+      <AttrNames>
+        <Item Value="ProviderName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="saveBookBarcodeChange" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="saveBookBarcodeChange"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.saveBookBarcodeChange_AppModuleDataControl_dataProvider_saveBookBarcodeChange_result">
+      <NamedData NDName="newBarcode"
+                 NDValue="#{pageFlowScope.NewBarcodeBean.bookNewBarcode}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="BookBarcodeChangeIterator" id="Barcode">
+      <AttrNames>
+        <Item Value="Barcode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookBarcodeChangeIterator" id="RegId">
+      <AttrNames>
+        <Item Value="RegId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="removeAllBookBarcodeChangeVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="removeAllBookBarcodeChangeVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

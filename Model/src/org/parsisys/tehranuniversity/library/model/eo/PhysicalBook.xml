@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  Name="PhysicalBook"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="PHYSICAL_BOOK"
+  AliasName="PhysicalBook"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.PhysicalBookImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="MessageVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.MessageVO"
+    RowLevelBinds="true"/>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegId"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="35"
+    ColumnName="REG_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.RegId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ReplicateNo"
+    Precision="2"
+    Scale="0"
+    ColumnName="REPLICATE_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.ReplicateNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="VolNo"
+    Precision="10"
+    ColumnName="VOL_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.VolNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PartNo"
+    Precision="10"
+    ColumnName="PART_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.PartNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LoanStatus"
+    DefaultValue="1"
+    Precision="1"
+    Scale="0"
+    ColumnName="LOAN_STATUS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.LoanStatus_LABEL"/>
+        <DISPLAYWIDTH
+          Value="5"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Place"
+    IsNotNull="true"
+    Precision="2"
+    Scale="0"
+    ColumnName="PLACE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Place_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="VbookArtId"
+    Precision="7"
+    Scale="0"
+    ColumnName="VBOOK_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Hold"
+    Precision="1"
+    Scale="0"
+    ColumnName="HOLD"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SafetyStatus"
+    DefaultValue="1"
+    Precision="1"
+    Scale="0"
+    ColumnName="SAFETY_STATUS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.SafetyStatus_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ExistenceStatus"
+    DefaultValue="1"
+    Precision="1"
+    Scale="0"
+    ColumnName="EXISTENCE_STATUS"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.ExistenceStatus_LABEL"/>
+        <DISPLAYWIDTH
+          Value="5"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Barcode"
+    Precision="14"
+    ColumnName="BARCODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="14"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Barcode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="InsertDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="INSERT_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.InsertDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    Precision="30"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.userSession.userData.username]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.UserName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="StatusChangeDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="STATUS_CHANGE_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BarcodeChangeDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="BARCODE_CHANGE_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BarcodeChangeUser"
+    Precision="30"
+    ColumnName="BARCODE_CHANGE_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StatusChangeUser"
+    Precision="30"
+    ColumnName="STATUS_CHANGE_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="200"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Description_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PubDate"
+    Precision="30"
+    ColumnName="PUB_DATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.PubDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="LoanDuration"
+    Precision="3"
+    Scale="0"
+    ColumnName="LOAN_DURATION"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DurationUnit"
+    Precision="2"
+    Scale="0"
+    ColumnName="DURATION_UNIT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FileAddress"
+    Precision="500"
+    ColumnName="FILE_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FileName"
+    Precision="100"
+    ColumnName="FILE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PHYSICAL_BOOK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPhysBookFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPhysBookFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPhysBookFkAssoc.PhysicalBook"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Loan"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanPhbookFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanPhbookFkAssoc.Loan"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_LoanPhbookFkAssoc.PhysicalBook"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Loan1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanPhBookFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanPhBookFkAssoc.Loan1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.LoanPhBookFkAssoc.PhysicalBook1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="BookStatusHistory"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_BkhisPhbookFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_BkhisPhbookFkAssoc.BookStatusHistory"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_BkhisPhbookFkAssoc.PhysicalBook"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="BookBarcodeHistory1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookBkBrcdHistFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookBkBrcdHistFkAssoc.BookBarcodeHistory1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookBkBrcdHistFkAssoc.PhysicalBook1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Loan2"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoanFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoanFkAssoc.Loan2"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoanFkAssoc.PhysicalBook2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="VirtualBook1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhysicalbookVbookFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhysicalbookVbookFkAssoc.VirtualBook1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhysicalbookVbookFkAssoc.PhysicalBook1"
+    Type="org.parsisys.tehranuniversity.library.model.eo.VirtualBookImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Loan_Spc"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoan_NullRetDate_FkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoan_NullRetDate_FkAssoc.Loan_Spc"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhbookLoan_NullRetDate_FkAssoc.PhysicalBook_Spc"
+    Type="org.parsisys.tehranuniversity.library.model.eo.LoanImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PenaltyType"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.physicalBookPenaltyTypeFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.physicalBookPenaltyTypeFkAssoc.PenaltyType"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.physicalBookPenaltyTypeFkAssoc.PhysicalBook"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="BookDupAltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PHYSICAL_BOOK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.VbookArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.ReplicateNo"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.VolNo"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.PartNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PhbookPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PHBOOK_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PhbookRegIdUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PHBOOK_REG_ID_UK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.RegId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PhysicalBookBarcodeAltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PhysicalBookBarcodeAltKey"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Barcode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007232">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007232"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007233">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007233"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007234">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007234"/>
+      <Attr Name="_checkCondition" Value='"REG_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.RegId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007235">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007235"/>
+      <Attr Name="_checkCondition" Value='"LOAN_STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.LoanStatus"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007236">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007236"/>
+      <Attr Name="_checkCondition" Value='"PLACE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Place"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007237">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007237"/>
+      <Attr Name="_checkCondition" Value='"VBOOK_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007238">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007238"/>
+      <Attr Name="_checkCondition" Value='"SAFETY_STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.SafetyStatus"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007239">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007239"/>
+      <Attr Name="_checkCondition" Value='"EXISTENCE_STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.ExistenceStatus"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007240">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007240"/>
+      <Attr Name="_checkCondition" Value='"INSERT_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.InsertDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007241">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007241"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007242">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007242"/>
+      <Attr Name="_checkCondition" Value='"STATUS_CHANGE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.StatusChangeDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007243">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007243"/>
+      <Attr Name="_checkCondition" Value='"BARCODE_CHANGE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.BarcodeChangeDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007244">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007244"/>
+      <Attr Name="_checkCondition" Value='"BARCODE_CHANGE_USER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.BarcodeChangeUser"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007245">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007245"/>
+      <Attr Name="_checkCondition" Value='"STATUS_CHANGE_USER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.StatusChangeUser"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PhbookVbookFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="VBOOK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PHBOOK_VBOOK_FK"/>
+      <Attr Name="_isDisabledConstraint" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.VbookArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_PhysicalBook">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UK_VIRTUAL_BOOK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_PHYSICAL_BOOK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.VbookArtId"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook.Labcol"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="PhysicalBook_Rule_0"
+    ResId="org.parsisys.tehranuniversity.library.model.eo.PhysicalBook_Rule_0"
+    KeyName="BookDupAltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="VbookArtId"/>
+      <validation:Item
+        Value="ReplicateNo"/>
+      <validation:Item
+        Value="VolNo"/>
+      <validation:Item
+        Value="PartNo"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

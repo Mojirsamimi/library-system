@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:fadak="/fadak" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+           <af:panelHeader text="تغییر وضعیت عضو" helpTopicId="memStatusChange">
+         <f:facet name="toolbar">
+              <af:toolbar id="t1">
+                <fadak:ToolbarSet debug="true" iteratorname="PersonVO1Iterator" id="ts1"
+                                    after_previous="#{pageFlowScope.cid_mem_statuschange.afterPrevious_fadak}"
+                                    after_next="#{pageFlowScope.cid_mem_statuschange.afterNext_fadak}"
+                                    showcommit="false" showcreate="false"
+                                    showdelete="false" showEditCommand="false"
+                                    showquery="false" showrefresh="false"
+                                    showrollback="false" showsearch="false"/>
+              </af:toolbar>
+            </f:facet>
+              <af:panelSplitter id="ps1" orientation="vertical"
+                                splitterPosition="120">
+                <f:facet name="first">
+              <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1"
+                                headerText="#{viewcontrollerBundle.mem_search}" disclosed="true"
+                                value="#{bindings.searchbarcodeidQuery.queryDescriptor}"
+                                model="#{bindings.searchbarcodeidQuery.queryModel}"
+                                queryListener="#{bindings.searchbarcodeidQuery.processQuery}"
+                                queryOperationListener="#{pageFlowScope.cid_mem_statuschange.afterSearchMember}"
+                                rows="1" maxColumns="2" saveQueryMode="hidden"
+                                
+                              modeChangeVisible="false"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+              
+                </f:facet>
+          <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout layout="vertical"
+                                         xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                         id="pgl2" halign="right"
+                                         valign="middle">
+                      <af:panelFormLayout maxColumns="2" rows="4"
+                                          partialTriggers="qryId1" id="pfl2">
+                        <af:inputText value="#{bindings.Barcode.inputValue}"
+                                      label="#{bindings.Barcode.hints.label}"
+                                      required="#{bindings.Barcode.hints.mandatory}"
+                                      columns="#{bindings.Barcode.hints.displayWidth}"
+                                      maximumLength="#{bindings.Barcode.hints.precision}"
+                                      shortDesc="#{bindings.Barcode.hints.tooltip}"
+                                      id="it6" readOnly="true">
+                          <f:validator binding="#{bindings.Barcode.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Fname.inputValue}"
+                                      label="#{bindings.Fname.hints.label}"
+                                      required="#{bindings.Fname.hints.mandatory}"
+                                      columns="#{bindings.Fname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Fname.hints.precision}"
+                                      shortDesc="#{bindings.Fname.hints.tooltip}"
+                                      id="it1" readOnly="true">
+                          <f:validator binding="#{bindings.Fname.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.PersType.inputValue}"
+                                            readOnly="true"
+                                            label="#{bindings.PersType.label}"
+                                            required="#{bindings.PersType.hints.mandatory}"
+                                            shortDesc="#{bindings.PersType.hints.tooltip}"
+                                            id="soc1">
+                          <f:selectItems value="#{bindings.PersType.items}"
+                                         id="si1"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.DeptName.inputValue}"
+                                      label="#{bindings.DeptName.hints.label}"
+                                      required="#{bindings.DeptName.hints.mandatory}"
+                                      columns="#{bindings.DeptName.hints.displayWidth}"
+                                      maximumLength="#{bindings.DeptName.hints.precision}"
+                                      shortDesc="#{bindings.DeptName.hints.tooltip}"
+                                      id="it4" readOnly="true">
+                          <f:validator binding="#{bindings.DeptName.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.MemshipStatus.inputValue}"
+                                            required="#{bindings.MemshipStatus.hints.mandatory}"
+                                            shortDesc="#{bindings.MemshipStatus.hints.tooltip}"
+                                            id="soc3" readOnly="true"
+                                            label="#{viewcontrollerBundle.current_status}">
+                          <f:selectItems value="#{bindings.MemshipStatus.items}"
+                                         id="si3"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{bindings.Id.inputValue}"
+                                      label="#{bindings.Id.hints.label}"
+                                      required="#{bindings.Id.hints.mandatory}"
+                                      columns="#{bindings.Id.hints.displayWidth}"
+                                      maximumLength="#{bindings.Id.hints.precision}"
+                                      shortDesc="#{bindings.Id.hints.tooltip}"
+                                      id="it7" readOnly="true">
+                          <f:validator binding="#{bindings.Id.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Lname.inputValue}"
+                                      label="#{bindings.Lname.hints.label}"
+                                      required="#{bindings.Lname.hints.mandatory}"
+                                      columns="#{bindings.Lname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Lname.hints.precision}"
+                                      shortDesc="#{bindings.Lname.hints.tooltip}"
+                                      id="it2" readOnly="true">
+                          <f:validator binding="#{bindings.Lname.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.MemshipCategoryText.inputValue}"
+                                      label="#{bindings.MemshipCategoryText.hints.label}"
+                                      required="#{bindings.MemshipCategoryText.hints.mandatory}"
+                                      columns="#{bindings.MemshipCategoryText.hints.displayWidth}"
+                                      maximumLength="#{bindings.MemshipCategoryText.hints.precision}"
+                                      shortDesc="#{bindings.MemshipCategoryText.hints.tooltip}"
+                                      id="it3" readOnly="true">
+                          <f:validator binding="#{bindings.MemshipCategoryText.validator}"/>
+                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.SecArtId.inputValue}"
+                                            label="#{bindings.SecArtId.label}"
+                                            required="#{bindings.SecArtId.hints.mandatory}"
+                                            shortDesc="#{bindings.SecArtId.hints.tooltip}"
+                                            id="soc2" readOnly="true">
+                          <f:selectItems value="#{bindings.SecArtId.items}"
+                                         id="si2"/>
+                        </af:selectOneChoice>
+                      </af:panelFormLayout>
+                      <af:spacer width="10" height="50" id="s1"/>
+                      <af:panelFormLayout id="pfl1" rows="1" maxColumns="3"
+                                          partialTriggers="qryId1"
+                                          labelWidth="80">
+                        <af:selectOneChoice value="#{bindings.NewMemshipStatus.inputValue}"
+                                            label="#{bindings.NewMemshipStatus.label}"
+                                            required="#{bindings.NewMemshipStatus.hints.mandatory}"
+                                            shortDesc="#{bindings.NewMemshipStatus.hints.tooltip}"
+                                            id="soc4">
+                          <f:selectItems value="#{bindings.NewMemshipStatus.items}"
+                                         id="si4"/>
+                        </af:selectOneChoice>
+                        <af:inputText label="#{viewcontrollerBundle.change_reason}"
+                                      id="it5"
+                                      value="#{pageFlowScope.cid_mem_statuschange.newStDescription}"/>
+                        <af:commandButton text="#{viewcontrollerBundle.create}" id="cb1"
+                                          actionListener="#{pageFlowScope.cid_mem_statuschange.save_action_listener}"
+                                          binding="#{pageFlowScope.cid_mem_statuschange.disablebtn_create}"
+                                          
+                                          partialTriggers="qryId1"/>
+                      </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+           </af:panelSplitter>
+           </af:panelHeader>
+          </f:facet>
+          <f:facet name="popup">
+          <af:popup id="p1">
+            <af:panelWindow id="pw1">
+              <af:panelFormLayout id="pfl6">
+                <f:facet name="footer">
+                  <h:panelGroup id="pg1">
+                    <af:commandButton text="بلی" id="cb3"
+                                      actionListener="#{pageFlowScope.cid_mem_statuschange.popUpYes_btn}"/>
+                    <af:commandButton text="خیر" id="cb4"/>
+                  </h:panelGroup>
+                </f:facet>
+                <af:outputText id="ot1"
+                               value="#{pageFlowScope.cid_mem_statuschange.popUpText}"/>
+                <af:spacer width="10" height="20" id="s2"/>
+              </af:panelFormLayout>
+            </af:panelWindow>
+          </af:popup>
+        </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:cid_mem_statuschange-->
+</jsp:root>

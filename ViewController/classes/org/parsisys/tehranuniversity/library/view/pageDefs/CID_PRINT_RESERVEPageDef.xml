@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_PRINT_RESERVEPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="ReserveCurrLabcolVO" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="ReserveCurrLabcolVOIterator"/>
+    <searchRegion Binds="ReserveCurrLabcolVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ReserveCurrLabcolVOQuery"/>
+    <iterator Binds="PrintReserveVO" RangeSize="25"
+              DataControl="AppModuleDataControl" id="PrintReserveVOIterator"/>
+    <searchRegion Binds="PrintReserveVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PrintReserveVOQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ReserveCurrLabcolVOIterator" id="ReserveCurrLabcolVO">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ReserveVO"
+                      Name="ReserveCurrLabcolVO0">
+        <AttrNames>
+          <Item Value="Title"/>
+          <Item Value="Barcode"/>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="RetDate"/>
+          <Item Value="Active"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PrintReserveVOIterator" id="PrintReserveVO">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ReserveVO"
+                      Name="PrintReserveVO0">
+        <AttrNames>
+          <Item Value="Title"/>
+          <Item Value="Barcode"/>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="RetDate"/>
+          <Item Value="Active"/>
+          <Item Value="Print" Binds="Print"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="PrintReserveVOIterator" id="Print"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="Print"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="reserve_historyflow">
+    <default-activity id="__1">Execute</default-activity>
+    <managed-bean id="__8">
+      <managed-bean-name id="__9">reserve_history</managed-bean-name>
+      <managed-bean-class id="__11">org.parsisys.tehranuniversity.library.view.beans.ReserveHistoryBean</managed-bean-class>
+      <managed-bean-scope id="__10">view</managed-bean-scope>
+    </managed-bean>
+    <view id="reserve_history">
+      <page>/ff/reserve_history.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <method-call id="Execute">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome id="__12">
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">reserve_history</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__7">end</from-outcome>
+        <to-activity-id id="__5">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id id="__14">Execute</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__16">Execute</from-outcome>
+        <to-activity-id id="__15">reserve_history</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

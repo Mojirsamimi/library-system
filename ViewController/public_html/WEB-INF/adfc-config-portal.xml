@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="portal_librarysystem">
+    <page>/portal_librarysystem.jsp</page>
+  </view>
+  <view id="portal_loan">
+    <page>/portal_loan.jsp</page>
+  </view>
+  <view id="portal_reserve">
+    <page>/portal_reserve.jsp</page>
+  </view>
+  <control-flow-rule id="__2">
+    <from-activity-id id="__1">*</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome id="__5">login_portal_success</from-outcome>
+      <to-activity-id id="__4">portal_librarysystem</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome id="__8">menu_portal_reserve</from-outcome>
+      <to-activity-id id="__6">portal_reserve</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__25">
+      <from-outcome id="__27">menu_portal_loan</from-outcome>
+      <to-activity-id id="__26">portal_loan</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome id="__11">menu_portal_homepage</from-outcome>
+      <to-activity-id id="__9">portal_librarysystem</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__13">
+    <managed-bean-name id="__14">portal_cid_loan</managed-bean-name>
+    <managed-bean-class id="__12">org.parsisys.tehranuniversity.library.view.beans.CidLoan</managed-bean-class>
+    <managed-bean-scope id="__15">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

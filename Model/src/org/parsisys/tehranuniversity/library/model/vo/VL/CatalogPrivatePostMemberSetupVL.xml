@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CatalogPrivatePostMemberSetupVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.CatalogPrivateMemberSetupFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="CatalogDetailVO"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.CatalogDetailVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="CatalogDetailVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.CatalogDetailVO.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.CatalogDetailVO.Value"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MemberSetUpVo"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.MemberSetUpVo">
+    <DesignTime>
+      <Attr Name="_finderName" Value="MemberSetUpVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.MemberSetUpVo.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.MemberSetUpVo.PloanQuota"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

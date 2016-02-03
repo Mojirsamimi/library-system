@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="CID_BOOK_RESERVE_HISTORYPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <invokeAction Binds="removeAllVirtualBookVC"
+                  id="removeAllVirtualBookVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <invokeAction Binds="removeAllReserveVC" id="removeAllReserveVC_execute"
+                  RefreshCondition="#{adfFacesContext.initialRender}"
+                  Refresh="prepareModel"/>
+    <iterator Binds="VirtualBookVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="VirtualBookVO1Iterator"/>
+    <searchRegion Criteria="search_callNo_titleVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="VirtualBookVO1Iterator" id="searchcallNotitleVCQuery"/>
+    <iterator Binds="ReserveVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="ReserveVO1Iterator"/>
+    <searchRegion Binds="ReserveVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ReserveVO1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="CallNo">
+      <AttrNames>
+        <Item Value="CallNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="VbookCNT">
+      <AttrNames>
+        <Item Value="VbookCNT"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="OrigTitle">
+      <AttrNames>
+        <Item Value="OrigTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ReserveVO1Iterator" id="ReserveVO1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.ReserveVO"
+                      Name="ReserveVO10">
+        <AttrNames>
+          <Item Value="ArtId"/>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="Barcode"/>
+          <Item Value="VolNo"/>
+          <Item Value="PartNo"/>
+          <Item Value="DayDate"/>
+          <Item Value="UserName"/>
+          <Item Value="RetDate"/>
+          <Item Value="Active"/>
+          <Item Value="ModifiedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="VirtualBookVO1Iterator" id="ProviderName">
+      <AttrNames>
+        <Item Value="ProviderName"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="removeAllVirtualBookVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllVirtualBookVC"
+                  IsViewObjectMethod="false"/>
+    <methodAction id="removeAllReserveVC"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="removeAllReserveVC"
+                  IsViewObjectMethod="false"/>
+  </bindings>
+</pageDefinition>

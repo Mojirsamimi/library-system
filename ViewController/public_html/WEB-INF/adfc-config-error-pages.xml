@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="AccessDenied">
+    <page>/AccessDenied.jspx</page>
+  </view>
+  <view id="PortalAccessDenied">
+    <page>/PortalAccessDenied.jspx</page>
+  </view>
+  <view id="logInFirst">
+    <page>/logInFirst.jspx</page>
+  </view>
+</adfc-config>

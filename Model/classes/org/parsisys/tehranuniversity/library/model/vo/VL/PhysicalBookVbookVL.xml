@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PhysicalBookVbookVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.PhysicalbookVbookFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="PhysicalBookVO"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="PhysicalBookVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.PhysicalBookVO.VbookArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="VirtualBookVO"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="VirtualBookVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.VirtualBookVO.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  Name="Provider"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="PROVIDER"
+  AliasName="Provider"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.ProviderImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="DummyVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.DummyVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MessageVO1"
+    ViewObjectName="org.parsisys.tehranuniversity.library.model.vo.RO.MessageVO"
+    RowLevelBinds="true"/>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROVIDER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="8"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="PROVIDER"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Provider"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="300"
+    ColumnName="PROVIDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Provider.Provider_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ForeignName"
+    IsUnique="true"
+    Precision="200"
+    ColumnName="FOREIGN_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Provider.ForeignName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="BDDate"
+    IsUnique="true"
+    Precision="50"
+    ColumnName="B_D_DATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Provider.BDDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ReadingOrder"
+    IsNotNull="true"
+    Precision="1"
+    Scale="0"
+    ColumnName="READING_ORDER"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Provider.ReadingOrder_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ProviderKind"
+    IsNotNull="true"
+    Precision="1"
+    Scale="0"
+    ColumnName="PROVIDER_KIND"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.Provider.ProviderKind_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ReferenceType"
+    DefaultValue="1"
+    Precision="1"
+    Scale="0"
+    ColumnName="REFERENCE_TYPE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="VbookProvider"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbprvPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbprvPrvFkAssoc.VbookProvider"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_VbprvPrvFkAssoc.Provider"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SeeProvider1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeePrvPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeePrvPrvFkAssoc.SeeProvider1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeePrvPrvFkAssoc.Provider1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SeeAlsoProvider1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoPrvPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoPrvPrvFkAssoc.SeeAlsoProvider1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoPrvPrvFkAssoc.Provider1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SeeProvider"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeePrvPrvRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeePrvPrvRelatedToFkAssoc.SeeProvider"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeePrvPrvRelatedToFkAssoc.Provider"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SeeProviderImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SeeAlsoProvider"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoPrvPrvRelatedToFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoPrvPrvRelatedToFkAssoc.SeeAlsoProvider"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.SeeAlsoPrvPrvRelatedToFkAssoc.Provider"
+    Type="org.parsisys.tehranuniversity.library.model.eo.SeeAlsoProviderImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="VbookProvider1"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc.VbookProvider1"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.VbookPrvPrvFkAssoc.Provider1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="VirtualBook"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookProviderFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookProviderFkAssoc.VirtualBook"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.Rep_VbookProviderFkAssoc.Provider"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ProviderForeignNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROVIDER_FOREIGN_NAME_CHECK"/>
+      <Attr Name="_checkCondition" Value='"FOREIGN_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="ProviderProviderCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROVIDER_PROVIDER_CHECK"/>
+      <Attr Name="_checkCondition" Value='"PROVIDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.Provider"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PrvPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRV_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008299">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008299"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008300">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008300"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC008301">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008301"/>
+      <Attr Name="_checkCondition" Value='"READING_ORDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.ReadingOrder"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008302">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008302"/>
+      <Attr Name="_checkCondition" Value='"PROVIDER_KIND" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.ProviderKind"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC008303">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C008303"/>
+      <Attr Name="_checkCondition" Value='"REFERENCE_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.ReferenceType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UniqueAltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROVIDER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.BDDate"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.ForeignName"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.Provider"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="unique">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROVIDERKEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.BDDate"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.ForeignName"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.Provider.Provider"/>
+    </AttrArray>
+  </Key>
+  <validation:UniqueKeyValidationBean
+    Name="Provider_Rule_0"
+    ResId="org.parsisys.tehranuniversity.library.model.eo.Provider_Rule_0"
+    KeyName="UniqueAltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="BDDate"/>
+      <validation:Item
+        Value="ForeignName"/>
+      <validation:Item
+        Value="Provider"/>
+    </validation:OnAttributes>
+    <validation:OnCondition>
+      <![CDATA[adf.userSession.userData.validation_policy=="persian_cataloging"]]>
+    </validation:OnCondition>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="showMessage"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</Entity>

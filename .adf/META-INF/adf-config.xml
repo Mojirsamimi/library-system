@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties"
+            xmlns:sec="http://xmlns.oracle.com/adf/security/config">
+			
+			<adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+    <adf-property name="adfAppUID"
+                  value="Library.org.parsisys.tehranuniversity.library"/>
+  </adf:adf-properties-child>
+  <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+    <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                            credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
+  </sec:adf-security-child>
+   <adfc-controller-config xmlns=     "http://xmlns.oracle.com/adf/controller/config">
+      <savepoint-datasource>java:comp/env/jdbc/Connection1DS</savepoint-datasource>
+     </adfc-controller-config>
+   <adf-controller-config xmlns="http://xmlns.oracle.com/adf/controller/config">
+      <savepoint-datasource>
+         java:comp/env/jdbc/Connection1DS
+      </savepoint-datasource>
+   </adf-controller-config>
+</adf-config>

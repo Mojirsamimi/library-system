@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PublicNonCashPenalty"
+  Version="11.1.1.56.60"
+  DBObjectType="synonym"
+  DBObjectName="PUBLIC_NON_CASH_PENALTY"
+  AliasName="PublicNonCashPenalty"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenaltyImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Labcol"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="LABCOL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_NON_CASH_PENALTY"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PenaltyDesc"
+    Precision="1000"
+    ColumnName="PENALTY_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.PenaltyDesc_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PenaltyDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="PENALTY_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.PenaltyDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ActionDesc"
+    Precision="1000"
+    ColumnName="ACTION_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.ActionDesc_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ActionDate"
+    Precision="8"
+    Scale="0"
+    ColumnName="ACTION_DATE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.ActionDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Active"
+    Precision="1"
+    Scale="0"
+    ColumnName="ACTIVE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.Active_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ArtId"
+    Precision="8"
+    Scale="0"
+    ColumnName="ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_NON_CASH_PENALTY"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MemArtId"
+    Precision="10"
+    Scale="0"
+    ColumnName="MEM_ART_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegisterUser"
+    Precision="30"
+    ColumnName="REGISTER_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.RegisterUser_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ActionUser"
+    Precision="30"
+    ColumnName="ACTION_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PUBLIC_NON_CASH_PENALTY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.ActionUser_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Member"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_PubncshpnMemFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_PubncshpnMemFkAssoc.Member"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.DB_PubncshpnMemFkAssoc.PublicNonCashPenalty"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicNonCashPenaltyFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicNonCashPenaltyFkAssoc.InitMember"
+    AssociationOtherEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.InitMemberPublicNonCashPenaltyFkAssoc.PublicNonCashPenalty"
+    Type="org.parsisys.tehranuniversity.library.model.eo.InitMemberImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PubncshpnPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PUBNCSHPN_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.ArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007258">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007258"/>
+      <Attr Name="_checkCondition" Value='"LABCOL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.Labcol"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007259">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007259"/>
+      <Attr Name="_checkCondition" Value='"PENALTY_DESC" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.PenaltyDesc"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007260">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007260"/>
+      <Attr Name="_checkCondition" Value='"PENALTY_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.PenaltyDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007261">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007261"/>
+      <Attr Name="_checkCondition" Value='"ACTIVE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.Active"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007262">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007262"/>
+      <Attr Name="_checkCondition" Value='"ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC007263">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007263"/>
+      <Attr Name="_checkCondition" Value='"MEM_ART_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007264">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007264"/>
+      <Attr Name="_checkCondition" Value='"REGISTER_USER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.RegisterUser"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PubncshpnMemFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MEM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PUBNCSHPN_MEM_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.eo.PublicNonCashPenalty.MemArtId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</Entity>

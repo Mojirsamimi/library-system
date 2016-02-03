@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PersonInitMemberVO"
+  Version="11.1.1.56.60"
+  SelectList="Person.LNAME, 
+       Person.FNAME, 
+       Person.ART_ID, 
+       InitMember.ART_ID AS ART_ID1, 
+       CidMemberSetup.POST, 
+       CidMemberSetup.ART_ID AS ART_ID2, 
+       Person.PERS_TYPE, 
+       Department.DEPT_NAME, 
+       Department.ART_ID AS ART_ID3, 
+       Section.SEC_NAME, 
+       Section.ART_ID AS ART_ID4, 
+       Person.BARCODE, 
+       Person.PERS_STATUS, 
+       Person.ID, 
+       (SELECT TEXT FROM CID_CATALOG_DETAIL WHERE CIDCAT_ART_ID=274 AND VALUE=pers_category) AS VIEW_ATTR, 
+       (SELECT TEXT  FROM CID_CATALOG_DETAIL         WHERE CIDCAT_ART_ID=276 AND VALUE=memship_category) AS VIEW_ATTR, 
+       (SELECT TEXT FROM CID_CATALOG_DETAIL         WHERE CIDCAT_ART_ID=277 AND VALUE=memship_status) AS VIEW_ATTR"
+  FromList="PERSON Person, INIT_MEMBER InitMember, CID_MEMBER_SETUP CidMemberSetup, DEPARTMENT Department, SECTION Section"
+  Where="(((Person.ART_ID = InitMember.PERS_ART_ID(+)) AND (Person.CMEMSETUP_ART_ID = CidMemberSetup.ART_ID(+))) AND (Person.DEPT_ART_ID = Department.ART_ID(+))) AND (Person.SEC_ART_ID = Section.ART_ID(+))"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="org.parsisys.tehranuniversity.library.model.vo.PersonInitMemberVORowImpl"
+  ComponentClass="fadak.base.TemplateViewObject"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Person"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Person"/>
+  <EntityUsage
+    Name="InitMember"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.InitMember"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonInitMemberFkAssoc.InitMember"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.PersonInitMemberVO.Person"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Person.ArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.InitMember.PersArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="CidMemberSetup"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.CidMemberSetup"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonCidMemSetupFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonCidMemSetupFkAssoc.CidMemberSetup"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.PersonInitMemberVO.Person"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Person.CmemsetupArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.CidMemberSetup.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="Department"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Department"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonDepartmentFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonDepartmentFkAssoc.Department"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.PersonInitMemberVO.Person"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Person.DeptArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Department.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="Section"
+    Entity="org.parsisys.tehranuniversity.library.model.eo.Section"
+    Association="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonSectionFkAssoc"
+    AssociationEnd="org.parsisys.tehranuniversity.library.model.eo.Assoc.PersonSectionFkAssoc.Section"
+    SourceUsage="org.parsisys.tehranuniversity.library.model.vo.PersonInitMemberVO.Person"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Person.SecArtId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item
+          Value="org.parsisys.tehranuniversity.library.model.eo.Section.ArtId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Lname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Lname"
+    EntityUsage="Person"
+    AliasName="LNAME"/>
+  <ViewAttribute
+    Name="Fname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fname"
+    EntityUsage="Person"
+    AliasName="FNAME"/>
+  <ViewAttribute
+    Name="ArtId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Person"
+    AliasName="ART_ID"/>
+  <ViewAttribute
+    Name="ArtId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="InitMember"
+    AliasName="ART_ID1"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="InitMember"
+    AliasName="END_DATE"
+    IsPersistent="false"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="InitMember"
+    AliasName="START_DATE"
+    IsPersistent="false"/>
+  <ViewAttribute
+    Name="CmemSetupPost"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="CmemSetupPost"
+    EntityUsage="Person"/>
+  <ViewAttribute
+    Name="Post"
+    PrecisionRule="true"
+    EntityAttrName="Post"
+    EntityUsage="CidMemberSetup"
+    AliasName="POST"/>
+  <ViewAttribute
+    Name="ArtId2"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="CidMemberSetup"
+    AliasName="ART_ID2"/>
+  <ViewAttribute
+    Name="PostText"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="org.parsisys.tehranuniversity.library.model.vo.PersonInitMemberVO.PostText_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PersType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PersType"
+    EntityUsage="Person"
+    AliasName="PERS_TYPE"/>
+  <ViewAttribute
+    Name="DeptName"
+    PrecisionRule="true"
+    EntityAttrName="DeptName"
+    EntityUsage="Department"
+    AliasName="DEPT_NAME"/>
+  <ViewAttribute
+    Name="ArtId3"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Department"
+    AliasName="ART_ID3"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="SecName"
+    PrecisionRule="true"
+    EntityAttrName="SecName"
+    EntityUsage="Section"
+    AliasName="SEC_NAME"/>
+  <ViewAttribute
+    Name="ArtId4"
+    PrecisionRule="true"
+    EntityAttrName="ArtId"
+    EntityUsage="Section"
+    AliasName="ART_ID4"/>
+  <ViewAttribute
+    Name="Barcode"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Barcode"
+    EntityUsage="Person"
+    AliasName="BARCODE"/>
+  <ViewAttribute
+    Name="PersStatus"
+    PrecisionRule="true"
+    EntityAttrName="PersStatus"
+    EntityUsage="Person"
+    AliasName="PERS_STATUS"/>
+  <ViewAttribute
+    Name="Id"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Person"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="PersCategoryText"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    Expression="SELECT TEXT FROM CID_CATALOG_DETAIL WHERE CIDCAT_ART_ID=274 AND VALUE=pers_category"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="MemShipCategoryText"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    Expression="SELECT TEXT  FROM CID_CATALOG_DETAIL         WHERE CIDCAT_ART_ID=276 AND VALUE=memship_category"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="MemshipStatusText"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    Expression="SELECT TEXT FROM CID_CATALOG_DETAIL         WHERE CIDCAT_ART_ID=277 AND VALUE=memship_status"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="NewEndDate"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="NewEndDate"
+    EntityUsage="InitMember"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ArtId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="org.parsisys.tehranuniversity.library.model.LibUTModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

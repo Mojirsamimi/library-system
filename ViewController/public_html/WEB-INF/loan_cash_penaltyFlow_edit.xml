@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="loan_cash_penaltyFlow_edit">
+    <default-activity id="__1">loanCashPenalty_edit</default-activity>
+    <managed-bean id="__9">
+      <managed-bean-name id="__10">cid_loan_cash_penalty_flow_edit</managed-bean-name>
+      <managed-bean-class id="__8">org.parsisys.tehranuniversity.library.view.beans.LoanCashPenalty</managed-bean-class>
+      <managed-bean-scope id="__11">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="loanCashPenalty_edit">
+      <page>/ff/loanCashPenalty_edit.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__2">
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">loanCashPenalty_edit</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">exit_edit</from-outcome>
+        <to-activity-id id="__6">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

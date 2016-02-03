@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LibRole_LibUserRoleVL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.LibRole_LibUserRoleFkAssooc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="LibRoleVO"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibRoleVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="LibRoleVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibRoleVO.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="LibUserRoleVo"
+    Cardinality="-1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibUserRoleVo">
+    <DesignTime>
+      <Attr Name="_finderName" Value="LibUserRoleVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.CommonVOs.LibUserRoleVo.LibroleArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MainSeeAlsoSubjectSeeAlsoSubject2VL"
+  Version="11.1.1.56.60"
+  EntityAssociation="org.parsisys.tehranuniversity.library.model.eo.Assoc.AlsoSubSubjFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="MainSeeAlsoSubjectVo"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.MainSeeAlsoSubjectVo"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="MainSeeAlsoSubjectVo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.MainSeeAlsoSubjectVo.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.MainSeeAlsoSubjectVo.ArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SeeAlsoSubject2Vo"
+    Cardinality="1"
+    Owner="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoSubject2Vo">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SeeAlsoSubject2Vo"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoSubject2Vo.Labcol"/>
+      <Item
+        Value="org.parsisys.tehranuniversity.library.model.vo.SeeAlsoSubject2Vo.SubjArtId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

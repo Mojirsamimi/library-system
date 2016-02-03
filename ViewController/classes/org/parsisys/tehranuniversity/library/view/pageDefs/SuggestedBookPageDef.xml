@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="SuggestedBookPageDef"
+                Package="org.parsisys.tehranuniversity.library.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="template.UTtemplatePageDef" id="pageTemplateBinding"
+          Refresh="ifNeeded"/>
+    <iterator Binds="SuggestedVirtualBookVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SuggestedVirtualBookVo1Iterator"/>
+    <iterator Binds="SuggestedBookLanguageVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SuggestedBookLanguageVo1Iterator"/>
+    <searchRegion Binds="SuggestedBookLanguageVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SuggestedBookLanguageVo1Query"/>
+    <iterator Binds="SuggestedProviderVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SuggestedProviderVo1Iterator"/>
+    <searchRegion Binds="SuggestedProviderVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SuggestedProviderVo1Query"/>
+    <iterator Binds="SuggestedPublisherVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SuggestedPublisherVo1Iterator"/>
+    <searchRegion Binds="SuggestedPublisherVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SuggestedPublisherVo1Query"/>
+    <iterator Binds="SuggestedSubjectVo1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SuggestedSubjectVo1Iterator"/>
+    <searchRegion Binds="SuggestedSubjectVo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="SuggestedSubjectVo1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="ActiveChangeDate">
+      <AttrNames>
+        <Item Value="ActiveChangeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="ActiveChangeUser">
+      <AttrNames>
+        <Item Value="ActiveChangeUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="ActiveStatus">
+      <AttrNames>
+        <Item Value="ActiveStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator" id="ArtId">
+      <AttrNames>
+        <Item Value="ArtId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator" id="Edition">
+      <AttrNames>
+        <Item Value="Edition"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="InsertDate">
+      <AttrNames>
+        <Item Value="InsertDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator" id="Labcol">
+      <AttrNames>
+        <Item Value="Labcol"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="ModifiedDate">
+      <AttrNames>
+        <Item Value="ModifiedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="OrigTitle">
+      <AttrNames>
+        <Item Value="OrigTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="PhysicalDesc">
+      <AttrNames>
+        <Item Value="PhysicalDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator" id="PubDate">
+      <AttrNames>
+        <Item Value="PubDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="Reference">
+      <AttrNames>
+        <Item Value="Reference"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="UniformTitle">
+      <AttrNames>
+        <Item Value="UniformTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SuggestedVirtualBookVo1Iterator"
+                     id="VolumeCount">
+      <AttrNames>
+        <Item Value="VolumeCount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="SuggestedVirtualBookVo1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <list IterBinding="SuggestedVirtualBookVo1Iterator" id="ActiveStatus1"
+          DTSupportsMRU="true" StaticList="true">
+      <AttrNames>
+        <Item Value="ActiveStatus"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="2"/>
+      </ValueList>
+    </list>
+    <list IterBinding="SuggestedVirtualBookVo1Iterator" id="Reference1"
+          DTSupportsMRU="true" StaticList="true">
+      <AttrNames>
+        <Item Value="Reference"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="2"/>
+      </ValueList>
+    </list>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="SuggestedBookLanguageVo1Iterator"
+          id="SuggestedBookLanguageVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SuggestedBookLanguageVo"
+                      Name="SuggestedBookLanguageVo10">
+        <AttrNames>
+          <Item Value="Labcol"/>
+          <Item Value="LanguageArtId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SuggestedProviderVo1Iterator" id="SuggestedProviderVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SuggestedProviderVo"
+                      Name="SuggestedProviderVo10">
+        <AttrNames>
+          <Item Value="Provider"/>
+          <Item Value="ForeignName"/>
+          <Item Value="BdDate"/>
+          <Item Value="ProviderKind"/>
+          <Item Value="ProviderRoleArtId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SuggestedPublisherVo1Iterator"
+          id="SuggestedPublisherVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SuggestedPublisherVo"
+                      Name="SuggestedPublisherVo10">
+        <AttrNames>
+          <Item Value="Publisher"/>
+          <Item Value="Place"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SuggestedSubjectVo1Iterator" id="SuggestedSubjectVo1">
+      <nodeDefinition DefName="org.parsisys.tehranuniversity.library.model.vo.SuggestedSubjectVo"
+                      Name="SuggestedSubjectVo10">
+        <AttrNames>
+          <Item Value="Subject"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SuggestedBookLanguageVo1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SuggestedBookLanguageVo1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="SuggestedPublisherVo1Iterator" id="CreateInsert2"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SuggestedPublisherVo1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="SuggestedProviderVo1Iterator" id="CreateInsert3"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SuggestedProviderVo1Iterator" id="Delete2"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="SuggestedSubjectVo1Iterator" id="CreateInsert4"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SuggestedSubjectVo1Iterator" id="Delete3"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="SuggestedVirtualBookVo1Iterator" id="Find"
+            RequiresUpdateModel="true" Action="iteratorFind"/>
+    <action IterBinding="SuggestedVirtualBookVo1Iterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

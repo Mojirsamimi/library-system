@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+            xmlns:fadak="/fadak"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['org.parsisys.tehranuniversity.library.view.UTBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  ${sessionUser.authorization}
+  <f:view locale="ar">
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/template/UTtemplate.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="center">
+          <af:panelHeader text="سابقه امانت عضو" helpTopicId="memLoanHistory">
+           <f:facet name="toolbar">
+          <af:toolbar id="t1">
+                  <fadak:ToolbarSet debug="true" iteratorname="PersonVO1Iterator" id="ts1"
+                                    disabled_delete="true"
+                                    disabled_create="true" showcreate="false"
+                                    showdelete="false" showEditCommand="false"
+                                    showquery="false" showrefresh="false"
+                                    showrollback="false" showsearch="false"
+                                    showcommit="false"/>
+
+          </af:toolbar>
+          
+        
+          </f:facet>
+              <af:panelSplitter id="ps1" splitterPosition="140"
+                                orientation="vertical">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                      <af:query id="qryId1" headerText="جستجوی عضو" disclosed="true"
+                                value="#{bindings.searchnameidbarcodeQuery.queryDescriptor}"
+                                model="#{bindings.searchnameidbarcodeQuery.queryModel}"
+                                queryListener="#{bindings.searchnameidbarcodeQuery.processQuery}"
+                                queryOperationListener="#{bindings.searchnameidbarcodeQuery.processQueryOperation}"
+                                rows="2" maxColumns="2" fieldWidth="200"
+                                modeChangeVisible="false"
+                                saveQueryMode="hidden"/>
+                    </af:panelHeader>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelBox text=" " id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" valign="middle"
+                                         layout="scroll" halign="center"
+                                         partialTriggers="qryId1">
+                      <af:panelFormLayout id="pfl1" rows="1" maxColumns="4"
+                                          fieldWidth="100">
+                        <af:inputText value="#{bindings.Barcode.inputValue}"
+                                      label="#{bindings.Barcode.hints.label}"
+                                      required="#{bindings.Barcode.hints.mandatory}"
+                                      columns="#{bindings.Barcode.hints.displayWidth}"
+                                      maximumLength="#{bindings.Barcode.hints.precision}"
+                                      shortDesc="#{bindings.Barcode.hints.tooltip}"
+                                      id="it4" readOnly="true">
+                          <f:validator binding="#{bindings.Barcode.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Id.inputValue}"
+                                      label="#{bindings.Id.hints.label}"
+                                      required="#{bindings.Id.hints.mandatory}"
+                                      columns="#{bindings.Id.hints.displayWidth}"
+                                      maximumLength="#{bindings.Id.hints.precision}"
+                                      shortDesc="#{bindings.Id.hints.tooltip}"
+                                      id="it5" readOnly="true">
+                          <f:validator binding="#{bindings.Id.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Fname.inputValue}"
+                                      label="#{bindings.Fname.hints.label}"
+                                      required="#{bindings.Fname.hints.mandatory}"
+                                      columns="#{bindings.Fname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Fname.hints.precision}"
+                                      shortDesc="#{bindings.Fname.hints.tooltip}"
+                                      id="it6" readOnly="true">
+                          <f:validator binding="#{bindings.Fname.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Lname.inputValue}"
+                                      label="#{bindings.Lname.hints.label}"
+                                      required="#{bindings.Lname.hints.mandatory}"
+                                      columns="#{bindings.Lname.hints.displayWidth}"
+                                      maximumLength="#{bindings.Lname.hints.precision}"
+                                      shortDesc="#{bindings.Lname.hints.tooltip}"
+                                      id="it7" readOnly="true">
+                          <f:validator binding="#{bindings.Lname.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer"/>
+                      </af:panelFormLayout>
+                      <af:spacer width="30" height="10" id="s1"/>
+                      <af:panelCollection id="pc1"
+                                          inlineStyle="width:90%; height:200.0px;">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.MemLoanHistoryVO.collectionModel}"
+                                  var="row"
+                                  rows="#{bindings.MemLoanHistoryVO.rangeSize}"
+                                  emptyText="#{bindings.MemLoanHistoryVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.MemLoanHistoryVO.rangeSize}"
+                                  rowBandingInterval="0"
+                                  filterModel="#{bindings.MemLoanHistoryVOQuery.queryDescriptor}"
+                                  queryListener="#{bindings.MemLoanHistoryVOQuery.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.MemLoanHistoryVO.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.MemLoanHistoryVO.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="t2"
+                                  partialTriggers=":::qryId1"
+                                  columnStretching="column:c4">
+                          <af:column sortProperty="RegId" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.RegId.label}"
+                                     id="c2">
+                            <af:outputText value="#{row.RegId}" id="ot10"/>
+                          </af:column>
+                          <af:column sortProperty="Barcode" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.Barcode.label}"
+                                     id="c4">
+                            <af:outputText value="#{row.Barcode}" id="ot9">
+                              <af:showPopupBehavior popupId=":::p1"
+                                                    triggerType="dblClick"
+                                                    align="endAfter"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="LoanDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.LoanDate.label}"
+                                     id="c1">
+                            <af:outputText value="#{row.LoanDate}" id="ot11">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.MemLoanHistoryVO.hints.LoanDate.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="RetDate" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.RetDate.label}"
+                                     id="c6">
+                            <af:outputText value="#{row.RetDate}" id="ot5">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.MemLoanHistoryVO.hints.RetDate.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="RealRetDate"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.RealRetDate.label}"
+                                     id="c7">
+                            <af:outputText value="#{row.RealRetDate}" id="ot12">
+                              <af:convertNumber groupingUsed="false"
+                                                pattern="#{bindings.MemLoanHistoryVO.hints.RealRetDate.format}"/>
+                            </af:outputText>
+                          </af:column>
+                          <af:column sortProperty="LoanTypeText"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.LoanTypeText.label}"
+                                     id="c8">
+                            <af:outputText value="#{row.LoanTypeText}"
+                                           id="ot8"/>
+                          </af:column>
+                          <af:column sortProperty="LoanUser" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.LoanUser.label}"
+                                     id="c3">
+                            <af:outputText value="#{row.LoanUser}" id="ot6"/>
+                          </af:column>
+                          <af:column sortProperty="ReturnUser" filterable="true"
+                                     sortable="true"
+                                     headerText="#{bindings.MemLoanHistoryVO.hints.ReturnUser.label}"
+                                     id="c5">
+                            <af:outputText value="#{row.ReturnUser}" id="ot7"/>
+                          </af:column>
+                        </af:table>
+                      </af:panelCollection>
+                      <af:panelFormLayout id="pfl3">
+                        <af:outputText value="#{viewcontrollerBundle.show_bookProviderInfo_dbclick}"
+                                       id="ot14"/>
+                        <af:panelLabelAndMessage label="#{bindings.LibName.hints.label}"
+                                                 id="plam5" visible="false">
+                          <af:outputText value="#{bindings.LibName.inputValue}"
+                                         id="ot13"/>
+                        </af:panelLabelAndMessage>
+                      </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </f:facet>
+              </af:panelSplitter>
+            </af:panelHeader>
+          </f:facet>
+           <f:facet name="popup">
+            <af:popup id="p1" contentDelivery="lazyUncached">
+              <af:panelWindow id="pw1" title="جزییات کتاب"
+                              inlineStyle="width:500.0px;">
+                <af:panelFormLayout id="pfl2"  rows="6"
+                                    maxColumns="1" partialTriggers="pc1:t2"
+                                    fieldWidth="300">
+                  <af:inputText value="#{bindings.Title.inputValue}"
+                                label="#{bindings.Title.hints.label}"
+                                required="#{bindings.Title.hints.mandatory}"
+                                columns="#{bindings.Title.hints.displayWidth}"
+                                maximumLength="#{bindings.Title.hints.precision}"
+                                shortDesc="#{bindings.Title.hints.tooltip}"
+                                id="it1">
+                    <f:validator binding="#{bindings.Title.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ProviderName.inputValue}"
+                                label="#{bindings.ProviderName.hints.label}"
+                                required="#{bindings.ProviderName.hints.mandatory}"
+                                columns="#{bindings.ProviderName.hints.displayWidth}"
+                                maximumLength="#{bindings.ProviderName.hints.precision}"
+                                shortDesc="#{bindings.ProviderName.hints.tooltip}"
+                                id="it2" readOnly="true">
+                    <f:validator binding="#{bindings.ProviderName.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.CallNo.inputValue}"
+                                label="#{bindings.CallNo.hints.label}"
+                                required="#{bindings.CallNo.hints.mandatory}"
+                                columns="#{bindings.CallNo.hints.displayWidth}"
+                                maximumLength="#{bindings.CallNo.hints.precision}"
+                                shortDesc="#{bindings.CallNo.hints.tooltip}"
+                                id="it3">
+                    <f:validator binding="#{bindings.CallNo.validator}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
+              </af:panelWindow>
+            </af:popup>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
